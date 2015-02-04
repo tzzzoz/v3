@@ -1,0 +1,14 @@
+/* *
+ *general
+ *
+ *= require bootstrap.min
+ *= require_self
+
+ *= require jquery.Jcrop
+ 
+ *= require main
+
+ *= require datepicker
+ *= require new_version
+ *= require bootstrap-slider
+*/

@@ -1,0 +1,6 @@
+<%= form_tag({:controller => "full_screen_light_boxes", :action => "show"}, :method => "get", :id => "fs_lb_select") do %>
+    <%= select_tag(:fs_light_box, options_from_collection_for_select(current_user.light_boxes, "id", "name", @light_box.id), :class => "form-control input-xs")  %>
+<% end %>
+<!--<div id="full_light_box_add" class="ui-state-focus">-->
+    <!--<span class="ui-icon ui-icon-plusthick" title="<%= I18n.t('new_lb') %>"> </span>-->
+<!--</div>-->

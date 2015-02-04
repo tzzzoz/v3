@@ -1,0 +1,20 @@
+$('#table_container').html('<%= escape_javascript(render :partial => "rep_medias") %>');
+$('#pw_paginator').html('<%= escape_javascript(paginate(@reportages, :remote => true).to_s) %>');
+$('#tst_bas_paginator').html('<%= escape_javascript(paginate(@reportages, :remote => true).to_s) %>');
+$('.pw_current_page').keyup(function(event) {
+                if (event.which == '13') {
+                    var v = $('.pw_current_page').val();
+                    if (location.href.indexOf('?') > 0) { $(location).attr('href',location.href+'&page='+v); }
+                    else { $(location).attr('href',location.href+'?page='+v); }
+                }
+                else if (event.which == '37' ) {
+                    // <-
+                    previous_page = $('.pagination:first .previous_page').attr('href');
+                    if (previous_page){ document.location = previous_page };
+                } else if (event.which == '39') {
+                    // ->
+                    next_page = $('.pagination:first .next_page').attr('href');
+                    if (next_page){ document.location = next_page };
+                }  else { event.preventDefault(); }
+            });
+

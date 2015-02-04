@@ -1,0 +1,72 @@
+<% ids= [] %>
+<% @medias.collect{|i| ids << i.id} %>
+<% @medias.each do |med| %>
+   <div id="main_<%= med.id %>" class="pw_thumb">
+     <% descrip = med.description %>
+     <% descrip = med.excerpts.description unless @show_facet == 0 %>
+     <% pw_c = "" %>
+     <% if med.ms_id == "flv" %>
+        <% pw_c = "
+           <object type='application/x-shockwave-flash' data='http://flv-player.net/medias/player_flv_maxi.swf' width='320' height='240'>
+           <param name='movie' value='http://flv-player.net/medias/player_flv_maxi.swf' />
+           <param name='autoload' value='true' />
+           <param name='autoplay' value='true' />
+           <param name='FlashVars' value='flv=#{med.hires_location}&amp;startimage=#{med.medium_location}&amp;showstop=1&amp;showvolume=1&&amp;autoload=1&amp;autoplay=1' />
+           </object>" %>
+     <% elsif med.ms_id == "mov" %>
+         <% pw_c = "
+           <object width='500' height='300' classid='clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B' codebase='http://www.apple.com/qtactivex/qtplugin.cab'>
+           <param name='src' value='#{med.hires_location}'>
+           <param name='autoplay' value='true'>
+           <param name='controller' value='true'>
+           <embed width='480' height='270' src='#{med.hires_location}' type='video/quicktime' autoplay='true' controller='true'>
+           </embed></object>"  %>
+     <% else %>
+         <% roll_img = med.medium_location %>
+         <% roll_img = med.thumb_location if session[:provvg][med.provider_id] == 0 %>
+         <% pw_c += "#{image_tag(roll_img)}" if @ivis==1%>
+     <% end %>
+     <% pw_c += "<div class='pw_info_thumb'>
+     <p><span class='pw_bold'>#{I18n.t('original_filename')} : </span> #{med.original_filename}</p>
+     <p><span class='pw_bold'>#{I18n.t('reception_date')} : </span> #{med.localised_reception_date}</p>
+     <p><span class='pw_bold'>#{I18n.t('date_created')} : </span> #{med.localised_date_created}</p>
+     <p><span class='pw_bold'>#{I18n.t('normalized_credit')} : </span> #{med.normalized_credit}</p>
+     <p><span class='pw_bold'>#{I18n.t('description')} : </span> #{descrip}</p>
+     </div>" if @idisp==1 %>
+
+
+     <% styl = "" %>
+     <% styl = "border:3px solid #{session[:border_color][med.provider_id]};" unless session[:border_color][med.provider_id].blank? %>
+     <% if med.ratio >= 1 %>
+        <%= link_to image_tag(med.thumb_location, :width => '160px', :oncontextmenu => "return false", :ondrag => "return false", :onmousedown => "return false", :class => 'popover-trigger', 'data-c' => pw_c, 'data-style' => 'primary', :style => styl), medias_path(:search => params[:search], :saved_search_id => params[:saved_search_id], :sort => @current_params[:sort], :media_typ => @current_params[:media_typ], :page => params[:page], :per_page => @perpage, :ids => ids, :anchor => med.id), :target => '_blank' %>
+     <% else %>
+        <%= link_to image_tag(med.thumb_location, :height => '160px', :oncontextmenu => "return false", :ondrag => "return false", :onmousedown => "return false", :class => 'popover-trigger', 'data-c' => pw_c, 'data-style' => 'primary', :style => styl), medias_path(:search => params[:search], :saved_search_id => params[:saved_search_id], :sort => @current_params[:sort], :media_typ => @current_params[:media_typ], :page => params[:page], :per_page => @perpage, :ids => ids, :anchor => med.id), :target => '_blank' %>
+     <% end %>
+
+     <p class="pw_media_button">
+        <%= image_tag("mp4.png", :title => "media video") if med.ms_id == "flv" || med.ms_id == "mov" %>
+        <% nbt = Statistic.where(image_id: med.id).count.to_i %>
+        <%= nbt unless nbt == 0 %>
+        <%= check_box_tag("med_#{med.id}") %>
+        <% unless @notitle == 1 %>
+         <%= link_to "<span class='glyphicon glyphicon-save'></span>".html_safe, downloads_path('ids[]' => med.id, :definition => "BD", :depage => 5), :class => "BD", :target => :blank %>
+         <%= link_to "<span class='glyphicon glyphicon-floppy-save'></span>".html_safe, downloads_path('ids[]' => med.id, :definition => "HD", :depage => 5), :class => "HD", :target => :blank %>
+        <% end %>
+
+        <%= link_to "<span class='glyphicon glyphicon-plus'></span>".html_safe,
+                            light_box_image_path(:id, 'ids[]' => med.id),
+                            :method => :put,
+                            :class => 'add_to_lightbox',
+                            :remote => true %>
+        <%= link_to("<span class='glyphicon glyphicon-list-alt'></span>".html_safe, medias_path(:reportage => med.reportage, :anchor => med.id, :provider_id => med.provider_id), :class => 'feature', :target => '_blank') unless med.reportage.blank? %>
+     </p>
+
+     <p class="pw_media_txt">
+         <%= med.normalized_credit %>
+     </p>
+   </div>
+<% end %>
+
+<script>
+  PwThumbRollo();
+</script>

@@ -1,0 +1,13 @@
+--- 
+users_001: 
+  salt: 2w0UrwFc4BVv4oUy6VR
+  crypted_password: 959dfd1002d1e5329614194d9cd17fa1dc3abe500cfae2c9cb3872a53cb4aeee119b4b9e5c07c379df6e1dc3b4ea3be10125e6a9b035e359a19631631297da63
+  id: 1
+  title_id: 1
+  first_name: super
+  last_name: admin
+  login: superadmin
+  email: support@pixpalace.com
+  roles_mask: 1
+
+#password monkey

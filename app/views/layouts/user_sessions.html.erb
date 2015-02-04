@@ -1,0 +1,121 @@
+<% require 'net/http' %>
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="shortcut icon" type="image/png" href="<%= asset_path 'pp_favicon.png' %>">
+  <title><%= I18n.t'pixpalace' %></title>
+  <%= csrf_meta_tag %>
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "user_sessions" %>
+  <script type="text/javascript">
+      function change_language(langue){
+          location = window.location.pathname + "?locale=" + langue
+      };
+      $(document).ready(function(){
+          $("#pw_menu li").not(':last').append(' | ');
+      });
+  </script>
+</head>
+
+<body>
+
+<map name="services_map_fr">
+  <area shape="rect" coords="2,3,225,77" href="http://www.pixways.com/pixpalace/" target="_blank" alt="PixPalace" />
+  <area shape="rect" coords="2,95,225,168" href="http://www.pixways.com/pixpalace/" target="_blank" alt="PixPalace2" />
+  <area shape="rect" coords="2,185,225,258" href="http://www.pixways.com/pixpush/" target="_blank" alt="PixPush+" />
+  <area shape="rect" coords="2,277,225,350" href="http://www.pixways.com/pixtrakk/" target="_blank" alt="PixTrakk" />
+  <area shape="rect" coords="2,368,225,442" href="http://www.pixways.com/pixday/" target="_blank" alt="PixDay" />
+  <area shape="rect" coords="2,460,225,535" href="http://www.pixways.com/" target="_blank" alt="PixWays" />
+</map>
+
+<map name="services_map_en">
+  <area shape="rect" coords="2,3,225,77" href="http://www.pixways.com/pixpalace_en/" target="_blank" alt="PixPalace" />
+  <area shape="rect" coords="2,95,225,168" href="http://www.pixways.com/pixpalace_en/" target="_blank" alt="PixPalace2" />
+  <area shape="rect" coords="2,185,225,258" href="http://www.pixways.com/pixpush_en/" target="_blank" alt="PixPush+" />
+  <area shape="rect" coords="2,277,225,350" href="http://www.pixways.com/pixtrakk_en/" target="_blank" alt="PixTrakk" />
+  <area shape="rect" coords="2,368,225,442" href="http://www.pixways.com/pixday_en/" target="_blank" alt="PixDay" />
+  <area shape="rect" coords="2,460,225,535" href="http://www.pixways.com/en/" target="_blank" alt="PixWays" />
+</map>
+
+<map name="services_map_zh-CN">
+  <area shape="rect" coords="2,3,225,77" href="http://www.pixways.com/pixpalace_en/" target="_blank" alt="PixPalace" />
+  <area shape="rect" coords="2,95,225,168" href="http://www.pixways.com/pixpalace_en/" target="_blank" alt="PixPalace2" />
+  <area shape="rect" coords="2,185,225,258" href="http://www.pixways.com/pixpush_en/" target="_blank" alt="PixPush+" />
+  <area shape="rect" coords="2,277,225,350" href="http://www.pixways.com/pixtrakk_en/" target="_blank" alt="PixTrakk" />
+  <area shape="rect" coords="2,368,225,442" href="http://www.pixways.com/pixday_en/" target="_blank" alt="PixDay" />
+  <area shape="rect" coords="2,460,225,535" href="http://www.pixways.com/en/" target="_blank" alt="PixWays" />
+</map>
+
+
+<div id="pw_main_home">
+
+  <div id="header">
+    <div id="pw_contact_pix">
+      <%= mail_to PixPalaceMail[I18n.locale.to_s],"@ #{I18n.t 'contact_us'}" %>
+    </div>
+    <div id="language">
+      <%=  I18n.t 'choose_the_language' %>
+      <%= select_tag("locale", options_for_select(I18n.available_locales.collect{|lang| [(I18n.t lang), lang.to_s]}, I18n.locale.to_s), { :index => nil, :onchange => 'change_language(this.value)'})%>
+    </div>
+  </div>
+
+
+  <div id="pw_left_home">
+    <%= image_tag "http://www.pixways.com/wp-content/homepages/services_#{locale.to_s}.png",:usemap => "#services_map_#{locale.to_s}",:alt=>""%>
+    <div id="pw_copyright">
+      &copy;&nbsp;<%=I18n.t'pixpalace'%> <%= Time.now.year %>
+    </div>
+  </div>
+
+
+  <div id="pw_center_home">
+
+    <div id="pw_main_header">
+      <div class="pw_title_bar_<%=@template%>">
+        <%= I18n.t "title_#{@template}"%>
+      </div>
+
+      <div id="pw_available_pictures">
+        <% unless @template=="pixtrakk"%>
+            <%=I18n.t('today_online')%> :  <%= number_with_delimiter(Image.search(:with => {:content_error => false}).total_entries) + " " + I18n.t('pictures')  %>
+        <% else %>
+            <%=I18n.t('tracked_publication_label')%>
+        <%end%>
+
+      </div>
+
+      <%= image_tag "http://www.pixways.com/wp-content/homepages/logo_#{@template}.png",:alt=>"#{@template}",:class => "pw_home_logo"%>
+      <div id="pw_label">
+        <%= I18n.t "label_#{@template}"%>
+      </div>
+    </div>
+
+    <div id="pw_login">
+      <%= flash[:notice]%>
+      <%= yield %>
+    </div>
+
+    <div id="pw_com_frame">
+      <% begin %>
+          <% Timeout::timeout(10) do %>
+              <% case response = Net::HTTP.get_response(URI.parse("http://www.pixways.com/wp-content/homepages/com_#{@com_frame}.html")) %>
+                <% when Net::HTTPSuccess then %>
+                  <iframe name="main" src= "http://www.pixways.com/wp-content/homepages/com_<%=@com_frame%>.html" style="padding:0;margin:0;width:630px;height:380px;" frameborder="0"></iframe>
+              <% else %>
+                  <% logger.warn "#{Time.now.utc} - COM FRAME ERROR : URL=http://www.pixways.com/wp-content/homepages/com_#{@com_frame}.html - "+response.message %>
+              <% end%>
+          <% end %>
+      <% rescue Exception => e %>
+          <% logger.warn "#{Time.now.utc} - COM FRAME ERROR : URL=http://www.pixways.com/wp-content/homepages/com_#{@com_frame}.html - "+e.message %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

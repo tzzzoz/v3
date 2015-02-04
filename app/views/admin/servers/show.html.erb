@@ -1,0 +1,9 @@
+<p id='notice'><%= notice %></p>
+
+<p id="name"><%= @server.name %></p>
+<p id="option"><%= @server.which_type %> <%= @server.status %>
+<%= 'Serveur courant' if @server.is_self %></p>
+<p id="API"><%= @server.api_key %> <%= @server.api_port %>
+
+<%= link_to I18n.t('edit'), edit_admin_server_path(@server.id) %> |
+<%= link_to I18n.t('back'), admin_servers_path %>

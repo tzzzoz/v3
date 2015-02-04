@@ -1,0 +1,31 @@
+<fieldset class="billingAdress">
+  <legend>
+    <%= I18n.t('identification.billing_address') %>
+  </legend>
+
+  <div class = "champ">
+    <%= User.human_attribute_name(:company) %>
+    <%= text_field_tag 'user[billing_company]','' %>
+  </div>
+
+  <div class = "champ">
+    <label id="labelAdress"><%= I18n.t('identification.address') %></label>
+    <%= text_area_tag 'user[address]','', :rows => 2 %>
+  </div>
+
+  <div class = "champ">
+    <%= I18n.t('identification.city') %>
+    <%= text_field_tag 'user[city]','' %>
+  </div>
+
+  <div class = "champ">
+    <%= I18n.t('identification.zip_code') %>
+    <%= text_field_tag 'user[zip_code]','' %>
+  </div>
+
+  <div class = "champ">
+    <%= I18n.t('identification.country') %>
+    <%= select_country %>
+  </div>
+
+</fieldset>

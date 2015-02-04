@@ -1,0 +1,54 @@
+<div class='content'>
+
+  <div>
+  <%if current_user.is_superadmin? %>
+   <% @providers.each do |p| %>
+     <% unless @nb_images[p.id].nil? %>
+        <%= p.name %>(<strong><%= number_with_delimiter(@nb_images[p.id]) %></strong>)
+     <% end %>
+   <% end %>
+  <% end %>
+  </div>
+  <div class="pw_stats_total pw_dashed_bottom">
+    <strong>
+      <%= I18n.t('statistics.total') %>
+      <%= number_with_delimiter(@statistics.total_entries) %>
+    </strong>
+    <span class="pw_stats_export">
+        <span class="pw_puce_arrow">
+          <%= link_to(I18n.t('statistics.export'), stats_to_csv_path(:per_page => @statistics.total_entries, :search => params[:search]), :target => '_blank') %>
+        </span>
+
+    </span>
+  </div>
+
+  <div class="pw_stats_paginate">
+    <%= paginate @statistics, :windows => 3, :outer_window => 2 %>
+  </div>
+
+  <div id="pw_results_stats">
+    <ul>
+        <li id="li_thumbs"><a href="#tabs-thumbs"><%= I18n.t('statistics.thumbs') %></a></li>
+        <li id="li_list"><a href="#tabs-list"><%= I18n.t('statistics.list') %></a></li>
+    </ul>
+
+    <div id="tabs-list">
+      <%= render :partial => "media_list" %>
+    </div>
+
+    <div id="tabs-thumbs">
+      <%= render :partial => "media_thumbs" %>
+    </div>
+  </div>
+
+  <span class="pw_stats_total">
+    <%= I18n.t('statistics.total') %>:
+    <%= number_with_delimiter(@statistics.total_entries) %>
+  </span>
+
+  <div class="pw_stats_paginate">
+    <%= paginate @statistics, :windows => 3, :outer_window => 2 %>
+  </div>
+
+
+</div>

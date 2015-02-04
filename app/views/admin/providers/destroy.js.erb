@@ -1,0 +1,22 @@
+<% if @provider.errors.any? %>
+ $('<div><%= @provider.errors.full_messages.join('\n') %></div>').dialog({
+			    title: 'Error Provider',
+                buttons: {
+                    'OK': function() {
+                        $(this).dialog('close');
+                    }
+                }
+          });
+<% end %>
+<% if notice %>
+ $('<div><%= notice %></div>').dialog({
+			    title: 'Provider',
+                buttons: {
+                    'OK': function() {
+                        $(this).dialog('close');
+                    }
+                }
+          });
+<% end %>
+
+$('#admin_tabs_providers').tabs('load', '');

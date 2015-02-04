@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+require '../config/environment.rb'
+
+ARGV.each do |f|
+  begin
+    fbn = File.basename(f)
+    puts '--- --- ---'
+    puts fbn
+    puts '--- --- ---'
+    File.open(f) do |tor|
+      im = Image.find(:first, :conditions =>  ["original_filename LIKE ?", "#{fbn.split('.')[0..-2].join('.')}.%"] )
+      txt = ''
+      tor.each do |l|
+        ul = l.encode('UTF-8', 'GBK', :invalid => :replace, :undef => :replace)
+        txt += ul unless ul.strip.empty?
+      end
+      im.update_attribute(:description, txt) unless txt.nil?
+    end if fbn.split('.')[-1].downcase == 'txt'
+    puts '--- --- ---'
+    puts
+  rescue Exception => e
+    puts e
+  end
+end

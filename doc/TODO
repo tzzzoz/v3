@@ -1,0 +1,19 @@
+Controllers/actions à conserver :
+HomeController#index
+
+Controllers à fusionner :
+MediaExportersController
+SavedSearchesController
+SearchProviderGroupsController
+SearchesController
+ServersController
+SettingsController
+TitleProviderGroupsController
+TitlesController
+UsersController
+
+Controllers supprimés :
+CountriesController
+LightBoxPermissionLabelsController
+OperationLabelsController
+RolesController

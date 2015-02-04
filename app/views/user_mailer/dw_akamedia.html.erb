@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Bonjour Agence Akamedia</h1><br>
+    Une demande de vidéos HD a été faite par : <strong><%= @user.login %></strong>.<br>
+    <br>
+    Merci, cordialement<br>
+    L'équipe PixPalace<br><br>
+    <h1>Vidéos demandées (<%= @vids.count %>)</h1>
+    <p>
+      <% @vids.each do |im| %>
+          <%= image_tag attachments[im].url %> <%= im.gsub(".jpg", "") %><br/>
+      <% end %>
+    </p>
+    <p>
+     <h1>Utilisateur</h1>
+        Nom d'utilisateur : <%= @user.login %><br />
+        Utilisateur : <%= @user.full_name %> <br />
+        Titre : <%=  @user.title.name %>   <br />
+        Tél. : <%= @user.phone %><br />   <br />
+        Email : <%= @user.email %><br />   <br />
+    <%= I18n.l Time.now %>.
+    </p>
+  </body>
+</html>

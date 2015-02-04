@@ -1,0 +1,66 @@
+<fieldset class="inscription">
+  <legend>
+    <%= I18n.t(:inscription, :scope =>['identification']) %>
+  </legend>
+
+  <div class = "champ" >
+    <%= I18n.t('identification.wished_identifier') %>
+    <%= text_field_tag 'user[login]' ,'' %>
+  </div>
+
+  <div class = "champ" >
+    <%= I18n.t('password') %>
+    <%= password_field_tag 'user[password]' ,'' %>
+  </div>
+
+  <div class = "champ" >
+    <%= I18n.t('confirm_password') %>
+    <%= password_field_tag 'user[password_confirmation]','' %>
+  </div>
+
+  <div class = "champ" >
+    <%= I18n.t('last_name') %>
+    <%= text_field_tag 'user[last_name]','' %>
+  </div>
+
+  <div class = "champ" >
+    <%= I18n.t('first_name') %>
+    <%= text_field_tag 'user[first_name]','' %>
+  </div>
+
+  <div class = "champ" >
+    <%= I18n.t('email') %>
+    <%= text_field_tag 'user[email]', '' %>
+  </div>
+
+  <div class = "champ" >
+    <%= User.human_attribute_name(:company) %>
+    <%= text_field_tag 'user[company]','' %>
+  </div>
+
+  <div class = "champ" >
+    <%= User.human_attribute_name(:activity_sector) %>
+    <%= select_activity_sector %>
+  </div>
+
+  <div class = "champ" >
+    <div class="optionnal"><%= User.human_attribute_name(:service) %></div>
+    <%= text_field_tag 'user[service]' ,'' %>
+  </div>
+
+  <div class = "champ" >
+    <div class="optionnal"><%= User.human_attribute_name(:job) %></div>
+    <%= select_job %>
+  </div>
+
+  <div class = "champ" >
+    <%= I18n.t('phone') %>
+    <%= text_field_tag 'user[phone]','' %>
+  </div>
+
+  <div class = "champ" >
+    <div class="optionnal"><%= I18n.t('fax') %></div>
+    <%= text_field_tag 'user[fax]','' %>
+  </div>
+
+</fieldset>

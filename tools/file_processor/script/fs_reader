@@ -1,0 +1,53 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require File.expand_path(File.join(File.dirname(__FILE__), '..','lib', 'file_processor.rb'))
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: fs_reader [options] /path/to/scan"
+
+  opts.on("-L", "--local", "files from a local agency") do |l|
+    options[:local] = l
+  end
+
+  opts.on("-H", "--hotfolder", "files will be erased from source after processing") do |l|
+    options[:folder] = l
+  end
+
+  opts.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+
+end.parse!
+
+if ARGV.empty?
+  puts 'error : no arguments, use -h or --help for help'
+  exit
+end
+
+@connection = Bunny.new
+begin
+  @connection.start
+rescue Bunny::ServerDownError => e
+  LOG.fatal("check if rabbitmq is up : #{e}")
+  raise
+  exit
+end
+
+feed = options[:local] ? 'local' : 'pixpalace'
+folder = options[:folder] ? 'hotfolder' : 'coldfolder'
+
+@jpeg_fs_reader = FsReader.new(*ARGV)
+topic = @connection.exchange('medias', :type => :topic)
+
+LOG.info "Starting publishers"
+
+@jpeg_fs_reader.each do |f|
+  LOG.debug("puplishing #{f} on #{feed}.image.iptc.#{folder}")
+  topic.publish(f, :key => "#{feed}.image.iptc.#{folder}")
+end
+
+@connection.stop

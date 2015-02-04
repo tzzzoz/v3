@@ -1,0 +1,23 @@
+:feed: pixpalace
+# :feed: pixtrakk
+# :feed: local
+
+
+:connexion:
+  :host:    ftp.pixpalace.com
+  :user:    my_user 
+  :passwd:  my_password
+  :active:  true
+
+:config:
+  :timeout:   120
+  :scan_each: 30
+# temp should be on the same hdd partition than the in
+  :temp:      /tmp/pictures_temp
+  :in:        /tmp/pictures_spool
+  :tries_before_reset:  5
+
+# when activating proxy the connexion is passive
+:proxy:
+  :host:
+  :port:

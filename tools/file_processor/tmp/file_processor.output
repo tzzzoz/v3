@@ -1,0 +1,918 @@
+file_processor: process with pid 8330 started.
+file_processor: process with pid 26603 started.
+file_processor: process with pid 27983 started.
+file_processor: process with pid 28274 started.
+file_processor: process with pid 35477 started.
+file_processor: process with pid 1749 started.
+file_processor: process with pid 1262 started.
+file_processor: process with pid 9369 started.
+file_processor: process with pid 11559 started.
+file_processor: process with pid 12391 started.
+file_processor: process with pid 18175 started.
+file_processor: process with pid 6249 started.
+file_processor: process with pid 6283 started.
+file_processor: process with pid 6321 started.
+file_processor: process with pid 6341 started.
+file_processor: process with pid 6384 started.
+file_processor: process with pid 7141 started.
+file_processor: process with pid 11284 started.
+file_processor: process with pid 11295 started.
+file_processor: process with pid 11302 started.
+file_processor: process with pid 11313 started.
+file_processor: process with pid 12289 started.
+file_processor: process with pid 12315 started.
+file_processor: process with pid 12752 started.
+/Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data': eventmachine not initialized: evma_send_data_to_connection (RuntimeError)
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:132:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:250:in `block (3 levels) in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `block (2 levels) in send'
+	from <internal:prelude>:10:in `synchronize'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:246:in `block in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:245:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:726:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:154:in `block (2 levels) in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `block in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:151:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp.rb:93:in `stop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:50:in `rescue in block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:34:in `block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:32:in `loop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:32:in `<top (required)>'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `start_load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:296:in `start'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/controller.rb:70:in `run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:143:in `block in run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `catch_exceptions'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:142:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 12781 started.
+/Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data': eventmachine not initialized: evma_send_data_to_connection (RuntimeError)
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:132:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:250:in `block (3 levels) in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `block (2 levels) in send'
+	from <internal:prelude>:10:in `synchronize'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:246:in `block in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:245:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:726:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:154:in `block (2 levels) in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `block in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:151:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp.rb:93:in `stop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:50:in `rescue in block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:34:in `block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:32:in `loop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:32:in `<top (required)>'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `start_load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:296:in `start'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/controller.rb:70:in `run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:143:in `block in run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `catch_exceptions'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:142:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 12837 started.
+file_processor: process with pid 12859 started.
+/Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data': eventmachine not initialized: evma_send_data_to_connection (RuntimeError)
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:132:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:250:in `block (3 levels) in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `block (2 levels) in send'
+	from <internal:prelude>:10:in `synchronize'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:246:in `block in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:245:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:726:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:154:in `block (2 levels) in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `block in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:151:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp.rb:93:in `stop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:50:in `rescue in block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:34:in `block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:32:in `loop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:32:in `<top (required)>'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `start_load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:296:in `start'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/controller.rb:70:in `run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:143:in `block in run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `catch_exceptions'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:142:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 12867 started.
+file_processor: process with pid 12877 started.
+file_processor: process with pid 12885 started.
+/Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data': eventmachine not initialized: evma_send_data_to_connection (RuntimeError)
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:132:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:250:in `block (3 levels) in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `block (2 levels) in send'
+	from <internal:prelude>:10:in `synchronize'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:246:in `block in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:245:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:726:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:154:in `block (2 levels) in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `block in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:151:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp.rb:93:in `stop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:50:in `rescue in block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:34:in `block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:32:in `loop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:32:in `<top (required)>'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `start_load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:296:in `start'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/controller.rb:70:in `run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:143:in `block in run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `catch_exceptions'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:142:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 12904 started.
+/Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data': eventmachine not initialized: evma_send_data_to_connection (RuntimeError)
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:132:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:250:in `block (3 levels) in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `block (2 levels) in send'
+	from <internal:prelude>:10:in `synchronize'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:246:in `block in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:245:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:726:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:154:in `block (2 levels) in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `block in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:151:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp.rb:93:in `stop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:50:in `rescue in block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:34:in `block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:32:in `loop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:32:in `<top (required)>'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `start_load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:296:in `start'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/controller.rb:70:in `run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:143:in `block in run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `catch_exceptions'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:142:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 12914 started.
+CHANNEL_ERROR - expected 'channel.open' in AMQP::Protocol::Basic::Publish
+file_processor: process with pid 12943 started.
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+/Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data': eventmachine not initialized: evma_send_data_to_connection (RuntimeError)
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:132:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:250:in `block (3 levels) in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `block (2 levels) in send'
+	from <internal:prelude>:10:in `synchronize'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:246:in `block in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:245:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:726:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:154:in `block (2 levels) in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `block in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:151:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp.rb:93:in `stop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:52:in `rescue in block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:36:in `block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:34:in `loop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:34:in `<top (required)>'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `start_load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:296:in `start'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/controller.rb:70:in `run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:143:in `block in run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `catch_exceptions'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:142:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 13010 started.
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+/Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data': eventmachine not initialized: evma_send_data_to_connection (RuntimeError)
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:132:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:250:in `block (3 levels) in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `block (2 levels) in send'
+	from <internal:prelude>:10:in `synchronize'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:246:in `block in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:245:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:726:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:154:in `block (2 levels) in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `block in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:151:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp.rb:93:in `stop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:52:in `rescue in block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:36:in `block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:34:in `loop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:34:in `<top (required)>'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `start_load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:296:in `start'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/controller.rb:70:in `run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:143:in `block in run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `catch_exceptions'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:142:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 13063 started.
+file_processor: process with pid 13089 started.
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+file_processor: process with pid 13151 started.
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+NOT_ALLOWED - cannot redeclare exchange 'medias' in vhost '/' with different type, durable or autodelete value in AMQP::Protocol::Exchange::Declare
+file_processor: process with pid 13701 started.
+file_processor: process with pid 13722 started.
+file_processor: process with pid 13731 started.
+file_processor: process with pid 13737 started.
+file_processor: process with pid 13746 started.
+/Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:65:in `block in initialize': Could not connect to server localhost:5672 (AMQP::Error)
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:97:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:97:in `block in unbind'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/eventmachine.rb:996:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/eventmachine.rb:996:in `block in run_deferred_callbacks'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/eventmachine.rb:996:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/eventmachine.rb:996:in `run_deferred_callbacks'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run_machine'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp.rb:79:in `start'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:4:in `<top (required)>'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `start_load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:296:in `start'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/controller.rb:70:in `run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:143:in `block in run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `catch_exceptions'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:142:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 13814 started.
+file_processor: process with pid 13928 started.
+file_processor: process with pid 14176 started.
+file_processor: process with pid 14211 started.
+file_processor: process with pid 14653 started.
+file_processor: process with pid 14669 started.
+file_processor: process with pid 14736 started.
+file_processor: process with pid 14755 started.
+/Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data': eventmachine not initialized: evma_send_data_to_connection (RuntimeError)
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/connection.rb:222:in `send_data'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:132:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:250:in `block (3 levels) in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:247:in `block (2 levels) in send'
+	from <internal:prelude>:10:in `synchronize'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:246:in `block in send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:245:in `send'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/mq.rb:726:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:154:in `block (2 levels) in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `each'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:153:in `block in close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/eventmachine-0.12.10/lib/em/deferrable.rb:47:in `callback'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp/client.rb:151:in `close'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/amqp-0.6.7/lib/amqp.rb:93:in `stop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:52:in `rescue in block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:36:in `block in <top (required)>'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:34:in `loop'
+	from /Users/sami/dev/pixpalace/tools/file_processor/lib/daemon.rb:34:in `<top (required)>'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `start_load'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:296:in `start'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/controller.rb:70:in `run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:143:in `block in run'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `call'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `catch_exceptions'
+	from /Users/sami/.rvm/gems/ruby-1.9.2-p0@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:142:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 14760 started.
+file_processor: process with pid 14812 started.
+file_processor: process with pid 16414 started.
+file_processor: process with pid 24057 started.
+#<IOError: closed stream>
+IOError
+#<Bunny::ConnectionError: No connection - socket has not been created>
+Bunny::ConnectionError
+#<Bunny::ConnectionError: No connection - socket has not been created>
+Bunny::ConnectionError
+#<Bunny::ConnectionError: No connection - socket has not been created>
+Bunny::ConnectionError
+#<Bunny::ConnectionError: No connection - socket has not been created>
+Bunny::ConnectionError
+#<Bunny::ConnectionError: No connection - socket has not been created>
+Bunny::ConnectionError
+#<Bunny::ConnectionError: No connection - socket has not been created>
+Bunny::ConnectionError
+#<Bunny::ConnectionError: No connection - socket has not been created>
+Bunny::ConnectionError
+#<Bunny::ConnectionError: No connection - socket has not been created>
+Bunny::ConnectionError
+file_processor: process with pid 5380 started.
+file_processor: process with pid 5519 started.
+file_processor: process with pid 5587 started.
+file_processor: process with pid 5827 started.
+file_processor: process with pid 5208 started.
+/home/patrick/.rvm/gems/ruby-1.9.2-p180@pixpalace/gems/bunny-0.6.0/lib/bunny/client08.rb:70:in `check_response': Error Reply Code: 320 (Bunny::ForcedConnectionCloseError)
+Error Reply Text: CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'
+	from /home/patrick/.rvm/gems/ruby-1.9.2-p180@pixpalace/gems/bunny-0.6.0/lib/bunny/channel08.rb:28:in `close'
+	from /home/patrick/.rvm/gems/ruby-1.9.2-p180@pixpalace/gems/bunny-0.6.0/lib/qrack/client.rb:58:in `block in close'
+	from /home/patrick/.rvm/gems/ruby-1.9.2-p180@pixpalace/gems/bunny-0.6.0/lib/qrack/client.rb:57:in `each'
+	from /home/patrick/.rvm/gems/ruby-1.9.2-p180@pixpalace/gems/bunny-0.6.0/lib/qrack/client.rb:57:in `close'
+	from /home/patrick/RubymineProjects/pixadmin/tools/file_processor/lib/controller.rb:6:in `halt'
+	from /home/patrick/RubymineProjects/pixadmin/tools/file_processor/lib/daemon.rb:4:in `block in <top (required)>'
+	from /home/patrick/RubymineProjects/pixadmin/tools/file_processor/lib/controller.rb:54:in `call'
+	from /home/patrick/RubymineProjects/pixadmin/tools/file_processor/lib/controller.rb:54:in `sleep'
+	from /home/patrick/RubymineProjects/pixadmin/tools/file_processor/lib/controller.rb:54:in `block in process'
+	from /home/patrick/RubymineProjects/pixadmin/tools/file_processor/lib/controller.rb:32:in `loop'
+	from /home/patrick/RubymineProjects/pixadmin/tools/file_processor/lib/controller.rb:32:in `process'
+	from /home/patrick/RubymineProjects/pixadmin/tools/file_processor/lib/controller.rb:64:in `run'
+	from /home/patrick/RubymineProjects/pixadmin/tools/file_processor/lib/daemon.rb:7:in `<top (required)>'
+	from /home/patrick/.rvm/gems/ruby-1.9.2-p180@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `load'
+	from /home/patrick/.rvm/gems/ruby-1.9.2-p180@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:203:in `start_load'
+	from /home/patrick/.rvm/gems/ruby-1.9.2-p180@pixpalace/gems/daemons-1.1.0/lib/daemons/application.rb:296:in `start'
+	from /home/patrick/.rvm/gems/ruby-1.9.2-p180@pixpalace/gems/daemons-1.1.0/lib/daemons/controller.rb:70:in `run'
+	from /home/patrick/.rvm/gems/ruby-1.9.2-p180@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:143:in `block in run'
+	from /home/patrick/.rvm/gems/ruby-1.9.2-p180@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `call'
+	from /home/patrick/.rvm/gems/ruby-1.9.2-p180@pixpalace/gems/daemons-1.1.0/lib/daemons/cmdline.rb:112:in `catch_exceptions'
+	from /home/patrick/.rvm/gems/ruby-1.9.2-p180@pixpalace/gems/daemons-1.1.0/lib/daemons.rb:142:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 9855 started.
+log writing failed. can't be called from trap context
+file_processor: process with pid 10652 started.
+log writing failed. can't be called from trap context
+file_processor: process with pid 10924 started.
+log writing failed. can't be called from trap context
+log writing failed. can't be called from trap context
+file_processor: process with pid 11203 started.
+log writing failed. can't be called from trap context
+file_processor: process with pid 11799 started.
+E, [2014-06-05T14:38:35.799361 #11799] ERROR -- #<Bunny::Session:70276570250140 guest@127.0.0.1:5672, vhost=/>: Exception in the reader loop: AMQ::Protocol::EmptyResponseError: Empty response received from the server.
+E, [2014-06-05T14:38:36.248152 #11799] ERROR -- #<Bunny::Session:70276570250140 guest@127.0.0.1:5672, vhost=/>: Backtrace: 
+E, [2014-06-05T14:38:36.248344 #11799] ERROR -- #<Bunny::Session:70276570250140 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/amq-protocol-1.9.2/lib/amq/protocol/frame.rb:60:in `decode_header'
+E, [2014-06-05T14:38:36.248400 #11799] ERROR -- #<Bunny::Session:70276570250140 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/transport.rb:208:in `read_next_frame'
+E, [2014-06-05T14:38:36.248453 #11799] ERROR -- #<Bunny::Session:70276570250140 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:68:in `run_once'
+E, [2014-06-05T14:38:36.248504 #11799] ERROR -- #<Bunny::Session:70276570250140 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:35:in `block in run_loop'
+E, [2014-06-05T14:38:36.248556 #11799] ERROR -- #<Bunny::Session:70276570250140 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:32:in `loop'
+E, [2014-06-05T14:38:36.248607 #11799] ERROR -- #<Bunny::Session:70276570250140 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:32:in `run_loop'
+W, [2014-06-05T14:38:36.248671 #11799]  WARN -- #<Bunny::Session:70276570250140 guest@127.0.0.1:5672, vhost=/>: Recovering from a network failure...
+W, [2014-06-05T14:38:41.249454 #11799]  WARN -- #<Bunny::Session:70276570250140 guest@127.0.0.1:5672, vhost=/>: TCP connection failed, reconnecting in 5.0 seconds
+W, [2014-06-05T14:38:51.252029 #11799]  WARN -- #<Bunny::Session:70276570250140 guest@127.0.0.1:5672, vhost=/>: TCP connection failed, reconnecting in 5.0 seconds
+log writing failed. can't be called from trap context
+log writing failed. can't be called from trap context
+/Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `lock': can't be called from trap context (ThreadError)
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `mon_enter'
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:209:in `mon_synchronize'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/session.rb:299:in `close'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:6:in `halt'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:4:in `block in <top (required)>'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `call'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `sleep'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `block in process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `loop'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:64:in `run'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:7:in `<top (required)>'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `start_load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:298:in `start'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/controller.rb:70:in `run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:147:in `block in run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `call'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `catch_exceptions'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:146:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 2614 started.
+log writing failed. can't be called from trap context
+/Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `lock': can't be called from trap context (ThreadError)
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `mon_enter'
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:209:in `mon_synchronize'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/session.rb:299:in `close'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:6:in `halt'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:4:in `block in <top (required)>'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `call'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `sleep'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `block in process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `loop'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:64:in `run'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:7:in `<top (required)>'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `start_load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:298:in `start'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/controller.rb:70:in `run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:147:in `block in run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `call'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `catch_exceptions'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:146:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 15250 started.
+log writing failed. can't be called from trap context
+file_processor: process with pid 16984 started.
+log writing failed. can't be called from trap context
+/Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `lock': can't be called from trap context (ThreadError)
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `mon_enter'
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:209:in `mon_synchronize'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/session.rb:299:in `close'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:6:in `halt'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:4:in `block in <top (required)>'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `call'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `sleep'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `block in process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `loop'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:64:in `run'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:7:in `<top (required)>'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `start_load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:298:in `start'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/controller.rb:70:in `run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:147:in `block in run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `call'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `catch_exceptions'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:146:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 19964 started.
+log writing failed. can't be called from trap context
+/Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `lock': can't be called from trap context (ThreadError)
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `mon_enter'
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:209:in `mon_synchronize'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/session.rb:299:in `close'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:6:in `halt'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:4:in `block in <top (required)>'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `call'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `sleep'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `block in process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `loop'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:64:in `run'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:7:in `<top (required)>'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `start_load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:298:in `start'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/controller.rb:70:in `run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:147:in `block in run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `call'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `catch_exceptions'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:146:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 21426 started.
+log writing failed. can't be called from trap context
+/Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `lock': can't be called from trap context (ThreadError)
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `mon_enter'
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:209:in `mon_synchronize'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/session.rb:299:in `close'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:6:in `halt'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:4:in `block in <top (required)>'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `call'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `sleep'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `block in process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `loop'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:64:in `run'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:7:in `<top (required)>'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `start_load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:298:in `start'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/controller.rb:70:in `run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:147:in `block in run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `call'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `catch_exceptions'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:146:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 22422 started.
+log writing failed. can't be called from trap context
+/Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `lock': can't be called from trap context (ThreadError)
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `mon_enter'
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:209:in `mon_synchronize'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/session.rb:299:in `close'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:6:in `halt'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:4:in `block in <top (required)>'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `call'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `sleep'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `block in process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `loop'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:64:in `run'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:7:in `<top (required)>'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `start_load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:298:in `start'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/controller.rb:70:in `run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:147:in `block in run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `call'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `catch_exceptions'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:146:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 26378 started.
+log writing failed. can't be called from trap context
+/Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `lock': can't be called from trap context (ThreadError)
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `mon_enter'
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:209:in `mon_synchronize'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/session.rb:299:in `close'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:6:in `halt'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:4:in `block in <top (required)>'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `call'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `sleep'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `block in process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `loop'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:64:in `run'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:7:in `<top (required)>'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `start_load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:298:in `start'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/controller.rb:70:in `run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:147:in `block in run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `call'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `catch_exceptions'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:146:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 26633 started.
+log writing failed. can't be called from trap context
+/Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `lock': can't be called from trap context (ThreadError)
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `mon_enter'
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:209:in `mon_synchronize'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/session.rb:299:in `close'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:6:in `halt'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:4:in `block in <top (required)>'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `call'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `sleep'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `block in process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `loop'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:64:in `run'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:7:in `<top (required)>'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `start_load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:298:in `start'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/controller.rb:70:in `run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:147:in `block in run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `call'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `catch_exceptions'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:146:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 27295 started.
+log writing failed. can't be called from trap context
+/Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `lock': can't be called from trap context (ThreadError)
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `mon_enter'
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:209:in `mon_synchronize'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/session.rb:299:in `close'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:6:in `halt'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:4:in `block in <top (required)>'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `call'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `sleep'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `block in process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `loop'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:64:in `run'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:7:in `<top (required)>'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `start_load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:298:in `start'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/controller.rb:70:in `run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:147:in `block in run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `call'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `catch_exceptions'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:146:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 27453 started.
+log writing failed. can't be called from trap context
+/Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `lock': can't be called from trap context (ThreadError)
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `mon_enter'
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:209:in `mon_synchronize'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/session.rb:299:in `close'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:6:in `halt'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:4:in `block in <top (required)>'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `call'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `sleep'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `block in process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `loop'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:64:in `run'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:7:in `<top (required)>'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `start_load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:298:in `start'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/controller.rb:70:in `run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:147:in `block in run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `call'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `catch_exceptions'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:146:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 28592 started.
+E, [2014-06-13T18:38:44.356653 #28592] ERROR -- #<Bunny::Session:70291183226740 guest@127.0.0.1:5672, vhost=/>: Exception in the reader loop: AMQ::Protocol::EmptyResponseError: Empty response received from the server.
+E, [2014-06-13T18:38:44.678043 #28592] ERROR -- #<Bunny::Session:70291183226740 guest@127.0.0.1:5672, vhost=/>: Backtrace: 
+E, [2014-06-13T18:38:44.678148 #28592] ERROR -- #<Bunny::Session:70291183226740 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/amq-protocol-1.9.2/lib/amq/protocol/frame.rb:60:in `decode_header'
+E, [2014-06-13T18:38:44.678214 #28592] ERROR -- #<Bunny::Session:70291183226740 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/transport.rb:208:in `read_next_frame'
+E, [2014-06-13T18:38:44.678274 #28592] ERROR -- #<Bunny::Session:70291183226740 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:68:in `run_once'
+E, [2014-06-13T18:38:44.678340 #28592] ERROR -- #<Bunny::Session:70291183226740 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:35:in `block in run_loop'
+E, [2014-06-13T18:38:44.678397 #28592] ERROR -- #<Bunny::Session:70291183226740 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:32:in `loop'
+E, [2014-06-13T18:38:44.678452 #28592] ERROR -- #<Bunny::Session:70291183226740 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:32:in `run_loop'
+W, [2014-06-13T18:38:44.678531 #28592]  WARN -- #<Bunny::Session:70291183226740 guest@127.0.0.1:5672, vhost=/>: Recovering from a network failure...
+W, [2014-06-13T18:38:50.121597 #28592]  WARN -- #<Bunny::Session:70291183226740 guest@127.0.0.1:5672, vhost=/>: TCP connection failed, reconnecting in 5.0 seconds
+log writing failed. can't be called from trap context
+/Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `lock': can't be called from trap context (ThreadError)
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `mon_enter'
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:209:in `mon_synchronize'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/session.rb:299:in `close'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:6:in `halt'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:4:in `block in <top (required)>'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `call'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `sleep'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:54:in `block in process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `loop'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:64:in `run'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:7:in `<top (required)>'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `start_load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:298:in `start'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/controller.rb:70:in `run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:147:in `block in run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `call'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `catch_exceptions'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:146:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'
+file_processor: process with pid 27396 started.
+E, [2014-06-21T14:43:22.055219 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: Exception in the reader loop: AMQ::Protocol::EmptyResponseError: Empty response received from the server.
+E, [2014-06-21T14:43:22.055354 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: Backtrace: 
+E, [2014-06-21T14:43:22.055426 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/amq-protocol-1.9.2/lib/amq/protocol/frame.rb:60:in `decode_header'
+E, [2014-06-21T14:43:22.055490 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/transport.rb:208:in `read_next_frame'
+E, [2014-06-21T14:43:22.055548 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:68:in `run_once'
+E, [2014-06-21T14:43:22.055604 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:35:in `block in run_loop'
+E, [2014-06-21T14:43:22.055660 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:32:in `loop'
+E, [2014-06-21T14:43:22.055716 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:32:in `run_loop'
+W, [2014-06-21T14:43:22.055811 #27396]  WARN -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: Recovering from a network failure...
+E, [2014-06-22T17:26:49.253916 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: Exception in the reader loop: AMQ::Protocol::EmptyResponseError: Empty response received from the server.
+E, [2014-06-22T17:26:49.254039 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: Backtrace: 
+E, [2014-06-22T17:26:49.254112 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/amq-protocol-1.9.2/lib/amq/protocol/frame.rb:60:in `decode_header'
+E, [2014-06-22T17:26:49.254172 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/transport.rb:208:in `read_next_frame'
+E, [2014-06-22T17:26:49.254230 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:68:in `run_once'
+E, [2014-06-22T17:26:49.254287 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:35:in `block in run_loop'
+E, [2014-06-22T17:26:49.254345 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:32:in `loop'
+E, [2014-06-22T17:26:49.254401 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:32:in `run_loop'
+W, [2014-06-22T17:26:49.254466 #27396]  WARN -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: Recovering from a network failure...
+E, [2014-06-23T01:40:34.403535 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: Exception in the reader loop: AMQ::Protocol::EmptyResponseError: Empty response received from the server.
+E, [2014-06-23T01:40:34.403664 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: Backtrace: 
+E, [2014-06-23T01:40:34.403751 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/amq-protocol-1.9.2/lib/amq/protocol/frame.rb:60:in `decode_header'
+E, [2014-06-23T01:40:34.403817 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/transport.rb:208:in `read_next_frame'
+E, [2014-06-23T01:40:34.403883 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:68:in `run_once'
+E, [2014-06-23T01:40:34.403949 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:35:in `block in run_loop'
+E, [2014-06-23T01:40:34.404012 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:32:in `loop'
+E, [2014-06-23T01:40:34.404076 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:32:in `run_loop'
+W, [2014-06-23T01:40:34.404147 #27396]  WARN -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: Recovering from a network failure...
+E, [2014-06-23T09:22:34.134623 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: Exception in the reader loop: AMQ::Protocol::EmptyResponseError: Empty response received from the server.
+E, [2014-06-23T09:22:34.271812 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: Backtrace: 
+E, [2014-06-23T09:22:34.271963 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/amq-protocol-1.9.2/lib/amq/protocol/frame.rb:60:in `decode_header'
+E, [2014-06-23T09:22:34.272062 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/transport.rb:208:in `read_next_frame'
+E, [2014-06-23T09:22:34.272147 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:68:in `run_once'
+E, [2014-06-23T09:22:34.272236 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:35:in `block in run_loop'
+E, [2014-06-23T09:22:34.272316 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:32:in `loop'
+E, [2014-06-23T09:22:34.272391 #27396] ERROR -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: 	/Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/reader_loop.rb:32:in `run_loop'
+W, [2014-06-23T09:22:34.272472 #27396]  WARN -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: Recovering from a network failure...
+W, [2014-06-23T09:22:39.274002 #27396]  WARN -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: TCP connection failed, reconnecting in 5.0 seconds
+W, [2014-06-23T09:22:49.275217 #27396]  WARN -- #<Bunny::Session:70365829255060 guest@127.0.0.1:5672, vhost=/>: TCP connection failed, reconnecting in 5.0 seconds
+log writing failed. can't be called from trap context
+/Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `lock': can't be called from trap context (ThreadError)
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:185:in `mon_enter'
+	from /Users/Leonard/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/monitor.rb:209:in `mon_synchronize'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/bunny-1.2.2/lib/bunny/session.rb:299:in `close'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:6:in `halt'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:4:in `block in <top (required)>'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:49:in `call'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:49:in `sleep'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:49:in `rescue in block in process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:33:in `block in process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `loop'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:32:in `process'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/controller.rb:64:in `run'
+	from /Users/Leonard/Documents/v3/tools/file_processor/lib/daemon.rb:7:in `<top (required)>'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:203:in `start_load'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/application.rb:298:in `start'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/controller.rb:70:in `run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:147:in `block in run'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `call'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons/cmdline.rb:109:in `catch_exceptions'
+	from /Users/Leonard/.rvm/gems/ruby-2.0.0-p451@pixpalace/gems/daemons-1.1.9/lib/daemons.rb:146:in `run'
+	from tools/file_processor/bin/file_processor:12:in `<main>'

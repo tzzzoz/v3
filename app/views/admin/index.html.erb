@@ -1,0 +1,131 @@
+<% content_for :document_ready do %>
+  $(".datepicker").datepicker();
+  $(".tab-content").hide();
+
+  $( document ).on( "change", "#provider_group_name_id", function(){
+    $('#pw_provider_form :input:checkbox').attr('checked', false).each( function(){ $(this).triggerHandler('click') });
+    the_group_providers = $(this).find("option:selected").data("pw_providers");
+    $(the_group_providers).attr('checked', true)
+                           .each( function(){ $(this).triggerHandler('click') });
+});
+
+$( document ).on( "change", "#pw_provider_form :input", function(){
+    var vid = $(this).attr('id').split('_').pop();
+    if (this.checked == true) {
+        //$('#admin_tabs_providers').tabs("url" , 1 , "/admin/providers/"+vid+"/").tabs("load",1);
+        $('#pw_admin_provider_menu').html($(this).data("pw_provider_modif"));
+        $('.providers_table').append($(this).data('tgn'));
+    }
+    else {
+         $('#tgn_provider_'+vid).remove();
+    }
+   });
+
+$('#admin_new_provider').click(function(){
+    $('#admin_tabs_providers').tabs("url" , 1 , "/admin/providers/new").tabs("load",1); });
+
+
+ //admin titles
+
+$( document ).on( "change", "#selected_group", function(){
+    var the_id = $(this).val();
+
+    if ($(this).val() == 0){
+        $('#admin_tabs-titles_users').tabs('url' , 0 , '/admin/titles/').tabs('load', 0);
+    }
+    else{
+        $('#admin_tabs-titles_users').tabs('url' , 0 , '/admin/titles?tpgn_id='+the_id).tabs('load', 0);
+    }
+
+ });
+
+
+ //admin titles and users
+
+$( document ).on( "click", ".admin_current_title", function(){
+    var the_id = $(this).attr('id').split('_').pop();
+    $('#admin_tabs-titles_users').tabs('url' , 1 , '/admin/users?title_id='+the_id).tabs('load', 1);
+
+
+ });
+
+
+$( document ).on( "change", "#selected_title", function(){
+    var the_id = $(this).val();
+
+    if ($(this).val() == 0){
+        $('#admin_tabs-titles_users').tabs('url' , 1 , '/admin/users/').tabs('load', 1);
+        $('#admin_tabs-titles_users').tabs('url' , 0 , '/admin/titles/');
+    }
+    else if ($(this).val() == 'orphans'){
+        $('#admin_tabs-titles_users').tabs('url' , 1 , '/admin/users?orphans='+the_id).tabs('load', 1);
+        $('#admin_tabs-titles_users').tabs('url' , 0 , '/admin/titles/');
+    }
+    else{
+        $('#admin_tabs-titles_users').tabs('url' , 1 , '/admin/users?title_id='+the_id).tabs('load', 1);
+        $('#admin_tabs-titles_users').tabs('url' , 0 , '/admin/titles/'+the_id);
+
+    }
+
+ });
+
+$( document ).on( "click", "#admin_back_to_title", function(e){
+    $('#admin_tabs-titles_users').tabs('url' , 0 , '/admin/titles/');
+    $('#admin_tabs-titles_users').tabs('url' , 1 , '/admin/users/').tabs('load', 1);
+    e.preventDefault();
+ });
+
+ //end admin titles and users
+
+
+
+ $.get('<%= admin_title_provider_group_names_path(:format => :js) %>');
+
+<% end %>
+<div id="admin_index">
+<% if can? :manage, :all %>
+
+    <div id="admin_tabs" class="pw_remote-tabs panel panel-default">
+        <ul class="nav nav-tabs panel-header">
+            <li name="admin_servers"><%= link_to(I18n.t('server'), admin_servers_path) %></li>
+            <li name="admin_country"><%= link_to(I18n.t('country'), admin_countries_path) %></li>
+        </ul>
+        <div class="tab-content panel-body"></div>
+    </div>
+
+    <div id="admin_tabs_providers" class="pw_remote-tabs panel panel-default">
+       <ul class="nav nav-tabs panel-header">
+            <li name="admin_providers"><%= link_to(I18n.t('providers'), admin_providers_path) %></li>
+            <li name="new_admin"><%= link_to(I18n.t('managing'), new_admin_provider_path) %></li>
+       </ul>
+       <div class="tab-content panel-body"></div>
+    </div>
+
+    <div id="pw_admin_groups_panel">
+      <div class="pw_panel-header" >
+        <div class='pw_panel-header-label ui-state-focus hidden-trigger'><span class="pw_title_panel"><%= I18n.t('titles_group_name') %></span></div>
+        <div class='pw_panel-header-content'>
+
+        </div>
+      </div>
+
+      <div class="pw_panel-content"></div>
+    </div>
+
+<% end %>
+<% if can? :manage, User %>
+ <div id="admin_tabs-titles_users" class="pw_remote-tabs panel panel-default">
+   <ul class="nav nav-tabs panel-header">
+     <% if can? :manage, Title %>
+        <li name="admin_titles">
+            <%= link_to(I18n.t('titles'), admin_titles_path) %>
+        </li>
+     <% end %>
+        <li name="admin_users">
+          <%= link_to(I18n.t('user'), admin_users_path) %>
+        </li>
+   </ul>
+   <div class="tab-content panel-body"></div>
+ </div>
+<% end %>
+</div>

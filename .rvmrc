@@ -1,0 +1,2 @@
+rvm use 2.1.1@pixpalace
+rvm rvmrc warning ignore /var/www/v2/current/.rvmrc

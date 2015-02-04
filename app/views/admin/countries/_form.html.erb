@@ -1,0 +1,22 @@
+  <%= form_for [:admin, @country] do |f| %>
+
+  <% if @country.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@country.errors.count, "erreur") %> <%= I18n.t('prohibited_this_operation') %>:</h2>
+
+      <ul>
+      <% @country.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field(:name, :size => 50) %>
+    </div>
+
+    <div class="action"> <%= f.submit I18n.t("validate") %> </div>
+
+    <% end %>

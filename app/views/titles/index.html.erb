@@ -1,0 +1,158 @@
+<% content_for :document_ready do %>
+    PwCollapsibleTable();
+    PwSlide();
+<% end %>
+<% tabr = ["Aucun accès", "Pas de téléchargement", "BD", "HD"] %>
+<div id="providers">
+  <% content_for :contextual_header do %>
+      <div id="providers_menu">
+        <span class="toggle_fold_all">
+          <span class="glyphicon glyphicon-expand"></span>
+          <strong><%= I18n.t('toggle_fold_all')%></strong>
+        </span>
+        <span><%= link_to(I18n.t(:export), 'titles_to_csv', :id => 'pw_providers_to_csv', :class => 'glyphicon glyphicon-expand', :target => '_blank') %></span>
+      </div>
+  <% end %>
+
+  <table id='pw_contacts' class='table fixed-header-table'>
+    <thead class="fixed-thead">
+      <tr class="pw_c_header">
+        <th width="14.0%"></th>
+        <th width="11.7%"><%= I18n.t(:group) %></th>
+        <th width="9.40%"><%= I18n.t(:type) %></th>
+        <th width="7.00%"><%= I18n.t(:first_name) %></th>
+        <th width="9.30%"><%= I18n.t(:last_name) %></th>
+        <th width="13.1%"><%= I18n.t(:email) %></th>
+        <th width="8.40%"><%= I18n.t(:phone) %></th>
+        <th width="5.60%"><%= I18n.t(:statut) %></th>
+        <th width="8.40%">Restriction</th>
+        <th width="13.1%"><%= I18n.t('admin.title.ojd_link') %></th>
+      </tr>
+      <tr class="pw_c_header" style="color: #66a299; background-color: #66a299; height: 2px; border: 0; ">
+        <td colspan="10"></td>
+      </tr>
+    </thead>
+    
+
+    <% @titles.each do |p| %>
+
+
+        <tr class="pw_c_header pw_theme2">
+          <td class='pw_c_header-label'><span class='ui-icon ui-icon-circle-plus'></span><%= p.visible_name %></td>
+          <td><%= p.group %></td>
+          <td><%= p.title_type %></td>
+          <td><%= p.first_name %></td>
+          <td><%= p.last_name %></td>
+          <td><%= mail_to(p.email) %></td>
+          <td><%= p.phone %></td>
+          <td><%= I18n.t(Title::TITLE_VISIBLE[p.visible]) unless p.visible == 2 %></td>
+          <td>
+            <% if @prov %>
+                <strong><%= tabr[@autho[t.id]] %></strong>
+            <% else %>
+                <% get_restric(p.title_provider_group_name_id, @l_prov).each do |k,v| %>
+                     <%= Provider.find(k).name %> => <strong><%= tabr[v] %></strong><br>
+                <% end %>
+            <% end %>
+          </td>
+          <td><%= link_to(p.ojd_link,p.ojd_link,:target => :blank) %></td>
+        </tr>
+
+        <tr class="pw_theme2" >
+          <td colspan = "4" class="pw_dashed_top">
+            <%=[p.address, p.zip_code, p.city, p.country.name].compact.join(" ")%>
+          </td>
+          <td colspan = "5" class="pw_dashed_top" >
+            <%= p.comment %></td>
+        </tr>
+
+        <tr class="pw_c_header" style="color: #66a299; background-color: #66a299; height: 2px; border: 0; ">
+          <td colspan="10"></td>
+        </tr>
+
+    <% end %>
+
+    <% unless @icono_users.blank? %>
+        <tr class="pw_c_header" style="color: #66a299; background-color: #66a299; height: 2px; border: 0; ">
+          <td colspan="10"></td></tr>
+        <tr  class="pw_c_header pw_theme2" height="30"><td><p align="center" style="color: red;font-weight: bold;">&nbsp;... AUTRES - Accès BD ...</p></td><td colspan="7"></td></tr>
+
+      <% @icono_users.each do |u| %>
+
+        <tr class="pw_c_header" style="color: #66a299; background-color: #66a299; height: 2px; border: 0; ">
+          <td colspan="10"></td></tr>
+        <tr class="pw_c_header pw_theme2">
+          <td class='pw_c_header-label'><span class='ui-icon ui-icon-circle-plus'></span><%= @icono_title %></td>
+          <td></td>
+          <td></td>
+          <td><%= u.first_name %></td>
+          <td><%= u.last_name %></td>
+          <td><%= mail_to(u.email) %></td>
+          <td><%= u.phone %></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr class="pw_theme2" >
+          <td colspan = "4" class="pw_dashed_top">
+            <%=[u.billing_address, u.zip_code, u.city].compact.join(" ")%>
+          </td>
+          <td colspan = "5" class="pw_dashed_top" >
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+    <% unless @partner_users.blank? %>
+
+       <% @partner_users.each do |u| %>
+
+         <tr class="pw_c_header" style="color: #66a299; background-color: #66a299; height: 2px; border: 0; ">
+           <td colspan="10"></td></tr>
+         <tr class="pw_c_header pw_theme2">
+           <td class='pw_c_header-label'><span class='ui-icon ui-icon-circle-plus'></span><%= @partner_title %></td>
+           <td></td>
+           <td></td>
+           <td><%= u.first_name %></td>
+           <td><%= u.last_name %></td>
+           <td><%= mail_to(u.email) %></td>
+           <td><%= u.phone %></td>
+           <td></td>
+           <td></td>
+         </tr>
+
+         <tr class="pw_theme2" >
+           <td colspan = "4" class="pw_dashed_top">
+             <%=[u.billing_address, u.zip_code, u.city].compact.join(" ")%>
+           </td>
+           <td colspan = "5" class="pw_dashed_top" >
+           </td>
+         </tr>
+       <% end %>
+     <% end %>
+
+    <tr class="pw_c_header" style="color: #66a299; background-color: #66a299; height: 4px; border: 0; ">
+      <td colspan="10"></td></tr>
+    <tr class="pw_c_header">
+    <th width="14.0%"></th>
+    <th width="11.7%"><%= I18n.t(:group) %></th>
+    <th width="9.4%"><%= I18n.t(:type) %></th>
+    <th width="7.0%"><%= I18n.t(:first_name) %></th>
+    <th width="9.3%"><%= I18n.t(:last_name) %></th>
+    <th width="13.1%"><%= I18n.t(:email) %></th>
+    <th width="8.4%"><%= I18n.t(:phone) %></th>
+    <th width="5.6%"><%= I18n.t(:statut) %></th>
+    <th width="8.4%">Restriction</th>
+    <th width="13.1%"><%= I18n.t('admin.title.ojd_link') %></th>
+    </tr>
+
+  </table>
+</div>
+
+<script>
+  $('#pw_contacts>.fixed-thead').affix({
+    offset: {
+      top: 0
+    },
+    target: '#pw_center'
+  })
+</script>

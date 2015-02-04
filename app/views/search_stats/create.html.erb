@@ -1,0 +1,34 @@
+<% content_for :document_ready do %>
+    $(".datepicker-from, .datepicker-to, .datepicker-wfrom, .datepicker-wto").datepicker($.datepicker.regional['<%= current_user.setting.language %>']);
+    $(".pw_buttonset").buttonize();
+    $(".pw_params_builder").params_builder({fields:<%= raw @displayed_image_fields.to_json %>});
+
+    $(".show_hide_total").toggle(function(){
+        $("#pw_statistics_list div").each( function() { $(this).hide(); } );
+        },function(){
+        $("#pw_statistics_list div").each( function() { $(this).show(); } );
+        });
+
+    $('.show_hide_prov').click(function(event){
+      var prov = $(this).attr('stats');
+      if ($('#prov_'+prov).is(":visible")) {
+        $("#prov_"+prov).hide();  }
+      else {
+        $("#prov_"+prov).show();  }
+    });
+
+
+
+<% end %>
+
+<div class='pw_spacer'></div>
+<%= render :partial => 'providers_form' %>
+<div class='pw_spacer'></div>
+
+<%= render :partial => 'titles_form' %>
+
+
+<div class='pw_spacer'></div>
+<%= render :partial => 'search_form' %>
+<div class='pw_spacer'></div>
+<%= render :partial => @s_partial %>

@@ -1,0 +1,30 @@
+<p id='notice'><%= notice %></p>
+
+<h1><%= @title.name %></h1>
+<p id="option">Pays : <%= @title.country.name unless @title.country_id.nil?%>
+  <br>Groupe de restrictions : <%= @title.title_provider_group_name.name unless @title.title_provider_group_name.blank? %>
+  <br>Groupe fichier utilisateurs : <%= @groupforfile %>
+  <br>Agences non autorisées :
+  <% if @title.hide_unauthorized_providers %>Invisibles
+      <% else %>Grisées
+      <% end %>
+  <br>DPI : <%= @title.dpi %>
+  <br>Flux : <%= @title.flow_path %>
+  <br>Prénom : <%= @title.first_name %>
+  <br>Nom : <%= @title.last_name %>
+  <br>Adresse : <%= @title.address %>
+  <br>Code Postal : <%= @title.zip_code %>
+  <br>Ville : <%= @title.city %>
+  <br>Tél. : <%= @title.phone %>
+  <br>Email : <%= @title.email %>
+  <br>Groupe : <%= @title.group %>
+  <br>Type : <%= @title.title_type %>
+  <br>Remarque : <%= @title.comment %>
+  <br>Visible : <%= I18n.t(Title::TITLE_VISIBLE[@title.visible]) %>
+  <br><%= I18n.t('admin.title.ojd_link') %> : <%= @title.ojd_link %>
+  <br>Créé le : <%= I18n.l(@title.created_at) %>
+  <br>Dernière modification le : <%= I18n.l(@title.updated_at) %>
+</p>
+
+<%= link_to I18n.t('edit'), edit_admin_title_path(@title) %> |
+<%= link_to I18n.t('back'), admin_titles_path, :id => 'admin_back_to_title' %>

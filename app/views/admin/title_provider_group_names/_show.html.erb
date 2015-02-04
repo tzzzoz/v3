@@ -1,0 +1,24 @@
+<%= form_for [:admin, @title_provider_group_name], :remote => true do |tpgn|%>
+    <span style="font-weight: bold;"><%= @title_provider_group_name.name %></span> / <span style="font-weight: bold;"><%= @country_name %></span>
+    <hr/>
+
+    <div id='in_group' class="pw_white">
+
+      <%= tpgn.fields_for :title_provider_groups do |tpg| %>
+          <div class="group_cell">
+            <%= tpg.check_box :_destroy, :id => "destroy_#{tpg.object.provider.id}", :class => 'destroy_group_provider' %>
+            <% hidden_class =  tpg.object.id.nil? ? 'providers_not_in_group' : 'providers_in_group' %>
+            <%= tpg.hidden_field :provider_id, :class => "group_provider_id #{hidden_class}" %>
+            <span class="pw_group_providers"><%= tpg.object.provider.name unless tpg.object.provider.nil? %></span>
+            <div class='group_cell_opts'>
+              <% @all_permission_labels.each do |pl| %>
+                  <%= tpg.label I18n.t(pl.label) %>
+                  <%= tpg.check_box pl.label, :class => "#{pl.label}_check_box" %>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+
+    </div>
+
+<% end %>

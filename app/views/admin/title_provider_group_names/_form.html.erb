@@ -1,0 +1,52 @@
+<%= form_for [:admin, @title_provider_group_name], :remote => true, :id => 'edit_title_provider_group_name' do |tpgn|%>
+
+    <% if @title_provider_group_name.errors.any? %>
+    <div class="error_explanation">
+      <h2><%= pluralize(@title_provider_group_name.errors.count, "erreur") %> <%= I18n.t('prohibited_this_operation') %>:</h2>
+
+      <ul>
+      <% @title_provider_group_name.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= tpgn.label I18n.t("country") %>
+    <%= tpgn.select :country_id, Country.all.collect {|c| [ c.name, c.id ] } %>
+
+    <%= tpgn.label :name %>
+    <%= tpgn.text_field :name %>
+    <hr />
+    <div class="group_cell">
+        <%= I18n.t('toggle_check_all')%>
+        <div class='group_cell_opts'>
+          <% @all_permission_labels.each do |pl| %>
+          <label id='toggle_check_all_<%= pl.label %>'><%= I18n.t(pl.label) %></label>
+          <% end %>
+        </div>
+    </div>
+
+    <fieldset id='not_in_group'>
+    </fieldset>
+
+    <fieldset id='in_group'>
+    <%= tpgn.fields_for :title_provider_groups do |tpg| %>
+        <div class="group_cell">
+            <%= tpg.check_box :_destroy, :id => "destroy_#{tpg.object.provider.id}", :class => 'destroy_group_provider' %>
+            <% hidden_class =  tpg.object.id.nil? ? 'providers_not_in_group' : 'providers_in_group' %>
+            <%= tpg.hidden_field :provider_id, :class => "group_provider_id #{hidden_class}" %>
+            <%= tpg.object.provider.name unless tpg.object.provider.nil? %>
+            <div class='group_cell_opts'>
+            <% @all_permission_labels.each do |pl| %>
+                <%= tpg.label I18n.t(pl.label) %>
+                <%= tpg.check_box pl.label, :class => "#{pl.label}_check_box" %>
+            <% end %>
+            </div>
+        </div>
+    <% end %>
+    </fieldset>
+    <br/>
+    <%= tpgn.submit I18n.t("validate") %>
+
+<% end %>

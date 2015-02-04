@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>PixPalace : nb Photos par agence au <%= I18n.l(Time.now) %></h1>
+
+    <table id='pw_statistics_list'>
+       <tr class="pw_statistics_list_titles">
+
+           <th align="left">Agence</th>
+           <th>Nb Photos</th>
+       </tr>
+
+       <% @prov.each do |name, value| %>
+         <tr class="pw_theme">
+           <td><%= name %></td>
+           <td width="25"><%= value %></td>
+         </tr>
+       <% end %>
+       <tr class="pw_statistics_list_titles">
+         <th align="left">Total</th>
+         <th><%= @t_photos %></th>
+       </tr>
+     </table>
+  <br><br>
+  </body>
+</html>

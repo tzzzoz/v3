@@ -1,0 +1,106 @@
+<% content_for :document_ready do %>
+
+    $(document).keyup(function(event) {
+        if (event.keyCode == '27') {
+            // esc
+            BeforeClose();
+        }
+    });
+
+
+    $("#pw_rename_light_box").hide();
+    $("#rename_div,#rename_basdiv").click(
+            function(){
+                $("#pw_rename_light_box").toggle();
+            }
+    );
+
+    toggle_check($('#pw_lb_results .pw_toggle_check'));
+
+    $(document).ready(function() {
+
+        $('.add_other').click(function() {
+            $('#modal_wrapper').html('<%= escape_javascript(render :partial => 'full_screen_light_boxes/form', :layout => nil) %>')
+            $('#selectLBModal').modal({
+                backdrop: 'static'
+            })
+
+            var ids = $(this).attr('id');
+
+            $('#selectLBModal').on('shown.bs.modal', function(){    
+                $('#hide_id').attr('value',ids);
+                $('.modal-footer .submitModal').click(function(){
+                    $('#add_image').submit();
+                })
+            })
+
+            return false;
+        });
+        
+
+        $('.add_other_big').click(function() {
+            $('#modal_wrapper').html('<%= escape_javascript(render :partial => 'full_screen_light_boxes/form', :layout => nil) %>')
+            $('#selectLBModal').modal({
+                backdrop: 'static'
+            })
+
+
+            $('#selectLBModal').on('shown.bs.modal', function(){
+                var ids = LbSelection(',');
+                $('#hide_id').attr('value',ids);
+                $('.modal-footer .submitModal').click(function(){
+                    $('#add_image').submit();
+                })
+            })
+
+            return false;
+        });
+
+        $('.pw_close_window').click(function(){
+            window.close();
+        });
+
+        $('#pw_light_box_images').sortable({
+            // set item relative to cursor position
+            onDragStart: function ($item, container, _super) {
+              var offset = $item.offset(),
+              pointer = container.rootGroup.pointer
+  
+              adjustment = {
+                left: pointer.left - offset.left,
+                top: pointer.top - offset.top
+              }
+  
+              _super($item, container)
+            },
+            onDrag: function ($item, position) {
+              $item.css({
+                left: position.left - adjustment.left,
+                top: position.top - adjustment.top
+              })
+            },
+            afterMove: function ($placeholder, container, $closestItemOrContainer) {
+                console.log($placeholder);
+                console.log(container);
+                console.log($closestItemOrContainer);
+            }
+        });
+
+    });
+<% end %>
+<% if notice %>
+    ('<div><%= notice %></div>').dialog({
+                    buttons: {
+                        'OK': function() {
+                            $(this).dialog('close');
+                        }
+                    }
+                });
+<% end %>
+<%= render  :partial => "menus" %>
+<!--<div id='pw_light_box_images'>-->
+  <ul id='pw_light_box_images' class='sortable-list'>
+    <%= render  :partial => "thumbs"  %>
+  </ul>
+<!--</div>-->
+ <%= render  :partial => "menus_bas" %>

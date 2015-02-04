@@ -1,0 +1,12 @@
+operation_labels_001: 
+  id: 1
+  label: BD
+operation_labels_002: 
+  id: 2
+  label: HD
+operation_labels_003:
+  id: 3
+  label: FLUX
+operation_labels_004:
+  id: 4
+  label: clic HD

@@ -1,0 +1,60 @@
+function initGroups(){
+    $('#pw_provider_form :input:checkbox').unbind('change.from_edit_group')
+                                          .unbind( "tabsload.from_edit_group")
+                                          .prop('checked', false).each( function(){ $(this).triggerHandler('click') })
+                                          .bind('change.from_edit_group',function(){
+            if ($(this).prop('checked')) {
+                $("#pw_admin_groups_panel .pw_panel-content").find('#'+$(this).attr('id').replace('providers', 'destroy'))
+                                                             .prop('checked',false )
+                                                             .parent('.group_cell').show();
+            } else {
+                $("#pw_admin_groups_panel .pw_panel-content").find('#'+$(this).attr('id').replace('providers', 'destroy'))
+                                                             .prop('checked',true )
+                                                             .parent('.group_cell').hide();
+            }
+        });
+
+    $('#pw_provider_form .pw_toggle_check').unbind('click.from_edit_group')
+                                           .bind('click.from_edit_group', function(){
+        $('#pw_provider_form :input:checkbox').each( function(){
+            if ($(this).prop('checked')) {
+                $("#pw_admin_groups_panel .pw_panel-content").find('#'+$(this).attr('id').replace('providers', 'destroy'))
+                                                             .prop('checked',true )
+                                                             .parent('.group_cell').hide();
+            } else {
+                $("#pw_admin_groups_panel .pw_panel-content").find('#'+$(this).attr('id').replace('providers', 'destroy'))
+                                                             .prop('checked',false )
+                                                             .parent('.group_cell').show();
+            }
+        });
+    });
+
+    $("#pw_admin_groups_panel .pw_panel-content").html('<%=escape_javascript(render :partial => 'form') %>')
+                                                 .find('.providers_in_group').each( function(){
+                                                    $('#providers_'+$(this).val()).prop('checked', true)
+                                                                                  .triggerHandler('click');
+                                                 }).end()
+                                                 .find('.providers_not_in_group').parent('.group_cell').hide().appendTo('#not_in_group');
+
+    $("#pw_admin_groups_panel .edit_title_provider_group_name, #pw_admin_groups_panel .new_title_provider_group_name").bind("ajax:before",  function(){
+        $(this).find('#not_in_group .group_cell:hidden').remove();
+    });
+    <% @all_permission_labels.each do |pl| %>
+    $('#toggle_check_all_<%= pl.label %>').css('cursor', 'pointer')
+                                          .toggle(
+            function(){ $(".<%= pl.label %>_check_box").each( function(){ $(this).prop('checked', true) }) },
+            function(){ $(".<%= pl.label %>_check_box").each( function(){ $(this).prop('checked', false) }) }
+    );
+    <% end %>
+
+}
+
+
+if ($("#admin_tabs_providers").tabs( "option", "selected" ) == 0) {
+    initGroups();
+} else {
+    $('#admin_tabs_providers').tabs( "option", "selected", 0 );
+    $('#admin_tabs_providers').bind( "tabsload.from_edit_group", function() {
+        initGroups();
+    });
+}

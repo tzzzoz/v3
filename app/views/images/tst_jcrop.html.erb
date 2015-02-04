@@ -1,0 +1,45 @@
+		<script type="text/javascript">
+
+			jQuery(document).ready(function(){
+
+				jQuery('#cropbox').Jcrop({
+					onChange: showCoords,
+					onSelect: showCoords
+				});
+
+			});
+
+			function showCoords(c)
+			{
+				jQuery('#x1').val(c.x);
+				jQuery('#y1').val(c.y);
+				jQuery('#x2').val(c.x2);
+				jQuery('#y2').val(c.y2);
+				jQuery('#w').val(c.w);
+				jQuery('#h').val(c.h);
+			};
+
+		</script>
+
+	<div align="center" style="color:#000">
+
+		<h1>Recadrez l'image et validez</h1>
+
+		<img src="<%= @image.medium_location %>" id="cropbox" />
+
+      <%= form_tag("/valid_crop", :method => :post, :class => "coords") do %>
+			<input type="hidden" id="x1" name="x1" />
+			<input type="hidden" id="y1" name="y1" />
+			<input type="hidden" id="x2" name="x2" />
+			<input type="hidden" id="y2" name="y2" />
+			<input type="hidden" id="w" name="w" />
+			<input type="hidden" id="h" name="h" />
+          <%= hidden_field_tag("img", @image.id) %>
+          <p>&nbsp;</p>
+          <%= button_tag("Annuler") %> | <%= submit_tag("Valider") %>
+		<% end %>
+
+		<p>
+		</p>
+
+	</div>

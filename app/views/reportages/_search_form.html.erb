@@ -1,0 +1,9 @@
+<%= form_tag({:action => action_title}, :method => "get", :id => "pw_search_form",:style => "background:transparent;border:0;") do -%>
+    <strong><%= "#{I18n.t"features.search_title"} :" %></strong>
+    <%= text_field_tag :keyword, @current_params[:keyword], :size => 50, :class => 'form-control input-xs' %>
+    <%= submit_tag 'OK', :class => 'btn btn-default btn-xs' %>
+    <%= hidden_field_tag :offres_reportages, @current_params[:offres_reportages]%>
+    <%= hidden_field_tag :sort, @current_params[:sort]%>
+    <%= hidden_field_tag :direction, @current_params[:direction]%>
+    <%= hidden_field_tag :panier, @current_params[:panier] if @current_params[:panier] %>
+<% end -%>

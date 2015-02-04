@@ -1,0 +1,11 @@
+#!/bin/sh
+case "$1" in
+  start)
+  su v2 -l -c'source $HOME/.rvm/scripts/rvm; cd /var/www/v2/current/tools && ./processor_ctrl start'
+  ;;
+  stop)
+  su v2 -l -c'source $HOME/.rvm/scripts/rvm; cd /var/www/v2/current/tools && ./processor_ctrl stop'
+  ;;	
+esac
+
+:

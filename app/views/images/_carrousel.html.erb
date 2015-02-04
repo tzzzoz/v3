@@ -1,0 +1,91 @@
+<% unless @image.nil? %>
+    <%= form_for @image do |f| %>
+
+    <% if @image.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@image.errors.count, "erreur") %> <%= I18n.t('prohibited_this_operation') %>:</h2>
+
+        <ul>
+        <% @image.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+     <%= hidden_field_tag "record_id", @record_id %>
+     <table width="100%" cellspacing="2px">
+       <tr>
+        <td valign="top"><%= image_tag(@image.medium_location) %></td>
+        <td valign="top">
+          <table width="100%" cellspacing="3px">
+           <tr>
+            <td valign="top" align="right"><%= f.label I18n.t('date_created') %></td>
+             <% im_date = @image.date_created %>
+             <% im_date = I18n.l(im_date) unless im_date.nil? %>
+            <td valign="top"><%= text_field_tag "image[date_created]", im_date, :size => 25, :class => 'datepicker-img' -%></td>
+           </tr>
+            <tr>
+             <td valign="top" align="right"><%= f.label I18n.t('headline') %></td>
+             <td valign="top"><%= f.text_field(:headline, :size => 100) %></td>
+            </tr>
+            <tr>
+             <td valign="top" align="right"><%= f.label I18n.t('description') %></td>
+             <td valign="top"><%= f.text_area(:description, :cols => 72, :rows => 10) %></td>
+            </tr>
+            <tr>
+             <td valign="top" align="right"><%= f.label I18n.t('iptc_country') %></td>
+             <td valign="top"><%= f.text_field(:country, :size => 100) %></td>
+            </tr>
+            <tr>
+             <td valign="top" align="right"><%= f.label I18n.t('city') %></td>
+             <td valign="top"><%= f.text_field(:city, :size => 100) %></td>
+            </tr>
+            <tr>
+             <td valign="top" align="right"><%= f.label I18n.t('source') %></td>
+             <td valign="top"><%= f.text_field(:source, :size => 100) %></td>
+            </tr>
+            <tr>
+             <td valign="top" align="right"><%= f.label I18n.t('creator') %></td>
+             <td valign="top"><%= f.text_field(:creator, :size => 100) %></td>
+            </tr>
+            <tr>
+             <td valign="top" align="right"><%= f.label I18n.t('rights') %></td>
+             <td valign="top"><%= f.text_field(:rights, :size => 100) %></td>
+            </tr>
+            <tr>
+             <td valign="top" align="right"><%= f.label I18n.t('credit') %></td>
+             <td valign="top"><%= f.text_field(:credit, :size => 100) %></td>
+            </tr>
+            <tr>
+             <td valign="top" align="right"><%= f.label I18n.t('normalized_credit') %></td>
+             <td valign="top"><span style="color: black;"><%= @image.normalized_credit %></span></td>
+            </tr>
+            <tr>
+             <td valign="top" align="right"><%= f.label I18n.t('subject') %></td>
+             <td valign="top"><%= f.text_area(:subject, :cols => 72, :rows => 10) %></td>
+            </tr>
+            <tr>
+             <td valign="top" align="right"><%= f.label I18n.t('instructions') %></td>
+             <td valign="top"><%= f.text_field(:instructions, :size => 100) %></td>
+            </tr>
+            <tr>
+             <td valign="top" align="right"><%= f.label I18n.t('reception_date') %></td>
+             <td valign="top"><span style="color: black;"><%= I18n.l(@image.reception_date) %></span></td>
+            </tr>
+            <tr>
+             <td valign="top" align="right"><%= f.label I18n.t('original_filename') %></td>
+             <td valign="top"><span style="color: black;"><%= @image.original_filename %></span></td>
+            </tr>
+            <tr height="35">
+              <td valign="top" align="right"></td>
+              <td valign="bottom" align="left"><%= f.submit "Valider modifications" %>
+                <%= button_tag("Fermer") %></td>
+            </tr>
+          </table>
+
+       </td>
+      </tr>
+     </table>
+
+      <% end %>
+<% end %>

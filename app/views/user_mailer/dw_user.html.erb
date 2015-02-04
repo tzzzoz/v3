@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Bonjour <%= @user.full_name %></h1><br>
+    <% if @op == "video" %>
+      Une demande de vidéo HD a été transmise à l'agence <strong><%= @prov_name %></strong>.<br>
+    <% else %>
+      Une demande de photos a été transmise à l'agence <strong><%= @prov_name %></strong>.<br>
+    <% end %>
+    L'agence va vous contacter rapidement.<br><br>
+    <br>
+    Merci, cordialement<br>
+    L'équipe PixPalace<br><br>
+    <h1>Rappel des photos demandées (<%= @imgs.count %>)</h1>
+    <p>
+      <% @imgs.each do |im| %>
+          <%= image_tag attachments[im].url %> <%= im %><br/>
+      <% end %>
+    </p>
+    <p>
+     <u>Votre titre</u> : <%= @user.title.name %><br />
+     <h1>Utilisateur</h1>
+        Nom d'utilisateur : <%= @user.login %><br />
+        Utilisateur : <%= @user.full_name %> <br /><br />
+     <u>Format</u> : <%= @op %>
+    <%= I18n.l Time.now %>.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Utilisateur</h1>
+        Client : <%= @user.title.name %><br />
+        Nom d'utilisateur : <%= @user.login %><br />
+        Utilisateur : <%= @user.full_name %> <br />
+        Visionneuse : <%= @lb %><br />
+    <h1>Photos à supprimer (<%= @imgs.count %>)</h1>
+    <p><i>ci-dessous les file_name</i></p>
+    <p>
+      <% @imgs.each do |im| %>
+          <%= im %><br/>
+      <% end %>
+    </p>
+    <p>
+     <%= I18n.l Time.now %>.
+    </p>
+  </body>
+</html>

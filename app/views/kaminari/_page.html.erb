@@ -1,0 +1,10 @@
+<% if page.current? %>
+	<li class='current_page'>
+		<a><%= text_field_tag('page_encours', page, :size => 2, :class => 'pw_current_page form-control input-xs') %>
+		</a>
+	</li>
+<% else %>
+	<li class='page'>
+		<%= link_to_unless page.current?, page, url, opts = {:remote => remote, :rel => page.next? ? 'next' : page.prev? ? 'prev' : nil} %>
+	</li>
+<% end %>

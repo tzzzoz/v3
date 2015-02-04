@@ -1,0 +1,52 @@
+<% if @light_box_ims_errors && @light_box_ims_errors.count > 0 %>
+    $("<%= escape_javascript(render :partial => 'light_boxes/images_errors') %>").dialog({
+			    title: 'Error Light-Box',
+                buttons: {
+                    'OK': function() {
+                        $(this).dialog('close');
+                    }
+                }
+          });
+<% end %>
+
+
+<% if flash[:notice_lightbox] %>
+    $("<div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button><h4 class='modal-title'>Image errors</h4></div><div class='modal-body'><%= flash[:notice_lightbox] %></div></div></div></div>").modal();
+<% end %>
+
+
+<% if @light_box.errors && @light_box.errors.any? %>
+    $('#light_box_form_place').html("<%= escape_javascript(render :partial => 'light_boxes/edit_form') %>");
+
+<% else %>
+    $('#light_box_form_place').html("<%= escape_javascript(render :partial => 'light_boxes/select_form') %>");
+    $('#pw_light_box_panel .pw_panel-content').html("<%= escape_javascript(render :partial => 'light_boxes/thumbs') %>");
+    $( document ).on( "click", "#light_box_rename", function(){
+    $('#light_box_form_place').html("<%= escape_javascript(render :partial => 'light_boxes/edit_form') %>")
+                              .find('input:text:first').focus();
+    });
+<% end %>
+
+toggle_check();
+
+$( document ).on( "change","#light_box_id", function(){ $.get("light_boxes/"+$(this).val()+".js") });
+
+
+$( document ).on("click", '#light_box_add',
+    function(){
+        $('#light_box_form_place').html("<%= escape_javascript(render :partial => 'light_boxes/new_form')%>")
+                                  .find('input:text:first').focus();
+    }
+);
+
+$( document ).on( "mouseout focusout mouseover", "#light_box_form_place", function(ev){
+if (ev.type == 'mouseout'){ out = true };
+if (ev.type == 'mouseover'){ out = false };
+if (ev.type == 'focusout' && out ){
+    $('#light_box_form_place').html("<%= escape_javascript(render :partial => 'light_boxes/select_form') %>");
+}
+});
+
+if ($('#pw_right .pw_panel-content').is(':visible') === false) {
+    collapseLightBox();
+};

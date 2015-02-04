@@ -1,0 +1,40 @@
+<% content_for :document_ready do %>
+	$("#pw_search_form").submit(function() {
+	    $("#pw_provider_form :input:checked").each(function() {
+	    	$("#pw_search_form").append("<input type='hidden' name='"+$(this).attr('name')+"' value='"+$(this).val()+"' />")
+	    });
+	});
+
+	$( document ).on( "change", "#search_since, #sort", function(){
+		$("#pw_provider_form :input:checked").each(function() {
+			$("#pw_search_form").append("<input type='hidden' name='"+$(this).attr('name')+"' value='"+$(this).val()+"' />")
+	    });
+	    document.pw_search_form.submit();
+	});
+
+	$( document ).on( "change", "#perpage", function(){
+		var defpage = $(this).val();
+		$('#default_per_page').attr('value',defpage);
+		$("#pw_provider_form :input:checked").each(function() {
+			$("#pw_search_form").append("<input type='hidden' name='"+$(this).attr('name')+"' value='"+$(this).val()+"' />")
+		});
+		document.pw_search_form.submit(); 
+	});
+
+	$('.facet_search').click(function(event){
+		var prov = $(this).attr('p_id');
+		$("#pw_search_form").append("<input type='hidden' name='providers["+prov+"]' value='1' />");
+		document.pw_search_form.submit();
+		event.preventDefault(); // Prevent link from following its href
+	});
+
+
+
+
+<% end %>
+
+<%= render :partial => 'providers_form' %>
+<div class='pw_spacer'></div>
+<%= render :partial => 'search_form' %>
+<div class='pw_spacer'></div>
+<%= render :partial => 'search_results' %>

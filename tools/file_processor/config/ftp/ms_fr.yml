@@ -1,0 +1,18 @@
+:connexion:
+  :host:    ftp.pixpalace.com
+  :user:    testsami 
+  :passwd:  phei7hie
+  :active:  true
+
+:config:
+  :timeout:   999
+  :scan_each: 30
+# temp should be on the same hdd partition than the in
+  :temp:      /Users/sami/pictures_temp
+  :in:        /Users/sami/pictures_spool
+  :tries_before_reset:  5
+
+# when activating proxy the connexion is passive
+:proxy:
+  :host:
+  :port:

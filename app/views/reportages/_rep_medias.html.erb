@@ -1,0 +1,67 @@
+<table class="reportages_table_header table table-bordered table-striped">
+  <tr>
+    <th width="20"></th>
+    <th class="reportages_title_col" style="text-align:center!important;padding-right:0;"><%= sortable "rep_titre",I18n.t("features.title")%></th>
+    <th class="reportages_nbpictures_col" style="padding-left: 0"><%= sortable "nb_photos",I18n.t('features.nb_pictures').capitalize %></th>
+    <th class="reportages_credit_col"><%= sortable "signatur",I18n.t('features.credit')%></th>
+    <th class="reportages_picture_col"></th>
+    <th class="reportages_date_col"><%= sortable "rep_date",I18n.t("features.feature_date")%></th>
+    <th class="reportages_date_col"><%= sortable "updated_at",I18n.t("features.release_date")%></th>
+    <th class="reportages_text_col"><%= sortable "rep_texte",I18n.t("features.text")%></th>
+    <th class="reportages_id_col"><%= sortable "id","ID" %></th>
+  </tr>
+</table>
+
+<div class="reportages_inner_table_div">
+
+  <table id="table_datas" class="reportages_table_datas table table-bordered">
+    <% @reportages.each do |rep| %>
+        <% im = Image.where(:ms_image_id => rep.prem_photo).first %>
+        <% unless im.nil? %>
+            <% pw_c = "#{image_tag(im.medium_location)}" %>
+            <% pw_c += "<div class='pw_info_thumb'>
+                <p><span class='pw_bold'>#{I18n.t('original_filename')} : </span> #{im.original_filename}</p>
+                <p><span class='pw_bold'>#{I18n.t('reception_date')} : </span> #{im.localised_reception_date}</p>
+                <p><span class='pw_bold'>#{I18n.t('date_created')} : </span> #{im.localised_date_created}</p>
+                <p><span class='pw_bold'>#{I18n.t('normalized_credit')} : </span> #{im.normalized_credit}</p>
+                <p><span class='pw_bold'>#{I18n.t('description')} : </span> #{im.description}</p>
+               </div>"  %>
+            <tr class="<%= cycle("reportages_odd","reportages_even")%> reportages_row">
+              <% if params[:panier] %>
+                  <td width="20" align="center">
+                    <%= link_to image_tag("minus_circle_black.png", :title => I18n.t("features.remove_from_selection")), panier_path(:id => rep.id), :method => :delete, :data => {:confirm => I18n.t("features.remove_from_selection_confirmation")} %>
+              <% else %>
+                  <td id="td_<%=rep.id%>" width="20" align="center" onclick="update_picto('td_<%=rep.id%>');">
+                    <%= link_to image_tag("plus_circle_black.png", :title => I18n.t("features.add_to_selection")), paniers_path(:id => rep.id), :method => :post, :remote => true unless @list_rep.include?(rep.id)%>
+              <% end %>
+              </td>
+              <td class="reportages_title_col reportages_row" onclick="window.open('<%= medias_path(:offre => rep.id, :anchor => im.id)%>')"><%= rep.rep_titre %></td>
+              <td class="reportages_nbpictures_col reportages_row" onclick="window.open('<%= medias_path(:offre => rep.id, :anchor => im.id)%>')"><%= rep.nb_photos %></span></td>
+              <td class="reportages_credit_col reportages_row" onclick="window.open('<%= medias_path(:offre => rep.id, :anchor => im.id)%>')"><%= rep.signatur %></td>
+              <td class="st_thumb reportages_picture_col reportages_row" onclick="window.open('<%= medias_path(:offre => rep.id, :anchor => im.id)%>')"><%=image_tag(im.thumb_location, :class => 'popover-trigger', 'data-c' => pw_c, 'data-style' =>'primary', :height => 50)%></td>
+              <td class="reportages_date_col reportages_row" onclick="window.open('<%= medias_path(:offre => rep.id, :anchor => im.id)%>')"><%= I18n.l(rep.rep_date, format: "%d/%m/%Y") unless rep.rep_date.nil? %></td>
+              <td class="reportages_date_col reportages_row" onclick="window.open('<%= medias_path(:offre => rep.id, :anchor => im.id)%>')"><%= I18n.l(rep.updated_at, format: "%d/%m/%Y") %></td>
+              <td class="reportages_text_col reportages_row" onclick="window.open('<%= medias_path(:offre => rep.id, :anchor => im.id)%>')"><%= truncate(rep.rep_texte, length: 125, separator: ' ')%></td>
+              <td class="reportages_id_col reportages_row" onclick="window.open('<%= medias_path(:offre => rep.id, :anchor => im.id)%>')"><%= rep.id %></td>
+            </tr>
+        <% end %>
+    <% end %>
+  </table>
+</div>
+
+<script>
+  PwThumbRollo();
+  $('.reportages_table_header').affix({
+    offset: {
+      top: function () {
+        return (this.top = $('.reportages_table_header').offset().top + $('#pw_center').scrollTop() - $('#pw_top').height());
+      }
+    },
+    target : '#pw_center'
+  })
+
+  $('.reportages_table_header').on("affix.bs.affix", function(){
+    $(this).css('top', $('#pw_top').height());
+    $(this).width($(this).width());
+  })
+</script>

@@ -1,0 +1,36 @@
+<div style="float:left;">
+  <%= form_for(@search_provider_group_name, :html => {:id => 'search_provider_group_name_form'} ) do |f| %>
+
+      <% if @search_provider_group_name.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@search_provider_group_name.errors.count, "error") %></h2>
+            <ul>
+              <% @search_provider_group_name.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <%= f.label :name %>
+      <%= f.text_field(:name, :size => 25, :id => 'name_s') %>
+      <%= f.submit I18n.t("validate").capitalize, :class => "btn btn-default btn-xs" %>
+      <%#= pw_link_to_button_in_tabs I18n.t('cancel'), search_provider_group_names_path %>
+  <% end %>
+</div>
+<%= button_to I18n.t('cancel').capitalize, search_provider_group_names_path, :method => :get, :class => "btn btn-default btn-xs", :id => "cancel_button" %>
+<div class="clearfix"></div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#name_s").focus();
+    });
+    $('.link_button').hide();
+
+    $("#search_provider_group_name_form").bind('ajax:before', function() {
+        var self = $(this);
+        $("#pw_provider_form :input:checked").each(function() {
+            self.append("<input type='hidden' name='"+$(this).attr('name')+"' value='"+$(this).val()+"' />");
+        });
+    });
+</script>

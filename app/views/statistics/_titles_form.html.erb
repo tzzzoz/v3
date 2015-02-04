@@ -1,0 +1,29 @@
+<div id="pw_title_panel">
+
+  <div class="pw_panel-header" >
+    <div class='pw_panel-header-label hidden-trigger'><span class="pw_title_panel"><%= I18n.t('titles') %></span></div>
+    <div class='pw_panel-header-content'>
+      <strong>
+        <%= "#{@current_params[:titles].count} / " unless @current_params[:titles].blank? %> <%= @titles.count %> <%= " #{I18n.t("titles").downcase}"%>
+      </strong>
+    </div>
+  </div>
+
+  <div class="pw_panel-content">
+  	<%= form_tag({:controller => "/home", :action => "index"}, :method => "get", :id => "pw_title_form") do -%>
+      <div class="pw_content">
+
+        <span class="pw_toggle_check">
+          <span class="glyphicon glyphicon-expand"></span>
+          <strong><%= I18n.t('toggle_check_all')%></strong>
+        </span>
+        <fieldset class="pw_buttonset pw_titles">
+          <% @titles.each do |t| %>
+            <%= check_box_tag( "titles[#{t.id}]", 1, @current_params[:titles]["#{t.id}"] == '1')%>
+            <%= label_tag("titles[#{t.id}]", t.name, :class => "btn btn-default") %>
+          <% end %>
+        </fieldset>
+      </div>
+    <% end %>
+  </div>
+</div>

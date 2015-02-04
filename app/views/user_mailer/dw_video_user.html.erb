@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Bonjour <%= @user.full_name %></h1><br>
+    Une demande de vidéos a été transmise à Akamedia, qui va vous contacter rapidement.<br>
+    Vous pouvez également les contacter par email : <a href="mailto:contact@akamedia.net">contact@akamedia.net</a> ou par téléphone : 01 46 06 40 40<br><br>
+    <br>
+    Merci, cordialement<br>
+    L'équipe PixPalace<br><br>
+    <h1>Rappel des vidéos demandées (<%= @imgs.count %>)</h1>
+    <p>
+      <% @imgs.each do |im| %>
+          <%= image_tag attachments[im].url %> <%= im %><br/>
+      <% end %>
+    </p>
+    <p>
+     <u>Votre titre</u> : <%= @user.title.name %><br />
+     <h1>Utilisateur</h1>
+        Nom d'utilisateur : <%= @user.login %><br />
+        Utilisateur : <%= @user.full_name %> <br /><br />
+    <%= I18n.l Time.now %>.
+    </p>
+  </body>
+</html>

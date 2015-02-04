@@ -1,0 +1,20 @@
+:feed: pixpalace
+
+:connexion:
+  :host:    192.168.200.3 
+  :user:    testbaicheng 
+  :passwd:  adb2wdt3 
+  :active:  true
+
+:config:
+  :timeout:   60
+  :scan_each: 3
+# temp should be on the same hdd partition than the in
+  :temp:      /Users/Leonard/Documents/pixpictures/pictures_temp
+  :in:        /Users/Leonard/Documents/pixpictures/pictures_spool
+  :tries_before_reset:  5
+
+# when activating proxy the connexion is passive
+:proxy:
+  :host:
+  :port:

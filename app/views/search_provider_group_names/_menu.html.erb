@@ -1,0 +1,4 @@
+<%= button_to I18n.t("delete").capitalize, search_provider_group_name_path(menu), :method => :delete, :class => "btn btn-default btn-xs", :remote => true, :confirm => I18n.t(:are_you_sure) %>
+<%#= pw_link_to_button_in_tabs I18n.t("modify"), edit_search_provider_group_name_path(menu) %>
+<%= button_to I18n.t("modify").capitalize, edit_search_provider_group_name_path(menu),:method => :get, :class => "btn btn-default btn-xs" %>
+<%= render(:partial => 'new_menu') %>

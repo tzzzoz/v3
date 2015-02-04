@@ -1,0 +1,26 @@
+<table id='pw_medias'>
+  <th></th>
+  <th><%= I18n.t('normalized_credit') %></th>
+  <th><%= I18n.t('original_filename') %></th>
+  <th><%= I18n.t('reception_date') %></th>
+  <th><%= I18n.t('date_created') %></th>
+  <th><%= I18n.t('description') %></th>
+  <% @medias.each do |med| %>
+  <tr class ="<%= cycle("body_like", "") %>">
+    <td>
+      <% if current_user.setting.border_color_provider.include?(med.provider_id.to_s) %>
+        <%= image_tag(med.thumb_location, :style => "border:1px solid #{current_user.setting.border_color_provider[med.provider_id.to_s]};") %>
+      <% else %>
+        <%= image_tag(med.thumb_location) %>
+    <% end %>
+
+    </td>
+    <td><%= check_box_tag("media_#{med.id}") %>
+        <%= med.normalized_credit %></td>
+    <td><%= med.original_filename %></td>
+    <td><%= med.localised_reception_date %></td>
+    <td><%= med.localised_date_created %></td>
+    <td><%= med.description %></td>
+  </tr>
+  <% end %>
+</table>

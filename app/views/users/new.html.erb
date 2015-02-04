@@ -1,0 +1,37 @@
+<% @user.password = @user.password_confirmation = nil %>
+
+<%= error_messages_for :user %>
+
+
+<span>
+  <%= I18n.t('identification.required_fields') %> /
+</span>
+<span class= "optionnal">
+  <%= I18n.t('identification.optional_fields') %>
+</span>
+
+
+<% form_tag(users_path , :onsubmit => 'return verify_existance_of_necessary_params()')do  %>
+
+<%= render :partial => "inscription" %>
+
+<%= render :partial => 'billing_address' %>
+
+<hr />
+<div class="inscriptionTVA champ">
+  <div id="TVA">
+    <%= I18n.t(:tva, :scope =>['identification']) %>
+    <%= text_field_tag 'user[numero_tva]' %>
+  </div>
+  <div id="notTVA">
+    <%= check_box_tag 'notTVACheckbox',"1",false%>
+    <%= I18n.t(:non_tva, :scope =>['identification']) %>
+    <%= hidden_field_tag 'web', true%>
+  </div>
+</div>
+
+<% end -%>
+
+<div class="inscriptionValider">
+  <%= submit_tag I18n.t(:validate, :scope =>['identification']), :class => "btn-validate" %>
+</div>

@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'RMagick'
+require 'fileutils'
+
+@iptc_to_image = {"2:5"=>"title", "2:10"=>"urgency", "2:12"=>"subject_code", "2:15"=>"category", "2:20"=>"supplemental_category", "2:25"=>"subject", "2:40"=>"instructions", "2:55"=>"date_created", "2:80"=>"creator", "2:85"=>"authors_position", "2:90"=>"city", "2:92"=>"location", "2:95"=>"state", "2:101"=>"country", "2:103"=>"transmission_reference", "2:105"=>"headline", "2:110"=>"credit", "2:115"=>"source", "2:116"=>"rights", "2:120"=>"description", "2:121"=>"reportage", "2:122"=>"caption_writer", "3:213"=>"hires_location", "3:214"=>"erasable", "3:215"=>"request_key", "3:216"=>"request_title", "3:217"=>"request_server", "3:218"=>"max_avail_width", "3:219"=>"max_avail_height", "3:220"=>"original_filename", "3:230"=>"ms_picture_id", "3:231"=>"ms_id", "3:232"=>"reception_date"}
+
+ARGV.each do |f|
+  begin
+    @file = Magick::Image.read(f).first
+    puts '--- --- ---'
+    puts File.basename(f)
+    puts '--- --- ---'
+    @iptc_to_image.each do |key, val|
+       extracted_val = @file.get_iptc_dataset(key)
+       puts "#{val} (#{key}) :: #{extracted_val.encode('utf-8', 'iso-8859-15')}" unless extracted_val.nil?
+    end
+    puts '--- --- ---'
+    puts
+  rescue Exception => e
+    puts e
+  end
+end

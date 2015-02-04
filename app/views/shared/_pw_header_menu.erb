@@ -1,0 +1,92 @@
+<script>
+$(document).ready(function(){
+  $('.dropdown-menu li a').each(function(){
+    if ($(this).hasClass('current')) {
+      $(this).parents('.dropdown').find('a.dropdown-toggle').css('color', '#e00000');
+    };
+  })
+  //  .click(function(){
+  //   console.log('aaaaaaaa');
+  //   
+  // })
+})
+  
+</script>
+
+<div id="pw_header">
+  <%= link_to image_tag("pixpalace.png", :title => "Pixpalace Home page"), home_url, :id => "pw_logo" %>
+
+  <div id="navigation1">
+    <nav class="navbar">
+      <li><%= link_to "Upload", form_20min_path, target: :blank %></li>
+      <% unless current_user.title.server.name.blank?%><li><a><%= "#{current_user.title.server.name}" %></a></li><%end%>
+      <li><a><%= "#{current_user.title.name}" %></a></li>
+      <li><a><%= "#{current_user.first_name} #{current_user.last_name}" %></a></li>
+      <li><%= link_to I18n.t('help'), '/AidePixpalace.pdf', :target => :blank %></li>
+      <li><%= link_to(I18n.t('settings.settings'), edit_setting_path(current_user.setting.id), :remote => true) %></li>
+      <li><%= link_to(I18n.t('logout'), :logout, :id => "pw_logout") %></li>
+    </nav>
+  </div>
+
+  <div id="navigation2" >
+    <ul class="nav nav-pills">
+      <li><%= link_to_unless_current(I18n.t('home'), :home){|link|
+        content_tag 'a', link, :class => 'current'} %></li>
+      <li><%= link_to_unless_current(I18n.t('agencies'), :providers){|link|
+        content_tag 'a', link, :class => 'current'} %></li>
+      <% if can? :manage, Statistic %>
+          <li><%= link_to_unless_current(I18n.t('menu_titles'), :titles){|link|
+            content_tag 'a', link, :class => 'current'} %></li>
+      <% end %>
+      <% if (current_user.is_superadmin?) && (File.exists?(USERS_LIST_FILE))%>
+          <li><%= link_to_unless_current(I18n.t('menu_users'), :users){|link|
+            content_tag 'a', link, :class => 'current'} %></li>
+      <% end %>
+      <% if current_user.is_superadmin? %>
+          <li><%= link_to_unless_current(I18n.t('admin.admin'), :admin){|link|
+            content_tag 'a', link, :class => 'current'} %></li>
+      <% end %>
+      <% if can? :manage, Statistic %>
+          <% if current_page?(:controller => '/statistics', :action => 'index') %>
+              <li><%= content_tag 'a', I18n.t('statistics.statistics'), :class => 'current'  %></li>
+          <% else %>
+              <li><%= link_to(I18n.t('statistics.statistics'), :searchstats) %></li>
+          <% end %>
+      <% end %>
+      <% if can? :manage, Statistic %>
+          <li class="dropdown">
+            <a data-toggle="dropdown" <%= "class=dropdown-toggle" if current_page?(:pictures_control)||current_page?(:search_stats)||current_page?(:rtp)||current_page?(:admin_reps)||current_page?(:new_reportage)  %> id="item_adm_agency" onclick="void(0)"><%= I18n.t('adm_agency') %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <% if current_user.is_provider_admin? %>
+              <li><%= link_to_unless_current(I18n.t('pictures_control'), :pictures_control){|link| content_tag 'a', link, :class => 'current'} %></li>
+              <li><%= link_to_unless_current(I18n.t('search_stats'), :search_stats){|link| content_tag 'a', link, :class => 'current'} %></li>
+              <li><%= link_to_unless_current(I18n.t('admin.providers.requests'), :rtp){|link| content_tag 'a', link, :class => 'current'} %></li>
+              <li class="last_item_menu"><%= link_to_unless_current(I18n.t('features_admin'), admin_reps_path){|link| content_tag 'a', link, :class => 'current',:offres_reportages =>1} %></li>
+              <% elsif current_user.is_superadmin? %>
+                  <li><%= link_to_unless_current(I18n.t('pictures_control'), :pictures_control){|link| content_tag 'a', link, :class => 'current'} %></li>
+                  <li><%= link_to_unless_current(I18n.t('search_stats'), :search_stats){|link| content_tag 'a', link, :class => 'current'} %></li>
+                  <li><%= link_to_unless_current(I18n.t('admin.providers.requests'), :rtp){|link| content_tag 'a', link, :class => 'current'} %></li>
+                  <li class="last_item_menu"><%= link_to_unless_current(I18n.t('features_admin'), admin_reps_path){|link| content_tag 'a', link, :class => 'current',:offres_reportages =>1} %></li>
+              <% else %>
+                  <li><%= link_to_unless_current(I18n.t('search_stats'), :search_stats){|link| content_tag 'a', link, :class => 'current'} %></li>
+                  <li><%= link_to_unless_current(I18n.t('admin.providers.requests'), :rtp){|link| content_tag 'a', link, :class => 'current'} %></li>
+                  <li class="last_item_menu"><%= link_to_unless_current(I18n.t('features_admin'),admin_reps_path){|link| content_tag 'a', link, :class => 'current',:offres_reportages =>1} %></li>
+              <% end %>
+            </ul>
+          </li>
+      <% end %>
+
+      <li class="flash_msg">
+        <% flash.each do |k,v| %>
+        <span id="pw_flash-<%= k %>"><%= v %></span>
+        <% end %>
+      </li>
+
+  </ul>
+  </div>
+  
+
+</div>
+<div id="pw_contextual_header">
+  <%= yield :contextual_header %>
+</div>

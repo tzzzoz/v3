@@ -1,0 +1,63 @@
+<div style="clear:both;" ></div>
+
+<div>
+  <%= form_for @reportage do |f| %>
+
+      <% if @reportage.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@reportage.errors.count, "erreur") %> <%= I18n.t('prohibited_this_operation') %>:</h2>
+
+            <ul>
+              <% @reportage.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <%= f.hidden_field(:string_key) %>
+      <%= f.hidden_field(:prem_photo) %>
+      <%= f.hidden_field(:no_reportage) %>
+      <%= f.hidden_field(:nb_photos) %>
+      <%= f.hidden_field(:signatur) %>
+      <%= hidden_field_tag("lbid", @light_box.id) if @light_box %>
+
+      <%= hidden_field_tag :keyword,params[:keyword] %>
+      <%= hidden_field_tag :sort,params[:sort] %>
+      <%= hidden_field_tag :direction,params[:direction] %>
+      <%= hidden_field_tag :liste_providers,params[:liste_providers] %>
+      <%= hidden_field_tag :offres_reportages,params[:offres_reportages] %>
+
+      <div style="margin-left: 10px">
+
+        <div class="field" style="height: 30px;">
+          <div class="label_edit" style="margin-top: 0;padding-top:0;">
+            <span style="padding-right: 3px;"><%= @reportage.nb_photos %></span><%= I18n.t("features.nb_pictures") %>
+          </div>
+          <% unless @reportage.id.nil? %>
+              <span style="font-weight: bold"><%= link_to "(#{I18n.t("features.add_pictures")})", reportage_path(:id => @reportage.id, :method => "get") %></span>
+          <% end %>
+        </div>
+        <div class="field">
+          <div class="label_edit"><%= f.label I18n.t("features.title") %></div>
+          <%= f.text_area(:rep_titre, :size => "100x2") %>
+        </div>
+        <div class="field">
+          <span class="label_edit"><%= f.label I18n.t("features.text") %></span>
+          <%= f.text_area :rep_texte,:size => "100x20" %>
+        </div>
+        <div class="field">
+          <% rep_date = @reportage.rep_date %>
+          <span class="label_edit"><%= f.label I18n.t("features.feature_date") %>   </span>
+          <%= f.text_field(:rep_date, :value => l(rep_date), :class => 'datepicker-rep') -%>
+        </div>
+        <div style="margin: 20px 0 0 110px;" class="action">
+          <%= f.submit I18n.t("validate").capitalize, class: "valid_ids" %>
+          <%= submit_tag I18n.t('cancel').capitalize, :type => 'button', :onclick => "javascript:window.close();" %>
+          <!--<button type="button" onclick="window.close();"><!%= I18n.t('cancel').capitalize%></button>-->
+        </div>
+
+      </div>
+
+  <% end %>
+</div>

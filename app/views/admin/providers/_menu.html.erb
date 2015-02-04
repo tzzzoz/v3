@@ -1,0 +1,3 @@
+    <strong><%= menu.name %></strong> :
+	<%= link_to I18n.t("modify"), edit_admin_provider_path(menu), :target => '_blank', :id => 'edit_prov' %>
+	<%= link_to I18n.t("delete"), admin_provider_path(menu), :method => :delete, :remote => true,  :data => { :confirm => I18n.t(:are_you_sure) }  %>

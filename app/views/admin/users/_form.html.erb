@@ -1,0 +1,134 @@
+<%= form_for [:admin, @user] do |f| %>
+
+    <% if @user.errors.any? %>
+
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "erreur") %> <%= I18n.t('prohibited_this_operation') %>:</h2>
+
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+
+        </div>
+
+    <% end %>
+
+    <div class="field">
+      <%= f.label I18n.t 'admin.user.title_user' %><br />
+      <%= f.select :title_id, options_for_select(Title.order('name ASC').all.collect{|t| [t.name, t.id]}, @user.title_id) %>
+    </div>
+
+    <div class="field">
+      <%= f.label I18n.t 'admin.user.roles' %><br />
+      <%= f.select :add_role_to_user, options_for_select(User.list_roles.collect{|r| [I18n.t(r), r]}, by_default_role),{}, {:id => "selected_role", :onChange => "check_role_selected();"} %>
+    </div>
+
+    <div class="field">
+      <%= f.label I18n.t 'admin.user.login' %><br />
+      <%= f.text_field :login %>
+    </div>
+
+    <div class="field">
+      <%= f.label I18n.t 'admin.user.first_name' %><br />
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label I18n.t 'admin.user.last_name' %><br />
+      <%= f.text_field :last_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label I18n.t 'admin.user.mail' %><br />
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label I18n.t 'admin.user.phone' %><br />
+      <%= f.text_field :phone %>
+    </div>
+
+    <div class="field spe">
+      <%= f.label I18n.t 'admin.user.password' %><br />
+      <%= f.text_field :password, :size => 20 %>
+    </div>
+
+    <div class="field">
+      <%= f.label I18n.t 'admin.user.password_confirmation' %><br />
+      <%= f.password_field :password_confirmation %>
+    </div>
+
+    <span id="generate_pass"><%= I18n.t 'admin.user.generate_pass' %></span>
+
+    <% unless @emergency == 2 %>
+        <div class="field">
+          <%#= hidden_field_tag :emergency_account,false %>
+          <%= check_box_tag :emergency_account, "1",@emergency==1,:id => "emergency_account_checkbox" %>
+          <%= label_tag I18n.t('admin.user.emergency_account') %>
+        </div>
+    <% end %>
+    </br>
+    <div class="action">
+      <%= f.submit I18n.t("validate") %>
+    </div>
+
+<% end %>
+
+<div style="margin-top: 10px;"><%= link_to I18n.t('back'), admin_users_path(:title_id => @user.title_id) %></div>
+
+<span class="pw_user_summary">
+  <%= I18n.t 'admin.user.summary' %>
+</span>
+
+<div class="clearfix"></div>
+
+<script type="text/javascript">
+
+  function generate_pass(val){
+      chars = "abcdefghijklmnopqrstuvwxyz1234567890";
+      chars_size = chars.length;
+      pass = "";
+
+      for(var i=0; i < val;i++){
+          pass += chars[Math.floor(Math.random()*chars_size)];
+      }
+      return pass;
+  }
+
+  $('#generate_pass').click(function(){
+      var valeur = generate_pass(8);
+      $('#user_password').val(valeur);
+      $('#user_password_clear').val(valeur);
+      $('#user_password_confirmation').val(valeur);
+  });
+
+  $('.pw_user_summary').click(function(){
+      var title = $('#user_title_id option:selected').text();
+      var log = $('#user_login').val();
+      var pass = $('#user_password').val();
+      var mel = $('#user_email').val();
+      $('<textarea cols="60"><%= I18n.t 'admin.user.title_user' %>: '+title+'\nlog1n: '+log+'\npassw0rd: '+pass+'\nemail: '+mel+'</textarea>').dialog({
+          title: "<%= I18n.t 'admin.user.summary' %>",
+          resizable: false
+          });
+  });
+
+  function check_role_selected(){
+      if ($('#selected_role option:selected').text() == "<%= I18n.t 'deactivated' %>") {
+          $('#generate_pass').click();
+      }
+  };
+
+  $('#emergency_account_checkbox').click(function() {
+      var $this = $(this);
+      if ($this.is(':checked')) {
+          $('#user_first_name').val("Acces_Secours");
+      } else {
+          $('#user_first_name').val("");
+      }
+  });
+
+
+</script>

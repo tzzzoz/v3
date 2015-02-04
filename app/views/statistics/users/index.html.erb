@@ -1,0 +1,43 @@
+<%= form_tag({:controller => "/statistics", :action => "index"}, :method => "get", :id => "pw_user_form") do -%>
+
+	<div class="pw_content">
+      <% if can? :manage, :all %>
+	    <fieldset>
+          <%= label_tag I18n.t('title_name') %>
+          <%= select_tag "selected_title_id", options_for_select(select_stats_users_table, by_default_selected) %>
+          <span class="pw_stats_tu_total pw_title_panel">
+            <%= "#{@current_params[:users].count} / " unless @current_params[:users].blank? %> <%="#{@pw_users.count} "%>
+          </span>
+	    </fieldset>
+      <% end %>
+	</div>
+
+    <div class="pw_content">
+      <span class="pw_toggle_check"><%= I18n.t('toggle_check_all')%></span>
+      <fieldset class="pw_buttonset pw_users">
+        <% @pw_users.each do |u| %>
+            <%= check_box_tag( "users[#{u.id}]", 1, @current_params[:users] ? @current_params[:users]["#{u.id}"] == '1' : false)%>
+            <% if u.full_name.blank? %>
+                <%= label_tag("users[#{u.id}]", u.login) %>
+            <% else %>
+                <%= label_tag("users[#{u.id}]", u.full_name) %>
+            <% end %>
+        <% end %>
+      </fieldset>
+    </div>
+<% end -%>
+
+<script type="text/javascript">
+
+    $( document ).on( "change", "#selected_title_id", function(){
+      var the_id = $(this).val();
+
+      if ($(this).val() == 0){
+          $('#stats_titles_users').tabs('url' ,1,'statistics/users/').tabs('load', 1);
+      }
+      else{
+          $('#stats_titles_users').tabs('url' ,1,'statistics/users?title_id='+the_id).tabs('load', 1);
+      }
+
+  });
+</script>

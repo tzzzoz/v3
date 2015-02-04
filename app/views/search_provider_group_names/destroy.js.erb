@@ -1,0 +1,5 @@
+<% if @search_provider_group.errors.any? %>
+    console.debug("<%= @search_provider_group.errors.full_messages.join('\n') %>");
+<% end %>
+
+$("[name=provider_sets]>a").click();

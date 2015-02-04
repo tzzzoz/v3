@@ -1,0 +1,466 @@
+zh-CN:
+  en: English
+  fr: Français
+  zh-CN: 中文
+  search: 搜索
+  from: 从
+  to: 到
+  logout: 断开
+  search_since: 自从
+  sort: 分类
+  all: 全部
+  10_minutes: 十分钟
+  1_hour: 1小时
+  1_day: 1天
+  1_week: 1星期
+  1_month: 1个月
+  3_month: 3个月
+  1_year: 1 an
+  sort_reception_date: 由放置日期（+）
+  sort_asc_date: 由放置日期（-）
+  sort_relevance: 由相关性
+  sort_date_created: 由拍摄日期（+）
+  sort_asc_created: 由拍摄日期（-）
+  sort_random:  随机
+  sort_n_per_agency: 每间图片社一张图片
+  sort_original_filename: 由文件夹名称(a-z)
+  sort_asc_filename: 由文件夹名称(z-a)
+  offers: Lists
+  offers_hint: See offers and features list
+  square: 正方形
+  horizontal: 水平
+  vertical: 垂直
+  panoramic: 全景
+  fonds: 背景
+  pictures_per_page: 每页图片
+  view_mode: 观看
+  thumbs: 缩略图
+  list: 名单
+  page: 页
+  toggle_check_all: 全（不）选
+  toggle_fold_all: 全（不）展开
+  management: 管理
+  erasing: 清除
+  providers: 图片社
+  close: 关闭
+  light_box:
+      name: 视窗
+      full: 视窗已满
+      image_not_found: 图像无法找到
+
+  home: 首页
+  help: 帮助
+  send: 发送
+  send_and_delete: 清除
+  move_and_delete: Move to PP2
+  ok: ok
+  pixpalace: PixPalace
+  contact_pixpalace: 联系PIXPALACE
+  pictures: pictures
+  HD: HR
+  BD: LR
+  PE: PE
+  FLUX: 流量
+  add_to_lightbox: 加入视窗
+  feature: 系列报道图片
+  delete: 删除
+  rename: 重新命名
+  open: 打开
+  send_by_email: 由电邮发送
+  sort_by_prov: 由图片社分拣
+  create_feature: Create offer
+
+#homepage
+  today_online: Online today
+  title_pixpalace: The output of the best photo agencies available to all media professionals
+  label_pixpalace: The portal of photo agencies
+  title_pixadmin: The output of the best photo agencies available to all media professionals
+  label_pixadmin: Photo management service
+  title_pixpalace2: PixPalace's complementary research module
+  label_pixpalace2: More images...
+  title_pixtrakk: An essential tool to identify your photos in printed and web publications
+  label_pixtrakk: Photo usage tracking
+  tracked_publication_label: Over 1000 tracked publications
+  contact_us: Contact us
+
+#Image field
+  title: 文件夹名称 (5）
+  subject_code:
+  subject: 关键词 (25）
+  instructions: 特别指令 (40)
+  creator: 摄影师 (80）
+  city: 城市 (90)
+  location:
+  state: 地区（省）(95)
+  iptc_country: 国家 (101)
+  headline: 标题 (105）
+  credit: 积分 (110）
+  source: 图片社 (115)
+  description: 描述 (120)
+  reportage: 系列报道图片 (PP)
+  normalized_credit: 积分 (PP)
+  max_avail_width: HD宽度 (PP)
+  max_avail_height: HD高度 (PP)
+  original_filename: 源文件夹名称 (PP)
+  file_name: PixPalace文件夹名称 (PP)
+  provider_comment: 介绍 (PP)
+  restrictions: （限制 (PP)
+  msid: （id (PP)
+  urgency: 优先 (10)
+  category: 种类 (15）
+  supplemental_category: 种类补充 （20）
+  authors_position: 创建人标题 (85）
+  transmission_reference: 传输的原参数 （103）
+  rights: 版权注释 （116）
+  caption_writer: 描述者 （122）
+  reception_date: PixPalace 日期 (PP)
+  date_created: 图片日期 （55）
+  hr_size: HD尺寸（像素LxH) (PP)
+  max_size: 最大尺寸（cm LxH) (PP)
+  iptc_search: 通过IPTC搜索
+  image_format: 图像规格
+  email: 电邮地址
+  phone: 电话
+  portable: 手机
+  fax: 传真
+  agencies: 图片社
+  menu_titles: 标题
+  export: 采用
+  contact: 联系方式
+  site: 网站
+  address: 地址
+  first_name: 名
+  last_name: 姓
+  provider: 图片社
+  terms_title:  在PixPlace下载图片的使用条件
+  terms: 图片使用权必须与其相关图片社确认，可以下载高清图片不等同于拥有其使用权。
+  close_after_download: 请在下载后关闭该页面
+  no_images_selected: 您没有选择图片来下载，请关闭该页面
+  available_pictures: 可用图片
+  download: 下载
+  forgot_passwd: 忘记密码？
+  choose_the_language: 选择语言
+  login: 登录
+  password: 密码
+  cancel: 取消
+  deleted: 删除
+  save: 保存
+  cancel: 取消
+  modify: 更改
+  authentication_required: 请输入您的登录名及密码
+
+  #Notices, warnings, alert
+  flash:
+    logged_in_successfully: 连接成功
+    log_in_failed_for: 请确认登录名及密码，连接失败
+    you_have_been_logged_out: 您已经断开连接
+    alert_cancan: 您无权访问该页面
+
+  #Settings
+  settings:
+    settings: 偏好
+    language: 语言
+    background_color: 背景颜色
+    font_color: 字体颜色
+    time_zone: 时区
+    thumbnail_rollover: 概览缩略图
+    previsualisation: 预览
+    display_text: 显示文本
+
+
+  #lightbox PL 4/4
+  viewer: 视窗 %{name}
+  diaporama: 幻灯播放
+  imppdf: 印象
+  light_box_rename: 重新命名视窗
+  validate: ok
+  new_name: 新名
+  confirm_delete_viewer: 您确定删除该视窗？
+  bin: 垃圾箱
+  select_lb: 选择一个视窗
+  lightbox_login: 您好，您需要连接以后才能浏览该视窗。
+  no_image_selected: 没有被选图片
+  images_not_added: 未被加上的图像
+  too_many_in_light_box: 最大限量图像数 （%{maxi}）
+  new_lb: 增加一个视窗
+  images: 图像
+  print:
+    print: 打印
+    contact_sheet: 联系表
+    text: 文本
+    without: 除了
+    credit: 积分
+    caption: 描述
+    file_name: 文件夹名称
+    portrait: 肖像
+    landscape: 风光
+
+  features:
+    offers: Offers
+    offers_hint: Selection offered by the agencies
+    features: Features
+    features_hint: Selection automatically created (represented by the pictogram under the thumbnails)
+    new_feature: New feature
+    edit_feature: Edit feature
+    delete_message: |
+                    Are you sure to delete this feature?
+                    (pictures won't be deleted)
+    add_pictures: Add pictures
+    search_title: Search title
+    title: Title
+    nb_pictures: Pictures
+    credit: Credit
+    feature_date: Feature date
+    release_date: Release date
+    text: Text
+    selection: Selection
+    selection_hint: Your offers and features selection
+    remove_from_selection: Remove from selection
+    remove_from_selection_confirmation: Are you sure you want to remove this feature from your selection?
+    added_to_selection_message_part1: You have
+    added_to_selection_message_part2: feature(s) in your selection
+    add_to_selection: Add to selection
+    go_to_selection: Go to selection
+
+  #admin
+  new_server: 新服务器
+  new_country: 新国家
+  new_title: 新标题
+  current_server: 当前服务器
+  edit_server: 更改服务器
+  edit_country: 更改国家
+  edit_title: 更改标题
+  edit_provider: 更改图片社
+  titles_group_name: 组群
+  new_titles_group_name: 新组群
+  country: 国家
+  name: 姓名
+  type: 类型
+  statut: 状态
+  titles: 标题
+  current_server: 当前服务器
+  are_you_sure: 永久删除？
+  successfully_created: 创建成功
+  successfully_updated: 更新成功
+  prohibited_this_operation: 操作未执行
+  user: 用户
+  demande: Demand
+
+  #administration agence
+  adm_agency: 管理图片社
+  waited_rtp: 要求等待中
+  answered_rtp: 要求被回复
+  send_photos: 发送图片
+  downloads_stats: Downloads statistics
+  pictures_control: Pictures control
+  rights_managment: Rights managment
+  search_stats: Users Searches
+  translation: Translation
+  features_admin: Offers and features
+
+  back: 返回
+  show: 浏览
+  edit: 更改
+  destroy: 删除
+  edit_server: 更改服务器
+  edit_country: 更改国家
+  edit_title: 更改标题
+  edit_provider: 更改图片社
+  not_authorized_providers: 未被授权图片社
+  greyed: 灰色
+  flow_path: 流量
+  group: 组群
+  server: 服务器
+  managing: 管理
+  
+  attributes:
+    created_at: 创建
+    updated_at: 更改
+    name: 姓名
+
+  #Statistics
+  statistics:
+    statistics: 统计
+    total: 全部
+    export: 采用
+    thumbs: 缩略图
+    list: 名单
+    date: 日期
+    operation: 操作
+    title: 标题
+    user: 用户
+    provider: 图片社
+    picture: 图片
+    titles: 标题
+    users: 用户
+    download: 下载
+    all: 所有
+  :customer_only: 仅限客户
+
+  country_str: 国家
+  title_name: 标题
+  users: 用户
+  sort_download_date: 由下载日期
+  sort_filename: 由文件夹名称
+  entries_per_page: 由每页图片
+  download_date: 下载日期
+
+
+  #admin
+  titles_group_name: 组群
+
+  admin:
+    admin: 管理
+    successfully_deleted: 删除已执行
+
+    providers:
+      distrute_to: 发布国家
+      name: 姓名
+      logo: 标志
+      description: 描述
+      agreement: 条件
+      web: 网站
+      price_url: URL价格
+      display_local: 本地展示
+      local_dir: 本地录入途径
+      form: 表格
+      pdf: PDF
+      string_key: 文本关键词
+      news_keep: 保存新闻
+      news_keep_per_pics: 由图片保存新闻
+      address: 地址
+      city: 城市
+      zip_code: 邮编
+      country: 国家
+      copyright_rule: 版权规则
+      free_text: 自由文本
+      first_name: 名
+      last_name: 姓
+      mail: 电邮
+      phone: 电话
+      portable: 手机
+      fax: 传真
+      requests: 要求
+      main: 主要的
+      delete: (删除）
+      up_limit: Maximum nb of photos
+
+    group_name:
+      country: 国家
+      group: 组群
+      name: 组群名称
+
+    user:
+      user_infos: 用户信息
+      title_user: 标题
+      create_new_user: 新用户
+      show_new_user: 浏览
+      are_you_sure: 您确定要删除该用户？
+      login: 登录名
+      last_name: 姓
+      first_name: 名
+      mail: 电邮
+      job: 职业
+      phone: 电话
+      roles: 角色
+      password: 密码
+      password_confirmation: 确认密码
+      select_title: 选择一个标题
+      select_title_null: 未署名用户
+      orphans: 未署名
+      generate_pass: 生成一个密码
+      summary: 总结
+      user_url: User URL
+      created_at: Created at
+      comments: Comments
+      public_url: Public URL
+      emergency_account: Emergency account
+      deactivated_account: Deactivated account
+      reactivated: Reactivated
+
+    tpgn:
+      select_country: 选择国家
+      select_group: 选择组群
+      delete_msg: 下面的标题与该组群相连所以无法被删除。
+
+    title:
+      orphans: 未署名
+      visible: 可视
+      comment: 备注
+      do_not_display: 未显示
+      test: 测试中
+      customer: 客户
+      partner: 合作者BD
+      restrictions_group: 组群的限制
+      magazine: 杂志
+      book_publisher: 出版社
+      corporate: 公司
+      PQN: PQN
+      university: 大专院校
+      communication_agency: 交流策划类通讯机构
+      press_com_agency: 新闻机构
+      website: 网站
+      independant_icono: 独立（肖像）图片研究者
+      ojd_link: OJD link
+
+  #Roles
+  superadmin: 超级管理员
+  editor_admin: 管理员编辑器
+  editor_user: 用户编辑器
+  provider_admin: 图片机构管理员
+  provider_user: 图片机构用户
+  photographer: 摄影师
+
+  #saved searches
+  my_searches: 我的搜索
+  my_requests: 我的要求
+  new_request: 新的要求
+  intro_new_request: 对已选图片社输入要求
+  date_label: 日期
+  subject_d: 描述
+  photo: 图片
+  
+  #fullscreen lightboxes
+  fslb:
+    images: 图像
+    diapo: 幻灯
+    select_timer:
+      inactive: 静止
+      two_s: 2秒钟
+      five_s: 5秒钟
+      ten_s: 10秒钟
+      one_m: 1分钟
+
+  views:
+      pagination:
+        first: "&laquo;"  
+        last: "&raquo;"  
+        previous: "<"  
+        next: ">"  
+        truncate: " ... "
+
+  download_conditions:
+      mail_error: 邮件未发送
+      mail_ok: 表格已被发送到BNF，谢谢
+      
+  media:
+    photo: 图片
+    info_photo: 图片信息
+    feature: 系列报告图片
+
+  #color picker, providers groups
+
+  cp_pg:
+    my_providers_set: 我的组群
+    my_borders: 边缘
+    new_group: 新组群
+    no_provider_group: 没有任何组群的记录
+    select_group_name: 选择组群
+
+  mail_content:
+    greetings: 您好
+               请查收以下来自pixpalace.com 新的要求
+               谢谢，向您致以问候
+               PixPalace团队
+
+               

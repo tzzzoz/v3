@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+  Client : <%= @title_name %><br />
+  Nom d'utilisateur : <%= @user.login %><br />
+  Utilisateur : <%= @user.full_name %> <br />
+  E-mail : <%= @user.email %> <br /><br />
+  <% unless @edition.blank? %>
+      <strong><%= @edition %></strong><br /> <u>Titre</u> : <%= @title_edition %><br /> <u>Date de publication</u> : <%= @publication_edition %> <br />
+      <u>Exemplaires</u> : <%= @exemplaires %><br /> <u>Diffusion</u> : <%= @diffusion %><br />
+  <% end %>
+  <% unless @presse.blank? %>
+      <strong><%=@presse%></strong><br /> <u>Titre</u> : <%= @title_presse %><br /> <u>Numéro</u> : <%= @num_presse %><br />
+      <u>Exemplaires</u> : <%= @exemplaires %><br /> <u>Diffusion</u> : <%= @diffusion %><br />
+  <% end %>
+  <% unless @pub_presse.blank? %>
+      <strong><%=@pub_presse%></strong><br /> <u>Titre</u> : <%= @title_pub_presse %><br /> <u>Numéro</u> : <%= @num_pub_presse %><br />
+      <u>Exemplaires</u> : <%= @exemplaires %><br /> <u>Diffusion</u> : <%= @diffusion %><br />
+  <% end %>
+  <% unless @emission_tv.blank? %>
+    <strong>Télévision</strong><br /> <u>Titre de l'émission</u> : <%= @emission_tv %><br /> <u>Date de première diffusion</u> : <%= @diffusion_tv %><br />
+  <% end %>
+  <% unless @cinema.blank? %>
+      <strong><%=@cinema%></strong><br /> <u>Titre du film</u> : <%= @film %><br /> <u>Date de première diffusion</u> : <%= @diffusion_cinema %><br />
+  <% end %>
+  <% unless @video.blank? %>
+      <strong><%=@video%></strong><br />
+      <% unless @illu_contenu_video.blank? %><strong>- <%=@illu_contenu_video%></strong><br /><% end %>
+      <% unless @illu_contenant_video.blank? %><strong>- <%=@illu_contenant_video%></strong><br /><% end %>
+      <u>Exemplaires</u> : <%= @exemplaires %><br /> <u>Diffusion</u> : <%= @diffusion %><br />
+  <% end %>
+  <% unless @internet.blank? %>
+      <strong><%=@internet%></strong><br />
+  <% end %>
+  <% unless @publicitaire.blank? %>
+      <strong><%=@publicitaire%></strong><br />
+  <% end %>
+  <% unless @expo_salon.blank? %>
+      <strong><%=@expo_salon%></strong><br />
+  <% end %>
+  <% unless @other.blank? %>
+      <strong>Autre</strong> : <%= @other %><br />
+  <% end %>
+  <br />
+  <% if @nclient.blank? %>
+      Dénomination sociale : <%= @legal_name %> <br />
+      Service : <%= @service %><br />
+      Adresse : <%= @adresse %><br />
+      Code postal : <%= @postal_code %><br />
+      Ville : <%= @city %><br />
+  <% else %>
+      Numéro de client : <%= @nclient %><br />
+  <% end %>
+  <br />
+  A pris connaissance des conditions générales d'utilisation et les a acceptées.<br /> a téléchargé en HD : <br><strong>
+    <%= @bnf_files %></strong>
+</body>
+</html>

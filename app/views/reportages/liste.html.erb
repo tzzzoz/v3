@@ -1,0 +1,75 @@
+<% content_for :document_ready do %>
+    buttonize($('#pw_provider_form'));
+    PwStats();
+//    $(".show_hide_help").toggle(function(){
+//    $(".help_frame").show();
+//    },function(){
+//    $(".help_frame").hide();
+//    });
+<% end %>
+
+<div class='pw_spacer'></div>
+<%= render :partial => 'providers_form', :locals => {:action_title => 'liste'} %>
+<div class='pw_spacer'></div>
+
+<div class='pw_features content-no-color'>
+
+
+
+  <div class='pw_panel-content'>
+
+    <div class='pw_title_panel'>
+      <ul class="nav nav-tabs">
+        <% if params[:panier] %>
+            <li class="features_tabs" title="<%= I18n.t('features.offers_hint') %>" ><%= link_to "#{I18n.t('features.offers')} (#{number_with_delimiter(@nb_off)})", liste_reps_path(:offres_reportages =>1)%></li>
+            <li class="features_tabs" title="<%= I18n.t('features.features_hint')%>" ><%= link_to "#{I18n.t('features.features')} (#{number_with_delimiter(@nb_rep)})",liste_reps_path(:sort => params[:sort], :direction => params[:direction], :keyword => params[:keyword],:liste_providers => params[:liste_providers],:offres_reportages =>0)%></li>
+            <li id="li_selection" class="features_tabs_active" title="<%= I18n.t('features.selection_hint')%>" ><a><%= "#{I18n.t("features.selection")} (#{number_with_delimiter(@nb_panier)})" %></a></li>
+        <%else%>
+            <% if params[:offres_reportages].to_i==1 %>
+                <li class="features_tabs_active" title="<%= I18n.t('features.offers_hint')%>" ><a><%= "#{I18n.t('features.offers')} (#{number_with_delimiter(@nb_off)})" %></a></li>
+                <% if @nb_rep == 0 %>
+                    <li class="features_tabs" title="<%= I18n.t('features.features_hint')%>" ><a><%= "#{I18n.t('features.features')} (#{number_with_delimiter(@nb_rep)})" %></a></li>
+                <% else %>
+                    <li class="features_tabs" title="<%= I18n.t('features.features_hint')%>" ><%= link_to "#{I18n.t('features.features')} (#{number_with_delimiter(@nb_rep)})",liste_reps_path(:sort => params[:sort], :direction => params[:direction], :keyword => params[:keyword],:liste_providers => params[:liste_providers],:offres_reportages =>0)%></li>
+                <% end %>
+            <%else%>
+                <% if @nb_off == 0 %>
+                    <li class="features_tabs" title="<%= I18n.t('features.offers_hint')%>" ><a><%= "#{I18n.t('features.offers')} (#{number_with_delimiter(@nb_off)})" %></a></li>
+                <% else %>
+                    <li class="features_tabs" title="<%= I18n.t('features.offers_hint')%>" ><%= link_to "#{I18n.t('features.offers')} (#{number_with_delimiter(@nb_off)})", liste_reps_path(:sort => params[:sort], :direction => params[:direction], :keyword => params[:keyword],:liste_providers => params[:liste_providers],:offres_reportages =>1)%></li>
+                <% end %>
+                <li class="features_tabs_active" title="<%= I18n.t('features.features_hint')%>" ><a><%= "#{I18n.t('features.features')} (#{number_with_delimiter(@nb_rep)})" %></a></li>
+            <%end%>
+            <% if @nb_panier == 0 %>
+                <li id="tab_selection" class="features_tabs" title="<%=I18n.t('features.selection_hint')%>" ><a><%= "#{I18n.t('features.selection')} (#{@nb_panier})" %></a></li>
+            <%else%>
+                <li id="tab_selection" class="features_tabs" title="<%=I18n.t('features.selection_hint')%>" ><%= link_to "#{I18n.t('features.selection')} (#{@nb_panier})", liste_reps_path(:panier => 1)%></li>
+            <%end%>
+        <% end %>
+      </ul>
+    </div>
+
+    <div style="float:right;margin: 0 10px;">
+      <%= render :partial => 'search_form', :locals => {:action_title => 'liste'} %>
+    </div>
+
+    <div id="pw_paginator">
+      <%= paginate @reportages, :remote => true %>
+    </div>
+
+  </div>
+
+  <div id="table_container" class="reportages_tables_container_div">
+      <%= render :partial => "rep_medias" %>
+  </div>
+
+  <div class="pw_stats_paginate" id="tst_bas_paginator">
+      <%= paginate @reportages, :remote => true %>
+  </div>
+</div>
+
+<script>
+    function update_picto(elmt_id){
+        document.getElementById(elmt_id).innerHTML='';
+    };
+</script>

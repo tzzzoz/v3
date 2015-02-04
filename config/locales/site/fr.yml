@@ -1,0 +1,472 @@
+fr:
+  en: English
+  fr: Français
+  zh-CN: 中文
+  search: Recherche
+  from: de
+  to: à
+  logout: Déconnexion
+  search_since: depuis
+  sort: tri
+  all: tous
+  10_minutes: 10 minutes
+  1_hour: 1 heure
+  1_day: 1 jour
+  1_week: 1 semaine
+  1_month: 1 mois
+  3_month:  3 mois
+  1_year: 1 an
+  sort_reception_date: par date de mise en ligne (+)
+  sort_asc_date: par date de mise en ligne (-)
+  sort_relevance: par pertinence
+  sort_date_created:  par date de photo (+)
+  sort_asc_created:  par date de photo (-)
+  sort_random: aléatoire
+  sort_n_per_agency:  une photo par agence
+  sort_original_filename: par nom de fichier (a-z)
+  sort_asc_filename: par nom de fichier (z-a)
+  offers: Listes
+  offers_hint: Voir la liste des offres et reportages
+  square: carré
+  horizontal: horizontal
+  vertical: vertical
+  panoramic: panoramique
+  fonds: Fonds
+  pictures_per_page: photos par page
+  view_mode: vue
+  thumbs: vignettes
+  list: liste
+  page: page
+  toggle_check_all: tout (dé)sélectionner
+  toggle_fold_all: tout (dé)plier
+  management: Gestion
+  erasing: Suppression
+  providers: Agences
+  close: Fermer
+  light_box:
+      name: Visionneuse
+      full: La visionneuse est pleine
+      image_not_found: L'image est introuvable
+
+  home: Accueil
+  help: Aide
+  send: envoyer
+  ok: ok
+  pixpalace: PixPalace
+  contact_pixpalace: Contactez PIXPALACE
+  pictures: photos
+  HD: HD
+  BD: BD
+  PE: PE
+  FLUX: FLUX
+  add_to_lightbox: ajouter à la visionneuse
+  feature: reportage
+  delete: Supprimer
+  rename: Renommer
+  open: Ouvrir
+  send_and_delete: Effacer
+  move_and_delete: Envoi PP2
+  send_by_email: Envoyer par email
+  sort_by_prov: Trier par agence
+  create_feature: Créer offre
+
+#homepage
+  today_online: Aujourd'hui en ligne
+  title_pixpalace: La production des meilleures agences photos pour les professionnels de l’image
+  label_pixpalace: Le portail des agences photos
+  title_pixadmin: La production des meilleures agences photos pour les professionnels de l’image
+  label_pixadmin: Administration des photos
+  title_pixpalace2: Le module de recherche complémentaire à PixPalace
+  label_pixpalace2: Encore plus d'images...
+  title_pixtrakk: Un outil indispensable pour tracer vos photos dans les publications papier et web
+  label_pixtrakk: Le suivi des parutions photos
+  tracked_publication_label: Plus de 1000 publications suivies
+  contact_us: Contactez-nous
+
+#Image field
+  title: nom de fichier (5)
+  subject_code:
+  subject: mots-clés (25)
+  instructions: instructions spéciales (40)
+  creator: photographe (80)
+  city: ville (90)
+  location:
+  state: région (95)
+  iptc_country: pays (101)
+  headline: titre (105)
+  credit: crédit (110)
+  source: agence (115)
+  description: légende (120)
+  reportage: reportage (PP)
+  normalized_credit: crédit (PP)
+  max_avail_width: largeur HD (PP)
+  max_avail_height: hauteur HD (PP)
+  original_filename: nom de fichier original (PP)
+  file_name: nom de fichier PixPalace (PP)
+  provider_comment: commentaire (PP)
+  restrictions: restrictions (PP)
+  msid: id (PP)
+  urgency: priorité (10)
+  category: catégorie (15)
+  supplemental_category: catégorie supplémentaire (20)
+  authors_position: titre du créateur (85)
+  transmission_reference: référence originale de transmission (103)
+  rights: notice de copyright (116)
+  caption_writer: (122) auteur de la description
+  reception_date: date PixPalace (PP)
+  date_created: date photo (55)
+  hr_size: taille HD (pixels LxH) (PP)
+  max_size: taille maxi (cm LxH) (PP)
+  iptc_search: Recherche par champs IPTC
+  image_format: Format d'images
+  email: Adresse email
+  phone: Téléphone
+  portable: Portable
+  fax: Fax
+  agencies: Les Agences
+  menu_titles: Les Titres
+  menu_users: Les Utilisateurs
+  export: exporter
+  contact: Contact
+  site: Web
+  address: Adresse
+  first_name: Prénom
+  last_name: Nom
+  provider: Agence
+  terms_title: Conditions d’utilisation des photos téléchargées sur le service PixPalace
+  terms: Les droits et conditions d’utilisation doivent être vérifiées avec l’agence concernée, le téléchargement d’une photo en haute résolution ne donne pas en lui-même le droit à utilisation.
+  close_after_download: Fermer cette fenêtre après téléchargement
+  no_images_selected: Vous n'avez pas sélectionné d'images à télécharger, veuillez fermer cette fenêtre
+  available_pictures: photos disponibles
+  download: Téléchargement
+  forgot_passwd: Mot de passe oublié ?
+  choose_the_language: choix de la langue
+  login: Identifiant
+  password: Mot de passe
+  cancel: Annuler
+  deleted: Supprimé
+  save: sauvegarder
+  cancel: annuler
+  modify: modifier
+  authentication_required: PixPalace, merci d'entrer vos login et mot de passe
+
+  #Notices, warnings, alert
+  flash:
+    logged_in_successfully: Connecté avec succès
+    log_in_failed_for: Vérifiez votre identifiant et votre mot de passe, l'identification a échoué pour
+    you_have_been_logged_out:  Vous avez été déconnecté
+    alert_cancan: Vous n'avez pas le droit d'accéder à cette page
+
+  #Settings
+  settings:
+    settings: Préférences
+    language: Langage
+    background_color: Couleur de fond
+    font_color: Couleur de police
+    time_zone: Fuseau horaire
+    thumbnail_rollover: Survol sur la vignette
+    previsualisation: prévisualisation
+    display_text: affichage du texte
+
+
+  #lightbox PL 4/4
+  viewer: visionneuse %{name}
+  diaporama: Diaporama
+  imppdf: Impression
+  light_box_rename: Renommer la visionneuse
+  validate: ok
+  new_name: Nouveau nom
+  confirm_delete_viewer: Voulez-vous vraiment supprimer la visionneuse
+  bin: poubelle
+  select_lb: Sélectionner une visionneuse
+  lightbox_login: Bonjour, Vous devez être connecté pour voir cette visionneuse
+  no_image_selected: Aucune image sélectionnée
+  images_not_added: image(s) déjà dans la visionneuse
+  too_many_in_light_box: Nombre maximum d'images dépassé (%{maxi})
+  new_lb: Ajouter une visionneuse
+  images: Images
+  print:
+    print: Imprimer
+    contact_sheet: Planche contact
+    text: Texte
+    without: sans
+    credit: crédit
+    caption: légende
+    file_name: nom du fichier
+    portrait: portrait
+    landscape: paysage
+
+  #features
+  features:
+    offers: Offres
+    offers_hint: Sélection proposée par l'agence
+    features: Reportages
+    features_hint: Sélection automatique (correspond à l'icône reportage sous les vignettes)
+    new_feature: Nouvelle offre
+    edit_feature: Edition offre
+    delete_message: |
+                    Etes-vous sûr de vouloir supprimer ce reportage?
+                    (les photos ne seront pas supprimées)
+    add_pictures: Ajouter des photos
+    search_title: Recherche titre
+    title: Titre
+    nb_pictures: Photos
+    credit: Crédit
+    feature_date: |
+                  Date
+                  reportage
+    release_date: |
+                  Date
+                  mise en ligne
+    text: Texte
+    selection: Sélection
+    selection_hint: Votre sélection d'offres et de reportages
+    remove_from_selection: Retirer de la sélection
+    remove_from_selection_confirmation: Voulez-vous vraiment retirer ce reportage de votre sélection ?
+    add_to_selection: Ajouter à la sélection
+    added_to_selection_message_part1: Vous avez
+    added_to_selection_message_part2: reportage(s) dans votre sélection
+    go_to_selection: Voir ma sélection
+
+  #admin
+  new_server: Nouveau serveur
+  new_country: Nouveau pays
+  new_title: Nouveau titre
+  current_server: Serveur courant
+  edit_server: Modifier serveur
+  edit_country: Modifier pays
+  edit_title: Modifier titre
+  edit_provider: Modifier Agence
+  titles_group_name: Groupes
+  new_titles_group_name: Nouveau Groupe
+  country: Pays
+  name: Nom
+  type: Type
+  statut: Statut
+  titles: Titres
+  current_server: Serveur courant
+  are_you_sure: Supprimer définitivement ?
+  successfully_created: Création réussie
+  successfully_updated: Mise à jour réussie
+  prohibited_this_operation: Opération non effectuée
+  user: Utilisateur
+  demande: Demande
+
+  #administration agence
+  adm_agency: Administration Agence
+  downloads_stats: Statistiques des téléchargements
+  waited_rtp: Requête(s) en attente
+  answered_rtp: Requête(s) répondue(s)
+  send_photos: Envoyer photos
+  pictures_control: Contrôles des photos
+  rights_managment: Gestion des droits
+  search_stats: Recherches utilisateurs
+  translation: Traduction
+  features_admin: Listes
+
+  back: Retour
+  show: Voir
+  edit: Modifier
+  destroy: Supprimer
+  edit_server: Modifier serveur
+  edit_country: Modifier pays
+  edit_title: Modifier titre
+  edit_provider: Modifier Agence
+  not_authorized_providers: Agences non autorisées
+  greyed: grisées
+  flow_path: Flux
+  group: Groupe
+  server: Serveur
+  managing: Gestion
+
+  attributes:
+    created_at: Créé le
+    updated_at: Modifié le
+    name: Nom
+
+  #Statistics
+  statistics:
+    statistics: Statistiques
+    total: Total
+    export: exporter
+    thumbs: Vignette
+    list: Liste
+    date: Date
+    operation: Opération
+    title: Titre
+    user: Utilisateur
+    provider: Agence
+    picture: Photo
+    titles: Titres
+    users: Utilisateurs
+    download: Téléchargement
+    all: Tous
+  :customer_only: Clients seulement
+
+  country_str: Pays
+  title_name: Titre
+  users: Utilisateurs
+  sort_download_date: par date de téléchargement
+  sort_filename: par nom de fichier
+  entries_per_page: Photos par page
+  download_date: Date de téléchargement
+
+
+  #admin
+  titles_group_name: Groupe
+
+  admin:
+    admin: Administration
+    successfully_deleted: suppression effectuée
+
+    providers:
+      distrute_to: Pays de diffusion
+      name: Nom
+      logo: Logo
+      description: Description
+      agreement: Conditions
+      web: Web
+      price_url: URL prix
+      display_local: Affichage local
+      local_dir: Chemin d'entrée local
+      form: Formulaire
+      pdf: PDF
+      string_key: Clé texte
+      news_keep: Conservation news
+      news_keep_per_pics: Conservation news par photo
+      address: Adresse
+      city: Ville
+      zip_code: Code postal
+      country: Pays
+      copyright_rule: Règle(s) de copyright
+      free_text: Texte libre
+      first_name: Prénom
+      last_name: Nom
+      mail: Email
+      phone: Tél.
+      portable: Portable
+      fax: Fax
+      requests: Requêtes clients
+      main: Principal
+      delete: (supprimer)
+      up_limit: Nbre max photos
+
+    group_name:
+      country: Pays
+      group: Groupe
+      name: Nom du Groupe
+
+    user:
+      user_infos: Infos utilisateur
+      title_user: Titre
+      create_new_user: Nouvel Utilisateur
+      show_new_user: Voir
+      are_you_sure: Êtes-vous sur de vouloir supprimer cet utilisateur
+      login: Identifiant
+      last_name: Nom
+      first_name: Prénom
+      mail: E-mail
+      job: Fonction
+      phone: Téléphone
+      roles: Rôle
+      password: Mot de passe
+      password_confirmation: Confirmer mot de passe
+      select_title: Sélectionner un titre
+      select_title_null: Utilisateurs orphelins
+      orphans: orphelins
+      generate_pass: Générer un mot de passe
+      summary: résumé
+      user_url: Adresse client
+      created_at: Date de création
+      comments: Commentaires
+      public_url: Adresse publique
+      emergency_account: compte de secours
+      deactivated_account: Compte désactivé
+      reactivated: Réactivé
+
+    tpgn:
+      select_country: Sélectionner un pays
+      select_group: Sélectionner un groupe
+      delete_msg: Les titres ci-dessous sont associés à ce groupe donc il ne peut pas être supprimé.
+
+    title:
+      orphans: orphelins
+      visible: Visible
+      comment: Remarque
+      do_not_display: Ne pas afficher
+      test: En test
+      customer: Client
+      partner: Partenaire BD
+      restrictions_group: Groupe de restrictions
+      magazine: Magazine
+      book_publisher: Maison d'Edition
+      corporate: Corporate
+      PQN: PQN
+      university: Etablissement Universitaire
+      communication_agency: Agence de communication
+      press_com_agency: Agence de presse/com
+      website: Site Web
+      independant_icono: Iconographe Indépendant(e)
+      ojd_link: Lien OJD
+
+  #Roles
+  superadmin: Super Administrateur
+  editor_admin: Administrateur Éditeur
+  editor_user: Utilisateur Éditeur
+  provider_admin: Administrateur Agence
+  provider_user: Utilisateur Agence
+  photographer: Photographe
+  deactivated: Désactivé
+
+  #saved searches
+  my_searches: Mes recherches
+  my_requests: Mes requêtes
+  new_request: nouvelle requête
+  intro_new_request: Entrez la requête aux agences sélectionnées
+  date_label: Date
+  subject_d: Description
+  photo: Photo(s)
+  
+  #fullscreen lightboxes
+  fslb:
+    images: images
+    diapo: Diaporama
+    select_timer:
+      inactive: inactif
+      two_s: 2 secondes
+      five_s: 5 secondes
+      ten_s: 10 secondes
+      one_m: 1 minute
+
+  views:
+      pagination:
+        first: "&laquo;"
+        last: "&raquo;"
+        previous: "<"
+        next: ">"
+        truncate: " ... "
+
+  download_conditions:
+      mail_error: "Erreur : mail non envoyé"
+      mail_ok: Le formulaire a bien été envoyé à la BNF. Merci
+      
+  media:
+    photo: Photo
+    info_photo: Informations Photo
+    feature: Reportage
+
+  #color picker, providers groups
+
+  cp_pg:
+    my_providers_set: Mes groupes
+    my_borders: Liserés
+    new_group: nouveau groupe
+    no_provider_group: Aucun groupe enregistré
+    select_group_name: Sélectionner groupe
+
+  mail_content:
+    greetings: Bonjour,
+               Veuillez trouver ci-dessous une nouvelle demande provenant de pixpalace.com
+               Merci, cordialement
+               L'équipe de Pixpalace
+

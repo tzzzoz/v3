@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require File.dirname(__FILE__) + '/../config/environment.rb'
+
+Setting.all.each do |s|
+  Setting.update(s.id,:display_params => {"background_color"=>"#909090", "font_color"=>"#080808", "previsualisation"=>"1", "display_text"=>"1"})  unless s.display_params.count==4
+end

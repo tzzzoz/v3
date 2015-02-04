@@ -1,0 +1,35 @@
+<% titles = "" %>
+<%= form_tag admin_title_provider_group_names_path, :remote => true, :method => 'GET', :id => 'title_provider_group_names_menu' do %>
+    <%= select_tag :country_id, options_for_select(select_country, default_country), :class => "form-control input-xs" %>
+    <%= select_tag :id, options_for_select(select_group, default_group), :class => "form-control input-xs" %>
+<% end %>
+<% if @title_provider_group_name_id %>
+
+    <%= link_to I18n.t('edit'), edit_admin_title_provider_group_name_path(@title_provider_group_name_id), :remote => true, :class => 'pw_tpgn_link' %>
+    <% if @titles.empty? %>
+        <%= link_to I18n.t('destroy'), admin_title_provider_group_name_path(@title_provider_group_name_id), :data => { :confirm => I18n.t('are_you_sure') }, :method => :delete, :remote => true, :class => 'pw_tpgn_link' %>
+    <% else %>
+        <% @titles.each do |t| %>
+            <% titles += "<li>#{t.name}</li>" %>
+        <% end %>
+        <%= link_to I18n.t('destroy'), '#',
+                             onclick: "$('<div>#{I18n.t('admin.tpgn.delete_msg')}<ul>#{titles}</ul></div>').dialog({
+                                                        title: 'Attention',
+                                                        resizable: false,
+                                                        draggable: false
+
+                                                      }
+                              );",
+                             :class => 'pw_tpgn_link' %>
+    <% end %>
+<% end %>
+<%= link_to I18n.t('new_titles_group_name'), new_admin_title_provider_group_name_path(:country_id => @country_id), :remote => true, :class => 'pw_tpgn_link' %>
+
+<script type="text/javascript">
+    $( document ).on( "change", "#id", function(){
+    var t_id = $(this).val();
+    if ($(this).val() != 0){
+        $.get('/admin/title_provider_group_names/'+t_id);
+    }
+  });
+</script>

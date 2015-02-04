@@ -1,0 +1,200 @@
+<%= simple_form_for [:admin, @provider], :html => { :id => "rules_form" } do |f| %>
+
+    <%= f.error_notification %>
+
+  <div class="admin_providers_form">
+    <div class="field">
+      <%= f.label "Actif" %>: <%= f.check_box :actif %>
+      <% if (Server.find_by_is_self(true).name == "webAgencesV2FR2") %>
+          / <%= f.label "sur Pixtrakk" %>: <%= f.check_box :in_pixtrakk %>
+      <% end %>
+    </div>
+  </div>
+  <div class="admin_providers_form">
+    <div class="field">
+        <%= f.label I18n.t 'admin.providers.name' %>
+        <%= f.text_field(:name, :size => 50) %>
+    </div>
+  <% if (Server.find_by_is_self(true).name == "webAgencesV2FR2") %>
+    <div class="field">
+        <%= f.label "Nom Pixways" %>
+        <%= f.text_field(:pp_name, :size => 50) %>
+    </div>
+  <% end %>
+    <div class="field">
+      <%= f.label I18n.t 'admin.providers.logo' %>
+      <% unless @provider.logo.blank? %>
+        <%= image_tag @provider.logo.url %>
+        <%= f.input :remove_logo, :label => false, :inline_label => 'Supprimer', :as => :boolean %>
+      <% else %>
+        <%= f.input :logo, :label => false %>
+      <% end %>
+    </div>
+    <div class="field">
+        <%= f.label I18n.t 'admin.providers.description' %>
+        <%= f.input :description, :as => :text, :input_html => { :cols => 60, :rows => 10 } %>
+    </div>
+    <div class="field">
+        <%= f.label I18n.t 'admin.providers.agreement' %>
+        <%= f.text_area(:provider_conditions, :size => "50X8") %>
+    </div>
+  </div>
+
+  <div class="admin_providers_form">
+    <div class="field">
+       <%= f.label I18n.t 'admin.providers.web' %>
+       <%= f.text_field(:site, :size => 50) %>
+    </div>
+    <div class="field">
+      <%= I18n.t 'admin.providers.price_url' %>
+    </div>
+    <div class="field">
+        <%= f.label I18n.t 'admin.providers.display_local' %>
+        <%= f.check_box(:local) %>
+    </div>
+    <div class="field">
+       <%= f.label I18n.t 'admin.providers.local_dir' %>
+       <%= f.text_field(:input_dir, :size => 50) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t 'admin.providers.form' %>
+      <% unless @provider.formu.blank? %>
+        <%= link_to @provider.formu, @provider.formu.url, :target => "_blank" %>
+        <%= f.input :remove_formu, :label => false, :inline_label => 'Supprimer', :as => :boolean %>
+      <% else %>
+        <%= f.input :formu, :label => false %>
+      <% end %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t 'admin.providers.pdf' %>
+      <% unless @provider.pdf.blank? %>
+        <%= link_to @provider.pdf, @provider.pdf.url, :target => "_blank" %>
+        <%= f.input :remove_pdf, :label => false, :inline_label => 'Supprimer', :as => :boolean %>
+      <% else %>
+        <%= f.input :pdf, :label => false %>
+      <% end %>
+    </div>
+    <div class="field">
+       <%= f.label I18n.t 'admin.providers.string_key' %>
+       <%= f.text_field(:string_key, :size => 50) %>
+    </div>
+    <div class="field">
+       <%= f.label I18n.t 'admin.providers.news_keep' %>
+       <%= f.text_field(:days_keep, :size => 3) %>
+    </div>
+    <div class="field">
+        <%= f.label I18n.t 'admin.providers.news_keep_per_pics' %>
+        <%= f.check_box(:days_keep_per_picture) %>
+    </div>
+    <div class="field">
+       <%= f.label I18n.t 'admin.providers.up_limit' %>
+       <%= f.text_field(:toomany_limit, :size => 7) %>
+    </div>
+
+    <div class="field">
+       <%= f.label I18n.t 'admin.providers.address' %>
+       <%= f.text_area(:address, :size => "40x5") %>
+    </div>
+    <div class="field">
+       <%= f.label I18n.t 'admin.providers.city' %>
+       <%= f.text_field(:city, :size => 40) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t 'admin.providers.zip_code' %>
+      <%= f.text_field(:zip_code, :size => 20) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t 'admin.providers.country' %>
+      <%= f.text_field(:country, :size => 40) %>
+    </div>
+  </div>
+
+  <div id="copyright">
+    <p><%= I18n.t 'admin.providers.copyright_rule' %></p>
+     <% rules = Image.searchable_fields.collect{|imf| [I18n.t(imf), imf]}  %>
+    <% rec_rules = @provider.copyright_rule %>
+    <% if rec_rules %>
+        <% rec_rules = rec_rules.split(" / ") %>
+        <% t_rules = rec_rules.collect{|x| x if x=~ /{/ }.compact %>
+        <% c_rule = rec_rules.last if (rec_rules.length != t_rules.length) %>
+        <% t_rules.collect!{ |cr| cr.delete("\#{:}")}    %>
+        <%= select_tag("rules", options_for_select(rules, t_rules), :size => rules.length, :multiple => true) %>
+        Texte libre : <%= text_field_tag "crule", c_rule, :size => 30, :maxlength => 40 %>
+    <% else %>
+        <%= select_tag("rules", options_for_select(rules), :size => rules.length, :multiple => true) %>
+        Texte libre : <%= text_field_tag "crule", nil, :size => 30, :maxlength => 40 %>
+    <% end %>
+
+    <%#= f.hidden_field(:copyright_rule) %>
+    <%= hidden_field_tag "provider[copyright_rule]", "" %>
+
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div id="contacts">
+    <p>Contact(s)</p>
+    <div id="provider_contact">
+      <%= f.fields_for :provider_contacts do |pc| %>
+        <div>
+          <span class="field">
+            <%= I18n.t 'admin.providers.first_name' %>: <%= pc.text_field :first_name %>
+          </span>
+          <span class="field">
+            <%= I18n.t 'admin.providers.last_name' %>: <%= pc.text_field :last_name %>
+          </span>
+          <span class="field">
+            <%= I18n.t 'admin.providers.mail' %>: <%= pc.text_field :email %>
+          </span>
+          <span class="field">
+            <%= I18n.t 'admin.providers.phone' %>: <%= pc.text_field :phone, :size => 12 %>
+          </span>
+          <span class="field">
+            <%= I18n.t 'admin.providers.portable' %>: <%= pc.text_field :portable, :size => 12 %>
+          </span>
+          <span class="field">
+            <%= I18n.t 'admin.providers.fax' %>: <%= pc.text_field(:fax, :size => 12, :placeholder => '') %>
+          </span>
+          <span class="sfield">
+            <%= pc.label I18n.t 'admin.providers.main' %>: <%= pc.check_box :main %>
+          </span>
+          <% if (Server.find_by_is_self(true).name == "webAgencesV2FR2") %>
+            <span class="sfield">
+              <%= pc.label I18n.t 'admin.providers.requests' %>: <%= pc.check_box :receive_requests %>
+            </span>
+            <span class="sfield">
+              <%= pc.label "stats" %>: <%= pc.check_box :receive_stat %>
+            </span>
+            <span class="sfield">
+              <%= pc.label "contrôles" %>: <%= pc.check_box :receive_errors %>
+            </span>
+            <span class="sfield">
+              <%= pc.label "demand" %>: <%= pc.check_box :receive_demand %>
+            </span>
+          <% end %>
+          <span class="field" style="line-height: 2.8em;">
+            <%= pc.check_box :_destroy %>
+            <%= pc.label :_destroy, '(supprimer)' %>
+          </span>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="action clearfix"> <%= f.submit I18n.t("validate") %> </div>
+ <% end %>
+
+  <script>
+      $("#rules_form").submit(function () {
+         var str = "";
+         $("select option:selected").each(function () {
+            str += "#{:" + $(this).val() + "} / ";
+          });
+         str += $("#crule").val();
+         $("#provider_copyright_rule").attr("value", str);
+
+        });
+
+
+  </script>

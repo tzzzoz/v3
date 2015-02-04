@@ -1,0 +1,20 @@
+<div style="float:left;"><%= I18n.t 'intro_new_request' %></div><br>
+<div style="float:left;width:auto;">
+<%= form_tag(request_to_providers_path, :method => :post, :id => "new_request" ) do |f| %>
+    <%= text_area_tag 'text', nil, :size => "60x10" %>
+    <span style="display:inline-block;vertical-align:top;"><%= submit_tag I18n.t('send').capitalize%><%#= pw_link_to_button_in_tabs I18n.t('cancel'), request_to_p
+roviders_path %></span>
+<% end %></div>
+<span><%= button_to I18n.t('cancel').capitalize, request_to_providers_path, :method => :get %></span>
+<div class="clearfix"></div>
+
+<script type="text/javascript">
+  $('.link_button').hide();
+
+  $("#new_request").submit(function() {
+      var self = $(this);
+      $("#pw_provider_form :input:checked").each(function() {
+          self.append("<input type='hidden' name='"+$(this).attr('name')+"' value='"+$(this).val()+"' />");
+      });
+  });
+</script>

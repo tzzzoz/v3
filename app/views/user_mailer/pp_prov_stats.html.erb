@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Téléchargements <%= @week_range %></h1>
+
+    <p><strong>Total : (HD) <%= @total_prov_hd %>            (BD) <%= @total_prov_bd %>            (demande) <%= @total_prov_dem %></strong></p>
+
+    <table id='pw_statistics_list'>
+       <tr class="pw_statistics_list_titles">
+
+           <th align="center" width="250">Agence</th>
+           <th width="40">HD</th>
+           <th width="40">BD</th>
+           <th width="40">Demande</th>
+       </tr>
+
+       <% @prov_hd.sort{|a,b| b[1]<=>a[1]}.each do |name, value| %>
+         <tr class="pw_theme">
+           <td align="center"><%= name %></td>
+           <td align="center"><%= value %></td>
+           <td align="center"><%= @prov_bd.fetch(name, 0) %></td>
+           <td align="center"><%= @prov_dem.fetch(name, 0) %></td>
+         </tr>
+       <% end %>
+     </table>
+  <br><br>
+
+    <table>
+       <tr class="pw_statistics_list_titles">
+
+         <th align="center" width="250">Agence</th>
+         <th width="40">HD</th>
+         <th width="40">BD</th>
+         <th width="40">Demande</th>
+       </tr>
+
+       <% @prov_hd.each do |name, value| %>
+         <tr class="pw_theme">
+           <td align="center"><%= name %></td>
+           <td align="center"><%= value %></td>
+           <td align="center"><%= @prov_bd.fetch(name, 0) %></td>
+           <td align="center"><%= @prov_dem.fetch(name, 0) %></td>
+         </tr>
+       <% end %>
+     </table>
+  <br><br>
+    <p><strong>Total : (HD) <%= @total_prov_hd %>            (BD) <%= @total_prov_bd %>            (Demande) <%= @total_prov_dem %></strong></p>
+  </body>
+</html>

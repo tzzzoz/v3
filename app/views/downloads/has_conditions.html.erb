@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/png" href="<%= asset_path 'pp_favicon.png' %>">
+
+<title><%= I18n.t 'download' %> </title>
+
+<%= javascript_include_tag "application" %>
+<%= stylesheet_link_tag "application" %>
+
+<%
+ s_t_font = current_user.setting.display_params['font_color']
+ s_t_bg = current_user.setting.display_params['background_color']
+ %>
+
+<style>
+  body { background-color: <%=  s_t_bg %>; color: <%=  s_t_font %>; font-family: "Helvetica Neue", Arial, sans-serif; margin-left: 20px; }
+  html{
+    overflow: auto;
+  }
+</style>
+
+</head>
+<body>
+<div class="download_conditions">
+ <form id="valid_conditions" target="_blank" action="/bnf_form" name="valid_conditions" method="post">
+  <input type="hidden" id="prov_count" name="prov_count" value="<%= @prov.count %>">
+  <input type="hidden" id="form_valide" name="form_valide" value="0">
+  <div id="provider_ids">
+   <% @cond.each do |pid,images| %>
+      <% ids = '' %>
+      <% images.each do |image| %>
+        <% ids += '&ids[]=' + image.to_s %>
+     <% end %>
+    <input type="checkbox" id="prov_<%= pid %>" name="prov_<%= pid %>" style="display:none" checked="checked" value="<%= ids %>">
+   <% end %>
+  </div>
+
+
+
+<% @prov.each do |pid| %>
+  <div id="provider_form_<%= pid %>">
+  <% provider = Provider.find(pid) %>
+  <hr width="1px">
+  <% if provider.string_key == 'Bnf' %>
+        <%= render :partial => "bnf_form", :locals => {:pid => provider.id} %>
+
+
+  <% else %>
+    <p align="center" class="provider_condition"><%= image_tag provider.logo.url unless provider.logo.blank? %>
+    <%= provider.provider_conditions %><br>
+    <%= link_to "Télécharger le PDF", provider.pdf.url, :target => "_blank" unless provider.pdf.blank? %></p>
+    <p align="center">
+        <input type="button" value="Je refuse" onclick="javascript:valid_form(<%= pid.to_i %>, 0)">
+        <input type="button" value="J'accepte" onclick="javascript:valid_form(<%= pid.to_i %>, 1)">
+    </p>
+  <% end %>
+  <hr width="1px">
+  </div>
+<% end %>
+
+  </form>
+</div>

@@ -1,0 +1,23 @@
+<div class="modal fade" id="selectLBModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+	<% lb = current_user.light_boxes.collect {|lb| [ "#{lb.name} (#{lb.images.count})", lb.id ] }  %>
+	<%= form_tag(full_screen_light_box_path("id"), :method => :put, :id => "add_image" ) do |f| %>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Select Light-Box</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+	    <%= select_tag "lbid", options_for_select(lb) %>
+	    <%= hidden_field_tag "ids", nil, :id => "hide_id" %>
+		</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default closeModal" data-dismiss="modal">Cancle</button>
+        <button type="button" class="btn btn-primary submitModal">OK</button>
+      </div>
+	<% end %>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

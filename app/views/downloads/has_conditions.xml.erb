@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<download_images>
+<% @cond.each do |id,images| %>
+  <% provider=Provider.find(id) %>
+<provider>
+   <conditions>
+    <%= provider.provider_conditions %>
+   </conditions>
+   <provider_logo>
+    <%=  PICTURES_PATH + provider.logo if provider.logo%>
+   </provider_logo>
+   <pdf_path>
+    <%=  PDF_PATH + provider.pdf_path if provider.pdf_path%>
+   </pdf_path>
+   <has_pdf>
+    <%= provider.has_pdf %>
+   </has_pdf>
+   <has_form>
+    <%=  provider.has_form %>
+   </has_form>
+   <%images[0].uniq.each do |image| %>
+   <image><%= image %></image>
+   <% end %>
+ </provider>
+<% end %> 
+</download_images>

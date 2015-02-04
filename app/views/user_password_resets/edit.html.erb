@@ -1,0 +1,12 @@
+<h1><%= I18n.t 'reset_my_password'  %> </h1>
+
+<% form_for @user, :url => password_update_url + '?id=' + params[:id], :method => :put do |f| %>
+  <%= f.error_messages %>
+  <%= f.label I18n.t 'password' %><br />
+  <%= f.password_field :password %><br />
+  <br />
+  <%= f.label I18n.t 'confirm_password' %><br />
+  <%= f.password_field :password_confirmation %><br />
+  <br />
+  <%= f.submit I18n.t 'update_my_password' %>
+<% end %>

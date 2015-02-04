@@ -1,0 +1,53 @@
+<%= form_tag({:controller => "/statistics", :action => "index"}, :method => "get", :id => "pw_title_form") do -%>
+    <div class="pw_content">
+        <fieldset>
+            <%= label_tag I18n.t('country_str') %>
+            <%= select_tag("selected_country_id", options_for_select(select_stats_countries_table, by_default_selected_country)) %>
+            <% if can? :manage, :all %>
+              <%= label_tag I18n.t('group') %>
+              <%= select_tag("selected_group_id", options_for_select(select_stats_titles_table, by_default_selected_group)) %>
+            <% end %>
+            <span class="pw_stats_tu_total pw_title_panel"><%= "#{@current_params[:titles].count} / " unless @current_params[:titles].blank? %> <%="#{@pw_titles.count} "%></span>
+        </fieldset>
+    </div>
+
+    <div class="pw_content">
+        <span class="pw_toggle_check pw_titles_stats"><%= I18n.t('toggle_check_all')%></span>
+        <fieldset class="pw_buttonset pw_titles">
+
+            <% @pw_titles.each do |t| %>
+                <%= check_box_tag( "titles[#{t.id}]", 1, @current_params[:titles]["#{t.id}"] == '1')%>
+                <%= label_tag("titles[#{t.id}]", t.name, :class => "stats_current_title") %>
+            <% end %>
+
+        </fieldset>
+    </div>
+
+<% end -%>
+
+<script type="text/javascript">
+
+    $( document ).on( "change", "#selected_country_id", function(){
+      var the_idc = $(this).val();
+
+      if ($(this).val() == 0){
+          $('#stats_titles_users').tabs('url' ,0,'statistics/titles/').tabs('load', 0);
+      }
+      else{
+          $('#stats_titles_users').tabs('url' ,0,'statistics/titles?country_id='+the_idc).tabs('load', 0);
+      }
+  });
+
+    $( document ).on( "change", "#selected_group_id", function(){
+      var the_id = $(this).val();
+
+      if ($(this).val() == 0){
+          $('#stats_titles_users').tabs('url' ,0,'statistics/titles/').tabs('load', 0);
+      }
+      else{
+          $('#stats_titles_users').tabs('url' ,0,'statistics/titles?tpgn_id='+the_id).tabs('load', 0);
+      }
+
+  });
+
+</script>

@@ -1,0 +1,13 @@
+<div class='pw_content ui-helper-reset ui-widget ui-widget-content ui-helper-clearfix ui-corner-tl ui-state-default'>
+
+    <% @statistics.each do |stats| %>
+      <% unless stats.image.nil? %>
+        <% pw_c = "#{image_tag(stats.image.medium_location)}" %>
+        <div id ="<%=stats.image.id%>" class="pw_stats_thumb st_thumb"">
+          <%= image_tag(stats.image.thumb_location, :alt => stats.image.normalized_credit, :class => 'tooltip', 'data-pw_caption' => pw_c) %>
+          <p><%= stats.image.original_filename %></p>
+        </div>
+      <% end %>
+    <% end %>
+
+</div>

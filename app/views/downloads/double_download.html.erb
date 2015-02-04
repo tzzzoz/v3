@@ -1,0 +1,27 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<%= javascript_include_tag "application" %>
+
+<%
+ s_t_font = current_user.setting.display_params['font_color']
+ s_t_bg = current_user.setting.display_params['background_color']
+ %>
+
+<style>
+  body { background-color: <%=  s_t_bg %>; color: <%=  s_t_font %>; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  input { margin-left: 20px; }
+</style>
+</head>
+<body>
+<title>Téléchargement PixPalace</title>
+
+<h1>Validez les téléchargements en cliquant sur les liens ci-dessous</h1>
+
+<br /><%= link_to @local_name, downloads_path('ids' => @ids_lhd, :definition => 'LHD'), :target => :blank %>
+<br /><%= link_to "Téléchargement PixPalace", downloads_path('ids' => @ids_hd, :definition => 'HD'), :target => :blank %>
+
+</body>
+</html>

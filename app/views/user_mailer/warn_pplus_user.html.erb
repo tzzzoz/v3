@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Bonjour <%= @user.full_name %></h1><br>
+    Votre demande de déplacement des photos de la visionneuse <strong><%= @lb %></strong> vers le service PixPalace2 a bien été prise en compte et est en cours de traitement.<br>
+    <strong>Les photos seront effectivement disponibles dans PixPalace2 et supprimées de PixPalace lorsque vous ne les verrez plus dans cette visionneuse.</strong><br><br>
+    Pour tout renseignement complémentaire, merci d'envoyer un email à <a href="mailto:support@pixpalace.com">support@pixpalace.com</a>
+    <br><br>
+    Merci, cordialement<br>
+    L'équipe PixPalace<br><br>
+    <h1>Rappel des photos à traiter (<%= @imgs.count %>)</h1>
+    <p>
+      <% @imgs.each do |im| %>
+          <%= im %><br/>
+      <% end %>
+    </p>
+    <p>
+     <u>Votre titre</u> : <%= @user.title.name %><br />
+     <h1>Utilisateur</h1>
+        Client : <%= @user.title.name %><br />
+        Nom d'utilisateur : <%= @user.login %><br />
+        Utilisateur : <%= @user.full_name %> <br />
+        Visionneuse : <%= @lb %><br />
+    <%= I18n.l Time.now %>.
+    </p>
+  </body>
+</html>

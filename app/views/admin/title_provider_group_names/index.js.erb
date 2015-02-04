@@ -1,0 +1,5 @@
+$("#pw_admin_groups_panel .pw_panel-header-content").html('<%=escape_javascript(render :partial => 'menu') %>');
+$('#title_provider_group_names_menu :input').change(function(){
+    $('#title_provider_group_names_menu').submit();
+
+});

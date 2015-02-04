@@ -1,0 +1,7 @@
+:paths:
+  :out:   /Users/ricp/Projects/Pixways/pixpalace/public
+  :err:   /Users/ricp/Projects/Pixways/pixpalace-data/errors
+
+:controller:
+  :workers: 2
+  :db_retries: 3

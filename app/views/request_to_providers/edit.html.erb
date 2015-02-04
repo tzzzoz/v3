@@ -1,0 +1,17 @@
+<% u = User.find(@request_to_provider.user_id) %>
+<h1><%= "Requête #{u.login} du #{I18n.l @request_to_provider.created_at}" %></h1>
+
+<% if (@img_nb > 0) %>
+    <p><u>Photos déjà envoyées</u></p>
+    <p><% @img.each do |i| %>
+          <img src="<%= i.thumb_location %>">
+      <% end %>
+    </p>
+<% end %>
+<p></p>
+<p>
+  <%= form_tag("/request_to_providers/#{@request_to_provider.id}", :method => :put, :multipart => true, :id => 'select_pictures_form') do %>
+      <%=  file_field_tag 'rphoto[]', :multiple =>true %><br><br>
+      <%= submit_tag I18n.t("validate").capitalize %>&nbsp;&nbsp;<%= submit_tag I18n.t('cancel').capitalize, :type => 'button', :onclick => "javascript:history.back();" %>
+  <% end %>
+</p>

@@ -1,0 +1,39 @@
+$('#modal_wrapper').html("<%= escape_javascript( render :partial => 'edit') %>");
+
+
+$('#settingsModal').modal({
+    backdrop: 'static'
+}).on('shown.bs.modal', function(){
+    var def_value = $('#setting_display_params_background_color').attr('value');
+    var def_value2 = $('#setting_display_params_font_color').attr('value');
+    $("#setting_display_params_background_color.slider").slider({
+        min: 0
+        , max: 255
+        , step: 8
+        , tooltip: 'hide'
+        , value: def_value
+        , formater: function(value) {
+            return 'Current value: ' + value;
+        }
+    }).on('slide', function(){
+        changeBgColor($(this).slider('getValue'));
+    });
+    
+    $("#setting_display_params_font_color.slider").slider({
+        min: 0
+        , max: 255
+        , step: 8
+        , tooltip: 'hide'
+        , value: def_value2
+        , formater: function(value) {
+            return 'Current value: ' + value;
+        }
+    }).on('slide', function(){
+        changeFtColor($(this).slider('getValue'));
+    });
+
+    $('#settingsModal button[data-dismiss="modal"]').click(function(){
+        changeBgColor(def_value);
+        changeFtColor(def_value2);
+    })
+});

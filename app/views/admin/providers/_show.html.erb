@@ -1,0 +1,21 @@
+  <%= notice %>
+
+  <div class="left">
+    <div class="field">
+        <%= image_tag @provider.new_logo.url(:resize) unless @provider.new_logo_file_name.nil? %>
+        <%= @provider.description %>
+        <%= @provider.provider_conditions %>
+        <%= @provider.site %>
+        <%= "Agence locale : @provider.input_dir" if @provider.local == true %>
+        <%= link_to @provider.form, @provider.form.url, :target => "_blank" unless @provider.form_file_name.nil? %>
+        <%= link_to @provider.pdf_file_name, @provider.pdf.url, :target => "_blank" unless @provider.pdf_file_name.nil? %>
+        <%= @provider.string_key %>
+        <%= @provider.address %>,<%= @provider.city %>,<%= @provider.zip_code %>,<%= @provider.country %>
+        <%= @provider.copyright_rule %>
+        <% @provider.provider_contacts.each do |pc| %>
+        <p>
+        Prénom: <%= pc.first_name %> Nom: <%= pc.last_name %> Email: <%= pc.email %> Tél.: <%= pc.phone %> Fax: <%= pc.fax %>
+        </p>
+      <% end %>
+    </div>
+  </div>

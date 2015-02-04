@@ -1,0 +1,18 @@
+<div align="center" style="color:#000">
+
+    <h1>Validez le recadrage</h1>
+    <p>&nbsp;</p>
+	<img src="<%= @image %>" />
+
+    <%= form_tag("/definitive_crop", :method => :post) do %>
+        <%= hidden_field_tag("x1", @x) %>
+        <%= hidden_field_tag("y1", @y) %>
+        <%= hidden_field_tag("w", @w) %>
+        <%= hidden_field_tag("h", @h) %>
+        <%= hidden_field_tag("img", @image_id) %>
+      <p>&nbsp;</p>
+      <%= button_tag("Annuler") %> | <%= submit_tag("Valider") %>
+     <% end %>
+
+
+</div>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="fr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <% if @reload %>
+        <meta http-equiv="refresh" content="<%= @reload %>">
+    <% end %>
+    <link rel="shortcut icon" type="image/png" href="<%= asset_path 'pp_favicon.png' %>">
+    <title><%= I18n.t'pixpalace' %></title>
+    <%= csrf_meta_tag %>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+
+    <%= raw dynamic_css %>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            // TODO : improve and put it in pw.application.js
+
+          $.get("<%= light_boxes_path(:ids => @ids) %>");
+
+          PwLayout();
+
+          toggle_check($("#search_div .pw_toggle_check"));
+
+          flashIt();
+
+
+          $(".tab-content").hide();
+
+
+          $('.datepicker').datepicker({language: 'fr'});
+
+
+          <%= yield :document_ready %>
+
+          linkCombined();
+          
+        });
+
+      $(window).resize(function(){ PwLayout() });
+
+    </script>
+
+
+  </head>
+  <body>
+    
+    <div id='pw_top' class="navbar-fixed-top">
+      <%= render :partial => 'shared/pw_header_menu' %>
+    </div>
+
+    <div class="container_wrapper">
+      <div id='pw_center'>
+        <%= yield %>
+        <%= render :partial => 'shared/pw_footer' %>
+      </div>
+      
+      <div id='pw_right'>
+        <div id="pw_light_box_panel">
+          <div class="pw_panel-header">
+            <span class="pw_panel-header-label hidden-trigger">
+            </span>
+            <span class='pw_panel-header-content'>
+              <div id='light_box_form_place'>
+              </div>
+            </span>
+          </div>
+
+
+          <div class="pw_panel-content">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="modal_wrapper"></div>
+  </body>
+</html>

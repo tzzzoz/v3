@@ -1,0 +1,22 @@
+<div id="pw_search_panel">
+  <%= form_tag({:controller => "search_stats", :action => "index"}, :method => "get", :class => "panel panel-default", :id => "pw_search_form" ) do -%>
+
+      <div class="pw_panel-header-2" >
+          <!--<span class='pw_panel-header-label ui-state-focus'><span class="pw_title_panel"><%= I18n.t('search') %></span></span>-->
+          <span class='pw_panel-header-content'>
+            <%= I18n.t('from') %>
+            <%= text_field_tag :date_begin, @current_params[:date_begin], :size => 10, :class => 'datepicker-from form-control input-xs' -%>
+            <%= I18n.t('to') %>
+            <%= text_field_tag :date_end, @current_params[:date_end], :size => 10, :class => 'datepicker-to form-control input-xs' -%>
+            &nbsp;&nbsp;<%= label_tag I18n.t('country_str') %>
+            <%= select_tag :pays, options_from_collection_for_select(country_by_name, "id", "name", @current_params[:pays]), :prompt => I18n.t('all'), :class => "form-control input-xs" %>
+            &nbsp;&nbsp;<%= label_tag "Type Recherche" %>
+            <%= select_tag :search_type, options_for_select([["toutes", 0],["resultat = 0", 1], ["resultat > 0", 2]], @current_params[:search_type]), :class => "form-control input-xs" %>
+
+            <%= submit_tag 'OK', :class => 'pw_bigger' %>
+          </span>
+      </div>
+
+
+  <% end -%>
+</div>

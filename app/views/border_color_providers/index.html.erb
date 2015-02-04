@@ -1,0 +1,38 @@
+<%= form_tag(border_color_provider_path(current_user.setting.id), :method => :put, :id => "borders_form") do %>
+
+<ul class="color-picker">
+    <%= build_picker(6,12) %>
+</ul>
+
+<input type="hidden" name="color-result" id="color-result" value="#fff">
+
+<div id="bgresult"></div>
+    <%= submit_tag I18n.t('save'), :class => "btn btn-default btn-xs"  %>
+<% end %>
+
+
+<%= form_tag(border_color_provider_path(current_user.setting.id), :method => :delete, :id => "del_borders_form") do %>
+    <%= submit_tag I18n.t('delete'), :class => "btn btn-default btn-xs" %>
+<% end %>
+
+ <script type="text/javascript">
+ $('li.color_picker').click(function(e,ui) {
+    var color = $(this).attr('title');
+    if (color == '#fff'){
+        e.preventDefault();
+    }
+    $('#color-result').attr('value',color);
+    $('#bgresult').attr('style','height:25px;width:25px;background:'+color);
+});
+ $("#borders_form, #del_borders_form").bind('ajax:before', function() {
+    var self = $(this);
+    var i = 0;
+    $("#pw_provider_form :input:checked").each(function() {
+        i++;
+        self.append("<input type='hidden' name='"+$(this).attr('name')+"' value='"+$(this).val()+"' />");
+    });
+    if (i == 0) { alert('vous devez sélectionner au moins une agence'); return false; }
+});
+ $("#borders_form").submit( function() { if ($('#color-result').val() == '#fff') { alert('vous devez sélectionner une couleur'); return false; }
+});
+ </script>

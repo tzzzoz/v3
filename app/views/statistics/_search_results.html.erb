@@ -1,0 +1,51 @@
+<div class='content'>
+
+  <div>
+  <%if current_user.is_superadmin? %>
+   <% @providers.each do |p| %>
+     <% if @nb_stats.has_key?(p.id) %>
+       <%= p.name %>(<strong><%= number_with_delimiter(@nb_stats[p.id]) %></strong>)
+     <% end %>
+   <% end %>
+  <% end %>
+  </div>
+  <div class="pw_stats_total pw_dashed_bottom">
+    <strong>
+      <%= I18n.t('statistics.total') %>
+      <%= number_with_delimiter(@statistics.total_entries) %>
+    </strong>
+    <span class="pw_stats_export">
+        <%= link_to(I18n.t('statistics.export'), stats_to_csv_path(:per_page => @statistics.total_entries, :search => params[:search]), :target => '_blank', :class => "glyphicon glyphicon-expand") %>
+    </span>
+  </div>
+
+  <div id="pw_paginator">
+    <%= paginate @statistics, :remote => true %>
+  </div>
+
+  <div id="pw_results_stats" class="pw_remote-tabs">
+    <ul class="nav nav-tabs">
+      <li id="li_thumbs" name="tabs-thumbs"><a href="#tabs-thumbs" class="no_remote"><%= I18n.t('statistics.thumbs') %></a></li>
+      <li id="li_list" name="tabs-list"><a href="#tabs-list" class="no_remote"><%= I18n.t('statistics.list') %></a></li>
+    </ul>
+    <div class="tab-content panel-body">
+      <div class="tab-pane active" id="tabs-thumbs">
+        <%= render :partial => "media_thumbs" %>
+      </div>
+      <div class="tab-pane" id="tabs-list">
+        <%= render :partial => "media_list" %>
+      </div>
+    </div>    
+  </div>
+
+  <span class="pw_stats_total">
+    <%= I18n.t('statistics.total') %>:
+    <%= number_with_delimiter(@statistics.total_entries) %>
+  </span>
+
+  <div class="pw_stats_paginate" id="tst_bas_paginator">
+    <%= paginate @statistics, :remote => true %>
+  </div>
+
+
+</div>

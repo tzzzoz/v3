@@ -1,0 +1,6 @@
+<p id='notice'><%= notice %></p>
+
+<p id="name"><%= @country.name %></p>
+
+<%= link_to I18n.t('edit'), edit_admin_country_path(@country) %> |
+<%= link_to I18n.t('back'), admin_countries_path %>

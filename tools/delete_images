@@ -1,0 +1,71 @@
+#!/usr/bin/env ruby
+
+require File.dirname(__FILE__) + '/../config/environment.rb'
+require 'optparse'
+require 'optparse/time'
+
+#Image.column_names - ["id"]
+
+options = {}
+options[:field] = 'file_name'
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: delete_images [options] listing.txt"
+
+  opts.on("-f images_field", "--field", "(default file_name) name of the images table field used to find them") do |l|
+    options[:field] = l
+  end
+
+  opts.on("-d max_reception_date", "--date", Time, "files will be erased until this reception date") do |l|
+    options[:date] = l
+  end
+
+  opts.on("-p provider_string_key", "--provider", String, "files will be erased only for this provider string key") do |l|
+    options[:provider] = l
+  end
+
+  opts.on("-N", "--no-delete", "don't delete, just show what would be done") do |l|
+    options[:no_delete] = true
+  end
+
+  opts.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+
+end.parse!
+
+if ARGV.blank?
+  puts 'error : no arguments, use -h or --help for help'
+  exit
+end
+
+search_str_complement = ''
+search_str_complement +=  "AND reception_date < '#{options[:date]}' " if options[:date]
+
+search_str_complement +=  "AND provider_id = #{Provider.find_by_string_key(options[:provider]).id} " if options[:provider]
+
+ic = 0
+ARGV.each do |f|
+  File.open(f) do |listing|
+    listing.each_line do |l|
+      ic = ic + 1
+      #puts l
+      l.strip!
+      Image.where("#{options[:field]} LIKE #{l.dump} #{search_str_complement}").each do |i|
+        unless options[:no_delete]
+          if Statistic.where(:image_id => i.id).blank?
+              i.destroy
+              puts ic.to_s+' '+i.file_name+' efface'
+          else
+              Image.update(i.id, :content_error => 1)
+              LightBoxImage.where(:image_id => i.id).collect{|lbi| lbi.destroy}
+              puts ic.to_s+' '+i.file_name+' stat'
+          end
+        else
+          puts i.file_name
+        end
+      end
+    end
+  end
+end

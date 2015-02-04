@@ -1,0 +1,7 @@
+:paths:
+  :out:   /home/damien/v2-ACL/public
+  :err:   /home/damien/pic_err
+
+:controller:
+  :workers: 2
+  :db_retries: 3

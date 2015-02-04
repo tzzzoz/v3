@@ -1,0 +1,41 @@
+<div style="float:left;">
+  <%= form_for(@saved_search) do |f| %>
+
+
+      <% if @saved_search.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@saved_search.errors.count, "erreur") %> <%= I18n.t('prohibited_this_operation') %>:</h2>
+            <ul>
+              <% @saved_search.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <%= f.label :name %>
+      <%= f.text_field(:name, :size => 50) %>
+
+      <input type="hidden" name="search" value="<%= params[:search] %>">
+      <input type="hidden" name="bidon" id="saved_search_photos_count" value="">
+
+      <%= f.submit I18n.t("validate").capitalize %><%#= pw_link_to_button_in_tabs I18n.t('cancel'), saved_searches_path %>
+
+  <% end %>
+</div>
+<%= button_to I18n.t('cancel').capitalize, saved_searches_path,:method => :get %>
+<div class="clearfix"></div>
+
+<script>
+    $('.link_button').hide();
+
+    $('#new_saved_search').submit(function(){
+        var nbfoto = $('#photos_count').val();
+        $('#saved_search_photos_count').attr('value',parseInt(nbfoto));
+        $('#saved_search_photos_count').attr('name', 'saved_search[photos_count]');
+        $("#pw_provider_form :input:checked").each(function() {
+            $("#new_saved_search").append("<input type='hidden' name='"+$(this).attr('name')+"' value='"+$(this).val()+"' />")
+        });
+    });
+
+</script>

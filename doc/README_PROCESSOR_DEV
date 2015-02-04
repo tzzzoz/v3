@@ -1,0 +1,15 @@
+Démarrage du traitement d'images en mode développement.
+
+1) Lancer RabbitMQ
+    - rabbitmq-server
+
+2) Démarrer le media_processor
+    - cd tools/media_processor && ./bin/media_processor start -t
+
+2) Démarrer le file_processor
+    - cd tools/file_processor && ./bin/file_processor start -t
+
+
+Configuration du file_processor:
+
+    - Editer tools/file_processor/config/ftp.yml et changer les valeurs pour les répertoires temp: et in:

@@ -1,0 +1,8 @@
+<%= form_tag({:controller => "full_screen_light_boxes", :action => "create"}, :method => "post") do  %>
+
+  <div class="field">
+    <%= text_field_tag :name, '', :size => 12 %>
+    <%= submit_tag I18n.t("validate") %>
+  </div>
+
+<% end %>

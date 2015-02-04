@@ -1,0 +1,50 @@
+<% tabsince = {"all"=>"Tous", "10_minutes"=>"10 minutes", "1_hour"=>"1 heure", "1_day"=>"1 jour", "1_week"=>"1 semaine", "1_month"=>"1 mois", "3_month"=>"3 mois"} %>
+<% tabsort = {"reception_date"=>"date de mise en ligne(+)", "asc_date"=>"date de mise en ligne(-)", "relevance"=>"pertinence", "date_created"=>"date de photo(+)", "asc_created"=>"date de photo(-)", "random"=>"aléatoire", "n_per_agency"=>"1 photo par agence"} %>
+<div class='content'>
+
+  <% @prov_stat.keys.each do |ps| %>
+     <% unless @prov_stat[ps].count == 0 %>
+      Agence <strong><%=  @prov_name[ps] %></strong><br>
+  <table id='pw_statistics_list'>
+    <tr class="pw_statistics_list_titles">
+
+        <th>Date</th>
+        <th>Titre</th>
+        <!--<th>Utilisateur</th>-->
+        <th>Recherche</th>
+        <th>Résultat</th>
+        <th>Depuis</th>
+        <th>Tri</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        <th>Date photo début</th>
+        <th>Date photo fin</th>
+    </tr>
+    <% @prov_stat[ps].each do |stat| %>
+        <% stab = stat.split("=") %>
+        <% searchstat = SearchStat.find(stab[0].to_i) %>
+        <%# user = User.find(searchstat.user_id) %>
+
+      <tr class="pw_theme">
+        <td><a class="show_hide_prov" stats="<%= searchstat.id %>" href="#"><%= I18n.l(searchstat.cs_created) %></a></td>
+        <td><%= @users_title[searchstat.user_id] %></td>
+        <!--<td><%= @users_login[searchstat.user_id] %></td>-->
+        <td><span style="color:darkred;"><%= searchstat.keyword %>
+        <% SearchImageField.where(:search_stat_id => searchstat.id).each do |f|  %>
+            <%= "[#{f.field_name}] = #{f.field_content}" %>
+        <% end %></span></td>
+        <td><%= stab[1].to_i %></td>
+        <td><%= tabsince[searchstat.since] %></td>
+        <td><%= tabsort[searchstat.tri] %></td>
+        <td><%= I18n.l(searchstat.date_pp_from) unless searchstat.date_pp_from.nil? %></td>
+        <td><%= I18n.l(searchstat.date_pp_to) unless searchstat.date_pp_to.nil? %></td>
+        <td><%= I18n.l(searchstat.date_photo_from) unless searchstat.date_photo_from.nil? %></td>
+        <td><%= I18n.l(searchstat.date_photo_to) unless searchstat.date_photo_to.nil? %></td>
+      </tr>
+
+    <% end %>
+  </table>
+          <% end %>
+ <% end %>
+
+</div>

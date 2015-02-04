@@ -1,0 +1,104 @@
+<div id="pw_search_panel">
+  <%= form_tag({:controller => "searches", :action => "create"}, :id => "pw_search_form", :name => "pw_search_form", :class => "form-inline" ) do -%>
+    <div class="pw_panel-header" >
+        <div class='pw_panel-header-label hidden-trigger'>
+          <span class="pw_title_panel"><%= I18n.t('search') %></span>
+        </div>
+        <span class='pw_panel-header-content'>
+          <%= text_field_tag :key_words, @current_params["key_words"], :size => 50, :class => "form-control input-xs" %>
+
+          <%= submit_tag 'OK', :class => 'pw_bigger' %>
+
+          <%#= label_tag I18n.t('pictures_per_page') %>
+          <%#= select_tag "default_per_page", options_for_select(THUMB_PER_PAGE, current_user.setting.default_per_page) %>
+          <%= hidden_field_tag 'default_per_page',  current_user.setting.default_per_page %>
+          <%= hidden_field_tag 'ppp_res', @current_params["ppp_res"] %>
+
+          <%
+           # TODO : Sami later : label_tag I18n.t('view_mode')
+           # TODO : Sami later : select_tag(:view_mode, options_for_select([[I18n.t('thumbs'), 'thumbs'], [I18n.t('list'), 'list']], params[:view_mode] || 'thumbs'))
+           %>
+
+          <%= label_tag "Médias" %>
+          <%= select_tag(:media_typ, options_for_select([
+          [I18n.t('all'), 'all'],
+          ["Photos", 'photos'],
+          ["Vidéos", 'videos']
+          ], @current_params["media_typ"]), :class => "form-control input-xs") %>
+
+          <%= label_tag I18n.t('search_since') %>
+          <%= select_tag(:search_since, options_for_select([
+          [I18n.t('all'), 'all'],
+          [I18n.t('10_minutes'), '10_minutes'],
+          [I18n.t('1_hour'), '1_hour'],
+          [I18n.t('1_day'), '1_day'],
+          [I18n.t('1_week'), '1_week'],
+          [I18n.t('1_month'), '1_month'],
+          [I18n.t('3_month'), '3_month']
+          ], default_setting_since), :class => "form-control input-xs") %>
+
+          <%= label_tag I18n.t('sort') %>
+          <%= select_tag(:sort, options_for_select([
+          [I18n.t('sort_reception_date'), 'reception_date'],
+          [I18n.t('sort_asc_date'), 'asc_date'],
+          [I18n.t('sort_relevance'), 'relevance'],
+          [I18n.t('sort_date_created'), 'date_created'],
+          [I18n.t('sort_asc_created'), 'asc_created'],
+          [I18n.t('sort_n_per_agency'), 'n_per_agency']
+          ], @current_params["sort"]), :class => "form-control input-xs") %>
+
+          <%= link_to I18n.t('offers'),liste_reps_path(:offres_reportages =>1),:title=>I18n.t("offers_hint"),:class=>"pw_big_button" %>
+        </span>
+    </div>
+
+    <div class="pw_panel-content">
+        <fieldset>
+          <strong><%= label_tag I18n.t('date_created') %></strong>
+          <%= label_tag(:from,  I18n.t('from')) %>
+          <%= text_field_tag :date_created_begin, @current_params["date_created_begin"], :size => 10, :class => 'datepicker form-control input-xs' -%>
+          <%= label_tag(:from,  I18n.t('to')) %>
+          <%= text_field_tag :date_created_end, @current_params["date_created_end"], :size => 10, :class => 'datepicker form-control input-xs' -%>
+          &nbsp;&nbsp;&nbsp;&nbsp;<strong><%= label_tag I18n.t('reception_date') %></strong>
+          <%= label_tag(:from,  I18n.t('from')) %>
+          <%= text_field_tag :reception_date_begin, @current_params["reception_date_begin"], :size => 10, :class => 'datepicker form-control input-xs' -%>
+          <%= label_tag(:from,  I18n.t('to')) %>
+          <%= text_field_tag :reception_date_end, @current_params["reception_date_end"], :size => 10, :class => 'datepicker form-control input-xs' -%>
+          &nbsp;&nbsp;&nbsp;&nbsp;<strong><%=I18n.t('image_format') %></strong> : <%= radio_button_tag(:ratio, "all", (@current_params["ratio"].blank? || @current_params["ratio"] == "all") ) %>
+          <%= label_tag(:ratio_all,  I18n.t('all')) %>
+          <%= radio_button_tag(:ratio, "horizontal", (@current_params["ratio"] == "horizontal") ) %>
+          <%= label_tag(:ratio_horizontal, I18n.t('horizontal')) %>
+          <%= radio_button_tag(:ratio, "vertical", (@current_params["ratio"] == "vertical") ) %>
+          <%= label_tag(:ratio_vertical,  I18n.t('vertical')) %>
+          <%= radio_button_tag(:ratio, "panoramic", (@current_params["ratio"] == "panoramic") ) %>
+          <%= label_tag(:ratio_panoramic, I18n.t('panoramic')) %>
+          <%= radio_button_tag(:ratio, "square", (@current_params["ratio"] == "square") ) %>
+          <%= label_tag(:ratio_square,  I18n.t('square')) %>
+        </fieldset>
+      <fieldset>
+        <strong><%= label_tag I18n.t('iptc_search') %></strong> : <%= label_tag I18n.t('subject') %>
+        <%= text_field_tag :subject, @current_params["subject"], :size => 20, :class => "form-control input-xs" %>
+        &nbsp;&nbsp;&nbsp;&nbsp;<%= label_tag I18n.t('creator') %>
+        <%= text_field_tag :creator, @current_params["creator"], :size => 20, :class => "form-control input-xs" %>
+        &nbsp;&nbsp;&nbsp;&nbsp;<%= label_tag I18n.t('city') %>
+        <%= text_field_tag :city, @current_params["city"], :size => 20, :class => "form-control input-xs" %>
+        &nbsp;&nbsp;&nbsp;&nbsp;<%= label_tag I18n.t('iptc_country') %>
+        <%= text_field_tag :country, @current_params["country"], :size => 20, :class => "form-control input-xs" %>
+        <!--&nbsp;&nbsp;&nbsp;&nbsp; <div style="float:right; inline:block;">-->
+        </fieldset>
+      <fieldset>
+          <%= select_tag(:image_searchable, options_for_select(@image_fields.collect{|f| [I18n.t(f), f]}), :class =>'pw_params_builder form-control input-xs') %>
+        <div></div>
+      </fieldset>
+
+    </div>
+
+    <div id="search_tabs" class='pw_remote-tabs'>
+        <ul class="nav nav-tabs">
+          <li name="search_sets"><%= link_to  I18n.t('my_searches'), saved_searches_path(:search => params[:search], :id => params[:saved_search_id]) %></li>
+          <li name="request_sets"><%= link_to  I18n.t('my_requests'), request_to_providers_path %></li>
+        </ul>
+        <div class="tab-content panel-body"></div>
+    </div>
+  <% end -%>
+
+</div>

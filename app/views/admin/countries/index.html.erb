@@ -1,0 +1,19 @@
+<div id="countries_list">
+  <table>
+
+  <% @countries.each do |c| %>
+    <tr>
+      <td><strong><%= c.name %></strong></td>
+      <td><%= link_to I18n.t('edit'), edit_admin_country_path(c.id) %></td>
+      <td><%= link_to I18n.t('destroy'), admin_country_path(c.id), :method => :delete, :remote => :true, :data => { :confirm => I18n.t('are_you_sure') } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <p id='notice'><%= notice %></p>
+
+  <br />
+
+  <%= link_to I18n.t("new_country"),new_admin_country_path %>
+
+ </div>

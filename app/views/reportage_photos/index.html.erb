@@ -1,0 +1,24 @@
+<% content_for :document_ready do %>
+
+<% end %>
+
+<div id="pw_results_stats">
+
+  <div style="margin-left:15px;">
+    <h2 style="display:inline-block;margin-right: 5px;"><%= @reportage.rep_titre %></h2>
+  </div>
+
+    <%= form_tag("/reportage_photos/#{@reportage.id}", :method => :put) do  %>
+        <p>
+          <% @photos.each do |p| %>
+            <div style="display:inline-block;margin-right: 5px;">
+                <%= image_tag(p.thumb_location) %><br>
+                <%= check_box_tag "img_ids[]", p.ms_image_id, false, :id => "img_ids_#{p.ms_image_id}" %> <br>
+                <%= link_to I18n.t('destroy'), reportage_photo_path(p.ms_image_id), :method => :delete, :data => { :confirm => I18n.t('are_you_sure') } %>
+            </div>
+          <% end %>
+         <div class="action"> <%= submit_tag(I18n.t("validate")) %> </div>
+        </p>
+    <% end %>
+
+</div>

@@ -1,0 +1,40 @@
+<div id="titles_list">
+
+  <div id="admin_title_select_group">
+    <% table_group = select_table_group %>
+    <%= select_tag 'selected_group', options_for_select(table_group, by_default_selected_group) %>
+  </div>
+
+  <div style="margin: 10px 0 0 5px;">
+    <% if params[:tpgn_id] %>
+        <%= link_to I18n.t("new_title"), new_admin_title_path(:tpgn_id => params[:tpgn_id]) %>
+    <% else %>
+        <%= link_to I18n.t("new_title"), new_admin_title_path %>
+    <% end %>
+  </div>
+
+  <table>
+
+      <% @titles.each do |t| %>
+        <tr>
+          <td>
+            <span class="admin_title_name">
+              <%= t.name %>
+            </span>
+            <i>(<%= t.country.name unless t.country_id.nil?%>, <%= tpgn_name(t.title_provider_group_name) %>, <%= t.server.name unless t.server_id==0 %>)</i>
+          </td>
+          <td>
+            <%= link_to I18n.t('show'), admin_title_path(t), :id => "_#{t.id}", :class => "admin_current_title" %>
+          </td>
+          <td><%= link_to I18n.t('edit'), edit_admin_title_path(t) %></td>
+          <td><%#= link_to I18n.t('destroy'), admin_title_path(t), :data => { :confirm => I18n.t('are_you_sure') }, :method => :delete, :remote => true %>
+          </td>
+        </tr>
+      <% end %>
+
+  </table>
+
+  <br />
+
+
+ </div>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <style>
+    table
+    {
+    border-collapse:collapse;
+    }
+    table, td, th
+    {
+    border:1px solid black;
+    font-family: "Arial,Helvetica,sans-serif";
+    }
+    td
+    {
+    padding:15px;
+    }
+    </style>
+  </head>
+  <body>
+  <% tabm=["","Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Npvembre","Décembre"] %>
+    <h1>20 Minutes : téléchargements AFP depuis PixPalace<br><strong><%= tabm[Time.now.month.to_i] %> <%= Time.now.year.to_i %></strong></h1><br>
+     <%= @stats.count %> téléchargements<br>
+     <table id='pw_statistics_list'>
+       <tr class="pw_statistics_list_titles">
+          <th><%= I18n.t('statistics.date') %></th>
+          <th>Référence</th>
+          <th>Date Photo</th>
+          <th>Objet</th>
+          <th>Source</th>
+          <th>Photographe</th>
+          <th></th>
+       </tr>
+
+       <% @stats.each do |stats| %>
+         <tr class="pw_theme">
+           <td><%= I18n.l(stats.created_at) %></td>
+           <td><%= stats.image.original_filename %></td>
+           <td><%= stats.image.date_created %></td>
+           <td><%= stats.image.headline %></td>
+           <td><%= stats.image.source %></td>
+           <td><%= stats.image.creator %></td>
+           <td><%= image_tag attachments[stats.image.original_filename].url %></td>
+         </tr>
+       <% end %>
+      </table>
+  </body>
+</html>

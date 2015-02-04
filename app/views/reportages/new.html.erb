@@ -1,0 +1,64 @@
+<% content_for :document_ready do %>
+
+    $(document).keyup(function(event) {
+    if (event.keyCode == '27') {
+    // esc
+    BeforeClose();
+    }
+    });
+
+
+    $(".pw_toggle_check").toggle(
+    function(){
+    $(this).closest('form').find("input:checkbox")
+    .attr('checked', true)
+    .each( function(){ $(this).triggerHandler('click') });
+    },
+    function(){
+    $(this).closest('form').find("input:checkbox")
+    .attr('checked', false)
+    .each( function(){ $(this).triggerHandler('click') });
+    }
+    );
+    $(document).ready(function() {
+
+    $('.valid_ids').click(function(){
+    var idprem = $('#pw_rep_results :checkbox:checked').map(function() {
+    return this.id;
+    }).get().join('&');
+    $('#reportage_prem_photo').attr('value',idprem);
+    });
+
+    $('.pw_close_window').click(function(){
+    window.close();
+    });
+
+    $('#pw_light_box_images').sortable({
+    opacity: 0.75,
+    revert: true,
+    tolerance: 'pointer'
+
+    });
+    $('#pw_light_box_images').disableSelection();
+    });
+<% end %>
+<% if notice %>
+    ('<div><%= notice %></div>').dialog({
+    buttons: {
+    'OK': function() {
+    $(this).dialog('close');
+    }
+    }
+    });
+<% end %>
+
+<div class='ui-widget-content'>
+
+  <h2 style="padding-left: 10px"><%= I18n.t('features.new_feature') %></h2>
+  <div style="background-color:#cccccc;padding: 0 0 10px 10px">
+    <%= render  :partial => "menu" %>
+    <%= render  :partial => "thumbs"  %>
+    <%= render 'form' %>
+  </div>
+
+</div>

@@ -1,0 +1,467 @@
+en:
+  en: English
+  fr: Français
+  zh-CN: 中文
+  search: Search
+  from: from
+  to: to
+  logout: Logout
+  search_since: since
+  sort: sort
+  all: all
+  10_minutes: 10 minutes
+  1_hour: 1 hour
+  1_day: 1 day
+  1_week: 1 week
+  1_month: 1 month
+  3_month:  3 months
+  1_year: 1 year
+  sort_reception_date: by reception date
+  sort_relevance: by relevance
+  sort_date_created:  by date created (+)
+  sort_random: by random
+  sort_n_per_agency:  one photo per agency
+  sort_original_filename: by filename (a-z)
+  sort_asc_date: oldest
+  sort_asc_created:  by date created (-)
+  sort_asc_filename: by filename (z-a)
+  offers: Lists
+  offers_hint: See offers and features lists
+  square: square
+  horizontal: horizontal
+  vertical: vertical
+  panoramic: panoramic
+  fonds: collection
+  pictures_per_page: photos per page
+  view_mode: view mode
+  thumbs: thumbs
+  list: list
+  page: page
+  toggle_check_all: (de)select all
+  toggle_fold_all: (un)fold all
+  management: Management
+  erasing: Erasing
+  providers: Agencies
+  close: Close
+  light_box:
+      name: Lightbox
+      full: Lightbox full
+      image_not_found: Can't find photo
+
+  home: Home
+  help: Help
+  send: send
+  send_and_delete: Erase
+  move_and_delete: Move to PP2
+  ok: ok
+  pixpalace: PixPalace
+  contact_pixpalace: Contact PIXPALACE
+  pictures: pictures
+  HD: HR
+  BD: LR
+  PE: PE
+  FLUX: FLUX
+  add_to_lightbox: Add to lightbox
+  feature: feature
+  delete: Delete
+  rename: Rename
+  open: Open
+  send_by_email: Send by email
+  sort_by_prov: Sort by Agency
+  create_feature: Create offer
+
+#homepage
+  today_online: Online today
+  title_pixpalace: The output of the best photo agencies available to all media professionals
+  label_pixpalace: The portal of photo agencies
+  title_pixadmin: The output of the best photo agencies available to all media professionals
+  label_pixadmin: Photo management service
+  title_pixpalace2: PixPalace's complementary research module
+  label_pixpalace2: More images...
+  title_pixtrakk: An essential tool to identify your photos in printed and web publications
+  label_pixtrakk: Photo usage tracking
+  tracked_publication_label: Over 1000 tracked publications
+  contact_us: Contact us
+
+ #Image field
+  title: File name (5)
+  subject_code:
+  subject: Keywords (25)
+  instructions: Specials instructions (40)
+  creator: photographer (80)
+  city: City (90)
+  location: Location
+  state: State (95)
+  iptc_country: Country (101)
+  headline: Title (105)
+  credit: Credit (110)
+  source: Agency (115)
+  description: Caption (120)
+  reportage: Feature (PP)
+  normalized_credit: normalized credit (PP)
+  max_avail_width: Width HD (PP)
+  max_avail_height: Height HD (PP)
+  original_filename: Original File name (PP)
+  file_name: PixPalace Filename (PP)
+  provider_comment: Agency's note (PP)
+  restrictions: restrictions (PP)
+  msid: id (PP)
+  urgency: Priority (10)
+  category: Category (15)
+  supplemental_category: Added category (20)
+  authors_position: Author's position (85)
+  transmission_reference: Transmission's reference (103)
+  rights: Copyright (116)
+  caption_writer: Caption's writer (122)
+  reception_date: PixPalace reception's date (PP)
+  date_created: Photo's creation date (55)
+  iptc_search: Search with IPTC field
+  image_format: Photos format (PP)
+  hr_size: HR size (pixels WxH) (PP)
+  max_size: Max size (cm WxH) (PP)
+  email: Email
+  phone: Telephone
+  portable: Mobile
+  fax: Fax
+  agencies: Agencies
+  menu_titles: Titles
+  menu_users: Users
+  export: Export
+  contact: Contact
+  site: Web site
+  address: Address
+  first_name: First name
+  last_name: Last name
+  provider: Agency
+  terms_title: Terms and Conditions for using downloaded photos in PixPalace
+  terms: |
+          Copyright and Conditions must be checked by the Provider :
+          Downloading hight-res photos do not give rights to use these photos.
+  close_after_download: Close the window after downloading
+  no_images_selected: No Images were selected, please, close this window
+  available_pictures: Available photos
+  download: Download
+  choose_the_language: Select language
+  login: Login
+  password: Password
+  cancel: cancel
+  deleted: Deleted
+  save: save
+  modify: modify
+  authentication_required: authentication required
+
+  #Notices, warnings, alert
+  flash:
+    logged_in_successfully: Logged_in successfully
+    log_in_failed_for: Wrong login and/ or password
+    you_have_been_logged_out:  You are logged-out
+    alert_cancan: You don't have right to view this page
+
+  #Settings
+  settings:
+    settings: Settings
+    language: Language
+    background_color: Background Color
+    font_color: Font Color
+    time_zone: Time Zone
+    thumbnail_rollover: Thumbs'roll-over
+    previsualisation: Photo Preview
+    display_text: Caption Display
+
+
+  #lightbox PL 4/4
+  viewer: Lightbox %{name}
+  diaporama: Slideshow
+  imppdf: Print out
+  light_box_rename: Rename lightbox
+  validate: ok
+  new_name: New name
+  confirm_delete_viewer: Do you really want to delete the lightbox
+  bin: Trash
+  select_lb: Select lightbox
+  lightbox_login: Hello, In order to see this lightbox you will need to login to PixPalace.
+
+  no_image_selected: No photo selected
+  images_not_added: photo(s) not added
+  too_many_in_light_box: Too many photos in lightbox (%{maxi})
+  new_lb: Add a lightbox
+  images: Photos
+  print:
+    print: Print out
+    contact_sheet: Contact sheet
+    text: Text
+    without: without
+    credit: credit
+    caption: caption
+    file_name: file name
+    portrait: portrait
+    landscape: lanscape
+
+  features:
+    offers: Offers
+    offers_hint: Selection offered by the agencies
+    features: Features
+    features_hint: Selection automatically created (represented by the pictogram under the thumbnails)
+    new_feature: New offer
+    edit_feature: Edit offer
+    delete_message: |
+                    Are you sure to delete this feature?
+                    (pictures won't be deleted)
+    add_pictures: Add pictures
+    search_title: Search title
+    title: Title
+    nb_pictures: Pictures
+    credit: Credit
+    feature_date: Feature date
+    release_date: Release date
+    text: Text
+    selection: Selection
+    selection_hint: Your offers and features selection
+    remove_from_selection: Remove from selection
+    remove_from_selection_confirmation: Are you sure you want to remove this feature from your selection?
+    added_to_selection_message_part1: You have
+    added_to_selection_message_part2: feature(s) in your selection
+    add_to_selection: Add to selection
+    go_to_selection: Go to selection
+
+  #admin
+  new_server: New server
+  new_country: New country
+  new_title: New title
+  current_server: Current server
+  edit_server: Modify server
+  edit_country: Modify country
+  edit_title: Modify title
+  edit_provider: Modify agency
+  titles_group_name: Groups
+  new_titles_group_name: New Group
+  country: Country
+  name: Name
+  type: Type
+  statut: Status
+  titles: Titles
+  current_server: Current server
+  are_you_sure: Delete for good ?
+  successfully_created: Creation successfull
+  successfully_updated: Update successfull
+  prohibited_this_operation: Operation prohibited
+  user: User
+  demande: Demand
+
+  #administration agence
+  adm_agency: Agency administration
+  downloads_stats: Downloads statistics
+  waited_rtp: Request(s) on demand
+  answered_rtp: Answered request(s)
+  send_photos: Send photos
+  pictures_control: Pictures control
+  rights_managment: Rights managment
+  search_stats: Users Searches
+  translation: translation
+  features_admin: Offers and features
+
+  back: Back
+  show: Show
+  edit: Edit
+  destroy: Delete
+  edit_server: Edit server
+  edit_country: Edit country
+  edit_title: Edit title
+  edit_provider: Edit provider
+  not_authorized_providers: Not authorized Agencies
+  greyed: greyed
+  flow_path: Flow path
+  group: Group
+  server: Server
+  managing: Management
+
+  attributes:
+    created_at: Created at
+    updated_at: Updated at
+    name: Name
+
+ #Statistics
+  statistics:
+    statistics: Statistics
+    total: Total
+    export: export
+    thumbs: Thumbs
+    list: List
+    date: Date
+    operation: Operation
+    title: Title
+    user: User
+    provider: Agency
+    picture: Photo
+    titles: Titles
+    users: Users
+    download: Downloading
+    all: Tous
+
+  country_str: Country
+  title_name: Title
+  users: Users
+  sort_download_date: by download date
+  sort_filename: by file name
+  entries_per_page: Photos per page
+  download_date: Download Date
+  customer_only: Customers only
+
+
+  #admin
+  titles_group_name: Group
+
+  admin:
+    admin: Administration
+    successfully_deleted: Deleted successfully
+
+    providers:
+      distrute_to: Distribute to countries
+      name: Name
+      logo: Logo
+      description: Description
+      agreement: Agreement
+      web: Web
+      price_url: Prices URL
+      display_local: Display local
+      local_dir: local input dir
+      form: Form
+      pdf: PDF
+      string_key: String key
+      news_keep: News keep
+      news_keep_per_pics: News keep per picture
+      address: Address
+      city: City
+      zip_code: Zip code
+      country: Country
+      copyright_rule: Copyright rule
+      free_text: Free text
+      first_name: First name
+      last_name: Last name
+      mail: Email
+      phone: Phone
+      portable: Mobile
+      fax: Fax
+      requests: Requests
+      main: Main
+      delete: (supprimer)
+      up_limit: Maximum nb of photos
+
+    group_name:
+      country: country
+      group: Group
+      name: Group name
+
+    user:
+      user_infos: Infos user
+      title_user: Title
+      create_new_user: New User
+      show_new_user: Show
+      are_you_sure: Do you really want to delete this user ?
+      login: Login
+      last_name: Last name
+      first_name: First name
+      mail: E-mail
+      job: Function
+      phone: Telephone
+      roles: Role
+      password: Password
+      password_confirmation: Password Confirmation
+      select_title: Select title
+      select_title_null: Orphans Users
+      orphans: orphans
+      generate_pass: Generate password
+      summary: summary
+      user_url: User URL
+      created_at: Created at
+      comments: Comments
+      public_url: Public URL
+      emergency_account: Emergency account
+      deactivated_account: Deactivated account
+      reactivated: Reactivated
+
+    tpgn:
+      select_country: Select country
+      select_group: Select group
+      delete_msg: The titles below are associated with this group, so it can not be deleted.
+
+    title:
+      orphans: orphans
+      visible: Visible
+      comment: Comment
+      do_not_display: Do not display
+      test: Testing
+      customer: Customer
+      partner: Partner
+      restrictions_group: Restrictions group
+      magazine: Magazine
+      book_publisher: Book publisher
+      corporate: Corporate
+      PQN: PQN
+      university: University
+      communication_agency: Communication agency
+      press_com_agency: Press/com agency
+      website: Website
+      independant_icono: Independant icono
+      ojd_link: OJD link
+
+  #Roles
+  superadmin: Super Admin
+  editor_admin: Editor Admin
+  editor_user: Editor
+  provider_admin: Agency Admin
+  provider_user: Agency User
+  photographer: Photographer
+  deactivated: Deactivated
+
+  #saved searches
+  my_searches: My searches
+  my_requests: My requests
+  new_request: new request
+  intro_new_request: Enter your request to agencies
+  date_label: Date
+  subject_d: Subject
+  photo: Photo(s)
+
+  #fullscreen lightboxes
+  fslb:
+    images: Photos
+    diapo: Slideshow
+    select_timer:
+      inactive: inactive
+      two_s: 2 seconds
+      five_s: 5 seconds
+      ten_s: 10 seconds
+      one_m: 1 minute
+
+  views:
+      pagination:
+        first: "&laquo;"
+        last: "&raquo;"
+        previous: "<"
+        next: ">"
+        truncate: " ... "
+
+  download_conditions:
+      mail_error: "Error : e-mail not send"
+      mail_ok: "E-Mail sent. Thank you"
+
+  media:
+    photo: Photo
+    info_photo: Caption Info
+    feature: Feature
+
+  #color picker, providers groups
+
+  cp_pg:
+    my_providers_set: My groups
+    my_borders: Photos Borders
+    new_group: new group
+    no_provider_group: No group recorded
+    select_group_name: Select group name
+
+  mail_content:
+    greetings: Hello,
+               Please, find below a new request from pixpalace.com
+               Thanks, regards
+               The Pixpalace team

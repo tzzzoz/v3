@@ -1,0 +1,1 @@
+User.where(:role_id => 1).each{|u| u.remove_role!('editor_user'); u.add_role!('superadmin') }

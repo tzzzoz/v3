@@ -1,0 +1,8 @@
+$('#pw_media_list').html("<%= escape_javascript( render :partial => "carrousel" ) %>");
+if('#next' == im_id){
+    im_id = $('#pw_media_list a:first').prop('hash');
+}
+else if ( '#prev' == im_id){
+    im_id = $('#pw_media_list a:last').prop('hash');
+}
+PwNav(im_id);

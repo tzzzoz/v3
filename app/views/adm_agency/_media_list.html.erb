@@ -1,0 +1,43 @@
+<div class='pw_content ui-helper-reset ui-widget ui-widget-content ui-helper-clearfix ui-corner-tl ui-state-default'>
+
+  <table id='pw_statistics_list'>
+    <tr class="pw_statistics_list_titles">
+
+        <th><%= I18n.t('statistics.date') %></th>
+        <th><%= I18n.t('statistics.download') %></th>
+        <th><%= I18n.t('statistics.title') %></th>
+        <th><%= I18n.t('user') %></th>
+        <th><%= I18n.t('statistics.provider') %></th>
+        <th><%= I18n.t('statistics.picture') %></th>
+        <th></th>
+        <th>Titre photo</th>
+        <th>Photographe</th>
+    </tr>
+
+    <% @statistics.each do |stats| %>
+      <% unless stats.image.nil? %>
+
+        <% pw_c = "#{image_tag(stats.image.medium_location)}" %>
+
+      <tr class="pw_theme">
+        <td><%= I18n.l(stats.created_at) %></td>
+        <td><%= stats.operation_label.label %></td>
+        <% if stats.user.nil? %>
+            <td><%= I18n.t(:deleted) %></td>
+            <td><%= I18n.t(:deleted) %></td>
+        <% else %>
+            <td><%= stats.user.title.nil? ? I18n.t(:deleted) : stats.user.title.name %></td>
+            <td><%= stats.user.nil? ? I18n.t(:deleted) : (stats.user.full_name.blank? ? stats.user.login : stats.user.full_name) %></td>
+        <% end %>
+        <td><%= (stats.image.nil? || stats.image.provider.nil? )? I18n.t(:deleted) : stats.image.provider.name %></td>
+        <td class="st_thumb"><%= stats.image.nil? ? I18n.t(:deleted) : image_tag(stats.image.thumb_location, :class => 'tooltip', 'data-pw_caption' => pw_c, :height => "32")%></td>
+        <td class="pw_stats_thumb_table_pic_nam"><%= stats.image.nil? ? I18n.t(:deleted) : stats.image.original_filename %></td>
+        <td><%= stats.image.headline %></td>
+        <td><%= stats.image.creator %></td>
+      </tr>
+
+    <% end %>
+    <% end %>
+  </table>
+
+</div>

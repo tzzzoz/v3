@@ -1,0 +1,8 @@
+--- 
+servers_001: 
+  name: master
+  status: public
+  host: localhost
+  is_self: true
+  which_type: CS
+  id: 1

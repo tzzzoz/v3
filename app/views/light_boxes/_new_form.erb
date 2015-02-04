@@ -1,0 +1,8 @@
+<%= form_for( LightBox.new(), :remote => true ) do |f| %>
+
+  <div class="field">
+    <%= f.text_field(:name, :size => 15, :class => "input-xs") %>
+    <%= f.submit I18n.t("validate"), :class => "btn btn-default btn-xs" %>
+  </div>
+
+<% end %>

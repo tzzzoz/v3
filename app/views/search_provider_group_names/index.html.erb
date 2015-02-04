@@ -1,0 +1,30 @@
+<div id="my_groups_list">
+  <select id="provider_group_name_id" name="provider_id" size="10" multiple class="form-control">
+    <option value="" data-pw_groups_menu="<%= raw escape_once( render(:partial => 'new_menu') ) %>"
+    <% if @spgn_id.nil? %> selected="selected"<% end %> ><%= I18n.t("cp_pg.select_group_name") %></option>
+    <% @groups.each do |g| %>
+        <option value="<%= g.id %>"
+            data-pw_providers="<%= g.providers.collect{|p| "#providers_#{p.id}" }.join(',') %>"
+            data-pw_groups_menu="<%= raw escape_once( render(:partial => 'menu', :object => g) ) %>"
+            <% if g.id==@spgn_id %> selected=" selected" <% end %>
+            >
+            <%= g.name %>
+        </option>
+    <% end %>
+  </select>
+</div>
+
+<div id='pw_groups_menu'>
+  <%= render(:partial => 'new_menu') %>
+</div>
+
+
+<script>
+$( "#provider_group_name_id" ).change( function(){
+    $('#pw_groups_menu').html($(this).find("option:selected").data("pw_groups_menu"));
+
+    $('#pw_provider_form :input:checked').click();
+    the_group_providers = $(this).find("option:selected").data("pw_providers");
+    $(the_group_providers).click();
+});
+</script>

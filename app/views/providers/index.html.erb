@@ -1,0 +1,132 @@
+<div id="providers">
+  <% content_for :contextual_header do %>
+      <div id="providers_menu">
+        <span class="toggle_fold_all">
+          <span class="glyphicon glyphicon-expand"></span>
+          <strong><%= I18n.t('toggle_fold_all')%></strong></span>
+        <span><%= link_to(I18n.t(:export), 'providers_to_csv', :id => 'pw_providers_to_csv', :class=>'glyphicon glyphicon-expand', :target => '_blank') %></span>
+      </div>
+ <% end %>
+ <strong><h4><%= I18n.t 'terms_title' %></h4></strong>
+ <p><%= simple_format I18n.t 'terms' %></p>
+
+ <table id='pw_contacts' class="table fixed-header-table">
+  
+  <thead class="fixed-thead" id="affix-thead">
+    <tr class="pw_c_header">
+      <th></th>
+      <th>Droits</th>
+      <th><%= I18n.t(:contact) %></th>
+      <th><%= I18n.t(:email) %></th>
+      <th><%= I18n.t(:phone) %></th>
+      <th><%= I18n.t(:portable) %></th>
+      <th><%= I18n.t(:site) %></th>
+      <th><%= I18n.t(:address) %></th>
+    </tr>
+  </thead>
+
+
+<%
+# TODO : Sami refactor this
+pw_contact = PixPalaceContact[{'fr' =>'FR','en' => 'EN','zh-CN' => 'CHINA'}[I18n.locale.to_s]]
+%>
+  <tr class="pw_c_header pw_theme">
+    <td class="pw_c_header-title"> <span class='icon-aligner'></span> PixPalace </td>
+    <td></td>
+    <td><%= pw_contact[:contact] %></td>
+    <td><%= mail_to(pw_contact[:mail]) %></td>
+    <td><%= pw_contact[:phone] %></td>
+    <td><%= pw_contact[:portable] %></td>
+    <td><%= link_to(pw_contact[:web], "http://#{pw_contact[:web]}", :target => '_blank') %></td>
+    <td><%= pw_contact[:address] %></td>
+  </tr>
+  <% @providers.each do |p| %>
+  <% unless p.local %>
+    <% mc = p.provider_contacts.find_by_main(true) %>
+
+  <tr class="pw_c_header" style="color: #66a299; background-color: #66a299; height: 4px; border: 0; "><td colspan="8"></td></tr>
+  <tr class="pw_c_header pw_theme2">
+    <td class='pw_c_header-label'><span class='glyphicon glyphicon-plus-sign'></span>&nbsp;<%= p.name %></td>
+    <% if session[:provhd][p.id] == 1 %>
+        <td><a href="" title="Téléchargements HD et BD autorisés">HD</a></td>
+    <% elsif session[:provbd][p.id] == 1 %>
+        <td><a href="" title="Téléchargements BD autorisés">BD</a></td>
+    <% elsif session[:provvg][p.id] == 1 %>
+        <td><a href="" title="Aucun téléchargement possible">PE</a></td>
+    <% else %>
+        <td></td>
+    <% end %>
+    <td><%= [mc.first_name, mc.last_name].compact.join(' ') unless mc.nil? %></td>
+    <td><%= mail_to(mc.email) unless mc.nil? %></td>
+    <td><%= mc.phone unless mc.nil? %></td>
+    <td><%= mc.portable unless mc.nil? %></td>
+    <td><%= link_to(p.site, "http://#{p.site}", :target => '_blank') unless p.site.blank? %></td>
+    <td><%= [p.address, p.zip_code, p.city, p.country].compact.join(", ") %></td>
+  </tr>
+
+  <% p.provider_contacts.where(main: false).each do |c| %>
+  <tr class="pw_theme2" style="display: none;">
+    <td></td>
+    <td></td>
+    <td><%= [c.first_name, c.last_name].compact.join(' ') unless c.nil? %></td>
+    <td><%= mail_to c.email unless c.nil? %></td>
+    <td><%= c.phone unless c.nil? %></td>
+    <td><%= c.portable unless c.nil? %></td>
+    <td></td>
+    <td></td>
+  </tr>
+   <% end %>
+
+  <tr class="pw_theme2" style="display: none;">
+    <td class="pw_dashed_top">
+      <%= link_to(image_tag(p.logo.url, :class =>'pw_prov_logo', :title => "Afficher les photos de l'agence dans l'interface"), searches_path("providers[#{p.id}]" => '1', :default_per_page => '40')) %>
+    </td>
+    <td class="pw_dashed_top"></td>
+    <td colspan = "5" class="pw_dashed_top">
+    <%= p.description %></td>
+
+    <td class="pw_dashed_top" align="center">
+        <div id="pw_slideShow_<%= p.id %>" class="pw_slideShow">
+          <%= image_tag("play-big.png", :alt => "diaporama agence", :class => "play", :height => "120px") %>
+        </div>
+    </td>
+  </tr>
+
+  <% end %>
+
+<% end %>
+
+   <tr class="pw_c_header" style="color: #66a299; background-color: #66a299; height: 4px; border: 0; "><td colspan="8"></td></tr>
+
+   <tr class="pw_c_header">
+     <th width="150px"></th>
+     <th>Droits</th>
+     <th><%= I18n.t(:contact) %></th>
+     <th><%= I18n.t(:email) %></th>
+     <th><%= I18n.t(:phone) %></th>
+     <th><%= I18n.t(:portable) %></th>
+     <th><%= I18n.t(:site) %></th>
+     <th><%= I18n.t(:address) %></th>
+   </tr>
+
+</table>
+</div>
+
+
+<% content_for :document_ready do %>
+  PwCollapsibleTable();
+  PwSlide();
+
+  $('.fixed-header-table>.fixed-thead').affix({
+    offset: {
+      top: function () {
+            return (this.top = $('.fixed-header-table>.fixed-thead').offset().top - $('#pw_top').height());
+        }
+    },
+    target: '#pw_center'
+  })
+
+  $('.fixed-header-table>.fixed-thead').on("affix.bs.affix", function(){
+    $(this).css('top', $('#pw_top').height())
+  })
+<% end %>

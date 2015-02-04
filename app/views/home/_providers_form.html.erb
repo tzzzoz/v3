@@ -1,0 +1,64 @@
+<div id="pw_provider_panel">
+
+  <div class="pw_panel-header" >
+    <div class='pw_panel-header-label hidden-trigger'><span class="pw_title_panel"><%= I18n.t('providers') %></span></div>
+    <div class='pw_panel-header-content'>
+      <strong>
+        <%= "#{@current_params[:providers].count} / " unless @current_params[:providers].blank? %> <%= @providers.count %><%= " #{I18n.t("providers").downcase}"%>
+      </strong>
+    </div>
+  </div>
+
+  <div class="pw_panel-content">
+  <%= form_tag({:controller => "home", :action => "index"}, :method => "get", :id => "pw_provider_form") do -%>
+    <span class="pw_toggle_check">
+      <span class="glyphicon glyphicon-expand"></span>
+      <strong><%= I18n.t('toggle_check_all')%></strong>
+    </span>
+    <fieldset class="pw_buttonset pw_providers">
+    <% providers_selected = 0 if @current_params["providers"].blank? %>
+
+    <% @pw_providers.each do |p| %>
+       <% if p.string_key == "LocalAfp" %>
+          <% pname = "#{p.name}  (#{@nbafp})" %>
+       <% else %>
+          <% pname = p.name %>
+       <% end %>
+       <% @current_params["providers"]["#{p.id}"] = '1' if providers_selected == 0 %>
+       <%= check_box_tag( "providers[#{p.id}]", 1, @current_params["providers"]["#{p.id}"] == '1')%>
+       <% if session[:border_color][p.id].blank? %>
+           <%= label_tag("providers[#{p.id}]", pname, :class => "btn btn-default") %>
+       <% else %>
+           <%= label_tag("providers[#{p.id}]", pname, :style => "color: #{session[:border_color][p.id]};", :class => "btn btn-default") %>
+      <% end %>
+    <% end %>
+    </fieldset>
+    <fieldset class="pw_buttonset pw_local_providers">
+
+    <% @local_providers.each do |p| %>
+    <% @current_params["providers"]["#{p.id}"] = '1' if providers_selected == 0 %>
+      <%= check_box_tag( "providers[#{p.id}]", 1, @current_params["providers"]["#{p.id}"] == '1')%>
+        <% if session[:border_color][p.id].blank? %>
+           <%= label_tag("providers[#{p.id}]", p.name, :class => "btn btn-default") %>
+        <% else %>
+           <%= label_tag("providers[#{p.id}]", p.name, :style => "color: #{session[:border_color][p.id]};", :class => "btn btn-default") %>
+        <% end %>
+    <% end %>
+    </fieldset>
+  <% end -%>
+  
+    <div class="pw_remote-tabs">
+        <ul id="providers_tabs" class="nav nav-tabs">
+            <li name="provider_sets"><%= link_to  I18n.t('cp_pg.my_providers_set'), search_provider_group_names_path %></li>
+            <li name="border_color"><%= link_to  I18n.t('cp_pg.my_borders'), border_color_providers_path %></li>
+        </ul>
+        <div class="tab-content panel-body"></div>
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+  buttonize($('#pw_provider_form'));
+</script>

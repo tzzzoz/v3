@@ -1,0 +1,33 @@
+<% content_for :document_ready do %>
+    buttonize($('#pw_provider_form'));
+    buttonize($('#pw_title_form'));
+    if (!$('.pw_buttonset input').is(':checked')) {
+        $('.pw_buttonset input').click();
+    };
+    scrollingTableSetThWidth($('.fixed-header-table'));
+    <!-- TODO -->
+    <!-- $(".pw_params_builder").params_builder({fields:<#%= raw @displayed_image_fields.to_json %>}); -->
+    PwStats();
+    PwThumbRollo();
+
+<% end %>
+
+<div class='pw_spacer'></div>
+<%= render :partial => 'providers_form' %>
+<div class='pw_spacer'></div>
+
+<%= render :partial => 'titles_form' %>
+
+<!--<div class='pw_content ui-helper-reset ui-widget ui-widget-content ui-helper-clearfix ui-corner-tl ui-state-default'>
+    <div id="stats_titles_users" class="pw_remote-tabs">
+      <ul>
+        <li><%#= link_to(I18n.t('statistics.titles'), statistics_titles_path) %></li>
+        <li><%#= link_to(I18n.t('statistics.users'), statistics_users_path) %></li>
+      </ul>
+    </div>
+</div>-->
+
+<div class='pw_spacer'></div>
+<%= render :partial => 'search_form' %>
+<div class='pw_spacer'></div>
+<%= render :partial => 'search_results' %>

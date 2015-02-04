@@ -1,0 +1,29 @@
+<div class="clearfix"></div>
+<div id="pw_media_all">
+    <span class="pw_media_txt_photo">
+      <%= "#{I18n.t 'media.photo'}: #{med.original_filename}" %>
+    </span>
+    <% unless @feature_value.nil? %>
+        <span class="pw_media_txt_photo">
+          <%= "/ #{I18n.t 'media.feature'}: #{@feature_value} / total: #{@feature_number}" %>
+        </span>
+    <% end %>
+    <ul class="pw_menus_3">
+      <li><%= link_to(image_tag("add.png", :title => I18n.t('add_to_lightbox')),nil, :class => 'add_other', :id => med.id) %></li>
+      <% med.providers_authorizations.each do |auth| %>
+          <li>
+            <%= link_to image_tag("#{auth.label}.png", :title => I18n.t(auth.label))+I18n.t(auth.label), downloads_path('ids[]' => med.id, :definition => auth.label), :class => auth.label %>
+          </li>
+      <% end %>
+      <li>
+        <%= link_to(image_tag('feature.png', :title => I18n.t('feature')), medias_path(:reportage => med.reportage, :anchor => med.id), :class => 'feature', :target => '_blank') unless med.reportage.blank? %>
+      </li>
+      <li>
+        <span title="<%= I18n.t 'print.print' %>" class="pw_print_icon pw_print_icon_media"></span>
+      </li>
+      <li class="ui-state-focus">
+        <span class="pw_close_window ui-icon ui-icon-closethick" title="<%= I18n.t 'close' %>"></span>
+      </li>
+    </ul>
+</div>
+<div class="clearfix"></div>

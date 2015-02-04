@@ -1,0 +1,39 @@
+
+    <div id="pw_panel_carrousel">
+        <div class="pw_panel-header">
+            <div class='pw_panel-header-label hidden-trigger'>
+              <span class="pw_title_panel"><%= I18n.t('fslb.images') %></span>
+            </div>
+            <div id="pw_carrousel_timer" class='pw_panel-header-content'>
+              <label for="pw_carrousel_select_timer"><%= I18n.t('fslb.diapo') %></label>
+              <select id="pw_carrousel_select_timer" class="form-control input-xs">
+                <option value="0" selected="selected"><%= I18n.t('fslb.select_timer.inactive') %></option>
+                <option value="2000"><%= I18n.t('fslb.select_timer.two_s') %></option>
+                <option value="5000"><%= I18n.t('fslb.select_timer.five_s') %></option>
+                <option value="10000"><%= I18n.t('fslb.select_timer.ten_s') %></option>
+                <option value="60000"><%= I18n.t('fslb.select_timer.one_m') %></option>
+              </select>
+            </div>
+
+        </div>
+
+        <div id='pw_media_list' class='pw_panel-content'>
+          <%= render(:partial => "carrousel") %>
+        </div>
+    </div>
+
+    <div class='pw_spacer'></div>
+    <% unless @feature_value.nil? || @feature_value == "1" %>
+    <div class='pw_content' style="border: 2px solid #9DA1A2;padding:10px;">
+          <span class="pw_media_txt_photo">
+            <%= I18n.t 'media.feature'%>:&nbsp;&nbsp; <%= @feature_value%> &nbsp;&nbsp;/&nbsp;&nbsp; <%=I18n.t 'pictures'%>: <%=@feature_number%>
+            <% if @offre %>
+                    &nbsp;&nbsp;/&nbsp;&nbsp; <%= link_to "Télécharger le reportage (BD)", downloads_path('offre' => @offre, :definition => "BD"), :class => "BD" %>
+                    &nbsp;&nbsp;/&nbsp;&nbsp; <%= link_to "Télécharger le reportage (HD)", downloads_path('offre' => @offre, :definition => "HD"), :class => "HD" %>
+            <% end %>
+         </span>
+      <br>
+    <%= @feature_text unless @feature_text.blank? %>
+    </div>
+  <% end%>
+

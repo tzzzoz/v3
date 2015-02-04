@@ -1,0 +1,75 @@
+<div class='result_content'>
+
+  <table id='pw_statistics_list' class="table fixed-header-table table-bordered table-hover">
+    <thead class="fixed-thead">
+        <tr class="pw_statistics_list_titles">
+            <th><%= I18n.t('statistics.date') %></th>
+            <th><%= I18n.t('statistics.download') %></th>
+            <th><%= I18n.t('statistics.title') %></th>
+            <th><%= I18n.t('user') %></th>
+            <th><%= I18n.t('statistics.provider') %></th>
+            <th><%= I18n.t('statistics.picture') %></th>
+            <th></th>
+            <th>Titre photo</th>
+            <th>Photographe</th>
+        </tr>
+    </thead>
+    
+
+    <% @statistics.each do |stats| %>
+      <% unless stats.image.nil? %>
+
+        <% pw_c = "#{image_tag(stats.image.medium_location)}" %>
+        <% pw_c += "<div class='pw_info_thumb'>
+            <p><span class='pw_bold'>#{I18n.t('original_filename')} : </span> #{stats.image.original_filename}</p>
+            <p><span class='pw_bold'>#{I18n.t('reception_date')} : </span> #{stats.image.localised_reception_date}</p>
+            <p><span class='pw_bold'>#{I18n.t('date_created')} : </span> #{stats.image.localised_date_created}</p>
+            <p><span class='pw_bold'>#{I18n.t('normalized_credit')} : </span> #{stats.image.normalized_credit}</p>
+            <p><span class='pw_bold'>#{I18n.t('description')} : </span> #{stats.image.description}</p>
+           </div>"  %>
+      <tr class="pw_theme">
+        <td><%= I18n.l(stats.created_at) %></td>
+        <td><%= stats.operation_label.label %></td>
+        <% if stats.user.nil? %>
+            <td><%= I18n.t(:deleted) %></td>
+            <td><%= I18n.t(:deleted) %></td>
+        <% else %>
+            <td><%= stats.user.title.nil? ? I18n.t(:deleted) : stats.user.title.name %></td>
+            <% if stats.image.provider.name == "Plainpicture" %>
+                <td><%= stats.user.login %></td>
+            <% else %>
+                <td><%= stats.user.full_name.blank? ? stats.user.login : stats.user.full_name %></td>
+            <% end %>
+        <% end %>
+        <td><%= (stats.image.nil? || stats.image.provider.nil? )? I18n.t(:deleted) : stats.image.provider.name %></td>
+        <td class="st_thumb"><%= stats.image.nil? ? I18n.t(:deleted) : image_tag(stats.image.thumb_location, :class => 'popover-trigger', 'data-c' => pw_c, 'data-style' => 'primary', :height => "32")%></td>
+        <td class="pw_stats_thumb_table_pic_nam"><%= stats.image.nil? ? I18n.t(:deleted) : stats.image.original_filename %></td>
+        <td><%= stats.image.headline %></td>
+        <td><%= stats.image.creator %></td>
+      </tr>
+
+    <% end %>
+    <% end %>
+  </table>
+
+</div>
+
+
+<script>
+var affixStatisticsList = function() {
+    $('#pw_statistics_list>.fixed-thead').affix({
+        offset: {
+          top: function () {
+                return (this.top = $('#pw_statistics_list>.fixed-thead').offset().top + $('#pw_center').scrollTop() - $('#pw_top').height());
+            }
+        },
+        target : '#pw_center'
+    })
+
+    $('#pw_statistics_list>.fixed-thead').on("affix.bs.affix", function(){
+        $(this).css('top', $('#pw_top').height());
+        $(this).width($(this).width());
+    })    
+}
+
+</script>

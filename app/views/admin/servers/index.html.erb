@@ -1,0 +1,17 @@
+<div id="servers_list">
+  <table>
+
+  <% @servers.each do |s| %>
+    <tr>
+      <td><strong><%= s.name %></strong> <i>(<%= s.which_type %> <%= s.status %> <%= I18n.t('current_server') if s.is_self %>)</i></td>
+      <td><%= link_to I18n.t('edit'), edit_admin_server_path(s.id) %></td>
+      <td><%= link_to I18n.t('destroy'), admin_server_path(s.id), :data => { :confirm => I18n.t('are_you_sure') }, :remote => :true, :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+  <%= link_to I18n.t("new_server"),new_admin_server_path %>
+
+ </div>

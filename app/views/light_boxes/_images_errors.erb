@@ -1,0 +1,10 @@
+<div id="lb_images_errors">
+   <%= "#{@light_box_ims_errors.count} image(s) en erreur"%>
+    <br />
+     <% err = @light_box_ims_errors.collect{ |e| e.errors.values }.uniq.flatten   %>
+     <% if err.uniq! %>
+           <% err.each do |e| %>
+            <%= e %><br />
+           <% end %>
+     <% end %>
+ </div>

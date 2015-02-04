@@ -1,0 +1,28 @@
+body{
+	background-color: #fff;
+	font-family: Serif;
+	font-size: 9pt;
+    color: #000;
+    float: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+#pw_media_list, #pw_media_all, #pw_panel_carrousel, .pw_media_info, .pagination{
+    display: none;
+}
+
+
+img{
+    /*float:left;*/
+    clear: both;
+    margin-right: 10pt;
+    border: 0px !important;
+    display: block;
+}
+
+.not_print{
+    display: none;
+}

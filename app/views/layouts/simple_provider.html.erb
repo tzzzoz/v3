@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" type="image/png" href="<%= asset_path 'pp_favicon.png' %>">
+    <title><%= I18n.t'pixpalace' %></title>
+    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "pw.providers.js" %>
+
+    <%= raw dynamic_css %>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            <%= yield :document_ready %>
+
+            $(".pw_menu_1 li").not(':last').append(' | ');
+            
+            $(".pw_toggle_check").toggle(
+              function(){
+                $(this).closest('form').find("input:checkbox")
+                                       .attr('checked', true)
+                                       .each( function(){ $(this).triggerHandler('click') });
+              },
+              function(){
+                $(this).closest('form').find("input:checkbox")
+                                       .attr('checked', false)
+                                       .each( function(){ $(this).triggerHandler('click') });
+              }
+            );
+
+            PwLayout();
+
+            flashIt();
+
+        });
+
+        $(window).resize(function(){ PwLayout() });
+        
+    </script>
+  </head>
+  <body>
+    
+    <div id='pw_top'>
+      <%#= render :partial => 'shared/pw_header_menu' %>
+    </div>
+
+     <div id='pw_center'>
+       <%= yield %>
+       <%#= render :partial => 'shared/pw_footer' %>
+    </div>
+
+    <div id="modal_wrapper"></div>
+  </body>
+</html>

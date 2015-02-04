@@ -1,0 +1,198 @@
+metadata_conversions_024: 
+  iptc: 3:214
+  xmp: 
+  eightbim: 3#214#Custom Field 15=
+  id: "24"
+  image: erasable
+metadata_conversions_013: 
+  iptc: 2:95
+  xmp: 
+  eightbim: 2#95#Province State=
+  id: "13"
+  image: state
+metadata_conversions_002: 
+  iptc: "2:10"
+  xmp: 
+  eightbim: 2#10#Priority=
+  id: "2"
+  image: urgency
+metadata_conversions_025: 
+  iptc: 3:215
+  xmp: 
+  eightbim: 3#215#Custom Field 16=
+  id: "25"
+  image: request_key
+metadata_conversions_014: 
+  iptc: 2:101
+  xmp: 
+  eightbim: 2#101#Country=
+  id: "14"
+  image: country
+metadata_conversions_003: 
+  iptc: "2:12"
+  xmp: 
+  eightbim: 
+  id: "3"
+  image: subject_code
+metadata_conversions_026: 
+  iptc: 3:216
+  xmp: 
+  eightbim: 3#216#Custom Field 17=
+  id: "26"
+  image: request_title
+metadata_conversions_015: 
+  iptc: 2:103
+  xmp: 
+  eightbim: 2#103#Original Transmission Reference=
+  id: "15"
+  image: transmission_reference
+metadata_conversions_004: 
+  iptc: "2:15"
+  xmp: 
+  eightbim: 2#15#Category=
+  id: "4"
+  image: category
+metadata_conversions_027: 
+  iptc: 3:217
+  xmp: 
+  eightbim: 3#217#Custom Field 18=
+  id: "27"
+  image: request_server
+metadata_conversions_016: 
+  iptc: 2:105
+  xmp: 
+  eightbim: 2#105#Headline=
+  id: "16"
+  image: headline
+metadata_conversions_005: 
+  iptc: "2:20"
+  xmp: 
+  eightbim: 2#20#Supplemental Category=
+  id: "5"
+  image: supplemental_category
+metadata_conversions_028: 
+  iptc: 3:218
+  xmp: 
+  eightbim: 3#218#Custom Field 19=
+  id: "28"
+  image: max_avail_width
+metadata_conversions_017: 
+  iptc: 2:110
+  xmp: 
+  eightbim: 2#110#Credit=
+  id: "17"
+  image: credit
+metadata_conversions_006: 
+  iptc: "2:25"
+  xmp: 
+  eightbim: 2#25#Keyword=
+  id: "6"
+  image: subject
+metadata_conversions_030: 
+  iptc: 3:220
+  xmp: 
+  eightbim: 3#220=
+  id: "30"
+  image: original_filename
+metadata_conversions_029: 
+  iptc: 3:219
+  xmp: 
+  eightbim: 3#219#Custom Field 20=
+  id: "29"
+  image: max_avail_height
+metadata_conversions_018: 
+  iptc: 2:115
+  xmp: 
+  eightbim: 2#115#Source=
+  id: "18"
+  image: source
+metadata_conversions_007: 
+  iptc: "2:40"
+  xmp: 
+  eightbim: 2#40#Special Instructions=
+  id: "7"
+  image: instructions
+metadata_conversions_031: 
+  iptc: 3:230
+  xmp: 
+  eightbim: 3#230=
+  id: "31"
+  image: ms_picture_id
+metadata_conversions_020: 
+  iptc: 2:120
+  xmp: 
+  eightbim: 2#120#Caption=
+  id: "20"
+  image: description
+metadata_conversions_019: 
+  iptc: 2:116
+  xmp: 
+  eightbim: 2#116#Copyright String=
+  id: "19"
+  image: rights
+metadata_conversions_008: 
+  iptc: "2:55"
+  xmp: 
+  eightbim: 2#55#Created Date=
+  id: "8"
+  image: date_created
+metadata_conversions_032: 
+  iptc: 3:231
+  xmp: 
+  eightbim: 3#231=
+  id: "32"
+  image: ms_id
+metadata_conversions_021: 
+  iptc: 2:121
+  xmp: 
+  eightbim: 2#121#Image Orientation=
+  id: "21"
+  image: reportage
+metadata_conversions_010: 
+  iptc: 2:85
+  xmp: 
+  eightbim: 2#85#Byline Title=
+  id: "10"
+  image: authors_position
+metadata_conversions_009: 
+  iptc: 2:80
+  xmp: 
+  eightbim: 2#80#Byline=
+  id: "9"
+  image: creator
+metadata_conversions_033: 
+  iptc: 3:232
+  xmp: 
+  eightbim: 3#232=
+  id: "33"
+  image: reception_date
+metadata_conversions_022: 
+  iptc: 2:122
+  xmp: 
+  eightbim: 2#122#Caption Writer=
+  id: "22"
+  image: caption_writer
+metadata_conversions_011: 
+  iptc: 2:90
+  xmp: 
+  eightbim: 2#90#City=
+  id: "11"
+  image: city
+metadata_conversions_023: 
+  iptc: 3:213
+  xmp: 
+  eightbim: 3#213#Custom Field 14=
+  id: "23"
+  image: hires_location
+metadata_conversions_012: 
+  iptc: 2:92
+  xmp: 
+  eightbim: 2#92=
+  id: "12"
+  image: location
+metadata_conversions_001: 
+  iptc: "2:5"
+  xmp: 
+  eightbim: 2#5#Image Name=
+  id: "1"
+  image: title

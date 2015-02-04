@@ -1,0 +1,120 @@
+#!/usr/bin/env ruby
+
+require File.dirname(__FILE__) + '/../config/environment.rb'
+require 'optparse'
+
+I18n.locale = :en
+
+options = {}
+errors = false
+
+OptionParser.new do |opts|
+  opts.banner = "
+  use quotes if needed (spaces, \#{:creator})
+  there are no default values
+  Usage: add_provider [options]
+  "
+
+  opts.on("--name string", String, "!mandatory! provider name") do |l|
+    options[:name] = l
+  end
+
+  opts.on("--string_key string", String, "!mandatory! provider string_key like on MS") do |l|
+    options[:string_key] = l
+  end
+
+  opts.on("--copyright_rule \"\#{:creator}\"", String, "!mandatory! provider copyright rule be carefull with the syntax") do |l|
+    options[:copyright_rule] = l
+  end
+
+  opts.on("--logo \"/absolute/path/to/logo.jpg\"", String, "provider logo full path, automaticaly renamed") do |l|
+    options[:logo] = l
+  end
+
+  opts.on("--groups_bl \"name1@@@name2\"", String, "blacklist listed groups on creation, group names must be separated by @@@") do |l|
+    options[:groups_bl] = l
+  end
+
+  opts.on("--description string", String, "provider description") do |l|
+    options[:description] = l
+  end
+
+  opts.on("--days_keep number", Integer, "Provider files will be erased after this number of days") do |l|
+    options[:days_keep] = l
+  end
+
+  opts.on("--days_keep_per_picture", "If set and days keep is filled files comming in in_modif will not be erased") do |l|
+    options[:days_keep_per_picture] = l
+  end
+
+  opts.on("--provider_conditions string", String, "Provider conditions shown in a pop before download") do |l|
+    options[:provider_conditions] = l
+  end
+
+  opts.on("--site string", String, "provider website url") do |l|
+    options[:site] = l
+  end
+
+  opts.on("--address string", String, "provider address") do |l|
+    options[:address] = l
+  end
+
+  opts.on("--city string", String, "provider city") do |l|
+    options[:city] = l
+  end
+
+  opts.on("--zip_code string", String, "provide zip code") do |l|
+    options[:zip_code] = l
+  end
+
+  opts.on("--country string", String, "provider country") do |l|
+    options[:country] = l
+  end
+
+end.parse!
+
+if options[:name].blank?
+  puts 'error : name is mandatory, use -h or --help for help'
+  errors = true
+end
+
+if options[:string_key].blank?
+  puts 'error : string_key is mandatory, use -h or --help for help'
+  errors = true
+end
+
+if options[:copyright_rule].blank?
+  puts 'error : copyright_rule is mandatory, use -h or --help for help'
+  errors = true
+end
+
+exit if errors
+
+p = Provider.create(
+  :name =>                  options[:name],
+  :string_key =>            options[:string_key],
+  :description =>           options[:description],
+  :site =>                  options[:site],
+  :address =>               options[:address],
+  :copyright_rule =>        options[:copyright_rule],
+  :days_keep =>             options[:days_keep],
+  :days_keep_per_picture => options[:days_keep_per_picture],
+  :provider_conditions =>   options[:provider_conditions],
+  :city =>                  options[:city],
+  :country =>               options[:country],
+  :zip_code =>              options[:zip_code]
+)
+
+unless p.errors.empty?
+  p.errors.each_full{|e| puts "error : #{e.to_s}"}
+  exit
+end
+
+options[:groups_bl] ||= []
+groups = TitleProviderGroupName.all.collect{|tpgn| tpgn.name} - options[:groups_bl].split('@@@')
+puts "adding provider to groups : #{groups.join(', ')}"
+TitleProviderGroupName.where(:name => groups).each{|tpgn| tpgn.add_provider({:authorizations => [1, 2], :id => p.id})}
+
+unless options[:logo].blank?
+  puts 'error : unable to add logo' unless p.add_logo(File.basename(options[:logo]), options[:logo])
+end

@@ -1,0 +1,134 @@
+<% content_for :document_ready do %>
+    $('.datepicker').datepicker({language: '<%= current_user.setting.language %>'});
+    buttonize($('#pw_provider_form'));
+    if (!$('.pw_buttonset input').is(':checked')) {
+        $('.pw_buttonset input').click();
+    };
+    //$(".pw_params_builder").params_builder({fields:<%= raw @displayed_image_fields.to_json %>});
+    $('.show_hide_err').click(function(event){
+        var that = $(this);
+        var prov = $(this).attr('err');
+        $('.show_hide_err').each( function() { $(this).removeClass('gras'); } );
+        $(that).addClass('gras');
+        if (prov=='cl0') {
+            $("#control_errors_list tr:hidden").each( function() { $(this).show(); } );
+        }
+        else {
+            $("#control_errors_list tr:visible").each( function() { $(this).hide(); } );
+            $("."+prov).show();
+            }
+        });
+    PwStats();
+    PwThumbRollo();
+
+    function show_frame() {
+      $(".help_frame").show();
+      $(".show_hide_help").one("click", hide_frame);
+    };
+    function hide_frame() {
+      $(".help_frame").hide();
+      $(".show_hide_help").one("click", show_frame);
+    };
+
+    $(".show_hide_help").one("click", show_frame);
+
+<% end %>
+
+<div id="pw_results_stats">
+
+  <div class="pw_panel">
+    <div class="pw_panel-header">
+      <h2 style="display:inline-block;margin: 5px;"><%=I18n.t('pictures_control')%></h2>
+      <a class="show_hide_help" href="#" style="display:inline-block;"><%= image_tag("questionmark_grey.gif", :style => "vertical-align:bottom;")%></a>
+      <br>
+    </div>
+    
+    <div class="help_frame pw_panel-content" style="display:none;">
+      - Les <span style="color: DarkRed;font-weight:bold;">photos non traitées</span> ne sont pas envoyées aux serveurs clients.<br>Il est possible de modifier les métadonnées en ligne (pour les erreurs "Pas de métadonnées" et "Date non valide"), les photos seront alors renvoyées au serveur principal (MS) pour passer à nouveau les contrôles.<br>
+      - Les <span style="color: darkblue;font-weight:bold;">photos avec avertissement</span> sont envoyées aux serveurs clients.<br><br>
+      <u><strong>Les contrôles effectués sont les suivants</strong></u> :<br>
+      &nbsp;<strong>- Vérifications du fichier</strong> : le fichier doit être de type <strong>jpeg</strong>, de format <strong>RGB</strong>, son extension doit être <strong>".jpg"</strong>,
+      sa taille comprise entre <strong>50 ko minimum et 25 Mo maximum</strong> et sa résolution au <strong>minimum de 550 x 350 pixels</strong>.<br>
+      &nbsp;<strong>- Vérification de la photo</strong> : la photo <strong>ne doit pas être grise ou noire sur au moins les 4/5 de sa surface</strong>.<br>
+      &nbsp;<strong>- Vérifications des métadonnées</strong> : <br>
+      &nbsp;&nbsp;-> la <strong>date</strong> de la photo ne doit <strong>pas être postérieure à la date du jour</strong><br>
+      &nbsp;&nbsp;-> les métadonnées à renseigner au minimum sont : une <strong>description</strong> ( titre (105) ou légende (120) ou mots-clés (25) )  <strong>et</strong>
+      un <strong>crédit</strong> ( photographe (80), agence (115) ou crédit (110) ou notice de copyright (116) )<br><br>
+      Les erreurs listées sont visibles <strong>pendant 7 jours</strong>.<br>
+      Chaque ligne correspond à une photo en erreur, avec la date du contrôle. Si vous renvoyez cette photo, la ligne n'est pas supprimée automatiquement, par contre si la photo ne réapparaît pas dans la liste, c'est qu'elle a passé correctement les contrôles et est disponible sur nos serveurs.
+      <br>Pour supprimer une ligne, cliquer sur le picto <%= image_tag("trash.png") %>, à gauche.
+    </div>
+  </div>
+
+  <div class='pw_spacer'></div>
+  <!--% tab_err = ["Toutes","Extension non .jpg", "Non jpeg","Fichier corrompu", "Non RGB", "Fichier > 25 Mo","Pas de métadonnées","Date non valide","Fichier < 50 ko","Résolution trop faible", "Doublon", "Photo redimensionnée", "Photo grise"] %>-->
+  <!--% tabclas = ["cl0", "cl1", "cl2", "cl3", "cl4", "cl5", "cl6", "cl7", "cl8", "cl9","cl10", "cl11", "cl12"] %>-->
+  <!-- tab_err[1] => 0 : toutes, 1 : erreurs, 2 : warnings -->
+  <% tab_ctrl = [[0,"Toutes","cl0"],[1,"Extension non .jpg","cl1"],[1,"Non jpeg","cl2"],[1,"Fichier corrompu","cl3"],[1,"Non RGB","cl4"],[1,"Fichier > 25 Mo","cl5"],[1,"Pas de métadonnées","cl6"],[1,"Date non valide","cl7"],[1,"Fichier < 50 ko","cl8"],[1,"Résolution trop faible","cl9"],[0,"Doublon","cl10"],[2,"Photo redimensionnée","cl11"],[1,"Photo grise","cl12"],[1,"Photo blanche","cl13"],[1,"Image du fichier csv non trouvée","cl14"]] %>
+
+  <% unless @providers.count == 1%>
+      <%= render :partial => 'adm_agency/providers_form' %>
+      <div class='pw_spacer'></div>
+      <%= render :partial => 'adm_agency/search_form' %>
+      <div class='pw_spacer'></div>
+  <%end%>
+
+  <div class='content'>
+    <div class="pw_panel-header">
+      <span style="font-size: 1.1em"><strong><a class="show_hide_err" err="<%= tab_ctrl[0][2] %>" href="#0"><%= @err_id.count %> photos</a></strong><br></span>
+      <span style="color: DarkRed">Non traitées : </span>
+      <% tab_ctrl.each_with_index do |i,index|%>
+          <% if tab_ctrl[index][0]==1 %>
+              <a class="show_hide_err" err="<%= tab_ctrl[index][2] %>" href="#<%=i%>"><%= tab_ctrl[index][1] %> (<strong><%= @taberr["err#{index}"] %></strong>)</a>
+          <%end%>
+      <% end %>
+      <br>
+      <span style="color: darkblue">Traitées avec avertissement : </span>
+      <% tab_ctrl.each_with_index do |i,index|%>
+          <% if tab_ctrl[index][0]==2 %>
+              <a class="show_hide_err" err="<%= tab_ctrl[index][2] %>" href="#<%=i%>"><%= tab_ctrl[index][1] %> (<strong><%= @taberr["err#{index}"] %></strong>)</a>
+          <%end%>
+      <% end %>
+    </div>
+
+    
+
+
+    <table id='control_errors_list' class="table table-hover">
+      <thead>
+        <tr class="pw_statistics_list_titles">
+          <th width="120" align="center">Retirer de la liste</th>
+          <th width="180" align="center">Agence</th>
+          <th width="180" align="center">Date de réception</th>
+          <th width="300" align="center">Erreur / Avertissement</th>
+          <th width="300" align="center">Nom du fichier</th>
+          <th width="180" align="center">Vignette</th>
+          <th width="200" align="center">Modifier les métadonnées</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @err_id.each do |f| %>
+          <tr class="pw_theme <%= tab_ctrl[@err_code[f].to_i][2] %>">
+            <td width="120" align="center"><%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, remove_error_path(:record_id => f), :data => {:confirm => "Voulez-vous vraiment supprimer cette erreur de la liste ?"}, :title => "Supprimer erreur" %></td>
+            <td width="180" align="center"><strong><%= @err_prov[f] %></strong></td>
+            <td width="180" align="center"><%= I18n.l(@err_date[f]+2.hours) %></td>
+            <td width="300" align="center">
+              <% if @err_code[f] == 11  %>
+              <span style="color: darkblue"><%= tab_ctrl[@err_code[f]][1] %></span>
+              <% else %>
+              <span style="color: DarkRed"><%= tab_ctrl[@err_code[f]][1] %></span>
+              <% end %>
+            </td>
+            <td width="300" align="center"><%= @err_file[f] %></td>
+            <td width="180" align="center"><% unless (@err_code[f] < 6 || @err_code[f] > 13) %><img src="<%= @err_vig[f] %>" height="70px"><% end %></td>
+            <td width="200" align="center"><%= link_to "Modifier métadonnées", edit_image_path(:id => @err_im_id[f], :record_id => f), :class => "pw_edit_icon", :title => "Modifier les Métadonnées" if (@err_im_id[f] != 0 and (@err_code[f] == 6 or @err_code[f] == 7)) %>
+          </tr>
+
+          <% end %>
+      </tbody> 
+    </table>
+
+  </div>
+
+</div>

@@ -1,0 +1,1747 @@
+--- 
+providers_084: 
+  local: "0"
+  form_path: 
+  name: Myop
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Myop.jpg
+  id: "84"
+  provider_conditions: 
+  string_key: Myop
+  description: "MYOP est compos\xC3\xA9e de 15 photographes, plasticiens ou reporters, chaque acteur y apporte un point de vue sur le monde contemporain"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_021: 
+  local: "0"
+  form_path: 
+  name: Andia
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Andia.jpg
+  id: "21"
+  provider_conditions: 
+  string_key: Andia
+  description: "La vie au quotidien, tourisme, actualit\xC3\xA9s, \xC3\xA9conomie,loisirs, sant\xC3\xA9, social, environnement urbain, viticulture, nature, diffuse Wildlife et Liverani"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_042: 
+  local: "0"
+  form_path: 
+  name: Api
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Api.jpg
+  id: "42"
+  provider_conditions: 
+  string_key: Api
+  description: API  Collection archives Francois LOCHON et illustration TOURISME
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_063: 
+  local: "0"
+  form_path: 
+  name: Light motiv
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator} / #{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Lightmotiv.jpg
+  id: "63"
+  provider_conditions: 
+  string_key: Lightmotiv
+  description: "Agence de reportage et d'illustration bas\xC3\xA9e au nord de Paris. Reportage, sant\xC3\xA9, social, architecture, portrait, culture, tourisme, villes."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_085: 
+  local: "0"
+  form_path: 
+  name: Ip3-press
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Lux.jpg
+  id: "85"
+  provider_conditions: 
+  string_key: Lux
+  description: "L'agence IP3-PRESS est une agence photographique g\xC3\xA9n\xC3\xA9raliste, couvrant l'actualit\xC3\xA9 politique, sociale et \xC3\xA9conomique."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_001: 
+  local: "0"
+  form_path: 
+  name: Sipa
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 90
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Sipa.jpg
+  id: "1"
+  provider_conditions: 
+  string_key: Sipa
+  description: "G\xC3\xA9n\xC3\xA9raliste"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_022: 
+  local: "0"
+  form_path: 
+  name: Imaginechina
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator} / #{:source}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: IC.jpg
+  id: "22"
+  provider_conditions: 
+  string_key: IC
+  description: "IMAGINECHINA, news et presse, production et distribution. Bureaux \xC3\xA0 Shanghai, Pekin, Canton. 300 photographes + syndication presse r\xC3\xA9gionale."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_043: 
+  local: "0"
+  form_path: 
+  name: Sagaphoto
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: SagaPhoto.jpg
+  id: "43"
+  provider_conditions: 
+  string_key: SagaPhoto
+  description: "Le collectif de photographes SagaPhoto est sp\xC3\xA9cialis\xC3\xA9 : Sapeur-Pompier, Agriculture, Environnement, Tourisme..."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_064: 
+  local: "0"
+  form_path: 
+  name: Marco Polo
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Marcopolo.jpg
+  id: "64"
+  provider_conditions: 
+  string_key: Marcopolo
+  description: "Agence sp\xC3\xA9cialis\xC3\xA9e dans les photos de personnages de tous \xC3\xA2ges photographi\xC3\xA9s dans leur vie quotidienne et durant leurs loisirs."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_086: 
+  local: "0"
+  form_path: 
+  name: Fastimage
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Fastimage.jpg
+  id: "86"
+  provider_conditions: 
+  string_key: Fastimage
+  description: "Musiques, concerts, portraits d'artistes, spectacles : vintage et actu."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_002: 
+  local: "0"
+  form_path: 
+  name: Epa
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 135
+  copyright_rule: "#{:creator} / EPA"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Epa.jpg
+  id: "2"
+  provider_conditions: 
+  string_key: Epa
+  description: "G\xC3\xA9n\xC3\xA9raliste europ\xC3\xA9enne"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_023: 
+  local: "0"
+  form_path: 
+  name: "Aper\xC3\xA7u"
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Apercu.jpg
+  id: "23"
+  provider_conditions: 
+  string_key: Ape
+  description: "G\xC3\xA9n\xC3\xA9raliste"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_044: 
+  local: "0"
+  form_path: 
+  name: Eliot
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 150
+  copyright_rule: "#{:title} / EliotPress"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: EliotPress.jpg
+  id: "44"
+  provider_conditions: 
+  string_key: ELIOT
+  description: "Eliot Press est une agence de presse photographique g\xC3\xA9n\xC3\xA9raliste sp\xC3\xA9cialis\xC3\xA9e dans l'actualit\xC3\xA9 people"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_065: 
+  local: "0"
+  form_path: 
+  name: Christophel
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: Collection Christophel
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Christophel.jpg
+  id: "65"
+  provider_conditions: 
+  string_key: Christophel
+  description: "La collection Christophel est une base sp\xC3\xA9cialis\xC3\xA9e dans le cin\xC3\xA9ma fran\xC3\xA7ais et international, 6 millions de photos, portrait, tournage, affiche."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_087: 
+  local: "0"
+  form_path: 
+  name: Vision
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Vision.jpg
+  id: "87"
+  provider_conditions: 
+  string_key: Vision
+  description: "Vision met \xC3\xA0 disposition de ses clients sur pixpalace le travail photographique de Youri Lenquette, Franck Camhi et Laurent Hamels. Ce travail couvre "
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_024: 
+  local: "0"
+  form_path: 
+  name: Francedias
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Francedias.jpg
+  id: "24"
+  provider_conditions: 
+  string_key: Francedias
+  description: "France : paysage, patrimoine, \xC3\xA9conomie, sports, gastronomie, nature, vie quotidienne"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_045: 
+  local: "0"
+  form_path: 
+  name: Akg-images
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Akg.jpg
+  id: "45"
+  provider_conditions: 
+  string_key: Akg
+  description: "L'agence photographique europ\xC3\xA9enne de la culture (histoire, beaux-arts, civilisations, photographie ancienne, musique, cin\xC3\xA9ma, religion, patrimoine)"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_066: 
+  local: "0"
+  form_path: 
+  name: Wireimage
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Wireimage.jpg
+  id: "66"
+  provider_conditions: "Ce panier contient au moins une photo Wireimage qui exige pour \xC3\xAAtre t\xC3\xA9l\xC3\xA9charg\xC3\xA9e que vous acceptiez les conditions g\xC3\xA9n\xC3\xA9rales de Cession de Droits de Getty Images disponibles sur www.gettyimages.fr"
+  string_key: Wireimage
+  description: "WireImage est le plus important fournisseur d'images Entertainment : photos, vid\xC3\xA9os, \xC3\xA9v\xC3\xA8nements..."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_003: 
+  local: "0"
+  form_path: 
+  name: Ap
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 90
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Ap.jpg
+  id: "3"
+  provider_conditions: 
+  string_key: Ap
+  description: "Actualit\xC3\xA9 am\xC3\xA9ricaine et internationale"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_088: 
+  local: "0"
+  form_path: 
+  name: Ide
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Ide.jpg
+  id: "88"
+  provider_conditions: 
+  string_key: Ide
+  description: L'Agence d'infographies, print, web et TV.
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_067: 
+  local: "0"
+  form_path: 
+  name: Filmmagic
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Filmmagic.jpg
+  id: "67"
+  provider_conditions: "Ce panier contient au moins une photo Film Magic qui exige pour \xC3\xAAtre t\xC3\xA9l\xC3\xA9charg\xC3\xA9e que vous acceptiez les conditions g\xC3\xA9n\xC3\xA9rales de Cession de Droits de Getty Images disponibles sur www.gettyimages.fr"
+  string_key: Filmmagic
+  description: "Film Magic est un fournisseur incontournable d'images Entertainment : stars au naturel, \xC3\xA9v\xC3\xA8nements..."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_046: 
+  local: "0"
+  form_path: 
+  name: Opa
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Opa.jpg
+  id: "46"
+  provider_conditions: 
+  string_key: Opa
+  description: Grands Reportages. Sujets magazines. Tourisme. Illustration. Galerie. Expos.
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_004: 
+  local: "0"
+  form_path: 
+  name: Cosmos
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Cosmos.jpg
+  id: "4"
+  provider_conditions: 
+  string_key: Cosmos
+  description: "G\xC3\xA9n\xC3\xA9raliste"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_025: 
+  local: "0"
+  form_path: 
+  name: Alamo
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Alamo.jpg
+  id: "25"
+  provider_conditions: 
+  string_key: Alamo
+  description: "People, culture, charme, faits de soci\xC3\xA9t\xC3\xA9 (textes et photos)."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_090: 
+  local: "0"
+  form_path: 
+  name: JerryCom
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:credit} / JerryCom"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: JerryCom.jpg
+  id: "90"
+  provider_conditions: 
+  string_key: JerryCom
+  description: "G\xC3\xA9n\xC3\xA9raliste, illustration, reportages."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_089: 
+  local: "0"
+  form_path: 
+  name: Bridgeman
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Bridgeman.jpg
+  id: "89"
+  provider_conditions: 
+  string_key: Bridgeman
+  description: "BRIDGEMAN : LA REFERENCE EN ART, CULTURE et HISTOIRE."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_068: 
+  local: "0"
+  form_path: 
+  name: Dagli Orti
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:source}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Dagliorti.jpg
+  id: "68"
+  provider_conditions: 
+  string_key: Dagliorti
+  description: "La collection Dagli Orti, source d'images d\xC3\xA9di\xC3\xA9es \xC3\xA0 l'art, aux civilisations et \xC3\xA0 l'Histoire"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_005: 
+  local: "0"
+  form_path: 
+  name: Twipix
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Twipix.jpg
+  id: "5"
+  provider_conditions: 
+  string_key: Twipix
+  description: "www.twipix.com est un portail multi-th\xC3\xA9matiques : cuisine, trains et transports (fonds de LA VIE DU RAIL), civilisations du monde, nature et faune."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_026: 
+  local: "0"
+  form_path: 
+  name: Fedephoto
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 90
+  copyright_rule: "#{:creator} / Fedephoto"
+  form_per_session: "0"
+  days_keep_per_picture: "1"
+  logo: Fedephoto.jpg
+  id: "26"
+  provider_conditions: 
+  string_key: Fedephoto
+  description: "Actualit\xC3\xA9s, illustration, magazine, portraits, people, culture, sports"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_047: 
+  local: "0"
+  form_path: 
+  name: Kharbine tapabor
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: KharbineTapabor.jpg
+  id: "47"
+  provider_conditions: 
+  string_key: KharbineTapabor
+  description: "Agence sp\xC3\xA9cialis\xC3\xA9e en document ancien : affiche, gravure, estampe, imagerie populaire, publicit\xC3\xA9, peinture, presse, objet, photographie, miniature"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_091: 
+  local: "0"
+  form_path: 
+  name: WikiSpectacle
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: WikiSpectacle.jpg
+  id: "91"
+  provider_conditions: 
+  string_key: WikiSpectacle
+  description: "Toute l'actualit\xC3\xA9 des spectacles (th\xC3\xA9\xC3\xA2tre, op\xC3\xA9ra, danses, portraits...)."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_070: 
+  local: "0"
+  form_path: 
+  name: Picturetank
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Picturetank.jpg
+  id: "70"
+  provider_conditions: 
+  string_key: Picturetank
+  description: "Une agence coop\xC3\xA9rative, un r\xC3\xA9seau international pour un fonds g\xC3\xA9n\xC3\xA9raliste, diversifi\xC3\xA9 et de haute qualit\xC3\xA9."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_069: 
+  local: "0"
+  form_path: 
+  name: Kobal
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:source}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Kobal.jpg
+  id: "69"
+  provider_conditions: 
+  string_key: Kobal
+  description: "Hollywood et cin\xC3\xA9ma international. Des millions d'images. Affiches, tournages, portraits"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_006: 
+  local: "0"
+  form_path: 
+  name: Starface
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 90
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Starface.jpg
+  id: "6"
+  provider_conditions: 
+  string_key: STAR
+  description: "Cin\xC3\xA9ma, TV, musique, people, spectacle, royaut\xC3\xA9, \xC3\xA9v\xC3\xA8nement, mode, collections"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_027: 
+  local: "0"
+  form_path: 
+  name: Bnf
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Bnf.jpg
+  id: "27"
+  provider_conditions: 
+  string_key: Bnf
+  description: "Documents patrimoniaux de la Biblioth\xC3\xA8que Nationale de France"
+  site: 
+  has_form: "1"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_048: 
+  local: "0"
+  form_path: 
+  name: Figarophoto
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator} / Figarophoto.com"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Figarophoto.jpg
+  id: "48"
+  provider_conditions: 
+  string_key: Figarophoto
+  description: Figarophoto
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_092: 
+  local: "0"
+  form_path: 
+  name: Age
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:credit} / Age Fotostock"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Age.jpg
+  id: "92"
+  provider_conditions: 
+  string_key: Age
+  description: "Voyage, vie quotidienne, nature, animaux, concepts... et une \xC3\xA9criture photographique \xC3\xA0 chaque fois diff\xC3\xA9rente."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_071: 
+  local: "0"
+  form_path: 
+  name: Ask images
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Ask.jpg
+  id: "71"
+  provider_conditions: 
+  string_key: Ask
+  description: "Agence g\xC3\xA9n\xC3\xA9raliste"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_007: 
+  local: "0"
+  form_path: 
+  name: Roger Viollet
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:source}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Rogerviollet.jpg
+  id: "7"
+  provider_conditions: 
+  string_key: Rogerviollet
+  description: Fonds d'archives historiques
+  site: 
+  has_form: "0"
+  address: ""
+  created_at: 2008-08-28 18:06:34
+providers_028: 
+  local: "0"
+  form_path: 
+  name: Agostino
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Agostino.jpg
+  id: "28"
+  provider_conditions: 
+  string_key: Agostino
+  description: Reportages
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_050: 
+  local: "0"
+  form_path: 
+  name: Stockfood
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Stockfood.jpg
+  id: "50"
+  provider_conditions: 
+  string_key: Stockfood
+  description: Toutes les photos culinaires
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_049: 
+  local: "0"
+  form_path: 
+  name: Ana
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Ana.jpg
+  id: "49"
+  provider_conditions: 
+  string_key: Ana
+  description: "L'agence ANA est sp\xC3\xA9cialis\xC3\xA9e dans la photographie de voyage, en France et partout dans le monde."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_093: 
+  local: "0"
+  form_path: 
+  name: Babel
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Babel.jpg
+  id: "93"
+  provider_conditions: 
+  string_key: Babel
+  description: "Photographes ind\xC3\xA9pendants associ\xC3\xA9s. Photojournalisme, documentaire et illustration. France et international."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_072: 
+  local: "0"
+  form_path: 
+  name: Vista photo
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator} / Vista Photo"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Vista.jpg
+  id: "72"
+  provider_conditions: 
+  string_key: Vista
+  description: "Photos a\xC3\xA9riennes de 5 \xC3\xA0 500 m\xC3\xA8tres d'altitude - Reportages \xC3\xA0 caract\xC3\xA8re culturel, historique et scientifique."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_008: 
+  local: "0"
+  form_path: 
+  name: Photononstop
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Photononstop.jpg
+  id: "8"
+  provider_conditions: 
+  string_key: Photononstop
+  description: "Illustration et images cr\xC3\xA9atives"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_030: 
+  local: "0"
+  form_path: 
+  name: Bios
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Bios.jpg
+  id: "30"
+  provider_conditions: 
+  string_key: Bios
+  description: Nature, environnement, jardin, animaux, biologie, agriculture.
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_029: 
+  local: "0"
+  form_path: 
+  name: Uma
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Uma.jpg
+  id: "29"
+  provider_conditions: 
+  string_key: Uma
+  description: "Images d'actualit\xC3\xA9 et d'illustrations sportives"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_051: 
+  local: "0"
+  form_path: 
+  name: Signatures
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Signatures.jpg
+  id: "51"
+  provider_conditions: 
+  string_key: Signatures
+  description: "Vie quotidienne, faits de soci\xC3\xA9t\xC3\xA9, \xC3\xA9conomie, politique"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_094: 
+  local: "0"
+  form_path: 
+  name: Only France
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:source}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Onlyfrance.jpg
+  id: "94"
+  provider_conditions: 
+  string_key: Onlyfrance
+  description: "La plate-forme sp\xC3\xA9cialis\xC3\xA9e sur la FRANCE : les + belles images d'agences, d'ind\xC3\xA9pendants. La FRANCE sous son meilleur angle !"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_073: 
+  local: "0"
+  form_path: 
+  name: Angeli
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 90
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Angeli.jpg
+  id: "73"
+  provider_conditions: 
+  string_key: Angeli
+  description: "Mode, people, cin\xC3\xA9ma, collections, \xC3\xA9v\xC3\xA8nement, royaut\xC3\xA9"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_010: 
+  local: "0"
+  form_path: 
+  name: Studio x
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: StudioX.jpg
+  id: "10"
+  provider_conditions: 
+  string_key: StudioX
+  description: Reportages et illustrations, diffuse Bilderberg, Look, Picture Press, Bokelberg et StockFood
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_009: 
+  local: "0"
+  form_path: 
+  name: Photos12
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: Photos 12
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Photos12.jpg
+  id: "9"
+  provider_conditions: 
+  string_key: P12
+  description: "Cin\xC3\xA9ma, art, histoire et illustration g\xC3\xA9n\xC3\xA9rale"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_031: 
+  local: "0"
+  form_path: 
+  name: Opale
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Opale.jpg
+  id: "31"
+  provider_conditions: 
+  string_key: Opale
+  description: "Agence de diffusion de photos d'\xC3\xA9crivains"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_052: 
+  local: "0"
+  form_path: 
+  name: Captimage
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Captimage.jpg
+  id: "52"
+  provider_conditions: 
+  string_key: Captimage
+  description: "G\xC3\xA9n\xC3\xA9raliste"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_095: 
+  local: "0"
+  form_path: 
+  name: Freestins
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Freestins.jpg
+  id: "95"
+  provider_conditions: 
+  string_key: Freestins
+  description: "Toutes les photos d'actualit\xC3\xA9, de sport et d'illustration en Bretagne et Pays de la Loire."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_074: 
+  local: "0"
+  form_path: 
+  name: Alpaca
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Alpaca.jpg
+  id: "74"
+  provider_conditions: 
+  string_key: Alpaca
+  description: "Le sp\xC3\xA9cialiste des images du Sud, plus de 40 photographes en Rh\xC3\xB4ne alpes, Provence Alpes C\xC3\xB4te d'Azur, Corse, Suisse et Italie"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_011: 
+  local: "0"
+  form_path: 
+  name: Rex
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 90
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Rex.jpg
+  id: "11"
+  provider_conditions: 
+  string_key: Rex
+  description: "Actualit\xC3\xA9 anglaise"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_032: 
+  local: "0"
+  form_path: 
+  name: Rea
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Rea.jpg
+  id: "32"
+  provider_conditions: 
+  string_key: Rea
+  description: "Economie, politique, soci\xC3\xA9t\xC3\xA9, tourisme, illustrations"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_053: 
+  local: "0"
+  form_path: 
+  name: Colorise
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Colorise.jpg
+  id: "53"
+  provider_conditions: 
+  string_key: Colorise
+  description: "Agence g\xC3\xA9n\xC3\xA9raliste : Culinaire, Faune, Flore, France, Monde, Vie Quotidienne..."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_096: 
+  local: "0"
+  form_path: 
+  name: Onlygrafic
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Onlygrafic.jpg
+  id: "96"
+  provider_conditions: 
+  string_key: Onlygrafic
+  description: "Premi\xC3\xA8re imagebank sp\xC3\xA9cialis\xC3\xA9e dans la diffusion de dessins d'illustrateurs en droits g\xC3\xA9r\xC3\xA9s"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_075: 
+  local: "1"
+  form_path: 
+  name: LOCAL1
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: ""
+  id: "75"
+  provider_conditions: 
+  string_key: Local1
+  description: ""
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_012: 
+  local: "0"
+  form_path: 
+  name: Artedia
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator} / #{:source}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Artedia.jpg
+  id: "12"
+  provider_conditions: 
+  string_key: Artedia
+  description: Patrimoine, architecture, ville, portrait d'architecte
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_033: 
+  local: "0"
+  form_path: 
+  name: Hemis
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator} / #{:source}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Hemis.jpg
+  id: "33"
+  provider_conditions: 
+  string_key: Hemis
+  description: Paysages, voyages et tourisme
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_054: 
+  local: "0"
+  form_path: 
+  name: Face to face
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Facetoface.jpg
+  id: "54"
+  provider_conditions: 
+  string_key: Facetoface
+  description: "G\xC3\xA8n\xC3\xA9raliste, Actualit\xC3\xA9s, T\xC3\xA9l\xC3\xA9vision, Peoples, 33 Partenaires dans le monde"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_097: 
+  local: "0"
+  form_path: 
+  name: Plainpicture
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Plainpicture.jpg
+  id: "97"
+  provider_conditions: 
+  string_key: Plainpicture
+  description: "Plainpicture - Photographie pure, agence photo pour la cr\xC3\xA9ation."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_076: 
+  local: "0"
+  form_path: 
+  name: PixPalace
+  updated_at: 2009-07-02 08:52:00
+  days_keep: 
+  copyright_rule: PixPalace
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: 
+  id: "76"
+  provider_conditions: 
+  string_key: PP
+  description: 
+  site: www.pixpalace.com
+  has_form: "0"
+  address: 
+  created_at: 2009-07-02 08:52:00
+providers_013: 
+  local: "0"
+  form_path: 
+  name: Globepix
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Globepix.jpg
+  id: "13"
+  provider_conditions: 
+  string_key: Globepix
+  description: Economie, politique et tourisme
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_034: 
+  local: "0"
+  form_path: 
+  name: Icon sport
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: IS.jpg
+  id: "34"
+  provider_conditions: 
+  string_key: IS
+  description: Images de sports
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_055: 
+  local: "0"
+  form_path: 
+  name: Artcomart
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: ArtComArt.jpg
+  id: "55"
+  provider_conditions: 
+  string_key: ArtComArt
+  description: "ArtComArt est d\xC3\xA9di\xC3\xA9e au spectacle vivant (Th\xC3\xA9atre, Op\xC3\xA9ra, Danse, Cirque...)"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_077: 
+  local: "0"
+  form_path: 
+  name: Gamma
+  updated_at: 
+  days_keep: 120
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Gamma.jpg
+  id: "77"
+  provider_conditions: 
+  string_key: Gamma
+  description: "G\xC3\xA9n\xC3\xA9raliste"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_035: 
+  local: "0"
+  form_path: 
+  name: Patrick Robert
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: PRobert.jpg
+  id: "35"
+  provider_conditions: 
+  string_key: PRobert
+  description: Patrick Robert
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_056: 
+  local: "0"
+  form_path: 
+  name: Jlppa
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Jlppa.jpg
+  id: "56"
+  provider_conditions: 
+  string_key: Jlppa
+  description: "G\xC3\xA9n\xC3\xA9raliste, Sp\xC3\xA9cialis\xC3\xA9e PACA"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_014: 
+  local: "0"
+  form_path: 
+  name: Asa
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Asa.jpg
+  id: "14"
+  provider_conditions: 
+  string_key: Asa
+  description: "G\xC3\xA9n\xC3\xA9raliste"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_078: 
+  local: "0"
+  form_path: 
+  name: Keystone
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Keystone.jpg
+  id: "78"
+  provider_conditions: 
+  string_key: Keystone
+  description: Fonds d'archives historiques
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_057: 
+  local: "0"
+  form_path: 
+  name: Story box
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Storybox.jpg
+  id: "57"
+  provider_conditions: 
+  string_key: Storybox
+  description: "Agence g\xC3\xA9n\xC3\xA9raliste, portrait, personnalit\xC3\xA9, people haut de gamme"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_015: 
+  local: "0"
+  form_path: 
+  name: Jbv-news
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Jbv-news.jpg
+  id: "15"
+  provider_conditions: 
+  string_key: Jbv-news
+  description: "G\xC3\xA9n\xC3\xA9raliste, Actualit\xC3\xA9 Politique, Economie"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_036: 
+  local: "0"
+  form_path: 
+  name: Urbaimages
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Urba.jpg
+  id: "36"
+  provider_conditions: 
+  string_key: Urba
+  description: "Urbanisme, environnement, transports, habitat, immobilier, France, r\xC3\xA9gions, villes, patrimoine, loisirs, \xC3\xA9conomie, social"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_080: 
+  local: "0"
+  form_path: 
+  name: Oeilpublic
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Oeilpublic.jpg
+  id: "80"
+  provider_conditions: 
+  string_key: Oeilpublic
+  description: "Photographie documentaire. La nouvelle vague du photojournalisme ind\xC3\xA9pendant."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_079: 
+  local: "0"
+  form_path: 
+  name: Bsip
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Bsip.jpg
+  id: "79"
+  provider_conditions: 
+  string_key: Bsip
+  description: "Sant\xC3\xA9, m\xC3\xA9decine, sciences, vie quotidienne, animaux, nature et environnement."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_016: 
+  local: "0"
+  form_path: 
+  name: Scope
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Scope.jpg
+  id: "16"
+  provider_conditions: 
+  string_key: Scope
+  description: France, Europe, tourisme, terroir, artisanat, viticulture
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_037: 
+  local: "0"
+  form_path: 
+  name: Option photo
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Optionphoto.jpg
+  id: "37"
+  provider_conditions: 
+  string_key: Optionphoto
+  description: "La qualit\xC3\xA9 des images de \xC2\xAB Sc\xC3\xA8nes de vie \xC2\xBB et de \xC2\xAB Saveurs \xC2\xBB"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_058: 
+  local: "0"
+  form_path: 
+  name: Riva
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Riva.jpg
+  id: "58"
+  provider_conditions: 
+  string_key: Riva
+  description: "Agence de photojournalisme proposant des sujets d'actualit\xC3\xA9 et des reportages documentaires (France et international)."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_081: 
+  local: "0"
+  form_path: 
+  name: VII
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:creator} / VII"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: VII.jpg
+  id: "81"
+  provider_conditions: 
+  string_key: VII
+  description: "Reportages et sujets sur les enjeux politiques, sociaux ou \xC3\xA9conomiques majeurs de notre plan\xC3\xA8te"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_017: 
+  local: "0"
+  form_path: 
+  name: Presse sports
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Pressesports.jpg
+  id: "17"
+  provider_conditions: 
+  string_key: Pressesports
+  description: Sports, syndication de l'Equipe
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_038: 
+  local: "0"
+  form_path: 
+  name: Ciel et espace
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Cieletespace.jpg
+  id: "38"
+  provider_conditions: 
+  string_key: Cieletes
+  description: "Phototh\xC3\xA8que, de l'histoire de la conqu\xC3\xAAte spatiale \xC3\xA0 l'actualit\xC3\xA9 de l'espace et de l'univers"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_060: 
+  local: "0"
+  form_path: 
+  name: Self
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator} / #{:source}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Self.jpg
+  id: "60"
+  provider_conditions: 
+  string_key: Self
+  description: "Agence photo sp\xC3\xA9cialis\xC3\xA9e en beaut\xC3\xA9, sant\xC3\xA9 et bien-\xC3\xAAtre."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_059: 
+  local: "0"
+  form_path: 
+  name: Libre arbitre
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Librearbitre.jpg
+  id: "59"
+  provider_conditions: 
+  string_key: Librearbitre
+  description: "Collectif Libre arbitre, Reportages de soci\xC3\xA9t\xC3\xA9, actualit\xC3\xA9, tourisme"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_082: 
+  local: "0"
+  form_path: 
+  name: Photoalto
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Photoalto.jpg
+  id: "82"
+  provider_conditions: 
+  string_key: Photoalto
+  description: "Des photos europ\xC3\xA9ennes de qualit\xC3\xA9 professionnelle r\xC3\xA9sultant d'un v\xC3\xA9ritable savoir-faire en production"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_018: 
+  local: "0"
+  form_path: 
+  name: Krimages
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Krimages.jpg
+  id: "18"
+  provider_conditions: 
+  string_key: Krimages
+  description: "Actualit\xC3\xA9, politique, \xC3\xA9conomique et sociale"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_040: 
+  local: "0"
+  form_path: 
+  name: Panoramic
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: PanoramiC.jpg
+  id: "40"
+  provider_conditions: 
+  string_key: PanoramiC
+  description: "Agence de presse photographique sp\xC3\xA9cialis\xC3\xA9e dans le sport, couvre tous les \xC3\xA9v\xC3\xA9nements sportifs dans tous les domaines"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_039: 
+  local: "0"
+  form_path: 
+  name: Enguerand
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Enguerand.jpg
+  id: "39"
+  provider_conditions: 
+  string_key: Enguerand
+  description: "L'actualit\xC3\xA9 du spectacle vivant, th\xC3\xA9\xC3\xA2tre, lyrique, danse, cirque etc..."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_061: 
+  local: "0"
+  form_path: 
+  name: "Sucr\xC3\xA9 sal\xC3\xA9"
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator} / #{:caption_writer}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Sucresale.jpg
+  id: "61"
+  provider_conditions: 
+  string_key: Sucresale
+  description: "Sucr\xC3\xA9-Sal\xC3\xA9 le meilleur de la photo culinaire"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_083: 
+  local: "0"
+  form_path: 
+  name: TendanceFloue
+  updated_at: 
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Tendancefloue.jpg
+  id: "83"
+  provider_conditions: 
+  string_key: Tendancefloue
+  description: "Collectif de photographes documentaires, fond g\xC3\xA9n\xC3\xA9raliste"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 
+providers_020: 
+  local: "0"
+  form_path: 
+  name: Citimages
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Citimages.jpg
+  id: "20"
+  provider_conditions: 
+  string_key: Citimages
+  description: "Collectivit\xC3\xA9s territoriales, urbanisme, environnement / CIT'en sc\xC3\xA8ne : culture, arts vivants"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_019: 
+  local: "0"
+  form_path: 
+  name: Webistan
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:creator}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Webistan.jpg
+  id: "19"
+  provider_conditions: 
+  string_key: Webistan
+  description: "G\xC3\xA9n\xC3\xA9raliste, reportage, cr\xC3\xA9ative"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_041: 
+  local: "0"
+  form_path: 
+  name: Magnum
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:rights}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Magnum.jpg
+  id: "41"
+  provider_conditions: 
+  string_key: Magnum
+  description: "60 ans de prestige et d'ind\xC3\xA9pendance"
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34
+providers_062: 
+  local: "0"
+  form_path: 
+  name: Pxp-gallery
+  updated_at: 2008-08-28 18:06:34
+  days_keep: 
+  copyright_rule: "#{:credit}"
+  form_per_session: "0"
+  days_keep_per_picture: "0"
+  logo: Pxp-gallery.jpg
+  id: "62"
+  provider_conditions: 
+  string_key: PXPGALLERY
+  description: "Voyage, Tourisme, Patrimoine, Gastronomie, Culinaire, Viticulture, Environnement, Paysage, Nature, Etranger, Portraits d'\xC3\xA9crivains et de cuisiniers."
+  site: 
+  has_form: "0"
+  address: 
+  created_at: 2008-08-28 18:06:34

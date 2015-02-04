@@ -1,0 +1,84 @@
+<% ch_mask = true %>
+<% int_mask = 1 %>
+<% if (@current_params[:hide_mask] && @current_params[:hide_mask].to_i == 0) %>
+  <% ch_mask = false %>
+  <% int_mask = 0 %>
+<% end %>
+<div id="pw_search_panel">
+  <%= form_tag({:controller => "/searchstat", :action => "create"}, :class => "panel panel-default", :id => "pw_search_form" ) do -%>
+
+  <div class="pw_panel-header-2" >
+    <!--<div class='pw_panel-header-label ui-state-focus'><span class="pw_title_panel"><%= I18n.t('search') %></span></div>-->
+    <span class='pw_panel-header-content'>
+      <%= hidden_field_tag(:hide_mask, int_mask) %>
+      <span><%= I18n.t('customer_only') %> <%= check_box_tag(:mask, 1, ch_mask) %></span>
+      <%#= label_tag I18n.t('download_date') %>
+      <span><%= I18n.t('from') %></span>
+      <%= text_field_tag :reception_date_begin, @current_params[:reception_date_begin], :size => 10, :class => 'datepicker form-control input-xs' -%>
+      <span><%= I18n.t('to') %></span>
+      <%= text_field_tag :reception_date_end, @current_params[:reception_date_end], :size => 10, :class => 'datepicker form-control input-xs' -%>
+      <span>Format</span>
+      <%= select_tag(:operation_label_id, options_for_select([
+        [I18n.t('all'), 0],
+        [I18n.t('BD'), 1],
+        [I18n.t('HD'),2],
+        ["Dem",3]
+        ], @current_params[:operation_label_id]), :class =>'form-control input-xs')
+        %>
+
+      <%= label_tag I18n.t('entries_per_page') %>
+      <%= select_tag(:per_page, options_for_select(LIST_ROWS_PER_PAGE, @current_params[:per_page]), :class =>'form-control input-xs') %>
+
+      <%= label_tag I18n.t('search_since') %>
+      <%= select_tag(:search_since, options_for_select([
+          [I18n.t('10_minutes'), '10_minutes'],
+          [I18n.t('1_hour'), '1_hour'],
+          [I18n.t('1_day'), '1_day'],
+          [I18n.t('1_week'), '1_week'],
+          [I18n.t('1_month'), '1_month'],
+          [I18n.t('3_month'), '3_month'],
+          [I18n.t('1_year'), '1_year'],
+          [I18n.t('all'), 'all']
+          ], @current_params[:search_since]), :class =>'form-control input-xs')
+          %>
+        <%= label_tag I18n.t('sort') %>
+        <%= select_tag(:sort, options_for_select([
+          [I18n.t('sort_download_date'), 'created_at'],
+          [I18n.t('sort_filename'), 'original_filename'],
+          ['téléchargement','operation_label_id'],
+          ['titre', 'title_name'],
+          ['utilisateur', 'user_login'],
+          ['agence', 'provider_name'],
+          ['photographe','creator'],
+          ['titre photo','headline']
+          ], @current_params[:sort]), :class =>'form-control input-xs')
+          %>
+        <%= label_tag I18n.t('country_str') %>
+        <%= select_tag :pays, options_from_collection_for_select(country_by_name, "id", "name", @current_params[:pays]), :prompt => I18n.t('all'), :class =>'form-control input-xs' %>
+      <%#= select_tag(:country, options_for_select([
+          [I18n.t('sort_download_date'), 'created_at'],
+          [I18n.t('sort_filename'), 'original_filename'],
+          ['téléchargement','operation_label_id'],
+          ['titre', 'title_name'],
+          ['utilisateur', 'user_login'],
+          ['agence', 'provider_name'],
+          ['photographe','creator'],
+          ['titre photo','headline']
+          ], @current_params[:country]))
+          %>
+
+        <%= text_field_tag :key_words, @current_params[:key_words], :size => 20, :class =>'form-control input-xs' %>
+        <%= submit_tag 'OK', :class => 'btn btn-default btn-xs' %>
+    </span>
+  </div>
+
+  <% end -%>
+</div>
+
+ <script type="text/javascript">
+$('#mask').change(function() {
+    var valmask = 0;
+    if ($(this).is(':checked')) { valmask = 1; }
+    $('#hide_mask').attr('value', valmask);
+});
+</script>

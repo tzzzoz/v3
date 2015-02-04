@@ -1,0 +1,135 @@
+<% content_for :document_ready do %>
+    buttonize($('#pw_provider_form'));
+    if (!$('.pw_buttonset input').is(':checked')) {
+        $('.pw_buttonset input').click();
+    };
+    PwStats();
+    PwThumbRollo();
+    $(".show_hide_help").toggle(function(){
+    $(".help_frame").show();
+    },function(){
+    $(".help_frame").hide();
+    });
+<% end %>
+
+<% if notice %>
+    ('<div><%= notice %></div>').dialog({
+                    buttons: {
+                        'OK': function() {
+                            $(this).dialog('close');
+                        }
+                    }
+                });
+<% end %>
+
+<% unless @providers.count == 1%>
+    <div class='pw_spacer'></div>
+    <%= render :partial => 'providers_form', :locals => {:action_title => 'index'} %>
+<%end%>
+<div class='pw_spacer'></div>
+
+<div class='pw_features content-no-color'>
+
+  <div class='pw_panel-content'>
+
+    <div class='pw_title_panel'>
+      <ul class="nav nav-tabs">
+        <% if params[:offres_reportages].to_i==1 %>
+          <li class="features_tabs_active" title="<%= I18n.t('features.offers_hint')%>" ><a><%= "#{I18n.t('features.offers')} (#{number_with_delimiter(@nb_off)})" %></a></li>
+          <% if @nb_rep == 0 %>
+              <li class="features_tabs" title="<%= I18n.t('features.features_hint')%>" ><a><%= "#{I18n.t('features.features')} (#{number_with_delimiter(@nb_rep)})" %></a></li>
+          <% else %>
+              <li class="features_tabs" title="<%= I18n.t('features.features_hint')%>" ><%= link_to "#{I18n.t('features.features')} (#{number_with_delimiter(@nb_rep)})",admin_reps_path(:sort => params[:sort], :direction => params[:direction], :keyword => params[:keyword],:liste_providers => params[:liste_providers],:offres_reportages =>0)%></li>
+          <% end %>
+        <%else%>
+          <% if @nb_off == 0 %>
+              <li class="features_tabs" title="<%= I18n.t('features.offers_hint')%>" ><a><%= "#{I18n.t('features.offers')} (#{number_with_delimiter(@nb_off)})" %></a></li>
+          <% else %>
+              <li class="features_tabs" title="<%= I18n.t('features.offers_hint')%>" ><%= link_to "#{I18n.t('features.offers')} (#{number_with_delimiter(@nb_off)})", admin_reps_path(:sort => params[:sort], :direction => params[:direction], :keyword => params[:keyword],:liste_providers => params[:liste_providers],:offres_reportages =>1)%></li>
+          <% end %>
+          <li class="features_tabs_active" title="<%= I18n.t('features.features_hint')%>"><a><%= "#{I18n.t('features.features')} (#{number_with_delimiter(@nb_rep)})" %></a></li>
+        <%end%>
+      </ul>
+    </div>
+
+    <div id='search_form'>
+      <%= render :partial => 'search_form', :locals => {:action_title => 'index'} %>
+    </div>
+
+    <div id="pw_paginator">
+    <%= paginate @reportages %>
+    </div>
+
+  </div>
+
+  <div id="table_container" class="reportages_tables_container_div" >
+
+    <table class="reportages_table_header table table-bordered table-striped">
+      <tr>
+        <th class="reportages_title_col" style="text-align:center!important;padding-right:0;"><%= sortable "rep_titre",I18n.t("features.title")%></th>
+        <th class="reportages_nbpictures_col" style="padding-left: 0"><%= sortable "nb_photos",I18n.t('features.nb_pictures').capitalize %></th>
+        <th class="reportages_credit_col"><%= sortable "signatur",I18n.t('features.credit')%></th>
+        <th class="reportages_picture_col"></th>
+        <th class="reportages_date_col"><%= sortable "rep_date",I18n.t("features.feature_date")%></th>
+        <th class="reportages_date_col"><%= sortable "updated_at",I18n.t("features.release_date")%></th>
+        <th class="reportages_text_col"><%= sortable "rep_texte",I18n.t("features.text")%></th>
+        <th class="reportages_id_col"><%= sortable "id","ID" %></th>
+        <th class="reportages_admin_col"></th>
+      </tr>
+    </table>
+
+    <div class="reportages_inner_table_div">
+
+      <table class="reportages_table_datas table table-bordered">
+        <% @reportages.each do |rep| %>
+          <% im = Image.where(:ms_image_id => rep.prem_photo).first %>
+            <% unless im.nil? %>
+              <% pw_c = "#{image_tag(im.medium_location)}" %>
+              <% pw_c += "<div class='pw_info_thumb'>
+                  <p><span class='pw_bold'>#{I18n.t('original_filename')} : </span> #{im.original_filename}</p>
+                  <p><span class='pw_bold'>#{I18n.t('reception_date')} : </span> #{im.localised_reception_date}</p>
+                  <p><span class='pw_bold'>#{I18n.t('date_created')} : </span> #{im.localised_date_created}</p>
+                  <p><span class='pw_bold'>#{I18n.t('normalized_credit')} : </span> #{im.normalized_credit}</p>
+                  <p><span class='pw_bold'>#{I18n.t('description')} : </span> #{im.description}</p>
+                 </div>"  %>
+                <tr class="<%= cycle("reportages_odd","reportages_even")%>">
+            <td class="reportages_title_col"><%= rep.rep_titre %></td>
+            <td class="reportages_nbpictures_col"><%= rep.nb_photos %></span></td>
+            <td class="reportages_credit_col"><%= rep.signatur %></td>
+            <td class="st_thumb reportages_picture_col"><%=image_tag(im.thumb_location, :class => 'popover-trigger', 'data-c' => pw_c, 'data-style' => 'primary', :height => 50)%></td>
+              <td class="reportages_date_col"><%= I18n.l(rep.rep_date, format: "%d/%m/%Y") unless rep.rep_date.nil? %></td>
+              <td class="reportages_date_col"><%= I18n.l(rep.updated_at, format: "%d/%m/%Y") %></td>
+              <td class="reportages_text_col"><%= truncate(rep.rep_texte, length: 125, separator: ' ')%></td>
+              <td class="reportages_id_col"><%= rep.id %></td>
+              <td class="reportages_admin_col">
+                <%= link_to image_tag("edit_pencil.png", :title => I18n.t('modify').capitalize, :style => "margin:0 10%;float:left;"), edit_reportage_path(rep.id,:keyword=>params[:keyword],:liste_providers => params[:liste_providers],:offres_reportages => params[:offres_reportages],:sort=>params[:sort],:direction=>params[:direction]) %>
+                <%= link_to image_tag("trash.png", :title =>I18n.t('destroy'), :style => "margin:0 10%;float:right;"), reportage_path(rep.id,:keyword=>params[:keyword],:liste_providers => params[:liste_providers],:offres_reportages => params[:offres_reportages],:sort=>params[:sort],:direction=>params[:direction]), :method => :delete, :remote => :true, :data => { :confirm => I18n.t('features.delete_message') } %>
+              </td>
+              </tr>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
+
+  <div class="pw_stats_paginate" id="tst_bas_paginator">
+      <%= paginate @reportages %>
+  </div>
+ </div>
+</div>
+
+
+<script>
+  $('.reportages_table_header').affix({
+    offset: {
+      top: function () {
+        return (this.top = $('.reportages_table_header').offset().top + $('#pw_center').scrollTop() - $('#pw_top').height());
+      }
+    },
+    target : '#pw_center'
+  })
+
+  $('.reportages_table_header').on("affix.bs.affix", function(){
+    $(this).css('top', $('#pw_top').height());
+    $(this).width($(this).width());
+  })
+</script>

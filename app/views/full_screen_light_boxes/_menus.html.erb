@@ -1,0 +1,93 @@
+<div id="title_fslboxes"><%= @light_box.name %></div>
+
+    <% if @light_box.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@light_box.errors.count, "erreur") %> <%= I18n.t('prohibited_this_operation') %>:</h2>
+            <ul>
+                <% @light_box.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+<div id="full_light_box_form_place">
+  <%= render :partial => 'full_screen_light_boxes/select_form' %>
+</div>
+
+<div id="pw_rename_light_box">
+
+    <%= form_for(@light_box, :url => full_screen_light_box_path, :method => :put) do |f| %>
+
+        <% if @light_box.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@light_box.errors.count, "erreur") %> <%= I18n.t('prohibited_this_operation') %>:</h2>
+              <ul>
+                <% @light_box.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+        <span class="field">
+            <%= f.label I18n.t("new_name") %>
+            <%= f.text_field(:name, :size => 25, :class => "form-control input-xs") %>
+            <%= f.submit I18n.t("validate"), :class => "btn btn-default btn-xs" %>
+        </span>
+
+    <% end %>
+
+</div>
+
+<div class="right-navigation">
+
+  <nav class='pw_menus'>
+    <% if current_user.is_provider_admin? || current_user.is_superadmin? %>
+      <li>
+        <%= link_to "<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('send_and_delete')}".html_safe, send_and_delete_path(:id => @light_box.id), :remote => true, :data => { :confirm => "Voulez-vous vraiment supprimer ces photos du service PixPalace ?" } %>
+      </li>
+    <% end %>
+      <li>
+        <%=  link_to("<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('sort_by_prov')}".html_safe, full_screen_light_box_path(:id => @light_box.id, :order_by_provider => "true"))%>
+      </li>
+      <li>
+        <% bod = I18n.t('lightbox_login') %>
+        <%= mail_to("", "<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('send_by_email')}".html_safe, :subject => 'PixPalace '+I18n.t('viewer', :name => @light_box.name), :body => "#{bod} \n #{show_light_boxe_url(:id => @light_box.hash_code)}")  %>
+      </li>
+      <li>
+        <a href="#" id="rename_div"><span class='glyphicon glyphicon-arrow-right'></span><%= I18n.t('rename') %></a>
+      </li>
+      <li>
+        <%= link_to("<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('delete')}".html_safe, full_screen_light_box_path(:id => @light_box.id), :method => 'delete', :data => { :confirm => "Voulez-vous vraiment supprimer cette visionneuse ?" }) %>
+      </li>
+  </nav>
+</div>
+
+<form id="pw_lb_results">
+  <div class="pw_fslboxes_dashed">
+    <ul class='pw_menus_3'>
+      <li>
+        <span class="pw_toggle_check">
+          <span class="glyphicon glyphicon-expand"></span>
+          <strong><%= I18n.t('toggle_check_all')%></strong>
+        </span>
+      </li>
+      <li>
+        <%= link_to("<span class='glyphicon glyphicon-plus'></span>#{I18n.t('add_to_lightbox')}".html_safe, "#", :class => "add_other_big") %>
+      </li>
+      <li>
+        <%= link_to("<span class='glyphicon glyphicon-save'></span>#{I18n.t('BD')}".html_safe, downloads_path(:definition => 'BD', :depage => 6), :class => 'multi_lb BD', :target => '_blank') unless @light_box.images.count > 50  %>
+      </li>
+      <li>
+        <%= link_to("<span class='glyphicon glyphicon-floppy-save'></span>#{I18n.t('HD')}".html_safe, downloads_path(:definition => 'HD', :depage => 6), :class => 'multi_lb HD', :target => '_blank') unless @light_box.images.count > 50  %>
+      </li>
+      <li>
+        <%= link_to("<span class='glyphicon glyphicon-play'></span>#{I18n.t('diaporama')}".html_safe, medias_path(:light_box => @light_box.id, :page => params[:page]), :target => '_blank')  %>
+      </li>
+      <li>
+        <%= link_to("<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('imppdf')}".html_safe, full_screen_light_box_path(:id => @light_box.id, :print => "true"), :target => "_blank")  %>
+      </li>
+      <li class='ui-state-focus pw_close_window'>
+        <span class='glyphicon glyphicon-remove'></span>
+      </li>
+    </ul>
+  </div>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Téléchargements HD+BD <%= @week_range %></h1>
+<% tabm=["","Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Npvembre","Décembre"] %>
+    <table id='pw_statistics_list'>
+       <tr class="pw_statistics_list_titles">
+
+           <th align="right">Agence</th>
+           <th>3 derniers mois</th>
+           <th><%= tabm[@mois_encours] %></th>
+       </tr>
+
+       <% @prov_hd.each do |name, value| %>
+         <tr class="pw_theme">
+           <td><%= name %></td>
+           <td><%= value %></td>
+           <td><%= @prov_1mois.fetch(name, 0) %></td>
+         </tr>
+      <% end %>
+     </table>
+  <br><br>
+    <p><strong>Total : (3 derniers mois) <%= @total_prov_hd %>                         (<%= tabm[@mois_encours] %>) <%= @total_prov_1mois %></p>
+
+  </body>
+</html>

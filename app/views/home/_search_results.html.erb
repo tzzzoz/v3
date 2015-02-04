@@ -1,0 +1,69 @@
+<div id="search_div" class='content' ontouchstart="touchStart(event,'search_div');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
+  <div class="pw_panel-header">
+    <div>
+     <%# unless @current_params[:key_words].blank? %>
+     <% unless @show_facet == 0 %>
+        <% @providers.each do |p| %>
+         <% if @nb_images.has_key?(p.id) and @nb_images[p.id] != nil and @nb_images[p.id] > 0 %>
+              <%=  link_to(p.name, '#', :class => 'facet_search', :p_id => p.id) %> (<%= link_to(number_with_delimiter(@nb_images[p.id]), '#', :class => 'facet_search', :p_id => p.id) %>)
+          <% end %>
+        <% end %>
+    </div>
+
+    <div id="head-pagination">
+      <span class="pw_total_photos">
+          <%=  number_with_delimiter(@t_entries) %>
+          <% if @ppp_res %>
+        <span style="margin-left:5px">
+              <a href="http://www.pixpalace2.com/login?from=pix&login=<%= @loginppp %>&keyw=<%= @current_params[:key_words] %>&provs=<%= @provs %>&ratio=<%= @current_params[:ratio] %>" title="Voir les résultats sur PixPalace2" target="_blank"><span class="pw_total_photos" style="font-weight:bold;font-size:18px;float:none">+<span style="color:#fcb514;margin-left:5px;"><%=@ppp_res%></span> sur <%=image_tag("pp2.png",:height=>25)%></span></a>
+          </span>
+          <% end %>
+      </span>
+
+      <% end %>
+
+      <input type="hidden" id="photos_count" name="photo_count" value="<%= @t_entries %>">
+      <div id="pw_paginator">
+          <%= paginate @medias, :windows => 3, :outer_window => 2, :remote => true %>
+      </div>
+      <div align="right" class="pw_panel-header-content"><%= label_tag I18n.t('pictures_per_page') %>
+          <%= select_tag "perpage", options_for_select(THUMB_PER_PAGE, default_setting_per_page), :class => "input-xs form-control-fixed-width" %>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+
+<form id="pw_results" class="pw_panel-content">
+    <ul class='pw_menus_3'>
+      <li>
+        <span class="pw_toggle_check">
+          <span class="glyphicon glyphicon-expand"></span>
+          <strong><%= I18n.t('toggle_check_all')%></strong>
+        </span>
+      </li>
+      <li>
+        <%= link_to( "<span class='glyphicon glyphicon-plus'></span>#{I18n.t('add_to_lightbox')}".html_safe,
+          light_box_image_path(:id),
+          :method => :put,
+          :remote => true,
+          :class => 'multi' )%>
+      </li>
+      <li>
+        <%= link_to( "<span class='glyphicon glyphicon-save'></span>#{I18n.t('BD')}".html_safe, downloads_path(:definition => 'BD', :depage => 4), :target => '_blank', :class => 'multi') %>
+      </li>
+      <li>
+        <%= link_to( "<span class='glyphicon glyphicon-floppy-save'></span>#{I18n.t('HD')}".html_safe, downloads_path(:definition => 'HD', :depage => 4), :target => '_blank', :class => 'multi') %>
+      </li>
+    </ul>
+  <hr />
+  <div id="tst_medias">
+    <%= render :partial => "media_thumbs" %>
+  </div>
+</form>
+<hr />
+    <div id="tst_bas_paginator">
+        <%= paginate @medias, :windows => 3, :outer_window => 2, :remote => true %>
+  </div>
+</div>
+

@@ -1,0 +1,57 @@
+<div id="users_list">
+  <div id="admin_user_select_title">
+    <%= select_tag 'selected_title', options_for_select(select_table, by_default_selected) %>
+  </div>
+
+  <div style="margin: 10px 0 0 5px;">
+    <% if params[:title_id] %>
+        <%= link_to I18n.t('admin.user.create_new_user'), new_admin_user_path(:title_id => params[:title_id])  %>
+    <% else %>
+        <%= link_to I18n.t('admin.user.create_new_user'), new_admin_user_path  %>
+    <% end %>
+
+  </div>
+
+  <div id="admin_users_list">
+
+    <ul>
+      <% @users.each do |user| %>
+          <li>
+             <span class="rollo_admin_user" data-admin_show_user="<%= raw escape_once(render :partial => "show", :object => user, :as => :user) %>">
+                <%= user.login %>
+             </span>
+             <span>
+                <%= link_to I18n.t('modify'), edit_admin_user_path(user), :title => I18n.t('modify'), :class => "ui-icon ui-icon-pencil pw_display_inline" %>
+                <%#= link_to I18n.t('delete'), admin_user_path(user), :data => { :confirm => I18n.t('admin.user.are_you_sure') }, :method => :delete, :remote => true, :class => "ui-icon ui-icon-trash pw_display_inline", :title => I18n.t('delete') %>
+             </span>
+             <span class="pw_orphans">
+                <%= title_nil(user.title_id) %>
+             </span>
+          </li>
+      <% end %>
+    </ul>
+
+    <span id="dialog-data" title="<%= I18n.t('admin.user.user_infos') %>"></span>
+  </div>
+  <div class="clearfix"></div>
+
+</div>
+
+<script type="text/javascript">
+  // $(function(){
+
+  //     $('#dialog-data').dialog({
+  //         autoOpen: false,
+  //         closeOnEscape: true,
+  //         resizable: false
+  //     });
+  // });
+
+  // $('.rollo_admin_user').click(function(){
+  //     $(this).removeData('admin_show_user');
+  //     $('#dialog-data').html('');
+  //     $('#dialog-data').html($(this).data('admin_show_user'));
+  //     $('#dialog-data').dialog('open');
+  // });
+
+</script>

@@ -1,0 +1,43 @@
+ <table class="table table-hover">
+  <thead>
+    <tr>
+      <th width="270" align="left"><%= I18n.t('date_label') %></th>
+      <th width="400" align="left"><%= I18n.t('subject_d') %></th>
+      <th width="50"><%= I18n.t('photo') %></th>
+      <th width="100"></th>
+    </tr>  
+  </thead>
+  
+  <% @request_to_providers.each  do |r| %>
+       <% if r.id==@r_to_p_id %>
+           <% styl = "bgcolor='#ff0000'" %>
+       <% else %>
+           <% styl = ""; %>
+       <% end %>
+    <tr <%= styl %>>
+      <td><%= I18n.l r.created_at %></td>
+      <td><% if (r.responses_count==0) %>
+            <span class="rtp_vide"><%= r.text %></span>
+          <% else  %>
+            <%= link_to r.text, home_path(:request_to_provider_id => r.id ), :class => 'no_remote'  %>
+          <% end %></td>
+      <td align="center"><%= r.responses_count %></td>
+      <td align="center"><%= link_to I18n.t('destroy'), request_to_provider_path(r.id), :method => :delete, :remote => :true, :class => "pw_trash_icon", :data => { :confirm => I18n.t('are_you_sure') } %></td>
+    </tr>
+  <% end %>
+
+</table>
+ <br>
+ <span>
+<%#= pw_link_to_button_in_tabs(I18n.t('new_request'), new_request_to_provider_path) %>
+ <%= button_to I18n.t('new_request'), new_request_to_provider_path, :method => :get, :class => "btn btn-default btn-xs" %>
+ </span>
+ <div class="clearfix"></div>
+
+ <script>
+   $('.link_button').hide();
+   $('.rtp_vide').click( function(e) {
+       alert('Pas de réponse à votre requête à ce jour !');
+       e.preventDefault();
+   })
+ </script>

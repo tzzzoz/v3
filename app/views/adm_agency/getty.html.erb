@@ -1,0 +1,9 @@
+<p>Nb images trouvées <%= @total_count %> (<%=  @count_nb %> affichées)</p>
+<p></p>
+<p>
+<%= @idsgetty.each do |i| %>
+    <div><a href='<%=  i["UrlPreview"] %>' target='_blank'><img src='<%=  i["UrlThumb"] %>'><br>Légende : <%=  i["Caption"] %><br>Crédit : <%=  i["Artist"] %></a></div>
+
+
+<% end %>
+</p>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Statistiques <%= @date_range %></h1>
+
+    <br>
+    <%= @stats.count %> téléchargements (dont <%= @statsbd %> BD, <%= @statshd %> HD, <%= @statsdem %> demandes)
+    <br>
+    <table id='pw_statistics_list'>
+       <tr class="pw_statistics_list_titles">
+
+           <th><%= I18n.t('statistics.date') %></th>
+           <th><%= I18n.t('statistics.download') %></th>
+           <th><%= I18n.t('statistics.title') %></th>
+           <th><%= I18n.t('user') %></th>
+           <th><%= I18n.t('statistics.provider') %></th>
+           <th>Nom Photo</th>
+       </tr>
+
+       <% @stats.each do |stats| %>
+         <tr class="pw_theme">
+           <td><%= I18n.l(stats.created_at) %></td>
+           <td class="pw_stats_thumb_table_pic_nam"><%= stats.operation_label.label %></td>
+           <td><%= stats.user.title.nil? ? I18n.t(:deleted) : stats.user.title.name %></td>
+           <% if stats.image.provider.name == "Plainpicture" %>
+            <td><%= stats.user.nil? ? I18n.t(:deleted) : (stats.user.full_name.blank? ? stats.user.login : stats.user.full_name) %></td>
+           <% else %>
+            <td><%= stats.user.nil? ? I18n.t(:deleted) : stats.user.login %></td>
+           <% end %>
+           <td><%= (stats.image.nil? || stats.image.provider.nil? )? I18n.t(:deleted) : stats.image.provider.name %></td>
+           <td class="pw_stats_thumb_table_pic_nam"><%= stats.image.nil? ? I18n.t(:deleted) : stats.image.original_filename %></td>
+         </tr>
+       <% end %>
+     </table>
+
+  </body>
+</html>

@@ -1,0 +1,137 @@
+TODO: Sami update
+
+# On Ubuntu server 9.10
+# create a v2 user and login as v2
+#
+sudo apt-get install build-essential libssl-dev libreadline5-dev zlib1g-dev
+# go to /home/v2/
+cd
+# get latest 1.9.1 stable ruby :
+wget ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p378.tar.gz
+cd ruby-1.9.1-p378/
+./configure
+make
+sudo make install
+# check if install and needed libs are OK
+ruby -v
+#ruby 1.9.1p378 (2010-01-10 revision 26273) [x86_64-linux]
+ruby -ropenssl -rzlib -rreadline -e "puts :Hello"
+#Hello
+
+# update the library manager gem
+sudo gem update --system
+# add alive repositories
+sudo gem sources -a http://gems.github.com
+sudo gem sources -a http://gemcutter.org
+# remove the old slow default repo
+sudo nano -w ~/.gemrc
+# delete this line :
+ - http://rubygems.org/
+# check if you edited the correct .gemrc
+sudo gem sources
+
+# install needed ubuntu packages 
+sudo apt-get update
+sudo apt-get install rabbitmq-server apache2 mysql-server subversion build-essential libmagickwand-dev apache2-prefork-dev libapr1-dev libmysqlclient15-dev
+# use aavei0ay as root mysql password when prompted
+sudo gem install rails -v "= 2.3.5"
+sudo gem install amqp daemon-kit mysql net-ssh passenger rmagick ts-delayed-delta viva-rubyzip will_paginate
+sudo gem install prawn -v "< 0.8.0"
+
+sudo mkdir /var/www/v2
+sudo chown v2:v2 /var/www/v2
+
+# install sphinxse
+# go to /home/v2/
+cd
+wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
+tar xzf sphinx-0.9.9.tar.gz 
+cd sphinx-0.9.9
+./configure
+make && sudo make install
+
+# download v2 source
+cd /var/www/v2
+svn co https://svn.nuxos.fr/retrospectiva/stockpalacev2/trunk .
+
+# configure apache 
+sudo su -
+passenger-install-apache2-module
+nano -w /etc/apache2/mods-available/passenger.load
+<--- copy'n paste of the passenger installer output
+LoadModule passenger_module /usr/local/lib/ruby/gems/1.9.1/gems/passenger-2.2.11/ext/apache2/mod_passenger.so
+PassengerRoot /usr/local/lib/ruby/gems/1.9.1/gems/passenger-2.2.11
+PassengerRuby /usr/local/bin/ruby
+--->
+a2enmod passenger
+
+a2dissite 000-default
+nano -w /etc/apache2/sites-available/PP
+<---
+<VirtualHost *>
+#	ServerName www.yourhost.com
+	DocumentRoot /var/www/v2/public
+	RailsEnv production
+</VirtualHost>
+--->
+a2ensite PP
+/etc/init.d/apache2 restart
+exit
+
+# configure mysql
+mysql -uroot -paavei0ay
+mysql>
+CREATE USER 'v2'@'localhost' IDENTIFIED BY 'eisha5eo';
+GRANT ALL PRIVILEGES ON v2_production.* TO 'v2'@'localhost';
+mysql> quit
+Bye
+nano -w /var/www/v2/config/database.yml
+<---
+production:
+  adapter: mysql
+  encoding: utf8
+  database: v2_production
+  username: v2
+  password: eisha5eo
+  reconnect: true  
+  #socket: /tmp/mysql.sock
+
+development:
+  adapter: mysql
+  encoding: utf8
+  database: v2_production
+  username: v2
+  password: eisha5eo
+  reconnect: true
+--->
+
+# make the logs dir
+sudo mkdir /var/log/pixways
+sudo chown v2:v2 /var/log/pixways
+
+# configure the rails environment for rails command line tools
+sudo nano -w /etc/environment
+# append
+<---
+RAILS_ENV=production
+--->
+# to avoid relogin
+RAILS_ENV=production
+export RAILS_ENV
+
+# cd /var/www/v2
+# edit config/initializers/app_initializers.rb and comment the GROUP_FOR_COUNT constant
+
+<---
+#GROUP_FOR_COUNT     = TitleProviderGroupName.first.name
+--->
+
+# initialize the rails db
+cd /var/www/v2
+rake db:create
+rake db:migrate
+rake db:fixtures:load FIXTURES_DIR=admin
+
+# see
+# /var/www/v2/tools/README
+# to configure the services

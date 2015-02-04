@@ -1,0 +1,46 @@
+<div class="clearfix"></div>
+<div class="pw_fslboxes_dashed">
+    <ul class='pw_menus_3'>
+      <li>
+        <span class="pw_toggle_check">
+          <span class="glyphicon glyphicon-expand"></span>
+          <strong><%= I18n.t('toggle_check_all')%></strong>
+        </span>
+      </li>
+      <li>
+        <%= link_to("<span class='glyphicon glyphicon-save'></span>#{I18n.t('BD')}".html_safe, downloads_path(:definition => 'BD'), :class => 'multi_lb BD', :target => '_blank') unless @light_box.images.count > 50  %>
+      </li>
+      <li>
+        <%= link_to("<span class='glyphicon glyphicon-floppy-save'></span>#{I18n.t('HD')}".html_safe, downloads_path(:definition => 'HD'), :class => 'multi_lb HD', :target => '_blank') unless @light_box.images.count > 50  %>
+      </li>
+      <li>
+        <%= link_to("<span class='glyphicon glyphicon-play'></span>#{I18n.t('diaporama')}".html_safe, medias_path(:light_box => @light_box.id, :page => params[:page]), :target => '_blank')  %>
+      </li>
+      <li>
+        <%= link_to("<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('imppdf')}".html_safe, full_screen_light_box_path(:id => @light_box.id, :print => "true"), :target => "_blank")  %>
+      </li>
+      <li class='ui-state-focus pw_close_window'>
+        <span class='glyphicon glyphicon-remove'></span>
+      </li>
+    </ul>
+</div>
+<div class="clearfix"></div>
+<div>    <%= select_tag(:fs_light_box, options_from_collection_for_select(current_user.light_boxes, "id", "name", @light_box.id), :class => "form-control input-xs")  %>
+</div>
+<div class="right-navigation">
+   <ul class = 'pw_menus'>
+      <li>
+        <%=  link_to("<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('sort_by_prov')}".html_safe, full_screen_light_box_path(:id => @light_box.id, :order_by_provider => "true"))%>
+      </li>
+      <li>
+        <%= mail_to("", "<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('send_by_email')}".html_safe, :subject => 'PixPalace '+I18n.t('viewer', :name => @light_box.name), :body => "Bonjour,\nVous devez être connecté pour voir cette visionneuse\n #{show_light_boxe_url(:id => @light_box.hash_code)}")  %>
+      </li>
+      <li>
+        <a href="#" id="rename_basdiv"><span class='glyphicon glyphicon-arrow-right'></span><%= I18n.t('rename') %></a>
+      </li>
+      <li>
+        <%= link_to("<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('delete')}".html_safe, full_screen_light_box_path(:id => @light_box.id), :method => 'delete', :data => { :confirm => "Voulez-vous vraiment supprimer cette visionneuse ?" }) %>
+      </li>
+  </ul>
+</div>
+</form>

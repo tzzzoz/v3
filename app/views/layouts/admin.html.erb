@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" type="image/png" href="<%= asset_path 'pp_favicon.png' %>">
+    <title><%= I18n.t'pixpalace' %></title>
+    <%= csrf_meta_tag %>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "admin" %>
+    <%= javascript_include_tag "application" %>
+    <%= raw dynamic_css %>
+
+
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+          <%= yield :document_ready %>
+          PwLayout();
+          flashIt();
+      });
+
+      $(window).resize(function(){ PwLayout() });
+
+    </script>
+  </head>
+  <body>
+    
+    <div id='pw_top'>
+      <%= render :partial => 'shared/pw_header_menu' %>
+    </div>
+
+    <div class="container_wrapper">
+      <div id='pw_center'>
+        <%= yield %>
+      </div>
+    </div>
+
+    <div id="modal_wrapper"></div>
+  </body>
+</html>

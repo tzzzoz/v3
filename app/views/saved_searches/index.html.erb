@@ -1,0 +1,33 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th width="450" align="left"><%= I18n.t('name') %></th>
+      <th width="200" align="left"><%= I18n.t('date_label') %></th>
+      <th width="70"><%= I18n.t('photo') %></th>
+      <th width="60">RSS</th>
+      <th width="100"></th>
+      <th></th>
+    </tr>
+  </thead>
+  <!-- <tr><td colspan="6" height="1px" bgcolor="black"></td> </tr> -->
+  <% @saved_searches.each  do |s| %>
+    <tr <%=  "class='hilite'" if s.id == params[:id].to_i %>>
+      <td><%= link_to(s.name, home_path(:saved_search_id => s.id ), :class => 'no_remote') %></td>
+      <td><%= I18n.l s.date %></td>
+      <td align="center"><%= s.photos_count %></td>
+      <td align="center"><%= link_to  image_tag('rss.png', :title => 'RSS'), {:controller => :home, :action => :feed, :format => :rss, :saved_search_id => s.id}, :target => '_blank' %></td>
+      <td align="center"><%= link_to image_tag('trash.png', :title => I18n.t('bin')), saved_search_path(s.id), :method => :delete, :remote => :true, :data => { :confirm => I18n.t('are_you_sure') } %></td>
+      <td><%#= pw_link_to_button_in_tabs I18n.t('rename'), edit_saved_search_path(s.id) %>
+        <%= button_to I18n.t('rename'), edit_saved_search_path(s.id), :method => :get, :class => "btn btn-default btn-xs" %></td>
+    </tr>
+  <% end %>
+
+</table>
+<span>
+    <%#= pw_link_to_button_in_tabs(I18n.t('save'), new_saved_search_path(:search => params[:search])) %>
+    <%= button_to I18n.t('save'), new_saved_search_path(:search => params[:search]), :method => :get, :class => "btn btn-default btn-xs" %>
+</span>
+<div class="clearfix"></div>
+<script type="text/javascript">
+  $('.link_button').hide();
+</script>

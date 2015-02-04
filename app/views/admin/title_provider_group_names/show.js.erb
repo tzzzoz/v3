@@ -1,0 +1,11 @@
+function initGroups(){
+    $("#pw_admin_groups_panel .pw_panel-content").html('<%=escape_javascript(render :partial => 'show') %>')
+                                                 .find('.providers_in_group').each( function(){
+                                                    $('#providers_'+$(this).val()).prop('checked', true)
+                                                                                  .triggerHandler('click');
+                                                 }).end()
+                                                 .find('.providers_not_in_group').parent('.group_cell').hide().appendTo('#not_in_group');
+
+}
+
+initGroups();

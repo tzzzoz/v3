@@ -1,0 +1,5 @@
+ <%= f.fields_for :provider_contacts do |pc| %>
+  <p>
+    Prénom: <%= pc.text_field :first_name %> Nom: <%= pc.text_field :last_name %> Email: <%= pc.text_field :email %> Tél.: <%= pc.text_field :phone %> Fax: <%= pc.text_field :fax %> Requête: <%= pc.check_box :receive_requests %> Principal: <%= pc.check_box :main %> Stats: <%= pc.check_box :receive_stat %>
+  </p>
+ <% end %>

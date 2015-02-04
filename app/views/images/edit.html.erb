@@ -1,0 +1,13 @@
+
+    <div class='pw_spacer'></div>
+    <h1>Information Photo</h1>
+    <div>
+       <%= render(:partial => "carrousel") %>
+    </div>
+    <div class='pw_spacer'></div>
+
+  <script>
+    $('#close_meta').click(function() {
+      $('.edit_image').append("<input type='hidden' name='fermer' value='2' />")
+    });
+  </script>

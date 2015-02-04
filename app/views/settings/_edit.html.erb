@@ -1,0 +1,96 @@
+<!-- Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= form_for @setting, :remote => true do |setting_field| %>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= I18n.t('settings.settings') %></h4>
+      </div>
+      <div class="modal-body">
+        <div id="settings">
+          <div class="setting_field">
+            <%= setting_field.label :language, I18n.t('settings.language') %>
+            <%= setting_field.select :language, I18n.available_locales.collect{|lang| [(I18n.t lang), lang.to_s]}, "class" => "form-control input-xs" %>
+          </div>
+          <div class="clearfix"></div>
+          
+          
+
+          
+          <%= setting_field.fields_for :display_params do |d_p_fields| %>
+            <div class="setting_field">
+              <%= d_p_fields.label :background_color, I18n.t('settings.background_color') %>
+              <%= d_p_fields.text_field :background_color, :value => @setting.display_params['background_color'][-2,2].to_i(16), :class => 'slider', "data-slider-id" => 'fontColorSlider' %>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="setting_field">
+              <%= d_p_fields.label :font_color, I18n.t('settings.font_color'), :class => "ft_label" %>
+              <%= d_p_fields.text_field :font_color, :value => @setting.display_params['font_color'][-2,2].to_i(16), :class => 'slider', "data-slider-id" => 'fontColorSlider' %>
+            </div>
+            <div class="clearfix"></div>
+
+          <% end %>
+
+          <div class="setting_field">
+            <%= setting_field.label I18n.t('settings.thumbnail_rollover') %>
+
+            <div class="setting_field_thumbnail">
+                <%= setting_field.label :display_params_display_text, I18n.t('settings.display_text') %>
+                <%= setting_field.check_box :display_params_display_text %>
+                <div class="clearfix"></div>
+                <%= setting_field.label :display_params_previsualisation, I18n.t('settings.previsualisation') %>
+                <%= setting_field.check_box :display_params_previsualisation %>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+
+          <div class="setting_field">
+            <%= setting_field.label :default_sort, I18n.t('sort').capitalize %>
+            <%= setting_field.select(:default_sort, options_for_select([
+                                                             [I18n.t('sort_reception_date'), 'reception_date'],
+                                                             [I18n.t('sort_asc_date'), 'asc_date'],
+                                                             [I18n.t('sort_relevance'), 'relevance'],
+                                                             [I18n.t('sort_date_created'), 'date_created'],
+                                                             [I18n.t('sort_asc_created'), 'asc_created'],
+                                                             [I18n.t('sort_n_per_agency'), 'n_per_agency']
+                                                     ], default_setting_sort), :class => "form-control input-xs") %>
+          </div>
+          <div class="clearfix"></div>
+
+          <div class="setting_field">
+            <%= setting_field.label :reload_pref, "Rafraîchissement automatique (en mn)" %>
+            <%= setting_field.select(:reload_pref, options_for_select([
+                                                            ["Pas de rafraîchisement", 0],
+                                                            ["Toutes les minutes", 1],
+                                                            ["Toutes les 2 minutes", 2],
+                                                            ["Toutes les 3 minutes", 3],
+                                                            ["Toutes les 4 minutes", 4],
+                                                            ["Toutes les 5 minutes", 5]
+                                                    ], @setting[:reload_pref])) %>
+          </div>
+          <div class="clearfix"></div>
+
+          <div class="setting_field">
+            <%= setting_field.label :time_zone, I18n.t('settings.time_zone') %>
+            <%= setting_field.time_zone_select :time_zone, nil, :default =>  'Paris' %>
+          </div>
+          <div class="clearfix"></div>
+
+          <div class="setting_field_submit">
+            
+            
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="reset" class="btn btn-default" data-dismiss="modal"><%= I18n.t("cancel") %></button>
+        <button type="submit" class="btn btn-primary"><%= I18n.t('save') %></button>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

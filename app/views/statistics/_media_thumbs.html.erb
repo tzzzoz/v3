@@ -1,0 +1,19 @@
+<div class='result_content'>
+    <% @statistics.each do |stats| %>
+      <% unless stats.image.nil? %>
+        <% pw_c = "#{image_tag(stats.image.medium_location)}" %>
+        <% pw_c += "<div class='pw_info_thumb'>
+            <p><span class='pw_bold'>#{I18n.t('original_filename')} : </span> #{stats.image.original_filename}</p>
+            <p><span class='pw_bold'>#{I18n.t('reception_date')} : </span> #{stats.image.localised_reception_date}</p>
+            <p><span class='pw_bold'>#{I18n.t('date_created')} : </span> #{stats.image.localised_date_created}</p>
+            <p><span class='pw_bold'>#{I18n.t('normalized_credit')} : </span> #{stats.image.normalized_credit}</p>
+            <p><span class='pw_bold'>#{I18n.t('description')} : </span> #{stats.image.description}</p>
+           </div>"  %>
+        <div id ="<%=stats.image.id%>" class="pw_stats_thumb st_thumb">
+          <%= image_tag(stats.image.thumb_location, :alt => stats.image.normalized_credit, :class => 'popover-trigger', 'data-c' => pw_c, 'data-style' => 'primary', :size => fit_square(stats.image.ratio,160) ) %>
+          <p><%= stats.image.original_filename %></p>
+        </div>
+      <% end %>
+    <% end %>
+
+</div>

@@ -1,0 +1,100 @@
+<%= form_for [:admin, @title] do |f| %>
+
+    <% if @title.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@title.errors.count, "erreur") %> <%= I18n.t('prohibited_this_operation') %>:</h2>
+
+          <ul>
+            <% @title.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field(:name, :size => 50) %>
+    </div>
+    <div class="field">
+      <%= f.label "Nom tel que visible dans la liste" %>
+      <%= f.text_field(:visible_name, :size => 50) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t("country") %>
+      <%= f.select(:country_id, options_from_collection_for_select(Country.order(:name), :id, :name, @title.country_id)) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t 'admin.title.restrictions_group' %>
+      <% if params[:tpgn_id] %>
+          <%= f.select(:title_provider_group_name_id, options_from_collection_for_select(TitleProviderGroupName.order(:name), :id, :name, params[:tpgn_id])) %>
+      <% else %>
+          <%= f.select(:title_provider_group_name_id, options_from_collection_for_select(TitleProviderGroupName.order(:name), :id, :name, @title.title_provider_group_name_id)) %>
+      <% end %>
+    </div>
+    <div class="field">
+      <%= f.label 'Groupe fichier utilisateurs' %>
+      <%= text_field_tag(:group_name,@groupforfile,:size => 30) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t("server") %>
+      <%= f.select(:server_id, options_from_collection_for_select(Server.order(:name), :id, :name, @title.server_id)) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t("not_authorized_providers") %>
+      Invisibles <%= f.radio_button(:hide_unauthorized_providers, true) %> <%= I18n.t('greyed') %> <%= f.radio_button(:hide_unauthorized_providers, false) %>
+    </div>
+    <div class="field">
+      <%= f.label "dpi" %>
+      <%= f.select(:dpi, options_for_select([["75", "75"],["100", "100"],["300", "300"]], @title.dpi)) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t("flow_path") %>
+      <%= f.text_field(:flow_path, :size => 100) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t("last_name") %>
+      <%= f.text_field(:last_name, :size => 30, :maxsize => 100) %>
+      <%= f.label I18n.t("first_name") %>
+      <%= f.text_field(:first_name, :size => 30, :maxsize => 100) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t("address") %>
+      <%= f.text_area(:address, :rows => 4, :cols => 110) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t("admin.providers.zip_code") %>
+      <%= f.text_field(:zip_code, :size => 10) %>
+      <%= f.label I18n.t 'admin.providers.city' %>
+      <%= f.text_field(:city, :size => 30, :maxsize => 100) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t("phone") %>
+      <%= f.text_field(:phone, :size => 20) %>
+      <%= f.label I18n.t("email") %>
+      <%= f.text_field(:email, :size => 40, :maxsize => 100) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t 'admin.title.visible' %>
+      <%= f.select(:visible, options_for_select(Title::TITLE_VISIBLE.collect{|k| [I18n.t(k),Title::TITLE_VISIBLE.index(k)]}, @title.visible)) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t 'group' %>
+      <%= f.text_field(:group, :size => 100) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t 'type' %>
+      <%= f.text_field(:title_type, :size => 100) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t 'admin.title.comment' %>
+      <%= f.text_area(:comment, :rows => 12, :cols => 110) %>
+    </div>
+    <div class="field">
+      <%= f.label I18n.t 'admin.title.ojd_link' %>
+      <%= f.text_field(:ojd_link, :size => 150) %>
+    </div>
+
+    <div class="action"> <%= f.submit I18n.t("validate") %> </div>
+
+<% end %>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+<%     tab_err = ["","Extension non .jpg", "non jpeg","fichier corrompu", "non RGB", "fichier > 25 Mo","pas de métadonnées","date non valide","fichier < 50 ko","résolution < 500X340 px", "Doublon", "Photo recompressée", "Photo grise", "Photo blanche (effacement non effectué)"] %>
+    <h1>Bonjour <%= @ag_name %></h1><br>
+    Vous trouverez ci-dessous le résultat des contrôles effectués sur vos photos reçues le <strong><%= I18n.l(Date.current.yesterday) %></strong>.<br><br>
+    Les photos en <span style="color: Darkblue"><strong>avertissement</strong></span> sont distribuées contrairement aux photos en <span style="color: DarkRed"><strong>erreur</strong></span>.<br><br>
+    Vous pouvez consulter la liste des contrôles des 5 derniers jours sur le <a href="http://agences.pixpalace.com">serveur Agences</a>, dans le menu Administration Agence, Contrôles des photos.<br><br>
+    N'hésitez pas à nous contacter pour plus d'informations : <a href="mailto:support@pixpalace.com">support@pixpalace.com</a>
+    <br><br>
+    Merci, cordialement<br><br>
+    L'équipe PixPalace<br><br>
+   <% unless @prov.empty? %>
+    <h1>Erreurs (<%= @prov.keys.count %>)</h1>
+
+    <table id='pw_statistics_list'>
+       <tr class="pw_statistics_list_titles">
+
+           <th>Photo</th>
+           <th>Contrôle</th>
+       </tr>
+
+       <% @prov.each do |name, value| %>
+         <tr class="pw_theme">
+           <td><%= name %></td>
+           <td>&nbsp;&nbsp;<span style="color: DarkRed"><strong><%= tab_err[value] %></strong></span></td>
+         </tr>
+       <% end %>
+     </table>
+     <p></p>
+    <% end %>
+    <% unless @prova.empty? %>
+     <h1>Avertissements (<%= @prova.keys.count %>)</h1>
+
+     <table id='pw_statistics_list'>
+        <tr class="pw_statistics_list_titles">
+            <th>Photo</th>
+            <th>Contrôle</th>
+        </tr>
+
+        <% @prova.each do |name, value| %>
+          <tr class="pw_theme">
+            <td><%= name %></td>
+            <td>&nbsp;&nbsp;<span style="color: Darkblue"><strong><%= tab_err[value] %></strong></span></td>
+          </tr>
+        <% end %>
+     </table>
+    <% end %>
+  </body>
+</html>

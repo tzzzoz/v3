@@ -1,0 +1,19 @@
+<div id ="<%= media.id %>" class="pw_thumb" >
+<%
+datas = "<b>#{I18n.t('original_filename')} : </b> #{media.original_filename}"
+datas << "<br /><b>#{I18n.t('reception_date')} : </b> #{media.localised_reception_date}"
+datas << "<br /><b>#{I18n.t('date_created')} : </b> #{media.localised_date_created}"
+datas << "<br /><b>#{I18n.t('normalized_credit')} : </b> #{media.normalized_credit}"
+datas << "<br /><b>#{I18n.t('description')} : </b> #{media.description}"
+%>
+  <% if current_user.setting.border_color_provider.include?(med.provider_id.to_s) %>
+    <%= image_tag(med.thumb_location, :class => 'tooltip', :title => datas, :style => "border:1px solid #{current_user.setting.border_color_provider[med.provider_id.to_s]};") %>
+  <% else %>
+      <%= image_tag(media.thumb_location, :class => 'tooltip', :title => datas) %>
+<% end %>
+  <p>
+  <%= check_box_tag("media_#{media.id}") %>
+  <%= media.normalized_credit%>
+  </p>
+
+</div>

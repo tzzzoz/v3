@@ -1,0 +1,35 @@
+<% content_for :document_ready do %>
+    $("#show_hide_thumbs").toggle(function(){
+    $("#thumbs_div").hide();
+    $("#show_hide_thumbs").removeClass("hide_pictures_icon");
+    $("#show_hide_thumbs").addClass("show_pictures_icon");
+    $("#show_hide_thumbs").text('Voir les photos');
+    },function(){
+    $("#thumbs_div").show();
+    $("#show_hide_thumbs").removeClass("show_pictures_icon");
+    $("#show_hide_thumbs").addClass("hide_pictures_icon");
+    $("#show_hide_thumbs").text('Cacher les photos');
+    });
+<% end %>
+
+<div id="show_hide_thumbs" class="hide_pictures_icon" style="margin:10px 0;">Cacher les photos</div>
+<div id="thumbs_div">
+  <form id="pw_rep_results">
+    <ul id='pw_light_box_images'>
+      <% @images.each do |med| %>
+          <li class="pw_fslboxes_thumb" >
+            <div style="vertical-align: middle;">
+              <%= image_tag(med.thumb_location,:size => fit_square(med.ratio,160))%>
+            </div>
+
+            <div class="pw_fslboxes_thumb_infos">
+              <%= check_box_tag("#{med.id}", '1', true) %>
+              <br>
+              <%= med.original_filename%>
+            </div>
+
+          </li>
+      <% end %>
+    </ul>
+  </form>
+</div>

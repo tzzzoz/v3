@@ -1,0 +1,46 @@
+  <%= form_for [:admin, @server] do |f| %>
+
+  <% if @server.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@server.errors.count, "erreur") %> <%= I18n.t('prohibited_this_operation') %>:</h2>
+
+      <ul>
+      <% @server.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field(:name, :size => 25) %>
+    </div>
+    <div class="field">
+        <%= f.label I18n.t("type") %>
+      <%= f.select(:which_type, options_for_select([["CS", "CS"],["ADMIN", "ADMIN"]], @server.which_type)) %>
+    </div>
+    <div class="field">
+        <%= f.label I18n.t("statut") %>
+        <%= f.select(:status, options_for_select([["public", "public"],["private", "private"]], @server.status)) %>
+    </div>
+    <div class="field">
+        <%= f.label I18n.t("current_server") %>
+        <%= f.check_box(:is_self) %>
+    </div>
+    <div class="field">
+        <%= f.label :host %>
+        <%= f.text_field(:host, :size => 25) %>
+    </div>
+    <div class="field">
+        <%= f.label :api_key %>
+        <%= f.text_field(:api_key, :size => 25) %>
+    </div>
+    <div class="field">
+        <%= f.label :api_port %>
+        <%= f.text_field(:api_port, :size => 10) %>
+    </div>
+
+    <div class="action"> <%= f.submit I18n.t("validate") %> </div>
+
+    <% end %>

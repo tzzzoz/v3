@@ -1,0 +1,7 @@
+:paths:
+  :out:   /Users/Leonard/Documents/v3/public
+  :err:   /Users/Leonard/Documents/pixpictures/pic_err
+
+:controller:
+  :workers: 2
+  :db_retries: 3

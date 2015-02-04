@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    $( document ).on( "change","#dossier", function(){
+        var dos = $(this).val();
+        var $validos = $('<div></div>')
+    		    .html('Voulez-vous vraiment exporter ce fichier vers un dossier Print ?')
+    		    .dialog({
+    			    autoOpen: false,
+    			    title: 'Confirmation envoi Print',
+                    buttons: {
+                        'OK': function() {
+                            var url = 'print_send?dos='+dos;
+                            window.location.href = url;
+                            $(this).dialog('close');
+                        },
+                        Cancel: function() {
+                            $(this).dialog('close');
+                        }
+                    }
+    		    });
+        $validos.dialog('open'); });
+</script>
+
+    <div align="center" style="color:#000">
+
+    <h2>Téléchargement du fichier</h2>
+    <p>&nbsp;</p>
+      <img src="<%= @img %>", width="400px">
+
+    <%= form_tag("/horby_send", :method => :post) do %>
+        <%= hidden_field_tag("id", @id) %>
+        <%= hidden_field_tag("img", "public/#{@img}") %>
+      <p>&nbsp;</p>
+      <p>Dimensions : <strong><%= @s %> pixels</strong><br><strong><%= @cm %> cm (300 dpi)</strong><br>Poids : <strong><%= @p %></strong></p>
+      <%= button_tag("Annuler") %> | <%= select_tag 'dossier', options_for_select(get_dossier.collect{|n,v| [n,"#{v}@#{@id}@#{@img}"]}), {prompt: 'Sélectionnez dossier Print'} %> | <%= submit_tag("vers Etna", {confirm: "Voulez-vous vraiment Envoyer ce fichier vers Etna ?"}) %>
+     <% end %>
+
+
+</div>

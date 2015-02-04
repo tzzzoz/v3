@@ -1,0 +1,42 @@
+<div class="admin_current_user">
+    <ul>
+        <li>
+          <%= I18n.t('admin.user.title_user') %>:
+          <%= title_name(user.title) %>
+        </li>
+
+        <li>
+          <%= I18n.t('admin.user.roles') %>:
+          <%= I18n.t(user.roles.first) %>
+        </li>
+
+        <li>
+          <%= I18n.t('admin.user.login') %>:
+          <%= user.login %>
+        </li>
+        <li>
+          <%= I18n.t('admin.user.last_name') %>:
+          <%= user.last_name %>
+        </li>
+        <li>
+          <%= I18n.t('admin.user.first_name') %>:
+          <%= user.first_name %>
+        </li>
+
+        <li>
+          <%= I18n.t('admin.user.mail') %>:
+          <%= user.email %>
+        </li>
+
+        <li>
+          <%= I18n.t('admin.user.phone') %>:
+          <%= user.phone %>
+        </li>
+      <li>
+         Dernier login :
+         <%= I18n.l(user.last_login_at) unless user.last_login_at.blank? %>
+       </li>
+
+
+    </ul>
+</div>

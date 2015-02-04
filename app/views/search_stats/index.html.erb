@@ -1,0 +1,61 @@
+<% content_for :document_ready do %>
+    $(".datepicker-from, .datepicker-to").datepicker({language: '<%= current_user.setting.language %>'})
+    buttonize($('#pw_provider_form'));
+    buttonize($('#pw_title_form'));
+
+    $('.show_hide_prov').click(function(event){
+        var prov = $(this).attr('stats');
+        if ($('#prov_'+prov).is(":visible")) {
+        $("#prov_"+prov).hide();  }
+        else {
+        $("#prov_"+prov).show();  }
+        });
+
+// TODO
+    $(".show_hide_total").toggle(function(){
+        $("#pw_statistics_list div").each( function() { $(this).hide(); } );
+        },function(){
+        $("#pw_statistics_list div").each( function() { $(this).show(); } );
+        });
+
+    $(".show_hide_help").toggle(function(){
+        $(".help_frame").show();
+        },function(){
+        $(".help_frame").hide();
+     });
+<% end %>
+
+<div class="pw_results_stats">
+  <div style="margin-left:15px;">
+    <h2 style="display:inline-block;margin: 5px;"><%=I18n.t('search_stats')%></h2>
+    <a class="show_hide_help" href="#" style="display:inline-block;"><%= image_tag("questionmark_grey.gif", :style => "vertical-align:bottom;")%></a>
+    <br>
+    <div class="help_frame" style="display:none;">
+      <strong>Toutes les nuits</strong>, les recherches utilisateurs sont remontées des serveurs clients. Elles restent visibles dans l'interface <strong>pendant 3 jours</strong>.<br>
+      <br>
+      De gauche à droite, sont affichés la <strong>date</strong> de la recherche, le <strong>titre</strong> et le <strong>nom de l'utilisateur</strong>, le champs <strong>recherche</strong> (mot ou groupe de mots), le <strong>nombre de résultats</strong> retournés par Pixpalace (pour l'ensemble des agences sélectionnées),<br>
+      puis les <strong>options de tri et de recherche</strong>.<br>
+      En-dessous, <strong>si votre agence a été sélectionnée</strong> dans cette recherche, figure <strong>le nombre de photos trouvées dans votre fonds</strong>.<br>
+      <u>Remarque</u> : les options de recherche sont vides si aucune d'elles n'a été sélectionnée, ce qui est le cas pour la majorité des recherches.<br>
+      <br>
+      Vous pouvez filtrer par <strong>titre</strong> (multi-sélection dans le bandeau Titres), pour un <strong>intervalle de date</strong> ou un <strong>pays</strong>.<br>
+      Vous pouvez aussi filtrer en sélectionnant les recherches pour lesquelles votre agence n'a retourné aucun résultat (<strong>résultat = 0</strong>) ou les recherches ayant retournées au moins une photo (<strong>résultat > 0</strong>).<br>
+      <br>
+      Pour afficher / cacher le nombre de photos de votre agence, cliquez sur la date de la recherche.<br>
+      Cliquez sur <strong>Ouvrir / Fermer</strong> pour afficher / cacher toutes les recherches de la page.<br>
+    </div>
+  </div>
+
+  <%= render :partial => 'search_stats/providers_form' %>
+  <div class='pw_spacer'></div>
+  <%= render :partial => 'search_stats/titles_form' %>
+  <div class='pw_spacer'></div>
+  <%= render :partial => 'search_stats/search_form' %>
+  <div class='pw_big_spacer'></div>
+
+<div id="pw_results_stats">
+
+    <div class='pw_spacer'></div>
+    <%#= render :partial => @s_partial %>
+  </div>
+</div>

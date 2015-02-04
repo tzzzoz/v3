@@ -1,0 +1,22 @@
+#!/bin/sh
+
+case "$1" in
+  start)
+  bundle exec rake ts:$1
+  ./media_processor/bin/media_processor $1
+  ./file_processor/bin/file_processor $1
+  ../script/delayed_job $1
+  ;;
+  stop)
+  ../script/delayed_job $1
+  ./file_processor/bin/file_processor $1
+  ./media_processor/bin/media_processor $1
+  bundle exec rake ts:$1
+  ;;
+  *)
+  echo "Usage: pw_processors {start|stop}" >&2
+  exit 3
+  ;;
+esac
+
+:

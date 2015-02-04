@@ -1,0 +1,36 @@
+
+  <% @light_box_images.each do |med| %>
+  <li class="pw_fslboxes_thumb" >
+  <% pw_caption = "<b>#{I18n.t('original_filename')} : </b> #{med.original_filename}
+             <br /><b>#{I18n.t('reception_date')} : </b> #{med.localised_reception_date}
+             <br /><b>#{I18n.t('date_created')} : </b> #{med.localised_date_created}
+             <br /><b>#{I18n.t('normalized_credit')} : </b> #{med.normalized_credit}
+             <br /><b>#{I18n.t('description')} : </b> #{med.description}" %>
+    <% if med.ratio >= 1 %>
+        <%= link_to image_tag(med.thumb_location, :width => "160px"), medias_path(:light_box => @light_box.id, :page => params[:page], :anchor => med.id), :target => '_blank' %>
+    <% else %>
+        <%= link_to image_tag(med.thumb_location, :height => "160px"), medias_path(:light_box => @light_box.id, :page => params[:page], :anchor => med.id), :target => '_blank' %>
+    <% end %>
+    <p class="pw_media_button">
+        <%# if @ids && @ids.include?(med.id.to_s) %>
+            <%= check_box_tag("lb_#{med.id}", '1', true) %>
+        <%# else %>
+            <%#= check_box_tag("lb_#{med.id}") %>
+        <%# end %>
+        <% med.providers_authorizations.each do |auth| %>
+          <% if auth.label == 'BD' then iconType = 'glyphicon glyphicon-save' end %>
+          <% if auth.label == 'HD' then iconType = 'glyphicon glyphicon-floppy-save' end %>
+          <%= link_to "<span class='#{iconType}'></span>".html_safe, downloads_path('ids[]' => med.id, :definition => auth.label), :class => auth.label unless auth.label == "PE" %>
+        <% end %>
+        <%= link_to("<span class='glyphicon glyphicon-plus'></span>".html_safe, nil, :class => 'add_other', :id => med.id) %>
+        <%= link_to("<span class='glyphicon glyphicon-list-alt'></span>".html_safe, medias_path(:reportage => med.reportage, :anchor => med.id), :class => 'feature', :target => '_blank') unless med.reportage.blank? %>
+        <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, light_box_image_path("ids[]" => med.id), :method => :delete, :class => "pw_trash_icon", :data => { :confirm => "Voulez-vous vraiment retirer cette photo de la visionneuse ?" }, :title => I18n.t('bin') %>
+    </p>
+    <p>
+    <%= med.normalized_credit%>
+    </p>
+
+  </li>
+<% end %>
+
+

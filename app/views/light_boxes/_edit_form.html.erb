@@ -1,0 +1,23 @@
+<%= form_for(@light_box, :remote => true) do |f| %>
+
+  <% if @light_box.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@light_box.errors.count, "erreur") %> <%= I18n.t('prohibited_this_operation') %>:</h2>
+
+      <ul>
+      <% @light_box.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <script>
+    $('#error_explanation').dialog();
+  </script>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field(:name, :size => 15, :class => "input-xs") %>
+    <%= f.submit I18n.t("validate"), :class => "btn btn-default btn-xs" %>
+  </div>
+
+<% end %>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" type="image/png" href="<%= asset_path 'pp_favicon.png' %>">
+    <title></title>
+    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag 'print_photo', :media => 'print' %>
+
+    <%= raw dynamic_css %>
+
+    <%= raw same_bg_css %>
+
+    <% value = (@feature_value.nil?) ? true : false %>
+
+
+     <script type="text/javascript">
+        $(document).ready(function(){
+
+          var media_id = document.location.hash;
+          var my_seq = null;
+
+          var fillCarrouselContent = function() {
+            // console.log($('#pw_media_list p a').length);
+
+            $('#pw_media_list p a img').each(function() {
+              var id = $(this).attr('id');
+              var item = "<div class='item' name='#"+ id +"'><div class='item_wrapper'><div class='pw_medium'>" + $(this).data('pw_medium') + "</div><div class='carousel-caption'>"+ $(this).data('pw_caption')+"</div></div></div>";
+              
+              $('.carousel-inner').append(item);
+            }).click(function(){
+              var this_id = $(this).parent().attr('href');
+              console.log(this_id);
+              var this_number = $(".carousel-indicators li[name=" + this_id + "]").data('slide-to');
+              console.log(this_number);
+              $('#carousel-example-generic').carousel(this_number);
+
+              $("#pw_current_image_wrapper > img").unwrap();
+              $(this).wrap("<span id='pw_current_image_wrapper' />");
+            })
+          }
+
+          fillCarrouselContent();
+          var this_item = $(".carousel-inner .item[name='" + media_id + "']").addClass("active");
+          // this_item.find('object').slideUp( 300 ).delay( 800 ).fadeIn( 400 );
+          this_item.find('img,object')[0].onload = function(){
+            carouselLayout('new');
+          };
+
+          var setActive = function() {
+            var media_id = document.location.hash;
+            var item_with_data = $('#pw_media_list p').find("[href='"+ media_id +"'] img");
+            $('.carousel-indicators').children("li[name='"+ media_id +"']").addClass("active");
+            $('.carousel-inner').children(".item[name='"+ media_id +"']").addClass("active");
+            $('.pw_buttonset').html(item_with_data.data('pw_buttons'));
+            $('.pw_prov_logo').html(item_with_data.data('pw_prov_logo'));
+            item_with_data.wrap("<span id='pw_current_image_wrapper' />");
+
+            $("#pw_media_list").scrollLeft(
+              $("#pw_media_list").scrollLeft() 
+              + item_with_data.position().left
+              + (item_with_data.outerWidth(true) / 2)
+              - ($("#pw_media_list").outerWidth(true) / 2) );
+          }
+
+          setActive();
+
+          // $(".pw_medium").find("img,object").load(carouselLayout);
+
+          $('#carousel-example-generic').on('slid.bs.carousel', function () {
+            var item_active = $(this).find('.item.active');
+            var item_with_data = $('#pw_media_list p').find("[href='"+item_active.attr('name')+"'] img");
+
+            $('.pw_buttonset').html(item_with_data.data('pw_buttons'));
+            $('.pw_prov_logo').html(item_with_data.data('pw_prov_logo'));
+            $("#pw_current_image_wrapper > img").unwrap();
+            item_with_data.wrap("<span id='pw_current_image_wrapper' />");
+            $("#pw_media_list").scrollLeft(
+              $("#pw_media_list").scrollLeft() 
+              + item_with_data.position().left
+              + (item_with_data.outerWidth(true) / 2)
+              - ($("#pw_media_list").outerWidth(true) / 2) );
+
+            console.log("animation finished");
+
+            $('.pw_close_window').click(function(){
+              window.close();
+            })
+            carouselLayout('new');
+          })
+
+          // $("#carousel-example-generic").carousel();          
+
+          $("#pw_media_list").scrollLeft(
+            $("#pw_media_list").scrollLeft() 
+            + $(media_id).position().left
+            + ($(media_id).outerWidth(true) / 2)
+            - ($("#pw_media_list").outerWidth(true) / 2) );
+
+
+
+          $('.print_button').click(function(){
+            window.print();
+          })
+
+          $('.pw_close_window').click(function(){
+            window.close();
+          })
+
+          $("#carousel-example-generic").carousel({
+            interval: false
+          });
+
+          $( document ).on( "change", "#pw_carrousel_select_timer",function(e){
+
+            var vit = $('#pw_carrousel_select_timer').val();
+            console.log(vit);
+
+            if (vit == 0){
+              $("#carousel-example-generic").carousel({
+                interval: false
+              });
+            }
+            else{
+              $("#carousel-example-generic").carousel({
+                interval: vit
+              })
+            }
+
+            e.preventDefault();
+          });
+          // $('.carousel').carousel();
+
+
+//             // $('#pw_panel_carrousel').panel({ collapsed: <%= value %> })
+//             //                        .bind('panelcollapse', function(){
+//             //                             PwCarrouselLayout();
+//             //                         });
+//             PwNav(document.location.hash);
+
+
+//             $( document ).on( "change", "#dossier", function(){
+//                var dos = $(this).val();
+//                // var $validos = $('<div></div>')
+//            		    // .html('Voulez-vous vraiment exporter ce fichier vers un dossier Print ?');
+//            		  //   .dialog({
+//            			 //    autoOpen: false,
+//            			 //    title: 'Confirmation envoi Print',
+//                //             buttons: {
+//                //                 'OK': function() {
+//                //                     var url = 'print_send?dos='+dos;
+//                //                     window.location.href = url;
+//                //                     $(this).dialog('close');
+//                //                 },
+//                //                 Cancel: function() {
+//                //                     $(this).dialog('close');
+//                //                 }
+//                //             }
+//            		  //   });
+//                // $validos.dialog('open'); 
+//              });
+
+
+//            var $dialog = $('<div></div>')
+//                 .html('<%= escape_javascript(render :partial => 'full_screen_light_boxes/form', :layout => nil) %>')
+//                 // .dialog({
+//                 //     autoOpen: false,
+//                 //     title: "<%= I18n.t 'select_lb' %>",
+//                 //     buttons: {
+//                 //         'OK': function() {
+//                 //             $('#add_image').submit();
+//                 //             $(this).dialog('close');
+//                 //         },
+//                 //         "<%= I18n.t 'cancel' %>": function() {
+//                 //             $(this).dialog('close');
+//                 //         }
+//                 //     }
+//                 // });
+
+//            $('.add_other').click(function() {
+//                 var ids = $(this).attr('id');
+//                 $('#hide_id').attr('value',ids);
+//                 // $dialog.dialog('open');
+
+//                 return false;
+//            });
+
+
+
+//         });
+            $(document).bind("keydown keypress", function(event) {
+              if (event.keyCode == '37' || event.keyCode == '39' ) {
+                event.preventDefault();
+              }
+            });
+            $(document).keyup(function(event) {
+              if (event.keyCode == '37') {
+                // <-
+                $('.left.carousel-control').click();
+              } else if (event.keyCode == '39') {
+                // ->
+                $('.right.carousel-control').click();
+              } else if (event.keyCode == '27') {
+                // esc
+                window.close();
+              }
+            })
+
+    })
+
+
+            // $(window).load(fn)
+// //        $(window).unload(function() { window.opener.location.reload(); });
+        $(window).resize(function(){
+          carouselLayout('resize');
+        });
+
+     </script>
+    <style type="text/css">body { overflow: auto; }</style>
+  </head>
+  <body>
+
+    <div class='pw_spacer'></div>
+
+    <%= yield %>
+    
+    <div class='not_print' style='border-top: 1px dashed #9DA1A2; clear: both; margin-top: 5px;'></div>
+
+    <div class="pw_media_header">
+      <div class="pw_prov_logo">
+
+      </div>
+    </div>
+
+    <div class='pw_buttonset'>
+    </div>
+    
+    <div class='not_print' style='border-top: 1px dashed #9DA1A2; clear: both; margin-top: 5px;'></div>
+
+    <div id='pw_media_show' class='pw_content' ontouchstart="touchStart(event,'search_div');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
+      <div id="carousel-example-generic" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <% @medias.each_with_index do |media,index| %>
+            <li data-target="#carousel-example-generic" data-slide-to="<%= index %>" name="#<%= media.id %>"></li>
+          <% end %>
+        </ol>
+
+        
+        <div class="carousel-inner" role="listbox">
+
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class='not_print' style='border-top: 1px dashed #9DA1A2; clear: both; margin-bottom: 5px;'></div>
+
+    <div class='pw_buttonset'>
+    </div>
+
+  </body>
+</html>

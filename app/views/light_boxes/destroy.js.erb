@@ -1,0 +1,3 @@
+<% if @light_box.errors.any? %>
+   $("<div> <%= @light_box.errors.full_messages.join('\n') %> </div>").dialog();
+<% end %>

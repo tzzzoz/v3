@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Téléchargements cachés <%= @week_range %></h1>
+
+    <table id='pw_statistics_list'>
+       <tr class="pw_statistics_list_titles">
+
+           <th align="center" width="250">Titre</th>
+           <th width="40">HD</th>
+           <th width="40">BD</th>
+       </tr>
+       <% @hide_hd.sort{|a,b| b[1]<=>a[1]}.each do |name, value| %>
+          <% unless (value == 0 and @hide_bd.fetch(name, 0) == 0) %>
+         <tr class="pw_theme">
+           <td><%= name %></td>
+           <td align="center"><%= value %></td>
+           <td align="center"><%= @hide_bd.fetch(name, 0) %></td>
+           <% end %>
+         </tr>
+       <% end %>
+     </table>
+  <br><br>
+  <p><strong>Total : (HD) <%= @total_hide_hd %>            (BD) <%= @total_hide_bd %></strong></p>
+
+  </body>
+</html>

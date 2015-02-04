@@ -1,0 +1,128 @@
+<% if @pagin %>
+    <p data-current_page = "<%= @medias.current_page %>" data-page_count = "<%= @medias.num_pages %>" >
+<% else %>
+    <p data-current_page = "1" data-page_count = "1" >
+<% end %>
+<% @medias.each do |med| %>
+  <% if @no_search %>
+    <% pw_caption = "<span class='pw_media_info'>#{I18n.t 'media.info_photo'}</span>
+                   <br/><b>#{I18n.t('date_created')} : </b> #{med.localised_date_created}
+             <br /><b>#{I18n.t('headline')} : </b> #{med.excerpts.headline}
+             <br /><b>#{I18n.t('description')} : </b> #{med.excerpts.description}
+             <br /><b>#{I18n.t('iptc_country')} : </b> #{med.excerpts.country}
+             <br /><b>#{I18n.t('city')} : </b> #{med.excerpts.city}
+             <br /><b>#{I18n.t('creator')} : </b> #{med.excerpts.creator}
+             <br /><b>#{I18n.t('source')} : </b> #{med.excerpts.source}
+             <br /><b>#{I18n.t('rights')} : </b> #{med.excerpts.rights}
+             <br /><b>#{I18n.t('normalized_credit')} : </b> #{med.normalized_credit}
+             <br /><b>#{I18n.t('subject')} : </b> #{med.excerpts.subject}
+             <br /><b>#{I18n.t('instructions')} : </b> #{med.instructions}
+             <br /><b>#{I18n.t('reception_date')} : </b> #{med.localised_reception_date}
+             <br /><b>#{I18n.t('original_filename')} : </b> #{med.excerpts.original_filename}
+             <br /><b>#{I18n.t('hr_size')} : </b> #{med.hr_size}
+             <br /><b>#{I18n.t('max_size')} : </b> #{med.max_size}
+             "
+     else
+         pw_caption = "<span class='pw_media_info'>#{I18n.t 'media.info_photo'}</span>
+                           <br/><b>#{I18n.t('date_created')} : </b> #{med.localised_date_created}
+                     <br /><b>#{I18n.t('headline')} : </b> #{med.headline}
+                     <br /><b>#{I18n.t('description')} : </b> #{med.description}
+                     <br /><b>#{I18n.t('iptc_country')} : </b> #{med.country}
+                     <br /><b>#{I18n.t('city')} : </b> #{med.city}
+                     <br /><b>#{I18n.t('creator')} : </b> #{med.creator}
+                     <br /><b>#{I18n.t('source')} : </b> #{med.source}
+                     <br /><b>#{I18n.t('rights')} : </b> #{med.rights}
+                     <br /><b>#{I18n.t('normalized_credit')} : </b> #{med.normalized_credit}
+                     <br /><b>#{I18n.t('subject')} : </b> #{med.subject}
+                     <br /><b>#{I18n.t('instructions')} : </b> #{med.instructions}
+                     <br /><b>#{I18n.t('reception_date')} : </b> #{med.localised_reception_date}
+                     <br /><b>#{I18n.t('original_filename')} : </b> #{med.original_filename}
+                     <br /><b>#{I18n.t('hr_size')} : </b> #{med.hr_size}
+                     <br /><b>#{I18n.t('max_size')} : </b> #{med.max_size}
+                     "
+     end
+     pw_prov_logo = ""
+     if session[:border_color][med.provider_id].blank?
+       styl = {:oncontextmenu => "return false", :ondrag => "return false", :onmousedown => "return false"}
+     else
+       styl = {:oncontextmenu => "return false", :ondrag => "return false", :onmousedown => "return false", :style => "border:3px solid #{session[:border_color][med.provider_id]};"}
+     end
+     if med.ms_id == "flv"
+        pw_medium = "<span style='display:inline-block;padding:0;margin:0px;width:340px;height:250px'>
+    <object type='application/x-shockwave-flash' data='http://flv-player.net/medias/player_flv_maxi.swf' width='320' height='240'>
+    <param name='movie' value='http://flv-player.net/medias/player_flv_maxi.swf' />
+    <param name='allowFullScreen' value='true' />
+    <param name='FlashVars' value='flv=#{med.hires_location}&amp;startimage=#{med.medium_location}&amp;showstop=1&amp;showvolume=1&amp;showfullscreen=1&amp;autoload=1&amp;autoplay=1' />
+    </object></span><span style='display:inline-block'></span>"
+     elsif med.ms_id == "mov"
+        pw_medium = "<span style='display:inline-block;padding:0;margin:0px;width:500px;height:300px'>
+        <object width='500' height='300' classid='clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B' codebase='http://www.apple.com/qtactivex/qtplugin.cab'>
+        <param name='src' value='#{med.hires_location}'>
+        <param name='autoplay' value='true'>
+        <param name='controller' value='true'>
+        <embed width='480' height='270' src='#{med.hires_location}' type='video/quicktime' autoplay='true' controller='true'>
+        </embed></object></span><span style='display:inline-block'></span>"
+     else
+       if session[:provvg][med.provider_id] == 0
+         pw_medium = "#{image_tag(med.thumb_location, styl ) }"
+       else
+         pw_medium = "#{image_tag(med.medium_location, styl ) }"
+       end
+     end
+     pw_prov_logo = "#{image_tag(med.provider.logo.url)}" unless med.provider.logo.url.nil?
+     pw_buttons = "<div id='pw_media_all'>
+                   <span class='pw_media_txt_photo'>"
+     pw_buttons += "#{I18n.t 'media.photo'}: #{med.original_filename}"
+     pw_buttons += "</span>"
+     pw_buttons += "<ul class='pw_menus_3'><li>"
+     pw_buttons += link_to '', light_box_image_path(:id, 'ids[]' => med.id), :method => :put, :remote => :true, :class => "glyphicon glyphicon-plus"
+     pw_buttons += "</li>"
+     unless @notitle == 1
+       pw_buttons += "<li>"
+       pw_buttons += link_to I18n.t("BD"), downloads_path('ids[]' => med.id, :definition => "BD", :depage => 5), :class => "glyphicon glyphicon-save"
+       pw_buttons += "</li>"
+       pw_buttons += "<li>"
+       pw_buttons += link_to I18n.t("HD"), downloads_path('ids[]' => med.id, :definition => "HD", :depage => 5), :class => "glyphicon glyphicon-floppy-save"
+       pw_buttons += "</li>"
+     end
+     pw_buttons += "<li>"
+     pw_buttons += link_to '', medias_path(:reportage => med.reportage, :anchor => med.id), :class => 'glyphicon glyphicon-list-alt', :target => '_blank' unless med.reportage.blank?
+     pw_buttons += "</li>"
+     if Server.find_by_is_self(true).name == "20minutes"
+     unless med.fonds == 1
+       pw_buttons += "<li>"
+       pw_buttons += select_tag 'dossier', options_for_select(get_dossier.collect{|n,v| [n,"#{v}@#{med.id}"]}), {prompt: 'Sélectionnez dossier Print'}
+       pw_buttons += "</li>"
+       pw_buttons += "<li>"
+       pw_buttons += link_to('vers Etna', horby_send_path(:id => med.id), :class => '20m')
+       pw_buttons += "</li>"
+       if med.provider_id == 1 || med.provider_id == 11 || med.provider_id == 3
+         pw_buttons += "<li>"
+         link_to(image_tag('selection_cut.png', :title => "Cadrage"), test_crop_path(:id => med.id), :class => '20m')
+         pw_buttons += "</li>"
+       end
+     end
+     end
+     pw_buttons += "<li>"
+     pw_buttons += "<span title="
+     pw_buttons += I18n.t 'print.print'
+     pw_buttons += " class='glyphicon glyphicon-print print_button'></span>"
+     pw_buttons += "<li>"
+     pw_buttons += "<li class='ui-state-focus pw_close_window'>"
+     pw_buttons += "<span class='glyphicon glyphicon-remove' title='Fermer'></span>"
+     pw_buttons += "</li></ul></div>"
+    #pw_buttons = "#{render :partial => 'buttons_med', :locals => {:med => med}}"
+  %>
+  <a href="#<%=med.id%>">
+    <%= image_tag(med.thumb_location,
+                   {:id => med.id,:height => "105px",
+                    'data-pw_caption' => pw_caption,
+                    'data-pw_medium' => pw_medium,
+                    'data-pw_prov_logo' => pw_prov_logo,
+                    'data-pw_filename' => "#{med.original_filename}",
+                    'data-pw_buttons' => pw_buttons}.merge(styl)
+         ) %>
+  </a>
+  <% end %>
+</p>
+

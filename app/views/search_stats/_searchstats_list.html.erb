@@ -1,0 +1,50 @@
+<div class='pw_content ui-helper-reset ui-widget ui-widget-content ui-helper-clearfix ui-corner-tl ui-state-default'>
+
+  <table id='pw_statistics_list'>
+    <tr class="pw_statistics_list_titles">
+
+        <th>Date</th>
+        <th>Titre</th>
+        <!--<th>Utilisateur</th>-->
+        <th>Recherche</th>
+        <th>Résultat (PP)</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        <th>Date photo début</th>
+        <th>Date photo fin</th>
+    </tr>
+
+    <% @searchstat.each do |stats| %>
+      <tr class="pw_theme">
+        <td><a class="show_hide_prov" stats="<%= stats.id %>" href="#"><%= I18n.l(stats.cs_created) %></a></td>
+        <td><%= stats.user.title.name %></td>
+        <!--<td><%= stats.user.full_name.blank? ? stats.user.login : stats.user.full_name %></td>-->
+        <td><span style="color:darkred;"><%= stats.keyword %>
+        <% unless @img_field[stats.id].empty? %>
+           <%  @img_field[stats.id].each do |k,v|  %>
+                <%= "[#{k}] = #{v}" %>
+           <% end %>
+        <% end %></span>
+        </td>
+        <td><strong><%= stats.result %></strong></td>
+        <td><%= I18n.l(stats.date_pp_from) unless stats.date_pp_from.nil? %></td>
+        <td><%= I18n.l(stats.date_pp_to) unless stats.date_pp_to.nil? %></td>
+        <td><%= I18n.l(stats.date_photo_from) unless stats.date_photo_from.nil? %></td>
+        <td><%= I18n.l(stats.date_photo_to) unless stats.date_photo_to.nil? %></td>
+      </tr>
+      <tr>
+        <td colspan="9"><div id="prov_<%= stats.id %>">
+          <% @prov_stat[stats.id].each do |k, v| %>
+            <%= "#{@prov_name[k]} => #{v} " %> <br />
+          <% end %>
+          </div>
+        </td>
+      </tr>
+
+    <% end %>
+  </table>
+
+</div>
+<script type="text/javascript">
+    $("#pw_statistics_list div").each( function() { $(this).show(); } );
+</script>

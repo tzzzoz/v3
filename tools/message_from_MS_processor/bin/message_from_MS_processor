@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+#
+# Stub executable for media_processor
+
+require File.dirname(__FILE__) + '/../config/environment'
+
+DaemonKit::Application.exec( DAEMON_ROOT + '/libexec/message_from_MS_processor-daemon.rb' )

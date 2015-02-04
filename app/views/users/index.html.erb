@@ -1,0 +1,79 @@
+<% content_for :document_ready do %>
+
+    $(".users_table_header>tbody").hide();
+    $("#comptes_clients_radio").click();
+    
+    $('.users_inner_table_div').height($('#pw_center').height() - $('.users_table_header').height());
+
+<% end %>
+
+  <% content_for :contextual_header do %>
+      <div id="providers_menu">
+        <input type="radio" name="selected_tab" id="comptes_clients_radio" value=0 onclick="$('#comptes_clients').show();$('#comptes_agences').hide();$('#comptes_désactivés').hide();$('#comptes_de_secours').hide();">
+        <label for="comptes_clients_radio">Comptes clients</label>
+        <input type="radio" name="selected_tab" id="comptes_agences_radio" value=0 onclick="$('#comptes_clients').hide();$('#comptes_agences').show();$('#comptes_désactivés').hide();$('#comptes_de_secours').hide();">
+        <label for="comptes_agences_radio">Comptes agences</label>
+        <input type="radio" name="selected_tab" id="comptes_de_secours_radio" value=0 onclick="$('#comptes_clients').hide();$('#comptes_agences').hide();$('#comptes_désactivés').hide();$('#comptes_de_secours').show();">
+        <label for="comptes_de_secours_radio">Comptes de secours</label>
+        <input type="radio" name="selected_tab" id="comptes_désactivés_radio" value=0 onclick="$('#comptes_clients').hide();$('#comptes_agences').hide();$('#comptes_désactivés').show();$('#comptes_de_secours').hide();">
+        <label for="comptes_désactivés_radio">Comptes désactivés</label>
+        <span><%= link_to(I18n.t(:export), 'users_to_xls', :id => 'pw_providers_to_csv', :class => 'pw_puce_arrow', :target => '_blank') %></span>
+      </div>
+  <% end %>
+
+  <div class="users_tables_container_div">
+
+    <table class="users_table_header">
+      <thead>
+        <tr>
+          <th class="col_server"><%= I18n.t(:server) %></th>
+          <th class="col_title"><%= I18n.t('statistics.title') %></th>
+          <th class="col_group"><%= I18n.t(:group) %></th>
+          <th class="col_firstname"><%= I18n.t(:first_name) %></th>
+          <th class="col_lastname"><%= I18n.t(:last_name) %></th>
+          <th class="col_userurl"><%= I18n.t('admin.user.user_url') %></th>
+          <th class="col_login"><%= I18n.t(:login) %></th>
+          <th class="col_password"><%= I18n.t(:password) %></th>
+          <th class="col_role"><%= I18n.t('admin.user.roles') %></th>
+          <th class="col_email"><%= I18n.t(:email) %></th>
+          <th class="col_createdate"><%= I18n.t('admin.user.created_at') %></th>
+          <th class="col_comments"><%= I18n.t('admin.user.comments') %></th>
+          <th class="col_publicurl"><%= I18n.t('admin.user.public_url') %></th>
+        </tr>
+      </thead>
+    </table>
+
+    <div class="users_inner_table_div">
+    <table class="users_table_datas">
+      <% Spreadsheet.open USERS_LIST_FILE do |excel_users_file|%>
+        <% excel_users_file.worksheets.each do |login_tab|%>
+          <% tbody_name = login_tab.name.gsub(/\s+/, "_").downcase %>
+          <% if (tbody_name!="adresses_clients_-_ip_publique") %>
+            <tbody id="<%= tbody_name %>">
+            <% login_tab.each 1 do |row| %>
+              <tr class="users_line">
+                <td class="col_server"><%= row[0] %></td>
+                <td class="col_title"><%= row[1] %></td>
+                <td class="col_group"><%= row[2] %></td>
+                <td class="col_firstname"><%= row[3] %></td>
+                <td class="col_lastname"><%= row[4] %></td>
+                <td class="col_userurl"><%= row[5]%></td>
+                <td class="col_login"><%= row[6] %></td>
+                <td class="col_password"><%= row[7] %></td>
+                <td class="col_role"><%= row[8] %></td>
+                <td class="col_email"><%= mail_to(row[9]) %></td>
+                <td class="col_createdate"><%= row[10] %></td>
+                <td class="col_comments"><%= row[11] %></td>
+                <td class="col_publicurl"><%= row[12] %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          <% end %>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+
+  </div>
+
+</div>

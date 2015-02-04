@@ -1,0 +1,142 @@
+
+<h4>LICENCE D&rsquo;UTILISATION COMMERCIALE</h4>
+<p>Toute utilisation commerciale de documents conserv&eacute;s &agrave; la Biblioth&egrave;que nationale de France doit faire l’objet d’une autorisation pr&eacute;alable du d&eacute;partement de la reproduction et de l’acquittement d’une redevance d’utilisation. Son montant est factur&eacute; &agrave; la parution de la publication ou du produit sur la base d’un justificatif adress&eacute; au d&eacute;partement de la reproduction. S’agissant des produits sur supports autres que papier, la liste d&eacute;finitive des images utilis&eacute;es, qui doit pr&eacute;ciser le caract&egrave;re noir et blanc ou couleur de l’utilisation, sert de justificatif.<br />
+  <br />
+  La r&eacute;ception du formulaire ci-apr&egrave;s vaut demande d’autorisation de reproduction des images t&eacute;l&eacute;charg&eacute;es pour les utilisations d&eacute;crites. Une autorisation de reproduction sera transmise &agrave; l’utilisateur.<br />
+  <br />
+  A titre de cr&eacute;dit, la mention de source &laquo; BnF/r&eacute;f&eacute;rence de l’image &raquo; (ex. BnF/ABC.0123456789) doit &ecirc;tre visible dans la publication.<br />
+  <br />
+  Vous trouverez ci-dessous les tarifs de redevance applicables aux images t&eacute;l&eacute;charg&eacute;es.</p>
+<p>(Les champs pr&eacute;c&eacute;d&eacute;s d'un <sup><b style="color:#660000;">*</b></sup> sont obligatoires)</p>
+<h3>Utilisation</h3>
+<fieldset id="group1" class="bnf_fieldset">
+<legend>Support de publication</legend>
+    <pre  id="warn-group1" class="formwarning msg_control">&nbsp;</pre>
+    <input type="checkbox" class="verif_edition" onclick="checkThis(this,'checkb','edition',(liv_pag_pap.checked||liv_pag_num.checked),'optional0')" name="edition" id="liv_pag_pap" value="Livre paginé papier"/><label for="liv_pag_pap">Livre pagin&eacute; papier</label>
+    <input type="checkbox" class="verif_edition" onclick="checkThis(this,'checkb','edition',(liv_pag_pap.checked||liv_pag_num.checked),'optional0')" name="edition" id="liv_pag_num" value="Livre paginé numérique" style="margin-left:100px" /><label for="liv_pag_num">Livre pagin&eacute; num&eacute;rique</label><br />
+        <label class='formBlock' style="margin-left:40px" ><sup><b style="color:#660000;">*</b></sup>Titre :</label>
+        <input onBlur="checkThis(this,'chaine','optional0')" class="edition" maxlength="50" size="20" name="title_edition" id="title_edition" disabled style="margin:0px;"/><br />
+        <label class='formBlock' style="margin-left:40px"><sup><b style="color:#660000;">*</b></sup>Date de publication (indicative) :</label>
+        <input onBlur="checkThis(this,'jour')" maxlength="2" size="2" class="edition" id="edition1" name="edition_day" disabled style="margin:0;" /> / <input  onBlur="checkThis(this,'mois')" maxlength="2" size="2" id="edition2" name="edition_month" class="edition" disabled style="margin:0;"/> / <input  onBlur="checkThis(this,'annee')" maxlength="4" size="4" id="edition3" name="edition_year" class="edition" disabled style="margin:0;"/><br />
+        <input type="hidden" name="publication_edition"  id="publication_edition" value="">
+        </br>
+    <input type="checkbox" class="verif_edition" onclick="checkThis(this,'checkb','presse',(per_pag_pap.checked||per_pag_num.checked),'optional0')" name="presse" id="per_pag_pap" value="Périodique paginé papier (quotidien, magazine etc.)"/><label for="per_pag_pap">P&eacute;riodique pagin&eacute; papier (quotidien, magazine etc.)</label>
+    <input type="checkbox" class="verif_edition" onclick="checkThis(this,'checkb','presse',(per_pag_pap.checked||per_pag_num.checked),'optional0')" name="presse" id="per_pag_num" value="Périodique paginé numérique"/><label for="per_pag_num">P&eacute;riodique pagin&eacute; num&eacute;rique </label><br />
+        <label class='formBlock' style="margin-left:40px;"><sup><b style="color:#660000;">*</b></sup>Titre : </label>
+        <input onBlur="checkThis(this,'chaine','optional0')" maxlength="50" size="20" class="presse" name="title_presse" id="title_presse" disabled style="margin:0 0 0 26px;" /><br />
+        <label class='formBlock' style="margin-left:40px"><sup><b style="color:#660000;">*</b></sup>Num&eacute;ro :</label>
+        <input onBlur="checkThis(this,'nomb')" maxlength="30" size="20" class="presse" name="num_presse" id="num_presse" disabled style="margin:0;"/><br />
+        <br />
+    <input type="checkbox" class="verif_edition" onclick="checkThis(this,'checkb','pub_presse',this.checked,'optional0')" name="pub_presse" id="pub_per_pag_pap" value="Insertion publicitaire dans un périodique paginé papier (quotidien, magazine etc.)"/><label for="pub_per_pag_pap">Insertion publicitaire dans un p&eacute;riodique pagin&eacute; papier (quotidien, magazine etc.)</label><br />
+        <label class='formBlock' style="margin-left:40px"><sup><b style="color:#660000;">*</b></sup>Titre : </label>
+        <input onBlur="checkThis(this,'chaine','optional0')" maxlength="50" size="20" class="pub_presse" name="title_pub_presse" id="title_pub_presse" disabled style="margin:0 0 0 26px;"/><br />
+        <label class='formBlock' style="margin-left:40px"><sup><b style="color:#660000;">*</b></sup>Num&eacute;ro :</label>
+        <input onBlur="checkThis(this,'nomb')" maxlength="30" size="20" class="pub_presse" name="num_pub_presse" id="num_pub_presse" disabled style="margin:0;"/><br />
+        <br />
+    <input type="checkbox" class="verif_edition" onclick="enableBlock('television',this.checked)" name="tv" id="tv" value="Télévision"/><label for="tv">T&eacute;l&eacute;vision</label><br />
+        <label class='formBlock' style="margin-left:40px;"><sup><b style="color:#660000;">*</b></sup>Titre de l&rsquo;&eacute;mission :</label>
+        <input onBlur="checkThis(this,'chaine')" maxlength="50" size="20" name="emission_tv" id="emission_tv" class="television" disabled style="margin:0;"/><br />
+        <label class='formBlock' style="margin-left:40px;"><sup><b style="color:#660000;">*</b></sup>Date de premi&egrave;re diffusion (indicative) :</label>
+        <input onBlur="checkThis(this,'jour')"  maxlength="2" size="2" id="tv1" name="jour_television" class="television" disabled style="margin:0;"/> / <input onBlur="checkThis(this,'mois')" maxlength="2" size="2" id="tv2" name="mois_television" class="television" disabled style="margin:0;"/> / <input onBlur="checkThis(this,'annee')" maxlength="4" size="4" id="tv3" name="an_television" class="television" disabled style="margin:0;"/><br />
+        <input type="hidden" name="diffusion_tv" id="diffusion_tv" value="">
+        <br />
+    <input type="checkbox" class="verif_edition" onclick="enableBlock('cinema',(cine_long.checked||cine_court.checked))" name="cinema" id="cine_long" value="Cinéma (long métrage)"/><label for="cine_long">Cin&eacute;ma (long m&eacute;trage)</label>
+    <input type="checkbox" class="verif_edition" onclick="enableBlock('cinema',(cine_long.checked||cine_court.checked))" name="cinema" id="cine_court"value="Cinéma (court ou moyen métrage)"/><label for="cine_court">Cin&eacute;ma (court et moyen m&eacute;trage)</label><br />
+        <label class='formBlock' style="margin-left:40px;"><sup><b style="color:#660000;">*</b></sup>Titre du film :</label>
+        <input onBlur="checkThis(this,'chaine')" maxlength="50" size="20" name="film" id="film" class="cinema" disabled style="margin:0;"/><br />
+        <label class='formBlock' style="margin-left:40px;"><sup><b style="color:#660000;">*</b></sup>Date de premi&egrave;re diffusion (indicative) :</label>
+        <input onBlur="checkThis(this,'jour')"  maxlength="2" size="2" id="jour_cinema" name="jour_cinema" class="cinema" disabled style="margin:0;"/> / <input onBlur="checkThis(this,'mois')" maxlength="2" size="2" id="mois_cinema" name="mois_cinema" class="cinema" disabled style="margin:0;"/> / <input onBlur="checkThis(this,'annee')" maxlength="4" size="4" id="annee_cinema" name="annee_cinema" class="cinema" disabled style="margin:0;"/><br />
+        <input type="hidden" name="diffusion_cinema" id="diffusion_cinema" value="">
+        <br />
+    <input type="checkbox" name="video" id="video" class="verif_edition" onClick="checkThis(this,'checkb','illu_video',this.checked,'optional0');" value="CD-ROM, DVD-ROM, vidéogramme"/><label for="video">CD-ROM, DVD-ROM, vid&eacute;ogramme</label><br />
+        <input type="checkbox" name="illu_contenu_video" id="illu_contenu_video" class='illu_video' value="Illustration du contenu" style="margin-left:40px;" disabled /><label for="illu_contenu_video">Illustration du contenu</label></br>
+        <input type="checkbox" name="illu_contenant_video" id="illu_contenant_video" class='illu_video' value="Illustration des jaquettes, livrets, boîtiers..." style="margin-left:40px;" disabled /><label for="illu_contenant_video">Illustration des jaquettes, livrets, bo&icirc;tiers...</label></br>
+        <br />
+    <input type="checkbox" name="internet" id="internet" class="verif_edition" onClick="checkThis(this,'checkb')" value="Site web et toutes utilisations en ligne (streaming, podcasting...)"/><label for="internet">Site web et toutes utilisations en ligne (streaming, podcasting...)</label><br />
+    <br />
+    <input type="checkbox" name="publicitaire" id="publicitaire" class="verif_edition" onClick="checkThis(this,'checkb')" value="Produit publicitaire (affichage public...)"/><label for="publicitaire">Produit publicitaire (affichage public...)</label><br />
+    <br />
+    <input type="checkbox" name="expo_salon" id="expo_salon" class="verif_edition" onClick="checkThis(this,'checkb')" value="Expositions, salons professionnels"/><label for="expo_salon">Expositions, salons professionnels</label><br />
+    <br />
+    <input type="checkbox" name="autre" id="autre" class="verif_edition" onclick="enableBlock('autre',this.checked)"/><label for="autre">Autre (<sup><b style="color:#660000;">*</b></sup>&aacute; pr&eacute;ciser) : </label><input onBlur="checkThis(this,'chaine')" maxlength="30" size="20" name="other" id="other" class="autre" disabled style="margin:0;"/><br />
+</fieldset>
+
+<fieldset id="group2" class="optional0 bnf_fieldset" style="display:none">
+<legend>Tirage (obligatoire) </legend>
+    <pre id="warn-group2" class="formwarning msg_control" >&nbsp;</pre>
+    <label><sup><b style="color:#660000;">*</b></sup>Nombre d&rsquo;exemplaires pr&eacute;vus (livres et p&eacute;riodiques papier, CD et DVD-ROM) : </label><input onBlur="checkThis(this,'nomb')" class="exemplaires" maxlength="30" size="20" name="exemplaires" /><br />
+</fieldset>
+
+<fieldset id="group3" class="optional0 bnf_fieldset" style="display:none">
+<legend>Diffusion (obligatoire) </legend>
+    <pre id="warn-group3" class="formwarning msg_control" >&nbsp;</pre>
+    <input class="verif_diffusion" onClick="checkThis(this,'checkb')" name="diffusion" type="radio" value="un pays, une langue" id="1pays-1langue"/><label for="1pays-1langue">un pays, une langue</label><br />
+    <input class="verif_diffusion" onClick="checkThis(this,'checkb')" name="diffusion" type="radio" value="un pays, plusieurs langues (+20%)" id="1pays-xlangues"/><label for="1pays-xlangues">un pays, plusieurs langues (+20%)</label><br />
+    <input class="verif_diffusion" onClick="checkThis(this,'checkb')" name="diffusion" type="radio" value="plusieurs pays, une langue (+50%)" id="xpays-1langue"/><label for="xpays-1langue">plusieurs pays, une langue (+50%)</label><br />
+    <input class="verif_diffusion" onClick="checkThis(this,'checkb')" name="diffusion" type="radio" value="plusieurs pays, plusieurs langues (+80%)" id="xpays-xlangues"/><label for="xpays-xlangues">plusieurs pays, plusieurs langues (+80%)</label><br />
+</fieldset>
+
+<h3 style="text-decoration: underline;" >Num&eacute;ro de client ou adresse de facturation</h3>
+<fieldset id="group4" class="bnf_fieldset">
+<legend>Num&eacute;ro de client</legend>
+    <pre id="warn-group4" class="formwarning msg_control" >&nbsp;</pre>
+    <label>(si connu) : </label>CLI-<input onBlur="checkThis(this,'chaine')" class="bnf_input" maxlength="30" size="20" name="nclient" /><br />
+</fieldset>
+
+<fieldset id="group5" class="bnf_fieldset">
+<legend>OU</legend>
+    <pre id="warn-group5" class="formwarning msg_control" >&nbsp;</pre>
+  <table>
+  <tr>
+    <td><label class='formBlock'><sup><b style="color:#660000;">*</b></sup>D&eacute;nomination (raison) sociale :</label></td>
+    <td><input onBlur="checkThis(this,'chaine')" class="manda bnf_input" maxlength="50" size="20" name="legal_name" /></td>
+  </tr>
+  <tr>
+    <td><label class='formBlock'>Service :</label></td>
+    <td><input onBlur="checkThis(this,'chaine')" class="bnf_input" maxlength="30" size="20" name="service" /><br /></td>
+  </tr>
+  <tr>
+    <td><label class='formBlock'><sup><b style="color:#660000;">*</b></sup>Adresse :</label></td>
+    <td><input onBlur="checkThis(this,'chaine')" class="manda bnf_input" maxlength="80" size="20" name="adresse" /><br /></td>
+  </tr>
+  <tr>
+    <td><label class='formBlock'><sup><b style="color:#660000;">*</b></sup>Code postal :</label></td>
+    <td><input onBlur="checkThis(this,'nomb')" class="manda bnf_input" maxlength="30" size="20" name="postal_code" /><br /></td>
+  </tr>
+  <tr>
+    <td><label class='formBlock'><sup><b style="color:#660000;">*</b></sup>Ville :</label></td>
+    <td><input onBlur="checkThis(this,'chaine')" class="manda bnf_input" maxlength="30" size="20" name="city" /><br /></td>
+  </tr>
+  </table>
+    <!--label class='formBlock'><sup><b style="color:#660000;">*</b></sup>Email :</label><input onBlur="checkThis(this,'mail')" class="manda" maxlength="80" size="20" name="email" /><br /-->
+    <!--label class='formBlock'>Pays :</label><input onBlur="checkThis(this,'chaine')" maxlength="30" size="20" name="pays" /><br /-->
+    <!--label class='formBlock'>Num&eacute;ro de TVA intracommunautaire : </label><input onBlur="checkThis(this,'tva1')" maxlength="2" size="2" name="tva[]" />&nbsp;  -  &nbsp;<input onBlur="checkThis(this,'tva2')" maxlength="11" size="11" name="tva[]" /><br /-->
+</fieldset>
+<h4>Conditions g&eacute;n&eacute;rales d&rsquo;utilisation</h4>
+<p>1. L&rsquo;autorisation d&rsquo;utilisation accord&eacute;e par
+la Biblioth&egrave;que nationale de France pour l&rsquo;usage qui a
+
+&eacute;t&eacute; pr&eacute;cis&eacute; lors de la facturation ne
+peut en aucun cas couvrir des usages ult&eacute;rieurs et
+conna&icirc;tre une quelconque extension sans une nouvelle
+autorisation.<br />
+
+2. L&rsquo;autorisation est accord&eacute;e sans limite de
+dur&eacute;e et &agrave; titre non exclusif pour le ou les seuls
+usages que vous avez d&eacute;clar&eacute;s.<br />
+
+3. L&rsquo;autorisation est accord&eacute;e sans pr&eacute;judice
+du droit des auteurs ou de leurs ayants droit.<br />
+(loi n&deg; 92-597 du 1er juillet 1992 portant code de la
+propri&eacute;t&eacute; intellectuelle).<br />
+
+4. La mention &laquo; BnF/-nom de l&rsquo;image dans Pixpalace-
+
+&raquo; est obligatoire.</p>
+<pre id="warn-group6" class="formwarning" >&nbsp;</pre>
+<input id="agrement" name="agrement" type="checkbox" /> <label for="agrement">En cochant cette case, je reconnais avoir pris connaissance des conditions g&eacute;n&eacute;rales d&rsquo;utilisation et je les accepte </label><br />
+<input value="Valider" type="button" onclick="javascript:checkForm(<%= pid.to_i %>, 1);">
+<input value="Refuser" type="button" onclick="javascript:checkForm(<%= pid.to_i %>, 0);">
+<p>
+<a href="/bnf.pdf" target="_blank">Tarifs de la redevance d'usage public</a>
+</p>

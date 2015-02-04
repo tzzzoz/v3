@@ -1,0 +1,109 @@
+<form id="pw_sel_light_box_results">
+  <ul class = 'pw_menus'>
+    <li class="multi">
+      <%= link_to "<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('open').capitalize}".html_safe, full_screen_light_box_path(@light_box), :class => 'full_screen', :target => '_blank' %>
+    </li>
+    <li class="multi">
+      <%= link_to "<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('delete').capitalize}".html_safe, light_box_path(@light_box), :method => :delete, :remote => true, :data => {:confirm => "#{I18n.t('confirm_delete_viewer')} #{@light_box.name} ?"} %>
+    </li>
+    <li class="multi">
+      <a href="#" id="light_box_rename" ><span class='glyphicon glyphicon-arrow-right'></span><%= I18n.t('rename').capitalize %></a>
+    </li>
+    <div class="pw_lb_dashed"></div>
+    <% if (@light_box.images.count > 0)%>
+        <% if (current_user.is_provider_admin? || current_user.is_superadmin?) %>
+            <li class="multi">
+              <%= link_to "<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('send_and_delete')}".html_safe, send_and_delete_path(:id => @light_box.id), :remote => true, :data => {:confirm => "Voulez-vous vraiment supprimer ces photos du service PixPalace ?"} %>
+            </li>
+            <li class="multi">
+              <%= link_to "<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('move_and_delete')}".html_safe, send_and_delete_path(:id => @light_box.id, :pplus => 1), :remote => true, :data => {:confirm => "Voulez-vous vraiment déplacer ces photos sur PixPalace2 ?"} %>
+            </li class="multi">
+        <%end%>
+        <% if (current_user.is_provider_user? || current_user.is_provider_admin? || current_user.is_superadmin?) %>
+            <li class="multi">
+              <%= link_to "<span class='glyphicon glyphicon-arrow-right'></span>#{I18n.t('create_feature')}".html_safe, new_reportage_path(:id => @light_box.id), :class => 'full_screen', :target => '_blank' %>
+            </li>
+        <%end%>
+    <% end %>
+    <div class="pw_lb_dashed"></div>
+  </ul>
+
+  <div style="text-align: left;">
+
+    <span class="pw_toggle_check">
+      <span class="glyphicon glyphicon-expand"></span>
+      <strong><%= I18n.t('toggle_check_all')%></strong>
+    </span>
+    
+    <ul class = 'pw_menus_3' >
+      <li>
+        <%= link_to( "<span class='glyphicon glyphicon-save'></span>#{I18n.t('BD')}".html_safe, downloads_path(:definition => 'BD', :depage => 6), :class => 'multi sel_light_box BD', :target => '_blank') %>
+      </li>
+      <li>
+        <%= link_to( "<span class='glyphicon glyphicon-floppy-save'></span>#{I18n.t('HD')}".html_safe, downloads_path(:definition => 'HD', :depage => 6), :class => 'multi sel_light_box HD', :target => '_blank') unless @light_box.images.where(:content_error => 0).count > 50 %>
+      </li>
+      <% unless current_user.title.flow_path.blank? %>
+          <li class="multi">
+            <%= link_to('Flux', downloads_path(:definition => 'FLUX', :light_box_name => @light_box.name), :class => 'sel_light_box HD', :target => '_blank') unless @light_box.images.where(:content_error => 0).count > 50 %>
+          </li>
+      <% end %>
+      <li>
+        <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, light_box_image_path(:id => @light_box.id), :method => :delete, :remote => :true, :target => '_blank', :class => "multi sel_light_box", :data => {:confirm => "Voulez-vous vraiment retirer ces photos de la visionneuse ?"} %>
+      </li>
+    </ul>
+  </div>
+  <div class="pw_lb_dashed"></div>
+
+  <% @lb_images.each do |im| %>
+      <div class="pw_lb_thumb" id ="lb_<%=im.id%>" >
+        <% if session[:border_color][im.provider_id] %>
+          <%= link_to image_tag(im.thumb_location, :size => fit_square(im.ratio,80), :style => "border:2px solid #{session[:border_color][im.provider_id]};"), medias_path(:light_box => @light_box.id, :page => params[:page], :anchor => im.id), :target => '_blank' %>
+         <% else %>
+            <%= link_to image_tag(im.thumb_location, :size => fit_square(im.ratio,80)), medias_path(:light_box => @light_box.id, :page => params[:page], :anchor => im.id), :target => '_blank' %>
+        <% end %>
+        <ul class="pw_menus_3">
+          <li>
+            <%= check_box_tag("lb_im_#{im.id}", '1', true) %>
+          </li>
+          <% if (current_user.is_provider_admin? || current_user.is_superadmin?) %>
+                <% if session[:provhd][im.provider_id] == 1 %>
+                  <li>
+                    <%#= link_to "X", remove_for_good_path(:id => @light_box.id, :ids => im.id), :title => "Supprimer de Pixpalace", :remote => :true, :data => {:confirm => "Voulez-vous vraiment supprimer cette photo de PixPalace ?"} %>
+                    <%= link_to '', edit_image_path(:id => im.id), :title => "Modifier les Méta-données", :class => "glyphicon glyphicon-pencil reset-margin", :target => :new %>
+                  </li>
+              <% end %>
+          <% end %>
+          <li>
+
+            <%= link_to '', light_box_image_path(:id => @light_box.id, "ids[]" => im.id), :class => "glyphicon glyphicon-trash reset-margin", :method => :delete, :remote => :true, :data => {:confirm => "Voulez-vous vraiment retirer cette photo de la visionneuse ?"} %>
+          </li>
+        </ul>
+      </div>
+  <% end %>
+  <!--</ul>-->
+</form>
+
+<script>
+    function LbSelection(joiner){
+        res = $('#pw_sel_light_box_results').find('input:checked')
+                .closest('div')
+                .map(function() { return this.id.replace('lb_',''); })
+                .get().join('&'+joiner);
+        if (res != '' ){ res = joiner + res }
+        return res
+    }
+
+    $('a.sel_light_box').click(function(){
+        curr_href = $(this).attr('href');
+        if ($(this).attr('href').indexOf("?") > 0 ){
+            $(this).attr('href', curr_href+'&'+LbSelection('ids[]='));
+        } else {
+            $(this).attr('href', curr_href+'?'+LbSelection('ids[]='));
+        }
+
+    });
+
+    toggle_check($("#pw_right .pw_toggle_check"));
+
+
+</script>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" type="image/png" href="<%= asset_path 'pp_favicon.png' %>">
+    <title><%= @title %></title>
+    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag 'print_light_box', :media => 'print' %>
+
+    <%= raw dynamic_css %>
+
+    <%= raw same_bg_css %>
+
+    <script type="text/javascript">
+
+        function LbSelection(joiner){
+           var res = $('#pw_lb_results :checkbox:checked').map(function() {
+                    return this.id.replace('lb_','');
+           }).get().join('&'+joiner);
+           if (res != '' ){ res = joiner + res }
+           return res
+        }
+
+        function BeforeClose() {
+           var currHref = window.opener.location.href;
+           if (currHref.indexOf('ids') > 0) { currHref = currHref.substring(0, currHref.indexOf('ids')); }
+           if (currHref.indexOf('?') > 0) { window.opener.location=(currHref+'&'+LbSelection('ids[]=')); }
+           else { window.opener.location=(currHref+'?'+LbSelection('ids[]=')); }
+           window.close();
+        }
+
+        $(document).ready(function(){
+
+            $('a.multi_lb').click(function(){
+                curr_href = $(this).attr('href');
+                if ($(this).attr('href').indexOf("?") > 0 ){ $(this).attr('href', curr_href+'&'+LbSelection('ids[]=')); }
+                else { $(this).attr('href', curr_href+'?'+LbSelection('ids[]=')); }
+
+            });
+
+
+            $('#fs_light_box').on('change', function(){ location.href=$(this).val(); });
+
+
+            $('#full_light_box_form_place').on('mouseout focusout mouseover', function(ev){
+                if (ev.type == 'mouseout'){ out = true };
+                if (ev.type == 'mouseover'){ out = false };
+                if (ev.type == 'focusout' && out ){
+                    $('#full_light_box_form_place').html("<%= escape_javascript(render :partial => 'full_screen_light_boxes/select_form') %>");
+                }
+            });
+
+            $('#full_light_box_add').on('mouseover',
+                function(){
+                    $(this).addClass('ui-state-hover');
+                }).on('mouseout',
+                function(){
+                    $(this).removeClass('ui-state-hover');
+                }).on('click',
+                function(){
+                    $('#full_light_box_form_place').html("<%= escape_javascript(render :partial => 'full_screen_light_boxes/new_form')%>")
+                                     .find('input:text:first').focus();
+            });
+
+            <%= yield :document_ready %>
+
+            flashIt();
+
+        });
+
+    </script>
+
+    <style type="text/css" media="all">
+        html{
+            overflow:auto;
+        }
+
+        .sameHeightCol {
+            float: left;
+            position: relative;
+        }
+        .tgn_col1 {
+            width: 150px;
+        }
+        .tgn_col2 {
+            width: 40px;
+        }
+        .tgn_col3 {
+            width: 40px;
+        }
+
+    </style>
+
+  </head>
+  <body>
+
+  <div class='pw_content'>
+    <%= yield %>
+  </div>
+
+  <div id="modal_wrapper"></div>
+
+  </body>
+</html>

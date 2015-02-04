@@ -1,0 +1,63 @@
+Go into this README folder (/var/www/v2/current/tools)
+
+stop the pw_processors service
+sudo /etc/init.d/pw_processors stop
+
+Configure the ftp in ./file_processor/config/ftp.yml
+send an email to support@pixpalace.com if you don't understand the options
+
+! The pictures will be moved not copied (hotfolder)
+start the file processor with the output in terminal to see if anything is wrong :
+./file_processor/bin/file_processor
+
+as usual ctrl+c to stop
+
+configure the network
+
+you can now work on you computer to do the following
+
+Configure the paths in ./media_processor/config/processor.yml
+You should change only the workers
+
+:paths:
+  :out:   put the path to store the pictures
+  :err:   put the path where incorrect pictures will be stored
+
+:controller:
+  :workers: number of processes put your cpu number, minimum 2 to have decent perfs
+  :db_retries: max tries on db timeout, put reconnect: true in the rails database.yml  
+
+start the media processor with the output in terminal to see if anything is wrong :
+./media_processor/bin/media_processor
+
+as usual ctrl+c to stop
+
+Configure the tunnel port in ./tunnel_processor/config/config.yml
+:remote_base: MS Clients.id + 1000 x 10
+(It must be between 1025 and 49150, it must be unique.)
+
+use /etc/init.d/pw_processors to start and stop the picture an ftp processing services (sudo /etc/init.d/pw_processors start and sudo /etc/init.d/pw_processors stop)
+
+the logs will be in :
+/var/log/pixways
+
+Connect in http as superadmin to configure the server, groups (only if you have to), titles and users.
+
+To see IPTC metadata in terminal use
+meta_show /path/to/pictures
+
+OPTIONAL
+To change the hostname :
+stop the file_processor
+./file_processor/bin/file_processor stop
+wait for all pics to be processed
+tail -f /var/log/pixways/media_processor_development.log 
+then
+sudo /etc/init.d/pw_processors stop
+sudo /etc/init.d/rabbitmq-server stop
+sudo rm -rf /var/lib/rabbitmq/mnesia
+change the hostname :
+sudo nano -w /etc/hostname
+sudo nano -w /etc/hosts
+reboot the server :
+sudo reboot

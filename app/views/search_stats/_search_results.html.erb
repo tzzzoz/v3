@@ -1,0 +1,24 @@
+<div class='content'>
+
+  <div class="pw_stats_total pw_dashed_bottom">
+    <strong>
+      <%= I18n.t('statistics.total') %>
+      <%= number_with_delimiter(@searchstat.count) %>
+    </strong>
+    <span class="pw_stats_export">
+  </div>
+
+  <div id="pw_results_stats">
+    <ul>
+        <li class="show_hide_total"><a href="#">Ouvrir / Fermer</a></li>
+    </ul>
+
+    <div id="tabs-list">
+      <%= render :partial => "searchstats_list" %>
+    </div>
+
+  </div>
+
+
+
+</div>

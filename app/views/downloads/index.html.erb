@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/png" href="<%= asset_path 'pp_favicon.png' %>">
+
+<title><%= I18n.t 'download' %> </title>
+
+<%= javascript_include_tag "application" %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#closeWindow").click(function(){
+      window.close();
+    });
+
+    <% if @dwn && @dwn.keys.count == 1 %>
+          $("form").submit();
+    <% end %>
+      
+  });
+</script>
+
+<%
+ s_t_font = current_user.setting.display_params['font_color'] if current_user
+ s_t_font ||= "#000"
+ s_t_bg = current_user.setting.display_params['background_color'] if current_user
+ s_t_bg ||= "#ccc"
+ %>
+
+<style>
+  body { background-color: <%=  s_t_bg %>; color: <%=  s_t_font %>; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  input { margin-left: 20px; }
+</style>
+
+</head>
+<body>
+
+<% @dwn && @dwn.each do |server,paras| %>
+    <% paras['urls'].each do |action, urls|%>
+      <form method='post' action='<%= action %>'>
+        <%  urls.each do |url| %>
+          <input type='hidden' name='<%= url %>'>
+        <% end %>
+          <label><%= server %> </label>
+        <%=  submit_tag I18n.t 'download' unless @dwn.keys.count == 1 %>
+      </form>
+    <% end %>
+<% end %>
+
+<% if @aff_txt %>
+  <h3><%= simple_format(@aff_txt) %></h3>
+<% else %>
+ <br><br>
+  <% if @dwn %>
+    <h2><%= I18n.t('close_after_download') %>.</h2>
+  <% else %>
+    <h2><%= I18n.t('no_images_selected') %>.</h2>
+  <% end %>
+<% end %>
+<p><br /><a href="javascript:window.close()" title="Fermer">Fermer</a></p>
+</body>
+</html>
